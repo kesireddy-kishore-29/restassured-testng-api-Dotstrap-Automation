@@ -4,10 +4,10 @@ pre-commit:
   commands:
     format:
       glob: "*.java"
-      run: mvn -q -B spotless:apply && git add {staged_files}
+      run: ./mvnw -q -B spotless:apply && git add {staged_files}
     lint:
       glob: "*.java"
-      run: mvn -q -B -DskipTests checkstyle:check
+      run: ./mvnw -q -B -DskipTests checkstyle:check
 
 commit-msg:
   commands:
