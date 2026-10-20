@@ -1,0 +1,27 @@
+# Build output
+target/
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Run output — evidence is produced per run and uploaded as CI artifacts, never committed.
+# Curated samples live under docs/examples/.
+run-evidence/
+allure-results/
+allure-report/
+newman/
+reports/
+postman/node_modules/
+node_modules/
+
+# Local overrides and secrets
+.env
+.env.*
+!.env.example
+*.log

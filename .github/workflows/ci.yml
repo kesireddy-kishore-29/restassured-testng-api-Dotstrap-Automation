@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  MAVEN_ARGS: -B -ntp
+
+jobs:
+  quality:
+    name: Format, lint, compile, unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+      - name: Spotless check, Checkstyle, compile (-Werror), framework + tools unit tests
+        run: ./mvnw verify -pl sut,framework,tools -am
+
+  smoke:
+    name: Smoke suite against the reference service
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      RECORD_MODE: failures
+      RUN_ID: ci-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+      - name: Build the reference service
+        run: ./mvnw -DskipTests package -pl sut -am
+      - name: Start the reference service
+        run: |
+          nohup java -jar sut/target/reference-service.jar > sut.log 2>&1 &
+          for _ in $(seq 1 30); do
+            curl -sf http://localhost:7070/health && exit 0
+            sleep 1
+          done
+          cat sut.log
+          exit 1
+      - name: Smoke suite
+        run: ./mvnw verify -pl tests -am -Pci -Dsuite=smoke
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: smoke-results
+          path: |
+            tests/target/surefire-reports/
+            tests/target/allure-results/
+            run-evidence/
+            sut.log
+          retention-days: 14
+          if-no-files-found: ignore

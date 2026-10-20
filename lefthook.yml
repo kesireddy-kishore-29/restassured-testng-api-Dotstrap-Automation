@@ -1,0 +1,15 @@
+# Git hooks. Install once with: lefthook install
+pre-commit:
+  parallel: false
+  commands:
+    format:
+      glob: "*.java"
+      run: mvn -q -B spotless:apply && git add {staged_files}
+    lint:
+      glob: "*.java"
+      run: mvn -q -B -DskipTests checkstyle:check
+
+commit-msg:
+  commands:
+    conventional:
+      run: sh scripts/check-commit-msg.sh {1}

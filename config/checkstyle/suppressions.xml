@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+  "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+  "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+<suppressions>
+  <!-- The reference service SIMULATES latency for resilience tests; that is product behaviour,
+       not a test waiting on a clock. Tests and framework code may never sleep. -->
+  <suppress checks="RegexpSingleline" id="noHardWait" files="[\/]sut[\/]"/>
+  <!-- Command-line tools write their report to stdout by design. -->
+  <suppress checks="RegexpSingleline" id="noSystemOut" files="[\/]tools[\/]src[\/]main[\/]"/>
+  <!-- Guardrail unit tests contain the forbidden patterns as string fixtures on purpose. -->
+  <suppress checks="RegexpSingleline" files="[\/]tools[\/]src[\/]test[\/]"/>
+</suppressions>
