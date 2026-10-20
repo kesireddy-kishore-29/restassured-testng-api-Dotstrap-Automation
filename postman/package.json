@@ -1,0 +1,13 @@
+{
+  "name": "api-automation-framework-postman",
+  "private": true,
+  "description": "Runs the Postman collection with Newman (CLI + HTML report).",
+  "scripts": {
+    "newman": "newman run api-automation-framework.postman_collection.json -e environments/local.postman_environment.json -r cli,htmlextra,junit --reporter-htmlextra-export ../reports/newman/index.html --reporter-htmlextra-title \"Reference service \u2014 Newman\" --reporter-junit-export ../reports/newman/junit.xml",
+    "newman:ci": "newman run api-automation-framework.postman_collection.json -e environments/ci.postman_environment.json -r cli,htmlextra,junit --reporter-htmlextra-export ../reports/newman/index.html --reporter-htmlextra-title \"Reference service \u2014 Newman\" --reporter-junit-export ../reports/newman/junit.xml"
+  },
+  "devDependencies": {
+    "newman": "6.2.3",
+    "newman-reporter-htmlextra": "1.23.1"
+  }
+}
