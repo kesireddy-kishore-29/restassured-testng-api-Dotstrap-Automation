@@ -1,8 +1,11 @@
 package com.kishore.qa.framework.core;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import java.time.Duration;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -50,8 +53,27 @@ public final class ApiResponse {
     return raw.jsonPath();
   }
 
+  /**
+   * The body mapped to a model. Prefer {@code Contracts.read(...)}, which checks the contract
+   * first.
+   */
   public <T> T as(Class<T> type) {
-    return raw.as(type);
+    try {
+      return Json.mapper().readValue(raw.asString(), type);
+    } catch (JsonProcessingException e) {
+      throw new IllegalStateException("Body of " + this + " is not a " + type.getSimpleName(), e);
+    }
+  }
+
+  /** A list field of the body, e.g. {@code asList("items", Message.class)}. */
+  public <T> List<T> asList(String field, Class<T> type) {
+    JsonNode node =
+        Json.tryParse(raw.asString())
+            .map(root -> root.get(field))
+            .orElseThrow(() -> new IllegalStateException("No '" + field + "' in body of " + this));
+    return Json.mapper()
+        .convertValue(
+            node, Json.mapper().getTypeFactory().constructCollectionType(List.class, type));
   }
 
   public Duration elapsed() {

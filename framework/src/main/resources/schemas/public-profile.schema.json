@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.example/public-profile.schema.json",
+  "title": "public-profile",
+  "type": "object",
+  "required": [
+    "handle",
+    "displayName",
+    "region"
+  ],
+  "properties": {
+    "handle": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "region": {
+      "enum": [
+        "in",
+        "eu",
+        "us"
+      ]
+    }
+  },
+  "not": {
+    "anyOf": [
+      {
+        "required": [
+          "id"
+        ]
+      },
+      {
+        "required": [
+          "role"
+        ]
+      },
+      {
+        "required": [
+          "createdAt"
+        ]
+      }
+    ]
+  },
+  "description": "Public view: must never carry id, role or createdAt."
+}

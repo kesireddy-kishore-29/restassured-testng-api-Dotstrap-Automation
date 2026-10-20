@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.example/booker-booking-created.schema.json",
+  "title": "booker-booking-created",
+  "type": "object",
+  "required": [
+    "bookingid",
+    "booking"
+  ],
+  "properties": {
+    "bookingid": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "booking": {
+      "$ref": "booker-booking.schema.json"
+    }
+  }
+}

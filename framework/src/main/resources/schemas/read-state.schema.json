@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.example/read-state.schema.json",
+  "title": "read-state",
+  "type": "object",
+  "required": [
+    "conversationId",
+    "unreadCount"
+  ],
+  "properties": {
+    "conversationId": {
+      "type": "string"
+    },
+    "unreadCount": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}

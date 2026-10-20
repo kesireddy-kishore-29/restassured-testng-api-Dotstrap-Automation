@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.example/conversation.schema.json",
+  "title": "conversation",
+  "type": "object",
+  "required": [
+    "id",
+    "subject",
+    "status",
+    "region",
+    "participants",
+    "messageCount",
+    "unreadCount",
+    "createdAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^cnv_"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "open",
+        "closed"
+      ]
+    },
+    "region": {
+      "enum": [
+        "in",
+        "eu",
+        "us"
+      ]
+    },
+    "participants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "messageCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unreadCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "closedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

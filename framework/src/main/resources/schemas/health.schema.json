@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.example/health.schema.json",
+  "title": "health",
+  "type": "object",
+  "required": [
+    "status",
+    "version",
+    "region",
+    "regions"
+  ],
+  "properties": {
+    "status": {
+      "const": "UP"
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "region": {
+      "enum": [
+        "in",
+        "eu",
+        "us"
+      ]
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "in",
+          "eu",
+          "us"
+        ]
+      },
+      "minItems": 1
+    },
+    "faultsEnabled": {
+      "type": "boolean"
+    }
+  }
+}

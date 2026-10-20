@@ -60,6 +60,11 @@
       <artifactId>slf4j-simple</artifactId>
       <scope>runtime</scope>
     </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -68,6 +73,8 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
+          <!-- Mockito's inline mock maker attaches as an agent; declare it instead of self-attaching. -->
+          <argLine>-XX:+EnableDynamicAgentLoading</argLine>
           <!-- Framework unit tests only (config validation, redaction, etc.). -->
           <includes>
             <include>**/*Test.java</include>

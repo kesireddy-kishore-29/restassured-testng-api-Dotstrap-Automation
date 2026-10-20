@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.example/message.schema.json",
+  "title": "message",
+  "type": "object",
+  "required": [
+    "id",
+    "conversationId",
+    "sender",
+    "body",
+    "createdAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^msg_"
+    },
+    "conversationId": {
+      "type": "string",
+      "pattern": "^cnv_"
+    },
+    "sender": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string",
+      "minLength": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

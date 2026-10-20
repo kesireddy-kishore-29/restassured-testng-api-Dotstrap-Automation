@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.example/token.schema.json",
+  "title": "token",
+  "type": "object",
+  "required": [
+    "accessToken",
+    "tokenType",
+    "expiresIn",
+    "accountId"
+  ],
+  "properties": {
+    "accessToken": {
+      "type": "string",
+      "minLength": 20
+    },
+    "tokenType": {
+      "const": "Bearer"
+    },
+    "expiresIn": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "accountId": {
+      "type": "string",
+      "pattern": "^acc_"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.example/ledger.schema.json",
+  "title": "ledger",
+  "type": "object",
+  "required": [
+    "items",
+    "total",
+    "balance"
+  ],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "amount",
+          "balanceAfter",
+          "reference",
+          "createdAt"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^led_"
+          },
+          "type": {
+            "enum": [
+              "grant",
+              "purchase",
+              "spend"
+            ]
+          },
+          "amount": {
+            "type": "integer"
+          },
+          "balanceAfter": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "reference": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "total": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "balance": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}

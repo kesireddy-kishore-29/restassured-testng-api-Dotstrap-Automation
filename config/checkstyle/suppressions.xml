@@ -6,6 +6,9 @@
   <!-- The reference service SIMULATES latency for resilience tests; that is product behaviour,
        not a test waiting on a clock. Tests and framework code may never sleep. -->
   <suppress checks="RegexpSingleline" id="noHardWait" files="[\/]sut[\/]"/>
+  <!-- The single honoured back-off: a server's Retry-After. Bounded (5 s cap, max 3 retries),
+       injectable, and never used to wait for application state. See docs/test-strategy.md. -->
+  <suppress checks="RegexpSingleline" id="noHardWait" files="[\/]core[\/]Sleeper\.java$"/>
   <!-- Command-line tools write their report to stdout by design. -->
   <suppress checks="RegexpSingleline" id="noSystemOut" files="[\/]tools[\/]src[\/]main[\/]"/>
   <!-- Guardrail unit tests contain the forbidden patterns as string fixtures on purpose. -->
