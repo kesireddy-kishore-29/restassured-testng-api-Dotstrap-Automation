@@ -1,0 +1,11 @@
+# Runs the reference service; the suites run on the host against http://localhost:7070
+# (or inside the network with -Pdocker, which points sut.baseUrl at http://sut:7070).
+services:
+  sut:
+    build:
+      context: .
+      dockerfile: sut/Dockerfile
+    ports:
+      - "7070:7070"
+    environment:
+      SUT_FAULTS_ENABLED: "true"
