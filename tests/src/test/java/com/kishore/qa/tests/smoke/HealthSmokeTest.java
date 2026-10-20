@@ -1,28 +1,42 @@
 package com.kishore.qa.tests.smoke;
 
+import static com.kishore.qa.framework.assertions.ApiAssertions.assertThatResponse;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.kishore.qa.framework.annotations.Feature;
-import com.kishore.qa.framework.clients.HealthClient;
-import com.kishore.qa.framework.config.Config;
-import com.kishore.qa.framework.core.ApiResponse;
-import com.kishore.qa.framework.core.RequestSpecs;
-import java.util.List;
+import com.kishore.qa.framework.assertions.Contracts;
+import com.kishore.qa.framework.clients.Sut;
+import com.kishore.qa.framework.clients.model.Account;
+import com.kishore.qa.framework.clients.model.Health;
+import com.kishore.qa.framework.data.Region;
+import com.kishore.qa.framework.data.TestAccount;
 import org.testng.annotations.Test;
 
 public class HealthSmokeTest {
 
+  private final Sut sut = Sut.connect();
+
   @Test(
       groups = {"smoke"},
-      description = "The reference service reports itself up")
+      description = "The reference service reports itself up, with its version and regions")
   @Feature("FEAT-HEALTH-01")
   public void serviceReportsUp() {
-    HealthClient health =
-        new HealthClient(Config.get().sutBaseUrl(), new RequestSpecs(Config.get(), List.of()));
+    Health health = Contracts.read(sut.health().health(), 200, "health", Health.class);
 
-    ApiResponse response = health.health();
+    assertThat(health.status()).isEqualTo("UP");
+    assertThat(health.regions()).containsExactlyInAnyOrder("in", "eu", "us");
+  }
 
-    assertThat(response.status()).isEqualTo(200);
-    assertThat(response.json().getString("status")).isEqualTo("UP");
+  @Test(
+      groups = {"smoke"},
+      description = "A new account can sign in and read itself back")
+  @Feature("FEAT-ACCT-01")
+  public void newAccountCanSignInAndReadItself() {
+    try (TestAccount ava = sut.newAccount(Region.EU)) {
+      Account me = Contracts.read(sut.accounts(ava).me(), 200, "account", Account.class);
+
+      assertThat(me.handle()).isEqualTo(ava.handle());
+      assertThatResponse(sut.accounts(ava).me()).hasHeader("X-Served-Region", "eu");
+    }
   }
 }

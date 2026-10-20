@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- Auth boundaries, admin, token expiry, CORS, rate limits, security headers. -->
+<suite name="security" parallel="methods" thread-count="4" data-provider-thread-count="4">
+  <test name="security">
+    <groups>
+      <run>
+        <exclude name="quarantine"/>
+        <exclude name="demo-failure"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.kishore.qa.tests.security"/>
+    </packages>
+  </test>
+</suite>

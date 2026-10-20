@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- JSON Schema (consumer) and OpenAPI (provider) contracts. -->
+<suite name="contract" parallel="methods" thread-count="4" data-provider-thread-count="4">
+  <test name="contract">
+    <groups>
+      <run>
+        <exclude name="quarantine"/>
+        <exclude name="demo-failure"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.kishore.qa.tests.contract"/>
+    </packages>
+  </test>
+</suite>

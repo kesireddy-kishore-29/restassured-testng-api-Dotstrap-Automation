@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- Deliberate failures that prove the failure evidence pipeline. Never part of a gating run. -->
+<suite name="demo-failure" parallel="methods" thread-count="4">
+  <test name="demo-failure">
+    <groups>
+      <run>
+        <include name="demo-failure"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.kishore.qa.tests.demo"/>
+    </packages>
+  </test>
+</suite>

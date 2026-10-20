@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- Quarantined tests still run (non-gating) so a fix is noticed; see quarantine.json. -->
+<suite name="quarantine" parallel="methods" thread-count="2">
+  <test name="quarantine">
+    <groups>
+      <run>
+        <include name="quarantine"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.kishore.qa.tests.*"/>
+    </packages>
+  </test>
+</suite>

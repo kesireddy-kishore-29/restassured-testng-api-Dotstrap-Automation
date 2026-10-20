@@ -30,7 +30,7 @@
     <testng.version>7.12.0</testng.version>
     <assertj.version>3.27.7</assertj.version>
     <jackson.version>2.22.4</jackson.version>
-    <json-schema-validator.version>3.0.8</json-schema-validator.version>
+    <json-schema-validator.version>2.0.8</json-schema-validator.version>
     <awaitility.version>4.3.0</awaitility.version>
     <allure.version>2.35.5</allure.version>
     <aspectj.version>1.9.25.1</aspectj.version>
@@ -40,7 +40,9 @@
 
     <!-- Plugin versions. -->
     <compiler-plugin.version>3.16.0</compiler-plugin.version>
-    <surefire.version>3.6.0</surefire.version>
+    <!-- 3.5.x: the last line with the classic TestNG provider. 3.6 runs TestNG through the
+         JUnit Platform engine, which ignores suite XML files (verified 2026-10-20). -->
+    <surefire.version>3.5.6</surefire.version>
     <shade-plugin.version>3.6.2</shade-plugin.version>
     <jar-plugin.version>3.5.1</jar-plugin.version>
     <resources-plugin.version>3.5.0</resources-plugin.version>

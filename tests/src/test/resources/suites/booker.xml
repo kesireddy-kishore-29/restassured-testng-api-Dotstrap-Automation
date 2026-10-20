@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- Restful-Booker, a public practice API. Needs internet; no reference service. -->
+<suite name="booker" parallel="methods" thread-count="2" data-provider-thread-count="4">
+  <parameter name="requires.sut" value="false"/>
+  <test name="booker">
+    <groups>
+      <run>
+        <exclude name="quarantine"/>
+        <exclude name="demo-failure"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.kishore.qa.tests.booker"/>
+    </packages>
+  </test>
+</suite>

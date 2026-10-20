@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- Multi-actor journeys, ledger consistency and multi-region routing. -->
+<suite name="workflows" parallel="methods" thread-count="4" data-provider-thread-count="4">
+  <test name="workflows">
+    <groups>
+      <run>
+        <exclude name="quarantine"/>
+        <exclude name="demo-failure"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.kishore.qa.tests.workflows"/>
+    </packages>
+  </test>
+</suite>

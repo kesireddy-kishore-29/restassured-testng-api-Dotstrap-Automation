@@ -85,7 +85,9 @@ public final class RequestSpecs {
         .setBaseUri(baseUri.toString())
         .setConfig(restAssuredConfig)
         .setContentType(ContentType.JSON)
-        .setAccept(ContentType.JSON)
+        // Exactly application/json: some APIs (Restful-Booker) answer 418 to REST Assured's
+        // default multi-type JSON Accept header.
+        .setAccept("application/json")
         .addFilters(filters)
         .build();
   }
