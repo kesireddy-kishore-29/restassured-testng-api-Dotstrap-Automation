@@ -94,9 +94,11 @@ public class RetryPolicyTest {
   public void givesUpOnTimeoutsAfterTheBudgetAndSaysHowManyAttempts() {
     RecordingSleeper recorder = new RecordingSleeper();
     RetryPolicy policy = new RetryPolicy(1, Duration.ofMillis(300), recorder);
+    // Exactly what REST Assured does: a checked SocketTimeoutException, thrown undeclared.
     Supplier<ApiResponse> alwaysTimesOut =
         () -> {
-          throw new IllegalStateException(new SocketTimeoutException("Read timed out"));
+          throw RetryPolicyTest.<RuntimeException>sneaky(
+              new SocketTimeoutException("Read timed out"));
         };
 
     assertThatThrownBy(() -> policy.execute("GET /slow", true, alwaysTimesOut))
@@ -108,5 +110,11 @@ public class RetryPolicyTest {
   public void rejectsAnUnboundedBudget() {
     assertThatThrownBy(() -> new RetryPolicy(5, Duration.ofSeconds(1), new RecordingSleeper()))
         .isInstanceOf(IllegalArgumentException.class);
+  }
+
+  /** Throws a checked exception without declaring it, the way Groovy-compiled code does. */
+  @SuppressWarnings("unchecked") // the cast is the point: it re-labels the checked exception
+  private static <E extends Throwable> E sneaky(Throwable error) throws E {
+    throw (E) error;
   }
 }

@@ -1,6 +1,8 @@
 package com.kishore.qa.framework.core;
 
+import java.io.IOException;
 import java.io.InterruptedIOException;
+import java.io.UncheckedIOException;
 import java.time.Duration;
 import java.util.Optional;
 import java.util.function.Supplier;
@@ -45,9 +47,11 @@ public final class RetryPolicy {
       ApiResponse response;
       try {
         response = attempt.get();
-      } catch (RuntimeException e) {
+      } catch (Exception e) {
+        // REST Assured (Groovy) throws SocketTimeoutException undeclared, as a checked exception,
+        // so catching RuntimeException alone would let timeouts escape the policy.
         if (!isTimeout(e)) {
-          throw e;
+          throw rethrow(e);
         }
         if (mayRetry) {
           continue;
@@ -86,6 +90,16 @@ public final class RetryPolicy {
       Thread.currentThread().interrupt();
       throw new IllegalStateException("Interrupted while honouring Retry-After", e);
     }
+  }
+
+  private static RuntimeException rethrow(Exception e) {
+    if (e instanceof RuntimeException runtime) {
+      return runtime;
+    }
+    if (e instanceof IOException io) {
+      return new UncheckedIOException(io);
+    }
+    return new IllegalStateException(e);
   }
 
   static boolean isTimeout(Throwable error) {
