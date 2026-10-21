@@ -28,6 +28,29 @@ public final class Verifier {
         : "./mvnw";
   }
 
+  /** One run of another failing test that the same fix claims to explain. */
+  public Step rerun(String testId) {
+    String className = testId.substring(0, testId.indexOf('#'));
+    String method = testId.substring(testId.indexOf('#') + 1).replaceAll("\\[.*$", "");
+    ProcessRunner.Result single =
+        runner.run(
+            List.of(
+                maven,
+                "-B",
+                "-o",
+                "verify",
+                "-pl",
+                "tests",
+                "-Dtest=" + className + "#" + method,
+                "-Dsurefire.failIfNoSpecifiedTests=false",
+                "-Dtest.retries=0"),
+            Duration.ofMinutes(10));
+    return new Step(
+        "also explained: " + className.substring(className.lastIndexOf('.') + 1) + "#" + method,
+        single.ok(),
+        single.ok() ? "passed" : single.tail());
+  }
+
   public List<Step> verify(String testId, String suite) {
     List<Step> steps = new ArrayList<>();
     String className = testId.substring(0, testId.indexOf('#'));

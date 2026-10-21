@@ -13,7 +13,8 @@ public final class PullRequestBody {
       String evidence,
       List<GuardrailViolation> violations,
       List<Verifier.Step> steps,
-      boolean needsHumanDecision) {
+      boolean needsHumanDecision,
+      List<String> alsoExplains) {
     StringBuilder md = new StringBuilder();
     md.append("## Self-healed: ").append(patch.category()).append("\n\n");
     md.append("> Proposed by `")
@@ -28,8 +29,19 @@ public final class PullRequestBody {
     md.append("| | |\n|---|---|\n");
     md.append("| Failure category | `").append(patch.category()).append("` |\n");
     md.append("| Test | `").append(patch.testId()).append("` |\n");
-    md.append("| Evidence | ").append(evidence).append(" |\n\n");
+    md.append("| Evidence | ").append(evidence).append(" |\n");
+    if (!alsoExplains.isEmpty()) {
+      md.append("| Also explains | ")
+          .append(alsoExplains.size())
+          .append(" other failing test(s) with the same cause (below) |\n");
+    }
+    md.append("\n");
     md.append("### Root cause\n\n").append(rootCause).append("\n\n");
+    if (!alsoExplains.isEmpty()) {
+      md.append("### Other failures with the same cause\n\n");
+      alsoExplains.forEach(t -> md.append("- `").append(t).append("`\n"));
+      md.append("\nThe verification below reruns each of them on this branch.\n\n");
+    }
     md.append("### Why this diff\n\n").append(patch.rationale()).append("\n\n");
     md.append("### Files changed (allowed paths only)\n\n");
     patch.changes().forEach(c -> md.append("- `").append(c.path()).append("`\n"));

@@ -30,7 +30,8 @@ import java.util.stream.Stream;
  * {@code qa-tools heal [--run <dir>] [--max-prs 3] [--open-prs]}: for each healable failure,
  * propose a patch (rules first, optional model second), refuse it if a guardrail objects, otherwise
  * apply it on {@code heal/<category>/<test>-<date>}, verify it (lint + compile, the failing test 3
- * times, the suite), commit, write the PR body and record it in healing-log.json. Never merges,
+ * times, the suite), commit, write the PR body and record it in healing-log.json. Failures whose
+ * fixes are identical share one branch, and the fix must turn each of them green. Never merges,
  * never pushes on its own; {@code --open-prs} asks {@code gh} to open the PR.
  */
 public final class HealCommand implements Command {
@@ -45,6 +46,26 @@ public final class HealCommand implements Command {
   @Override
   public String summary() {
     return "propose guarded, verified fixes on heal/* branches (never auto-merged)";
+  }
+
+  /** A healable failure with the fix proposed for it. */
+  private record Candidate(Path triageFile, JsonNode triage, Patch patch, Instant started) {
+    String testId() {
+      return triage.path("testId").asText();
+    }
+
+    String slug() {
+      return triageFile.getFileName().toString().replace(".json", "");
+    }
+  }
+
+  /** Failures whose proposed fixes are identical share one branch and one pull request. */
+  static String fingerprint(Patch patch) {
+    StringBuilder key = new StringBuilder(patch.category().name());
+    patch.changes().stream()
+        .sorted(java.util.Comparator.comparing(FileChange::path))
+        .forEach(c -> key.append('\n').append(c.path()).append('\n').append(c.after()));
+    return key.toString();
   }
 
   @Override
@@ -66,8 +87,10 @@ public final class HealCommand implements Command {
       out.println("Working tree is not clean; refusing to create heal branches.");
       return 2;
     }
-    int opened = 0;
     List<Map<String, Object>> summary = new ArrayList<>();
+
+    // 1. Propose a fix for every healable failure (rules first, the model second).
+    Map<String, List<Candidate>> groups = new LinkedHashMap<>();
     for (Path triageFile : triageFiles(runDir)) {
       JsonNode triage = Json.read(triageFile);
       Category category = Category.valueOf(triage.path("category").asText());
@@ -75,12 +98,7 @@ public final class HealCommand implements Command {
       if (!category.healable()) {
         continue;
       }
-      if (opened >= maxPrs) {
-        out.println("PR budget (" + maxPrs + ") reached; stopping.");
-        break;
-      }
-      HealingLog log = HealingLog.read(logFile);
-      if (log.attemptsToday(testId, today) >= MAX_ATTEMPTS_PER_FAILURE) {
+      if (HealingLog.read(logFile).attemptsToday(testId, today) >= MAX_ATTEMPTS_PER_FAILURE) {
         out.println("Attempt budget used for " + testId);
         continue;
       }
@@ -93,28 +111,43 @@ public final class HealCommand implements Command {
       if (patch.isEmpty()) {
         patch = ai.propose(category, testId, triage, candidateFiles(repoRoot));
       }
-      String slug = triageFile.getFileName().toString().replace(".json", "");
-      Path healDir = runDir.resolve("healing").resolve(slug);
       if (patch.isEmpty()) {
         out.println("No proposal for " + testId + " (rules: none; AI: " + ai.status() + ")");
         summary.add(Map.of("testId", testId, "outcome", "no-proposal", "aiStep", ai.status()));
         continue;
       }
-      List<GuardrailViolation> violations = guardrails.check(patch.get());
+      groups
+          .computeIfAbsent(fingerprint(patch.get()), k -> new ArrayList<>())
+          .add(new Candidate(triageFile, triage, patch.get(), started));
+    }
+
+    // 2. One guarded, verified branch per distinct fix.
+    int opened = 0;
+    for (List<Candidate> group : groups.values()) {
+      Candidate lead = group.getFirst();
+      List<Candidate> others = group.subList(1, group.size());
+      if (opened >= maxPrs) {
+        out.println("PR budget (" + maxPrs + ") reached; stopping.");
+        break;
+      }
+      Patch patch = lead.patch();
+      Category category = patch.category();
+      Path healDir = runDir.resolve("healing").resolve(lead.slug());
+      List<GuardrailViolation> violations = guardrails.check(patch);
       Map<String, String> guardResult = guardrailSummary(violations);
       if (!violations.isEmpty()) {
-        out.println("Guardrails refused the patch for " + testId + ": " + violations);
+        out.println("Guardrails refused the patch for " + lead.testId() + ": " + violations);
         record(
             logFile,
             runDir,
             entry(
                 today,
-                triage,
+                lead.triage(),
                 "",
                 "",
-                patch.get(),
+                patch,
                 "rejected-by-guardrails",
-                started,
+                lead.started(),
                 guardResult,
                 Map.of()));
         continue;
@@ -123,13 +156,19 @@ public final class HealCommand implements Command {
           "heal/"
               + category.name().toLowerCase(Locale.ROOT).replace('_', '-')
               + "/"
-              + slug
+              + lead.slug()
               + "-"
               + LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE);
       git.createBranch(branch);
-      write(repoRoot, patch.get());
-      String suite = triage.path("suite").asText("regression");
-      List<Verifier.Step> steps = verifier.verify(testId, suite);
+      write(repoRoot, patch);
+      String suite = lead.triage().path("suite").asText("regression");
+      List<Verifier.Step> steps = new ArrayList<>(verifier.verify(lead.testId(), suite));
+      // The same fix must also turn every other failure it claims to explain green.
+      for (Candidate other : others) {
+        if (steps.stream().allMatch(Verifier.Step::passed)) {
+          steps.add(verifier.rerun(other.testId()));
+        }
+      }
       boolean verified = steps.stream().allMatch(Verifier.Step::passed);
       Map<String, Object> verification = new LinkedHashMap<>();
       verification.put("runs", 3);
@@ -138,38 +177,43 @@ public final class HealCommand implements Command {
           steps.stream().filter(s -> s.passed() && s.name().startsWith("failing test")).count());
       verification.put(
           "suite", steps.stream().anyMatch(s -> s.passed() && s.name().startsWith("surrounding")));
-      String rootCause = triage.path("reason").asText();
+      verification.put(
+          "alsoExplained",
+          steps.stream().filter(s -> s.passed() && s.name().startsWith("also explained")).count());
+      String rootCause = lead.triage().path("reason").asText();
+      List<String> alsoExplains = others.stream().map(Candidate::testId).toList();
       String body =
           PullRequestBody.render(
-              patch.get(),
+              patch,
               rootCause,
               "`"
-                  + triage.path("evidence").path("bundleZip").asText()
+                  + lead.triage().path("evidence").path("bundleZip").asText()
                   + "` (run `"
-                  + triage.path("runId").asText()
+                  + lead.triage().path("runId").asText()
                   + "`)",
               violations,
               steps,
-              category.needsHumanDecision());
+              category.needsHumanDecision(),
+              alsoExplains);
       writeText(healDir.resolve("PR.md"), body);
-      Json.write(healDir.resolve("patch.json"), patch.get());
-      writeText(healDir.resolve("patch.diff"), unifiedDiff(patch.get()));
+      Json.write(healDir.resolve("patch.json"), patch);
+      writeText(healDir.resolve("patch.diff"), unifiedDiff(patch));
       if (!verified) {
         git.discardChanges();
         git.switchTo(startBranch);
         git.deleteBranch(branch);
-        out.println("Verification failed for " + testId + "; branch discarded");
+        out.println("Verification failed for " + lead.testId() + "; branch discarded");
         record(
             logFile,
             runDir,
             entry(
                 today,
-                triage,
+                lead.triage(),
                 branch,
                 "",
-                patch.get(),
+                patch,
                 "failed-verification",
-                started,
+                lead.started(),
                 guardResult,
                 verification));
         continue;
@@ -177,12 +221,12 @@ public final class HealCommand implements Command {
       HealingLog.Entry entry =
           entry(
               today,
-              triage,
+              lead.triage(),
               branch,
               "(local branch; PR body at " + runDir.relativize(healDir.resolve("PR.md")) + ")",
-              patch.get(),
+              patch,
               "proposed",
-              started,
+              lead.started(),
               guardResult,
               verification);
       Json.write(logFile, HealingLog.read(logFile).plus(entry));
@@ -190,24 +234,35 @@ public final class HealCommand implements Command {
           "fix(heal): "
               + category.name().toLowerCase(Locale.ROOT).replace('_', ' ')
               + " in "
-              + slug
+              + lead.slug()
               + "\n\n"
               + rootCause
+              + (others.isEmpty()
+                  ? ""
+                  : "\n\nThe same fix explains " + others.size() + " other failing test(s).")
               + "\n\nProposed by "
-              + patch.get().provider()
+              + patch.provider()
               + "; guardrails passed; failing test passed 3/3 "
               + "and suite '"
               + suite
               + "' passed. Needs human review; never auto-merged.\n\nHealed-By: "
-              + patch.get().provider());
+              + patch.provider());
       String prUrl = args.flag("open-prs") ? openPullRequest(runner, branch, body, category) : "";
       git.switchTo(startBranch);
       Json.write(
           runDir.resolve("healing").resolve("healing-log.json"),
           HealingLog.read(logFile).plus(entry));
       opened++;
-      out.println("Proposed " + branch + (prUrl.isEmpty() ? "" : " -> " + prUrl));
-      summary.add(Map.of("testId", testId, "outcome", "proposed", "branch", branch));
+      out.println(
+          "Proposed "
+              + branch
+              + (others.isEmpty() ? "" : " (also explains " + others.size() + " other failures)")
+              + (prUrl.isEmpty() ? "" : " -> " + prUrl));
+      summary.add(Map.of("testId", lead.testId(), "outcome", "proposed", "branch", branch));
+      others.forEach(
+          o ->
+              summary.add(
+                  Map.of("testId", o.testId(), "outcome", "same-fix-as", "branch", branch)));
     }
     Json.write(
         runDir.resolve("healing").resolve("healing-summary.json"),
