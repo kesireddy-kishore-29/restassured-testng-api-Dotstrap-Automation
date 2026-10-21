@@ -98,6 +98,14 @@ jobs:
         with:
           header: api-test-summary
           path: reports/site/summary.md
+      - name: Upload the failure bundles
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: failure-bundles-${{ github.run_attempt }}
+          path: ${{ env.RUN_DIR }}/failure-bundles/
+          retention-days: 30
+          if-no-files-found: ignore
       - name: Upload evidence and reports
         if: always()
         uses: actions/upload-artifact@v7
