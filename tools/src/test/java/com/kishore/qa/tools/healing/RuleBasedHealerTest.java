@@ -29,11 +29,22 @@ public class RuleBasedHealerTest {
         model,
         "record Balance(@JsonProperty(\"balance\") int balance) {}\n",
         StandardCharsets.UTF_8);
+    // Another contract that legitimately keeps a field with the same name.
+    Files.writeString(
+        schema.resolveSibling("ledger.schema.json"),
+        "{\n  \"required\": [\"items\", \"balance\"],\n"
+            + "  \"properties\": {\"items\": {\"type\": \"array\"}, \"balance\": {\"type\": \"integer\"}}\n}\n",
+        StandardCharsets.UTF_8);
+    Files.writeString(
+        model.resolveSibling("Ledger.java"),
+        "record Ledger(@JsonProperty(\"balance\") int balance) {}\n",
+        StandardCharsets.UTF_8);
     return root;
   }
 
   private static SchemaDiff rename(String from, String to) {
-    return new SchemaDiff(null, "GET /v1/credits/balance", List.of(from), List.of(to), List.of());
+    return new SchemaDiff(
+        "balance", "GET /v1/credits/balance", List.of(from), List.of(to), List.of());
   }
 
   @Test
@@ -54,6 +65,36 @@ public class RuleBasedHealerTest {
         .allSatisfy(
             c -> assertThat(c.after()).contains("availableBalance").doesNotContain("\"balance\""));
     assertThat(new Guardrails().check(patch)).isEmpty();
+  }
+
+  @Test
+  public void leavesOtherContractsWithTheSameFieldNameAlone() throws IOException {
+    RuleBasedHealer healer = new RuleBasedHealer(repoWithBalanceContract());
+
+    Patch patch =
+        healer
+            .propose(Category.CONTRACT_DRIFT, "t#m", rename("balance", "availableBalance"))
+            .orElseThrow();
+
+    assertThat(patch.changes())
+        .extracting(FileChange::path)
+        .noneMatch(p -> p.contains("ledger") || p.contains("Ledger"));
+  }
+
+  @Test
+  public void proposesNothingWhenTheViolatedContractIsUnnamed() throws IOException {
+    RuleBasedHealer healer = new RuleBasedHealer(repoWithBalanceContract());
+    SchemaDiff unnamed =
+        new SchemaDiff(
+            null, "GET /v1/credits/balance", List.of("balance"), List.of("x"), List.of());
+
+    assertThat(healer.propose(Category.CONTRACT_DRIFT, "t#m", unnamed)).isEmpty();
+  }
+
+  @Test
+  public void mapsSchemaNamesToModelNames() {
+    assertThat(RuleBasedHealer.modelName("balance")).isEqualTo("Balance");
+    assertThat(RuleBasedHealer.modelName("ledger-entry")).isEqualTo("LedgerEntry");
   }
 
   @Test

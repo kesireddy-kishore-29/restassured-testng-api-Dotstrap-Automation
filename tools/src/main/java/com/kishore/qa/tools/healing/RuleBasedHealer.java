@@ -31,14 +31,20 @@ public final class RuleBasedHealer {
   }
 
   public Optional<Patch> propose(Category category, String testId, SchemaDiff diff) {
-    if (category != Category.CONTRACT_DRIFT || diff == null || !diff.looksLikeRename()) {
+    // Only the contract the violation names: another schema may use the same field name
+    // legitimately
+    // (the ledger still has its own balance), so an unnamed schema gets no mechanical fix.
+    if (category != Category.CONTRACT_DRIFT
+        || diff == null
+        || diff.schema() == null
+        || !diff.looksLikeRename()) {
       return Optional.empty();
     }
     String from = diff.missing().get(0);
     String to = diff.unexpected().get(0);
     List<FileChange> changes = new ArrayList<>();
-    changes.addAll(schemaChanges(from, to));
-    changes.addAll(modelChanges(from, to));
+    changes.addAll(schemaChanges(diff.schema(), from, to));
+    changes.addAll(modelChanges(diff.schema(), from, to));
     if (changes.isEmpty()) {
       return Optional.empty();
     }
@@ -50,17 +56,22 @@ public final class RuleBasedHealer {
             + "` and now has `"
             + to
             + "` instead. "
-            + "This patch renames the field in the consumer contract and in the client model's wire "
-            + "name only; the tests are unchanged and keep asserting the same values.";
+            + "This patch renames the field in the `"
+            + diff.schema()
+            + "` consumer contract and in its client model's wire name only; other contracts "
+            + "and the tests are unchanged, and the tests keep asserting the same values.";
     return Optional.of(new Patch(category, testId, NAME, rationale, changes));
   }
 
-  private List<FileChange> schemaChanges(String from, String to) {
+  private List<FileChange> schemaChanges(String schema, String from, String to) {
     Pattern key = Pattern.compile("\\\"" + Pattern.quote(from) + "\\\"(\\s*):");
     Pattern required =
         Pattern.compile("(\\\"required\\\"\\s*:\\s*\\[[^\\]]*)\\\"" + Pattern.quote(from) + "\\\"");
     List<FileChange> changes = new ArrayList<>();
     for (Path file : files("framework/src/main/resources/schemas", ".schema.json")) {
+      if (!file.getFileName().toString().equals(schema + ".schema.json")) {
+        continue;
+      }
       String before = read(file);
       if (!key.matcher(before).find()) {
         continue;
@@ -73,11 +84,13 @@ public final class RuleBasedHealer {
     return changes;
   }
 
-  private List<FileChange> modelChanges(String from, String to) {
+  private List<FileChange> modelChanges(String schema, String from, String to) {
     String annotation = "@JsonProperty(\"" + from + "\")";
+    String modelFile = modelName(schema) + ".java";
     List<FileChange> changes = new ArrayList<>();
     for (Path file : files("framework/src/main/java", ".java")) {
-      if (!file.toString().replace('\\', '/').contains("/clients/model/")) {
+      if (!file.toString().replace('\\', '/').contains("/clients/model/")
+          || !file.getFileName().toString().equals(modelFile)) {
         continue;
       }
       String before = read(file);
@@ -114,5 +127,19 @@ public final class RuleBasedHealer {
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }
+  }
+
+  /**
+   * The client model for a schema: {@code balance} -> {@code Balance}, {@code ledger-entry} ->
+   * {@code LedgerEntry}.
+   */
+  static String modelName(String schema) {
+    StringBuilder name = new StringBuilder();
+    for (String part : schema.split("[-_]")) {
+      if (!part.isEmpty()) {
+        name.append(Character.toUpperCase(part.charAt(0))).append(part.substring(1));
+      }
+    }
+    return name.toString();
   }
 }
