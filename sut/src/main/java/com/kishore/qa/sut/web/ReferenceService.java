@@ -64,7 +64,7 @@ public final class ReferenceService {
             http, accounts, conversations, tokens, plane, settings.defaultTokenTtl());
     this.conversationHandlers = new ConversationHandlers(http, conversations);
     this.creditHandlers = new CreditHandlers(http, credits, settings.chaos());
-    this.openApiDocument = readOpenApi();
+    this.openApiDocument = readOpenApi(settings.chaos());
     accounts.createAdmin("admin", settings.adminPassword(), settings.defaultRegion());
   }
 
@@ -164,13 +164,42 @@ public final class ReferenceService {
     }
   }
 
-  private static String readOpenApi() {
+  private static String readOpenApi(SutSettings.Chaos chaos) {
+    String document;
     try (InputStream in =
         ReferenceService.class.getResourceAsStream("/openapi/reference-service.yaml")) {
-      return new String(
-          Objects.requireNonNull(in, "openapi document").readAllBytes(), StandardCharsets.UTF_8);
+      document =
+          new String(
+              Objects.requireNonNull(in, "openapi document").readAllBytes(),
+              StandardCharsets.UTF_8);
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }
+    return chaos == SutSettings.Chaos.RENAME_BALANCE_FIELD
+        ? renameBalanceField(document)
+        : document;
+  }
+
+  /**
+   * The chaos demo's provider ships the rename and publishes it: the served document describes
+   * {@code availableBalance}, so the provider is consistent and only consumers that have not caught
+   * up (their schema and model) fail.
+   */
+  static String renameBalanceField(String document) {
+    String original =
+        "    Balance:\n"
+            + "      type: object\n"
+            + "      additionalProperties: false\n"
+            + "      required: [balance, currency, accountId]\n"
+            + "      properties:\n"
+            + "        balance: { type: integer, minimum: 0 }\n";
+    if (!document.contains(original)) {
+      throw new IllegalStateException("The Balance schema changed; update the chaos rename");
+    }
+    String renamed =
+        original
+            .replace("[balance, ", "[availableBalance, ")
+            .replace("        balance: ", "        availableBalance: ");
+    return document.replace(original, renamed);
   }
 }

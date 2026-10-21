@@ -28,7 +28,9 @@ public record SutSettings(
   public enum Chaos {
     NONE,
     /**
-     * {@code GET /v1/credits/balance} returns {@code availableBalance} instead of {@code balance}.
+     * {@code GET /v1/credits/balance} returns {@code availableBalance} instead of {@code balance},
+     * and the served OpenAPI document says so: an agreed provider change that consumers have not
+     * caught up with yet.
      */
     RENAME_BALANCE_FIELD,
     /** Every ledger read is delayed by 3 seconds. */
