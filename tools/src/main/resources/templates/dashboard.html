@@ -108,6 +108,12 @@ summary { cursor: pointer; color: var(--text-secondary); }
 .empty { color: var(--text-muted); font-size: 13px; padding: 8px 0; }
 .scroll { overflow-x: auto; }
 code { font-size: 12px; overflow-wrap: anywhere; }
+.shot-set + .shot-set { margin-top: 14px; }
+.shot-title { font-size: 13px; font-weight: 600; margin-bottom: 6px; overflow-wrap: anywhere; }
+.shots { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+figure { margin: 0; min-width: 0; }
+figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 8px; }
+figcaption { color: var(--text-secondary); font-size: 12px; margin-top: 4px; }
 </style>
 </head>
 <body>
@@ -268,6 +274,14 @@ function render(d) {
     }
     if (extra.bars) body.append(barList(extra.bars, (v) => String(v)));
     if (extra.table) body.append(extra.bars ? dataTable(extra.table.headers, extra.table.rows) : table(extra.table.headers, extra.table.rows));
+    if (extra.images) {
+      if (extra.images.length === 0 && extra.emptyText) body.append(empty(extra.emptyText));
+      for (const set of extra.images) {
+        const fig = $(`<div class="shot-set"><div class="shot-title">${esc(set.title)}</div><div class="shots"></div></div>`);
+        set.items.forEach((i) => fig.querySelector('.shots').append($(`<figure><a href="${esc(i.src)}"><img loading="lazy" src="${esc(i.src)}" alt="${esc(`${set.title}: ${i.label}`)}"></a><figcaption>${esc(i.label)}</figcaption></figure>`)));
+        body.append(fig);
+      }
+    }
     if (extra.link) body.append($(`<p class="sub" style="margin-top:10px"><a href="${esc(extra.link.href)}">${esc(extra.link.label)}</a></p>`));
     grid.append(card(extra.wide ? 'span-12' : 'span-6', extra.title, extra.subtitle, body));
   }
