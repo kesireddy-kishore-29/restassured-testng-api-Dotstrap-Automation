@@ -1,36 +1,36 @@
 {
+  "aiStep" : "skipped (ANTHROPIC_API_KEY not set)",
   "results" : [ {
-    "testId" : "com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts",
     "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
+    "testId" : "com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts",
     "outcome" : "proposed"
   }, {
+    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
     "testId" : "com.qaautomation.tests.negative.CreditsNegativeTest#purchaseWithoutIdempotencyKeyIsA400",
-    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
     "outcome" : "same-fix-as"
   }, {
+    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
     "testId" : "com.qaautomation.tests.negative.CreditsNegativeTest#sendingWithNoCreditsIsA402",
-    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
     "outcome" : "same-fix-as"
   }, {
+    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
     "testId" : "com.qaautomation.tests.resilience.IdempotencyTest#concurrentDuplicatesProduceOnePurchase",
-    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
     "outcome" : "same-fix-as"
   }, {
+    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
     "testId" : "com.qaautomation.tests.resilience.IdempotencyTest#replayReturnsTheOriginalAndChargesOnce",
-    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
     "outcome" : "same-fix-as"
   }, {
+    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
     "testId" : "com.qaautomation.tests.resilience.IdempotencyTest#reusingAKeyForADifferentPurchaseIsRefused",
-    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
     "outcome" : "same-fix-as"
   }, {
+    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
     "testId" : "com.qaautomation.tests.workflows.LedgerConsistencyTest#historySumsToTheBalance",
-    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
     "outcome" : "same-fix-as"
   }, {
-    "testId" : "com.qaautomation.tests.workflows.MultiActorConversationTest#twoPeopleConverseAndTheOwnerEndsIt",
     "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
+    "testId" : "com.qaautomation.tests.workflows.MultiActorConversationTest#twoPeopleConverseAndTheOwnerEndsIt",
     "outcome" : "same-fix-as"
-  } ],
-  "aiStep" : "skipped (ANTHROPIC_API_KEY not set)"
+  } ]
 }

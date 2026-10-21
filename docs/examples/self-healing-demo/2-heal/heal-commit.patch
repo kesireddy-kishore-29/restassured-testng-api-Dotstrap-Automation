@@ -1,6 +1,6 @@
-commit c32cbb6084f4f14eb9dfd0c0e527025ad7e91770
+commit 94321b530bfe0f45c14774437bcc5e959f68e4e0
 Author: kesireddy-kishore-29
-Date:   Wed Oct 21 20:25:58 2026 +0530
+Date:   Wed Oct 21 21:40:54 2026 +0530
 
 fix(heal): contract drift in contract-test-credit-resources-match-their-contracts
 
@@ -48,7 +48,7 @@ index d5f74d4..4d87ce1 100644
      },
 diff --git a/healing-log.json b/healing-log.json
 new file mode 100644
-index 0000000..c05b801
+index 0000000..580384c
 --- /dev/null
 +++ b/healing-log.json
 @@ -0,0 +1,26 @@
@@ -56,7 +56,7 @@ index 0000000..c05b801
 +  "schemaVersion" : 1,
 +  "entries" : [ {
 +    "date" : "2026-10-21",
-+    "runId" : "api-chaos-3",
++    "runId" : "api-chaos-4",
 +    "testId" : "com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts",
 +    "category" : "CONTRACT_DRIFT",
 +    "rootCause" : "The response no longer matches its contract: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200",
@@ -64,7 +64,7 @@ index 0000000..c05b801
 +    "pr" : "(local branch; PR body at healing/contract-test-credit-resources-match-their-contracts/PR.md)",
 +    "provider" : "rule-based",
 +    "outcome" : "proposed",
-+    "timeToFixMinutes" : 4,
++    "timeToFixMinutes" : 3,
 +    "guardrails" : {
 +      "paths" : "pass",
 +      "patterns" : "pass",

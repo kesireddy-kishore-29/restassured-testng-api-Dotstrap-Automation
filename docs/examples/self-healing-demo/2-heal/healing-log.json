@@ -2,7 +2,7 @@
   "schemaVersion" : 1,
   "entries" : [ {
     "date" : "2026-10-21",
-    "runId" : "api-chaos-3",
+    "runId" : "api-chaos-4",
     "testId" : "com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts",
     "category" : "CONTRACT_DRIFT",
     "rootCause" : "The response no longer matches its contract: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200",
@@ -10,7 +10,7 @@
     "pr" : "(local branch; PR body at healing/contract-test-credit-resources-match-their-contracts/PR.md)",
     "provider" : "rule-based",
     "outcome" : "proposed",
-    "timeToFixMinutes" : 4,
+    "timeToFixMinutes" : 3,
     "guardrails" : {
       "paths" : "pass",
       "patterns" : "pass",

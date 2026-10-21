@@ -1,7 +1,7 @@
 {
   "schemaVersion" : 1,
-  "repo" : "api-automation-framework",
-  "runId" : "api-chaos-3",
+  "repo" : "restassured-testng-api-Dotstrap-Automation",
+  "runId" : "api-chaos-4",
   "testId" : "com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts",
   "title" : "Balance, ledger and purchase match their schemas",
   "suite" : "contract",
@@ -23,7 +23,7 @@
     "operation" : "/v1/credits/balance",
     "url" : "http://localhost:7070/v1/credits/balance",
     "status" : "200",
-    "correlationId" : "qa-bd225491-9e4f-4a41-82db-afb3ec2802fc"
+    "correlationId" : "qa-06ce5df3-060b-42fd-843f-4e2a36dd0933"
   },
   "schemaDiff" : {
     "schema" : "balance",
@@ -39,7 +39,7 @@
     "bundle" : "failure-bundles/contract-test-credit-resources-match-their-contracts/",
     "bundleZip" : "failure-bundles/contract-test-credit-resources-match-their-contracts.zip"
   },
-  "gitDiff" : "9498ec3 docs(examples): failure bundle from a run with the generic package names\n\n docs/examples/failure-evidence/README.md           |   4 +-\n ...rate-failure-test-condition-never-met-fails.zip | Bin 15088 -> 15085 bytes\n docs/examples/failure-evidence/failure-report.md   |   8 +-\n docs/examples/failure-evidence/timeline.html       |  16 +--\n docs/examples/failure-evidence/transcript.md       | 108 ++++++++++-----------\n docs/examples/failure-evidence/triage-summary.json |   2 +-\n 6 files changed, 69 insertions(+), 69 deletions(-)",
+  "gitDiff" : "0e480f8 docs(examples): dashboard, gallery, Allure and a failure bundle under the new name\n\n docs/examples/README.md                            |   4 +-\n docs/examples/dashboard/allure-overview.png        | Bin 61169 -> 61095 bytes\n docs/examples/dashboard/dashboard-390px.png        | Bin 295735 -> 292066 bytes\n docs/examples/dashboard/dashboard-dark.png         | Bin 311817 -> 308476 bytes\n docs/examples/dashboard/dashboard-light.png        | Bin 305407 -> 302069 bytes\n docs/examples/dashboard/hero.png                   | Bin 56267 -> 53430 bytes\n docs/examples/dashboard/run-gallery.png            | Bin 103886 -> 106563 bytes\n docs/examples/failure-evidence/README.md           |   2 +-\n ...rate-failure-test-condition-never-met-fails.zip | Bin 15085 -> 15274 bytes\n docs/examples/failure-evidence/failure-report.md   |   4 +-\n docs/examples/failure-evidence/timeline.html       |  16 ++--\n docs/examples/failure-evidence/transcript.md       | 106 ++++++++++-----------\n docs/examples/failure-evidence/triage-summary.json |   4 +-\n 13 files changed, 68 insertions(+), 68 deletions(-)",
   "retryHistory" : [ {
     "attempt" : 1,
     "status" : "retried"

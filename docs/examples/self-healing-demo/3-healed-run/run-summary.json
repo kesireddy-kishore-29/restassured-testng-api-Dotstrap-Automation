@@ -1,12 +1,12 @@
 {
   "schemaVersion" : 1,
-  "repo" : "api-automation-framework",
-  "runId" : "api-chaos-healed-3",
-  "gitSha" : "c32cbb6084f4",
+  "repo" : "restassured-testng-api-Dotstrap-Automation",
+  "runId" : "api-chaos-healed-4",
+  "gitSha" : "94321b530bfe",
   "recordMode" : "failures",
-  "startedAt" : "2026-10-21T14:57:09.483264300Z",
-  "finishedAt" : "2026-10-21T14:57:28.293940400Z",
-  "durationMs" : 18810,
+  "startedAt" : "2026-10-21T16:11:52.757160400Z",
+  "finishedAt" : "2026-10-21T16:12:09.776210900Z",
+  "durationMs" : 17019,
   "environment" : {
     "testEnv" : "local",
     "sutBaseUrl" : "http://localhost:7070",
@@ -30,11 +30,11 @@
     "featureIds" : [ "FEAT-CONTRACT-01", "FEAT-ACCT-03" ],
     "tags" : [ "contract", "smoke" ],
     "status" : "passed",
-    "durationMs" : 3763,
+    "durationMs" : 2291,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:09.621Z",
-    "finishedAt" : "2026-10-21T14:57:13.384Z"
+    "startedAt" : "2026-10-21T16:11:52.872Z",
+    "finishedAt" : "2026-10-21T16:11:55.163Z"
   }, {
     "id" : "com.qaautomation.tests.contract.ContractTest#conversationResourcesMatchTheirContracts",
     "title" : "Conversation, message, page and read-state match their schemas",
@@ -42,11 +42,11 @@
     "featureIds" : [ "FEAT-CONTRACT-01" ],
     "tags" : [ "contract" ],
     "status" : "passed",
-    "durationMs" : 3896,
+    "durationMs" : 2390,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:09.621Z",
-    "finishedAt" : "2026-10-21T14:57:13.517Z"
+    "startedAt" : "2026-10-21T16:11:52.872Z",
+    "finishedAt" : "2026-10-21T16:11:55.262Z"
   }, {
     "id" : "com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts",
     "title" : "Balance, ledger and purchase match their schemas",
@@ -54,11 +54,11 @@
     "featureIds" : [ "FEAT-CONTRACT-01" ],
     "tags" : [ "contract" ],
     "status" : "passed",
-    "durationMs" : 3659,
+    "durationMs" : 2245,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:09.621Z",
-    "finishedAt" : "2026-10-21T14:57:13.280Z"
+    "startedAt" : "2026-10-21T16:11:52.872Z",
+    "finishedAt" : "2026-10-21T16:11:55.117Z"
   }, {
     "id" : "com.qaautomation.tests.contract.ContractTest#everyOperationConformsToTheOpenApiDocument",
     "title" : "Every operation in the OpenAPI document answers as documented (checked per response)",
@@ -66,11 +66,11 @@
     "featureIds" : [ "FEAT-CONTRACT-02" ],
     "tags" : [ "contract" ],
     "status" : "passed",
-    "durationMs" : 4198,
+    "durationMs" : 2635,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:09.621Z",
-    "finishedAt" : "2026-10-21T14:57:13.819Z"
+    "startedAt" : "2026-10-21T16:11:52.872Z",
+    "finishedAt" : "2026-10-21T16:11:55.507Z"
   }, {
     "id" : "com.qaautomation.tests.functional.AccountsTest#displayNameChangeIsPersisted",
     "title" : "A new display name is stored and returned",
@@ -78,11 +78,11 @@
     "featureIds" : [ "FEAT-ACCT-02" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 365,
+    "durationMs" : 367,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:13.629Z",
-    "finishedAt" : "2026-10-21T14:57:13.994Z"
+    "startedAt" : "2026-10-21T16:11:55.370Z",
+    "finishedAt" : "2026-10-21T16:11:55.737Z"
   }, {
     "id" : "com.qaautomation.tests.functional.AccountsTest#ownerReadsBackTheAccountAsCreated",
     "title" : "The owner reads back exactly what was created",
@@ -90,11 +90,11 @@
     "featureIds" : [ "FEAT-ACCT-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 363,
+    "durationMs" : 375,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:13.631Z",
-    "finishedAt" : "2026-10-21T14:57:13.994Z"
+    "startedAt" : "2026-10-21T16:11:55.370Z",
+    "finishedAt" : "2026-10-21T16:11:55.745Z"
   }, {
     "id" : "com.qaautomation.tests.functional.AccountsTest#publicProfileExposesNoPrivateFields",
     "title" : "Anyone signed in sees a public profile with no private fields",
@@ -102,11 +102,11 @@
     "featureIds" : [ "FEAT-ACCT-03" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 479,
+    "durationMs" : 489,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:13.632Z",
-    "finishedAt" : "2026-10-21T14:57:14.111Z"
+    "startedAt" : "2026-10-21T16:11:55.371Z",
+    "finishedAt" : "2026-10-21T16:11:55.860Z"
   }, {
     "id" : "com.qaautomation.tests.functional.ConversationsTest#closedConversationRefusesMessages",
     "title" : "A closed conversation refuses new messages with 409",
@@ -114,11 +114,11 @@
     "featureIds" : [ "FEAT-CONV-02" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 1770,
+    "durationMs" : 1687,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:13.830Z",
-    "finishedAt" : "2026-10-21T14:57:15.600Z"
+    "startedAt" : "2026-10-21T16:11:55.539Z",
+    "finishedAt" : "2026-10-21T16:11:57.226Z"
   }, {
     "id" : "com.qaautomation.tests.functional.ConversationsTest#twoPeopleExchangeMessages",
     "title" : "Two people start a conversation and exchange messages",
@@ -126,11 +126,11 @@
     "featureIds" : [ "FEAT-CONV-01" ],
     "tags" : [ "regression", "smoke" ],
     "status" : "passed",
-    "durationMs" : 285,
+    "durationMs" : 394,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:14.002Z",
-    "finishedAt" : "2026-10-21T14:57:14.287Z"
+    "startedAt" : "2026-10-21T16:11:55.747Z",
+    "finishedAt" : "2026-10-21T16:11:56.141Z"
   }, {
     "id" : "com.qaautomation.tests.functional.ConversationsTest#unreadCountFollowsMessagesAndResetsOnRead",
     "title" : "Unread counts follow messages and reset when read",
@@ -138,11 +138,11 @@
     "featureIds" : [ "FEAT-CONV-03" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 309,
+    "durationMs" : 402,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:14.004Z",
-    "finishedAt" : "2026-10-21T14:57:14.313Z"
+    "startedAt" : "2026-10-21T16:11:55.754Z",
+    "finishedAt" : "2026-10-21T16:11:56.156Z"
   }, {
     "id" : "com.qaautomation.tests.negative.AuthBoundaryTest#missingTokenIsUnauthenticated",
     "title" : "No token: 401 unauthenticated with a Bearer challenge",
@@ -150,11 +150,11 @@
     "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 1326,
+    "durationMs" : 1267,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:14.121Z",
-    "finishedAt" : "2026-10-21T14:57:15.447Z"
+    "startedAt" : "2026-10-21T16:11:55.870Z",
+    "finishedAt" : "2026-10-21T16:11:57.137Z"
   }, {
     "id" : "com.qaautomation.tests.negative.AuthBoundaryTest#outsiderCannotReadOrWriteAConversation",
     "title" : "Someone outside a conversation gets 403, not its content",
@@ -162,11 +162,11 @@
     "featureIds" : [ "FEAT-AUTHZ-01" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 1743,
+    "durationMs" : 1472,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:14.297Z",
-    "finishedAt" : "2026-10-21T14:57:16.040Z"
+    "startedAt" : "2026-10-21T16:11:56.150Z",
+    "finishedAt" : "2026-10-21T16:11:57.622Z"
   }, {
     "id" : "com.qaautomation.tests.negative.AuthBoundaryTest#unknownTokenIsRefused[0]",
     "title" : "A token the service never issued is refused [not-a-real-token-at-all, invalid-token]",
@@ -174,11 +174,11 @@
     "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 1108,
+    "durationMs" : 947,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:14.339Z",
-    "finishedAt" : "2026-10-21T14:57:15.447Z"
+    "startedAt" : "2026-10-21T16:11:56.188Z",
+    "finishedAt" : "2026-10-21T16:11:57.135Z"
   }, {
     "id" : "com.qaautomation.tests.negative.AuthBoundaryTest#unknownTokenIsRefused[1]",
     "title" : "A token the service never issued is refused [eyJhbGciOiJub25lIn0.eyJzdWIiOiJhZG1pbiJ9., invalid-token]",
@@ -186,11 +186,11 @@
     "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 1108,
+    "durationMs" : 951,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:14.339Z",
-    "finishedAt" : "2026-10-21T14:57:15.447Z"
+    "startedAt" : "2026-10-21T16:11:56.188Z",
+    "finishedAt" : "2026-10-21T16:11:57.139Z"
   }, {
     "id" : "com.qaautomation.tests.negative.CreditsNegativeTest#purchaseWithoutIdempotencyKeyIsA400",
     "title" : "A purchase without an Idempotency-Key is refused with 400",
@@ -198,11 +198,11 @@
     "featureIds" : [ "FEAT-IDEMP-03", "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 310,
+    "durationMs" : 240,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:15.463Z",
-    "finishedAt" : "2026-10-21T14:57:15.773Z"
+    "startedAt" : "2026-10-21T16:11:57.151Z",
+    "finishedAt" : "2026-10-21T16:11:57.391Z"
   }, {
     "id" : "com.qaautomation.tests.negative.CreditsNegativeTest#sendingWithNoCreditsIsA402",
     "title" : "With no credits left, a message is a 402 and nothing is charged",
@@ -210,11 +210,11 @@
     "featureIds" : [ "FEAT-LEDGER-02", "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 791,
+    "durationMs" : 642,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:15.472Z",
-    "finishedAt" : "2026-10-21T14:57:16.263Z"
+    "startedAt" : "2026-10-21T16:11:57.152Z",
+    "finishedAt" : "2026-10-21T16:11:57.794Z"
   }, {
     "id" : "com.qaautomation.tests.negative.CreditsNegativeTest#unknownPackIsA422",
     "title" : "An unknown credit pack is a 422 on packId",
@@ -222,71 +222,71 @@
     "featureIds" : [ "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 366,
+    "durationMs" : 453,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:15.618Z",
-    "finishedAt" : "2026-10-21T14:57:15.984Z"
+    "startedAt" : "2026-10-21T16:11:57.238Z",
+    "finishedAt" : "2026-10-21T16:11:57.691Z"
   }, {
     "id" : "com.qaautomation.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[0]",
-    "title" : "An invalid account request is a 422 naming the field [handle too short, NewAccount[handle=ab, displayName=Name, password=pw-935272ff-07ec-4a44-bbab-268a776bb620, region=eu], handle]",
+    "title" : "An invalid account request is a 422 naming the field [handle too short, NewAccount[handle=ab, displayName=Name, password=pw-9350a45a-03c6-49eb-a1fe-888f9eb4c59e, region=eu], handle]",
     "suite" : "negative",
     "featureIds" : [ "FEAT-ACCT-02", "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 296,
+    "durationMs" : 327,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:15.795Z",
-    "finishedAt" : "2026-10-21T14:57:16.091Z"
+    "startedAt" : "2026-10-21T16:11:57.402Z",
+    "finishedAt" : "2026-10-21T16:11:57.729Z"
   }, {
     "id" : "com.qaautomation.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[1]",
-    "title" : "An invalid account request is a 422 naming the field [handle with capitals, NewAccount[handle=Bad-Handle, displayName=Name, password=pw-935272ff-07ec-4a44-bbab-268a776bb620, region=eu], handle]",
+    "title" : "An invalid account request is a 422 naming the field [handle with capitals, NewAccount[handle=Bad-Handle, displayName=Name, password=pw-9350a45a-03c6-49eb-a1fe-888f9eb4c59e, region=eu], handle]",
     "suite" : "negative",
     "featureIds" : [ "FEAT-ACCT-02", "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 239,
+    "durationMs" : 273,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:15.797Z",
-    "finishedAt" : "2026-10-21T14:57:16.036Z"
+    "startedAt" : "2026-10-21T16:11:57.418Z",
+    "finishedAt" : "2026-10-21T16:11:57.691Z"
   }, {
     "id" : "com.qaautomation.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[2]",
-    "title" : "An invalid account request is a 422 naming the field [blank display name, NewAccount[handle=qa-2b757edbae0f, displayName=   , password=pw-935272ff-07ec-4a44-bbab-268a776bb620, region=eu], displayName]",
+    "title" : "An invalid account request is a 422 naming the field [blank display name, NewAccount[handle=qa-3976fd311567, displayName=   , password=pw-9350a45a-03c6-49eb-a1fe-888f9eb4c59e, region=eu], displayName]",
     "suite" : "negative",
     "featureIds" : [ "FEAT-ACCT-02", "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 256,
+    "durationMs" : 273,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:15.798Z",
-    "finishedAt" : "2026-10-21T14:57:16.054Z"
+    "startedAt" : "2026-10-21T16:11:57.420Z",
+    "finishedAt" : "2026-10-21T16:11:57.693Z"
   }, {
     "id" : "com.qaautomation.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[3]",
-    "title" : "An invalid account request is a 422 naming the field [password too short, NewAccount[handle=qa-2b757edbae0f, displayName=Name, password=short, region=eu], password]",
+    "title" : "An invalid account request is a 422 naming the field [password too short, NewAccount[handle=qa-3976fd311567, displayName=Name, password=short, region=eu], password]",
     "suite" : "negative",
     "featureIds" : [ "FEAT-ACCT-02", "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 320,
+    "durationMs" : 288,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:15.801Z",
-    "finishedAt" : "2026-10-21T14:57:16.121Z"
+    "startedAt" : "2026-10-21T16:11:57.403Z",
+    "finishedAt" : "2026-10-21T16:11:57.691Z"
   }, {
     "id" : "com.qaautomation.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[4]",
-    "title" : "An invalid account request is a 422 naming the field [unknown region, NewAccount[handle=qa-2b757edbae0f, displayName=Name, password=pw-935272ff-07ec-4a44-bbab-268a776bb620, region=mars], region]",
+    "title" : "An invalid account request is a 422 naming the field [unknown region, NewAccount[handle=qa-3976fd311567, displayName=Name, password=pw-9350a45a-03c6-49eb-a1fe-888f9eb4c59e, region=mars], region]",
     "suite" : "negative",
     "featureIds" : [ "FEAT-ACCT-02", "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 142,
+    "durationMs" : 120,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:16.060Z",
-    "finishedAt" : "2026-10-21T14:57:16.202Z"
+    "startedAt" : "2026-10-21T16:11:57.717Z",
+    "finishedAt" : "2026-10-21T16:11:57.837Z"
   }, {
     "id" : "com.qaautomation.tests.negative.ValidationTest#malformedJsonIsA400",
     "title" : "A body that is not JSON is a 400 malformed-json problem",
@@ -294,11 +294,11 @@
     "featureIds" : [ "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 180,
+    "durationMs" : 103,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:16.002Z",
-    "finishedAt" : "2026-10-21T14:57:16.182Z"
+    "startedAt" : "2026-10-21T16:11:57.634Z",
+    "finishedAt" : "2026-10-21T16:11:57.737Z"
   }, {
     "id" : "com.qaautomation.tests.negative.ValidationTest#takenHandleIsA409",
     "title" : "A handle that is already taken is a 409",
@@ -306,11 +306,11 @@
     "featureIds" : [ "FEAT-ACCT-01", "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 308,
+    "durationMs" : 192,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:16.068Z",
-    "finishedAt" : "2026-10-21T14:57:16.376Z"
+    "startedAt" : "2026-10-21T16:11:57.709Z",
+    "finishedAt" : "2026-10-21T16:11:57.901Z"
   }, {
     "id" : "com.qaautomation.tests.negative.ValidationTest#unknownResourcesAre404",
     "title" : "Unknown conversations and handles are 404 problems",
@@ -318,11 +318,11 @@
     "featureIds" : [ "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 395,
+    "durationMs" : 320,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:16.198Z",
-    "finishedAt" : "2026-10-21T14:57:16.593Z"
+    "startedAt" : "2026-10-21T16:11:57.748Z",
+    "finishedAt" : "2026-10-21T16:11:58.068Z"
   }, {
     "id" : "com.qaautomation.tests.negative.ValidationTest#wrongContentTypeIsA415",
     "title" : "A body that is not application/json is a 415",
@@ -330,11 +330,11 @@
     "featureIds" : [ "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 115,
+    "durationMs" : 73,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:16.215Z",
-    "finishedAt" : "2026-10-21T14:57:16.330Z"
+    "startedAt" : "2026-10-21T16:11:57.803Z",
+    "finishedAt" : "2026-10-21T16:11:57.876Z"
   }, {
     "id" : "com.qaautomation.tests.resilience.IdempotencyTest#concurrentDuplicatesProduceOnePurchase",
     "title" : "Six concurrent duplicates: one purchase, five replays, one charge",
@@ -342,11 +342,11 @@
     "featureIds" : [ "FEAT-IDEMP-01" ],
     "tags" : [ "regression", "resilience" ],
     "status" : "passed",
-    "durationMs" : 308,
+    "durationMs" : 273,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:16.276Z",
-    "finishedAt" : "2026-10-21T14:57:16.584Z"
+    "startedAt" : "2026-10-21T16:11:57.852Z",
+    "finishedAt" : "2026-10-21T16:11:58.125Z"
   }, {
     "id" : "com.qaautomation.tests.resilience.IdempotencyTest#replayReturnsTheOriginalAndChargesOnce",
     "title" : "Same key + same body replays the original purchase",
@@ -354,11 +354,11 @@
     "featureIds" : [ "FEAT-IDEMP-01" ],
     "tags" : [ "regression", "resilience" ],
     "status" : "passed",
-    "durationMs" : 245,
+    "durationMs" : 244,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:16.350Z",
-    "finishedAt" : "2026-10-21T14:57:16.595Z"
+    "startedAt" : "2026-10-21T16:11:57.887Z",
+    "finishedAt" : "2026-10-21T16:11:58.131Z"
   }, {
     "id" : "com.qaautomation.tests.resilience.IdempotencyTest#reusingAKeyForADifferentPurchaseIsRefused",
     "title" : "Same key + different body is a 409 and charges nothing",
@@ -366,11 +366,11 @@
     "featureIds" : [ "FEAT-IDEMP-02" ],
     "tags" : [ "regression", "resilience" ],
     "status" : "passed",
-    "durationMs" : 249,
+    "durationMs" : 364,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:16.409Z",
-    "finishedAt" : "2026-10-21T14:57:16.658Z"
+    "startedAt" : "2026-10-21T16:11:57.908Z",
+    "finishedAt" : "2026-10-21T16:11:58.272Z"
   }, {
     "id" : "com.qaautomation.tests.resilience.IdempotencyTest#theSameKeyFromTwoAccountsMakesTwoPurchases",
     "title" : "Keys are scoped per account",
@@ -378,11 +378,11 @@
     "featureIds" : [ "FEAT-IDEMP-01" ],
     "tags" : [ "regression", "resilience" ],
     "status" : "passed",
-    "durationMs" : 178,
+    "durationMs" : 295,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:16.597Z",
-    "finishedAt" : "2026-10-21T14:57:16.775Z"
+    "startedAt" : "2026-10-21T16:11:58.084Z",
+    "finishedAt" : "2026-10-21T16:11:58.379Z"
   }, {
     "id" : "com.qaautomation.tests.resilience.RetryAndTimeoutTest#clientTimeoutIsEnforcedWithinItsBudget",
     "title" : "A slow server cannot hang the client",
@@ -390,11 +390,11 @@
     "featureIds" : [ "FEAT-RES-02" ],
     "tags" : [ "regression", "resilience" ],
     "status" : "passed",
-    "durationMs" : 1807,
+    "durationMs" : 1835,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:16.601Z",
-    "finishedAt" : "2026-10-21T14:57:18.408Z"
+    "startedAt" : "2026-10-21T16:11:58.137Z",
+    "finishedAt" : "2026-10-21T16:11:59.972Z"
   }, {
     "id" : "com.qaautomation.tests.resilience.RetryAndTimeoutTest#lostResponseIsRetriedWithoutDoubleCharging",
     "title" : "A lost response is retried with the same key and the purchase is charged once",
@@ -402,11 +402,11 @@
     "featureIds" : [ "FEAT-RES-01", "FEAT-IDEMP-01" ],
     "tags" : [ "regression", "resilience" ],
     "status" : "passed",
-    "durationMs" : 1144,
+    "durationMs" : 1211,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:16.604Z",
-    "finishedAt" : "2026-10-21T14:57:17.748Z"
+    "startedAt" : "2026-10-21T16:11:58.148Z",
+    "finishedAt" : "2026-10-21T16:11:59.359Z"
   }, {
     "id" : "com.qaautomation.tests.resilience.RetryAndTimeoutTest#unavailableIsRetriedAfterRetryAfter",
     "title" : "A 503 with Retry-After is retried after the wait",
@@ -414,11 +414,11 @@
     "featureIds" : [ "FEAT-RES-03" ],
     "tags" : [ "regression", "resilience" ],
     "status" : "passed",
-    "durationMs" : 1139,
+    "durationMs" : 1119,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:16.668Z",
-    "finishedAt" : "2026-10-21T14:57:17.807Z"
+    "startedAt" : "2026-10-21T16:11:58.280Z",
+    "finishedAt" : "2026-10-21T16:11:59.399Z"
   }, {
     "id" : "com.qaautomation.tests.security.AuthorizationTest#adminEndpointIsForbiddenToANormalAccount",
     "title" : "A normal account cannot use the admin endpoint",
@@ -426,11 +426,11 @@
     "featureIds" : [ "FEAT-SEC-02" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 122,
+    "durationMs" : 109,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:16.783Z",
-    "finishedAt" : "2026-10-21T14:57:16.905Z"
+    "startedAt" : "2026-10-21T16:11:58.385Z",
+    "finishedAt" : "2026-10-21T16:11:58.494Z"
   }, {
     "id" : "com.qaautomation.tests.security.AuthorizationTest#expiredTokenIsRefused",
     "title" : "A token stops working when it expires",
@@ -438,11 +438,11 @@
     "featureIds" : [ "FEAT-SEC-03" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 1370,
+    "durationMs" : 1195,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:16.910Z",
-    "finishedAt" : "2026-10-21T14:57:18.280Z"
+    "startedAt" : "2026-10-21T16:11:58.500Z",
+    "finishedAt" : "2026-10-21T16:11:59.695Z"
   }, {
     "id" : "com.qaautomation.tests.security.CorsTest#allowedOriginCanReadTheHeadersTheAppNeeds",
     "title" : "An allowed origin can read the headers the app needs",
@@ -450,11 +450,11 @@
     "featureIds" : [ "FEAT-CORS-01" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 14,
+    "durationMs" : 16,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:17.753Z",
-    "finishedAt" : "2026-10-21T14:57:17.767Z"
+    "startedAt" : "2026-10-21T16:11:59.361Z",
+    "finishedAt" : "2026-10-21T16:11:59.377Z"
   }, {
     "id" : "com.qaautomation.tests.security.CorsTest#allowedOriginPassesPreflight",
     "title" : "An allowed origin passes preflight for an idempotent purchase",
@@ -462,11 +462,11 @@
     "featureIds" : [ "FEAT-CORS-01" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 20,
+    "durationMs" : 19,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:17.773Z",
-    "finishedAt" : "2026-10-21T14:57:17.793Z"
+    "startedAt" : "2026-10-21T16:11:59.377Z",
+    "finishedAt" : "2026-10-21T16:11:59.396Z"
   }, {
     "id" : "com.qaautomation.tests.security.CorsTest#otherOriginsAreRefused",
     "title" : "Any other origin is refused",
@@ -474,11 +474,11 @@
     "featureIds" : [ "FEAT-CORS-02" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 60,
+    "durationMs" : 50,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:17.801Z",
-    "finishedAt" : "2026-10-21T14:57:17.861Z"
+    "startedAt" : "2026-10-21T16:11:59.401Z",
+    "finishedAt" : "2026-10-21T16:11:59.451Z"
   }, {
     "id" : "com.qaautomation.tests.security.RateLimitTest#exceedingTheLimitIs429ThenRecovers",
     "title" : "Past the limit: 429 with Retry-After, then recovery",
@@ -486,35 +486,35 @@
     "featureIds" : [ "FEAT-RATE-01" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 10380,
+    "durationMs" : 10307,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:17.813Z",
-    "finishedAt" : "2026-10-21T14:57:28.193Z"
+    "startedAt" : "2026-10-21T16:11:59.405Z",
+    "finishedAt" : "2026-10-21T16:12:09.712Z"
   }, {
     "id" : "com.qaautomation.tests.security.SecurityHeadersTest#securityHeadersOnEveryResponse[0]",
-    "title" : "Every response carries the security headers and no server banner [200 health, com.qaautomation.tests.security.SecurityHeadersTest$$Lambda/0x0000012b108cd1e0@7522d84f]",
+    "title" : "Every response carries the security headers and no server banner [200 health, com.qaautomation.tests.security.SecurityHeadersTest$$Lambda/0x00000236818d28a0@1589d3f9]",
     "suite" : "security",
     "featureIds" : [ "FEAT-SEC-01" ],
     "tags" : [ "security", "regression", "smoke" ],
     "status" : "passed",
-    "durationMs" : 19,
+    "durationMs" : 15,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:17.870Z",
-    "finishedAt" : "2026-10-21T14:57:17.889Z"
+    "startedAt" : "2026-10-21T16:11:59.460Z",
+    "finishedAt" : "2026-10-21T16:11:59.475Z"
   }, {
     "id" : "com.qaautomation.tests.security.SecurityHeadersTest#securityHeadersOnEveryResponse[1]",
-    "title" : "Every response carries the security headers and no server banner [401 problem, com.qaautomation.tests.security.SecurityHeadersTest$$Lambda/0x0000012b108cd408@217919ca]",
+    "title" : "Every response carries the security headers and no server banner [401 problem, com.qaautomation.tests.security.SecurityHeadersTest$$Lambda/0x00000236818d2ac8@7ed596e]",
     "suite" : "security",
     "featureIds" : [ "FEAT-SEC-01" ],
     "tags" : [ "security", "regression", "smoke" ],
     "status" : "passed",
-    "durationMs" : 17,
+    "durationMs" : 15,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:17.870Z",
-    "finishedAt" : "2026-10-21T14:57:17.887Z"
+    "startedAt" : "2026-10-21T16:11:59.460Z",
+    "finishedAt" : "2026-10-21T16:11:59.475Z"
   }, {
     "id" : "com.qaautomation.tests.smoke.HealthSmokeTest#newAccountCanSignInAndReadItself",
     "title" : "A new account can sign in and read itself back",
@@ -522,11 +522,11 @@
     "featureIds" : [ "FEAT-ACCT-01" ],
     "tags" : [ "smoke" ],
     "status" : "passed",
-    "durationMs" : 107,
+    "durationMs" : 125,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:17.898Z",
-    "finishedAt" : "2026-10-21T14:57:18.005Z"
+    "startedAt" : "2026-10-21T16:11:59.482Z",
+    "finishedAt" : "2026-10-21T16:11:59.607Z"
   }, {
     "id" : "com.qaautomation.tests.smoke.HealthSmokeTest#serviceReportsUp",
     "title" : "The reference service reports itself up, with its version and regions",
@@ -534,11 +534,11 @@
     "featureIds" : [ "FEAT-HEALTH-01" ],
     "tags" : [ "smoke" ],
     "status" : "passed",
-    "durationMs" : 28,
+    "durationMs" : 22,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:18.020Z",
-    "finishedAt" : "2026-10-21T14:57:18.048Z"
+    "startedAt" : "2026-10-21T16:11:59.613Z",
+    "finishedAt" : "2026-10-21T16:11:59.635Z"
   }, {
     "id" : "com.qaautomation.tests.workflows.LedgerConsistencyTest#concurrentPurchasesSumCorrectly",
     "title" : "Ten concurrent purchases are all counted, exactly once",
@@ -546,11 +546,11 @@
     "featureIds" : [ "FEAT-LEDGER-03" ],
     "tags" : [ "workflow", "regression" ],
     "status" : "passed",
-    "durationMs" : 364,
+    "durationMs" : 265,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:18.060Z",
-    "finishedAt" : "2026-10-21T14:57:18.424Z"
+    "startedAt" : "2026-10-21T16:11:59.641Z",
+    "finishedAt" : "2026-10-21T16:11:59.906Z"
   }, {
     "id" : "com.qaautomation.tests.workflows.LedgerConsistencyTest#historySumsToTheBalance",
     "title" : "Grants, purchases and spends sum to the balance",
@@ -558,11 +558,11 @@
     "featureIds" : [ "FEAT-LEDGER-01" ],
     "tags" : [ "workflow", "regression" ],
     "status" : "passed",
-    "durationMs" : 433,
+    "durationMs" : 240,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:18.305Z",
-    "finishedAt" : "2026-10-21T14:57:18.738Z"
+    "startedAt" : "2026-10-21T16:11:59.703Z",
+    "finishedAt" : "2026-10-21T16:11:59.943Z"
   }, {
     "id" : "com.qaautomation.tests.workflows.MultiActorConversationTest#twoPeopleConverseAndTheOwnerEndsIt",
     "title" : "Two people exchange messages; an outsider is kept out; closing stops the thread",
@@ -570,11 +570,11 @@
     "featureIds" : [ "FEAT-CONV-01", "FEAT-CONV-02", "FEAT-CONV-03", "FEAT-AUTHZ-01", "FEAT-REGION-02" ],
     "tags" : [ "workflow", "regression" ],
     "status" : "passed",
-    "durationMs" : 1039,
+    "durationMs" : 628,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:18.414Z",
-    "finishedAt" : "2026-10-21T14:57:19.453Z"
+    "startedAt" : "2026-10-21T16:11:59.913Z",
+    "finishedAt" : "2026-10-21T16:12:00.541Z"
   }, {
     "id" : "com.qaautomation.tests.workflows.MultiRegionTest#crossRegionConversationLivesInTheRecipientsRegion",
     "title" : "A cross-region conversation is stored in the recipient's region, for both sides",
@@ -582,11 +582,11 @@
     "featureIds" : [ "FEAT-REGION-02" ],
     "tags" : [ "workflow", "regression" ],
     "status" : "passed",
-    "durationMs" : 385,
+    "durationMs" : 217,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:18.434Z",
-    "finishedAt" : "2026-10-21T14:57:18.819Z"
+    "startedAt" : "2026-10-21T16:11:59.949Z",
+    "finishedAt" : "2026-10-21T16:12:00.166Z"
   }, {
     "id" : "com.qaautomation.tests.workflows.MultiRegionTest#servedByTheHomeRegionFromAnyEdge[0]",
     "title" : "Requests are served by the home region, whichever edge they arrive at [IN, eu]",
@@ -594,11 +594,11 @@
     "featureIds" : [ "FEAT-REGION-01" ],
     "tags" : [ "workflow", "regression" ],
     "status" : "passed",
-    "durationMs" : 151,
+    "durationMs" : 144,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:18.764Z",
-    "finishedAt" : "2026-10-21T14:57:18.915Z"
+    "startedAt" : "2026-10-21T16:11:59.982Z",
+    "finishedAt" : "2026-10-21T16:12:00.126Z"
   }, {
     "id" : "com.qaautomation.tests.workflows.MultiRegionTest#servedByTheHomeRegionFromAnyEdge[1]",
     "title" : "Requests are served by the home region, whichever edge they arrive at [EU, us]",
@@ -606,11 +606,11 @@
     "featureIds" : [ "FEAT-REGION-01" ],
     "tags" : [ "workflow", "regression" ],
     "status" : "passed",
-    "durationMs" : 136,
+    "durationMs" : 143,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:18.764Z",
-    "finishedAt" : "2026-10-21T14:57:18.900Z"
+    "startedAt" : "2026-10-21T16:11:59.980Z",
+    "finishedAt" : "2026-10-21T16:12:00.123Z"
   }, {
     "id" : "com.qaautomation.tests.workflows.MultiRegionTest#servedByTheHomeRegionFromAnyEdge[2]",
     "title" : "Requests are served by the home region, whichever edge they arrive at [US, in]",
@@ -618,11 +618,11 @@
     "featureIds" : [ "FEAT-REGION-01" ],
     "tags" : [ "workflow", "regression" ],
     "status" : "passed",
-    "durationMs" : 256,
+    "durationMs" : 167,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:18.772Z",
-    "finishedAt" : "2026-10-21T14:57:19.028Z"
+    "startedAt" : "2026-10-21T16:11:59.980Z",
+    "finishedAt" : "2026-10-21T16:12:00.147Z"
   }, {
     "id" : "com.qaautomation.tests.workflows.MultiRegionTest#unknownRegionIsRefused",
     "title" : "An unknown home region is refused with 422",
@@ -630,10 +630,10 @@
     "featureIds" : [ "FEAT-REGION-03" ],
     "tags" : [ "workflow", "regression" ],
     "status" : "passed",
-    "durationMs" : 149,
+    "durationMs" : 98,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T14:57:18.833Z",
-    "finishedAt" : "2026-10-21T14:57:18.982Z"
+    "startedAt" : "2026-10-21T16:12:00.164Z",
+    "finishedAt" : "2026-10-21T16:12:00.262Z"
   } ]
 }

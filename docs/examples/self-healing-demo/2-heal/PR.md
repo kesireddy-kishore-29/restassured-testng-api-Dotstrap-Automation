@@ -6,7 +6,7 @@
 |---|---|
 | Failure category | `CONTRACT_DRIFT` |
 | Test | `com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts` |
-| Evidence | `failure-bundles/contract-test-credit-resources-match-their-contracts.zip` (run `api-chaos-3`) |
+| Evidence | `failure-bundles/contract-test-credit-resources-match-their-contracts.zip` (run `api-chaos-4`) |
 | Also explains | 7 other failing test(s) with the same cause (below) |
 
 ### Root cause

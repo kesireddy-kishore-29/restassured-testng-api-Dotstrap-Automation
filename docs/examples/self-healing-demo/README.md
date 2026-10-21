@@ -1,7 +1,7 @@
 # Self-healing demo: a renamed response field (contract drift)
 
-Everything in this folder comes from one real local run on 2026-10-21 (run IDs `api-chaos-3` and
-`api-chaos-healed-3`). Nothing was edited except one thing: the commit view in
+Everything in this folder comes from one real local run on 2026-10-21 (run IDs `api-chaos-4` and
+`api-chaos-healed-4`). Nothing was edited except one thing: the commit view in
 `2-heal/heal-commit.patch` leaves out the author's email.
 
 ## The scenario
@@ -15,12 +15,12 @@ client model still expect `balance`.
 
 | Step | Command | Result |
 |---|---|---|
-| 1. PR gate on `main` | `RUN_ID=api-chaos-3 ./mvnw verify -pl tests -Dsuite=pr-gate` | 43 passed, **8 failed** ([run-summary](1-failing-run/run-summary.json)) |
-| 2. Triage | `java -jar tools/target/qa-tools.jar triage --run run-evidence/api-automation-framework/api-chaos-3` | 8 × `CONTRACT_DRIFT`, one cause: `balance` missing, `availableBalance` undeclared ([triage](1-failing-run/triage/)) |
-| 3. Heal | `java -jar tools/target/qa-tools.jar heal --run run-evidence/api-automation-framework/api-chaos-3` | One branch for the one root cause: `heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021` |
-| 4. PR gate on the heal branch | `RUN_ID=api-chaos-healed-3 ./mvnw verify -pl tests -Dsuite=pr-gate` | **51 passed**, 0 failed ([run-summary](3-healed-run/run-summary.json)) |
+| 1. PR gate on `main` | `RUN_ID=api-chaos-4 ./mvnw verify -pl tests -Dsuite=pr-gate` | 43 passed, **8 failed** ([run-summary](1-failing-run/run-summary.json)) |
+| 2. Triage | `java -jar tools/target/qa-tools.jar triage --run run-evidence/restassured-testng-api-Dotstrap-Automation/api-chaos-4` | 8 × `CONTRACT_DRIFT`, one cause: `balance` missing, `availableBalance` undeclared ([triage](1-failing-run/triage/)) |
+| 3. Heal | `java -jar tools/target/qa-tools.jar heal --run run-evidence/restassured-testng-api-Dotstrap-Automation/api-chaos-4` | One branch for the one root cause: `heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021` |
+| 4. PR gate on the heal branch | `RUN_ID=api-chaos-healed-4 ./mvnw verify -pl tests -Dsuite=pr-gate` | **51 passed**, 0 failed ([run-summary](3-healed-run/run-summary.json)) |
 
-The heal took 4 min 44 s. Inside it:
+The heal took 3 min 23 s. Inside it:
 
 1. The rule-based healer proposed a two-line change: the `balance` consumer schema and the
    `@JsonProperty` of the `Balance` model ([patch.diff](2-heal/patch.diff)). No test changed. The
