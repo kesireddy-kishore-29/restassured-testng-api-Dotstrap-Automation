@@ -12,32 +12,32 @@ Secrets (tokens, passwords, credential headers) are masked as `****`.
 
 | # | Call | Status | ms | Correlation ID |
 |---|---|---|---|---|
-| 1 | `POST /v1/accounts` | 201 | 14 | `qa-3ca3388f-2564-4b44-b6db-9ccc746d391c` |
-| 2 | `POST /v1/auth/token` | 200 | 32 | `qa-63864ed1-bb9d-4f47-9afe-6b133e0349ff` |
-| 3 | `GET /v1/credits/balance` | 200 | 11 | `qa-9b8e7b15-0f5f-4f89-bc01-b0cc87105862` |
-| 4 | `GET /v1/credits/balance` | 200 | 8 | `qa-8ef319a5-85bd-4369-98fc-6a8007c208fd` |
-| 5 | `GET /v1/credits/balance` | 200 | 14 | `qa-040b134c-31e2-40b7-b816-dc4bd5e758de` |
-| 6 | `DELETE /v1/accounts/me` | 204 | 12 | `qa-0dfecc5a-cc9d-47f0-b884-25f7bf8f4347` |
-| 7 | `POST /v1/auth/token` | 401 | 12 | `qa-84b9f58a-d674-4455-9a65-c7a03df68b27` |
+| 1 | `POST /v1/accounts` | 201 | 8 | `qa-04996e5c-939f-4a64-8479-3880df5cf025` |
+| 2 | `POST /v1/auth/token` | 200 | 8 | `qa-2654789c-2da4-4adc-9188-15643ca89de1` |
+| 3 | `GET /v1/credits/balance` | 200 | 5 | `qa-dfe85eac-f77c-4f15-b62c-76ec83efd298` |
+| 4 | `GET /v1/credits/balance` | 200 | 5 | `qa-f0e388e8-a2be-4e90-86a5-46b64e55ceb3` |
+| 5 | `GET /v1/credits/balance` | 200 | 5 | `qa-e5f81fe8-044c-4bcc-bf6f-48ef69f378e5` |
+| 6 | `DELETE /v1/accounts/me` | 204 | 5 | `qa-7f93798f-1c96-4a53-be66-28b1101b6444` |
+| 7 | `POST /v1/auth/token` | 401 | 6 | `qa-8601101d-c6a9-40ed-9a96-cf7a3a3efbbe` |
 
 ## 1. POST /v1/accounts
 
 ```text
 #1 POST http://localhost:7070/v1/accounts
-correlation: qa-3ca3388f-2564-4b44-b6db-9ccc746d391c
+correlation: qa-04996e5c-939f-4a64-8479-3880df5cf025
 
 --- request headers ---
 Accept: application/json
-X-Correlation-Id: qa-3ca3388f-2564-4b44-b6db-9ccc746d391c
+X-Correlation-Id: qa-04996e5c-939f-4a64-8479-3880df5cf025
 Content-Type: application/json
 
 --- request body ---
-{"handle":"qa-f64ae8090c7f","displayName":"QA f64ae8090c7f","password":"****","region":"eu"}
+{"handle":"qa-97f5a016198c","displayName":"QA 97f5a016198c","password":"****","region":"eu"}
 
---- response: 201 in 14 ms ---
-Date: Wed, 21 Oct 2026 14:49:51 GMT
+--- response: 201 in 8 ms ---
+Date: Wed, 21 Oct 2026 16:02:54 GMT
 Content-Type: application/json
-X-Correlation-Id: qa-3ca3388f-2564-4b44-b6db-9ccc746d391c
+X-Correlation-Id: qa-04996e5c-939f-4a64-8479-3880df5cf025
 X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
@@ -48,31 +48,31 @@ Vary: Origin
 RateLimit-Limit: 600
 RateLimit-Remaining: 578
 RateLimit-Reset: 8
-Location: /v1/accounts/qa-f64ae8090c7f
+Location: /v1/accounts/qa-97f5a016198c
 X-Served-Region: eu
 Content-Length: 181
 
-{"id":"acc_0cadb294-2e05-44b3-95ca-2838c4ba5209","handle":"qa-f64ae8090c7f","displayName":"QA f64ae8090c7f","region":"eu","role":"user","createdAt":"2026-10-21T14:49:51.017689400Z"}
+{"id":"acc_e60a7f4f-fd90-4b18-b162-74e2ed1b2a9f","handle":"qa-97f5a016198c","displayName":"QA 97f5a016198c","region":"eu","role":"user","createdAt":"2026-10-21T16:02:54.875613300Z"}
 ```
 
 ## 2. POST /v1/auth/token
 
 ```text
 #2 POST http://localhost:7070/v1/auth/token
-correlation: qa-63864ed1-bb9d-4f47-9afe-6b133e0349ff
+correlation: qa-2654789c-2da4-4adc-9188-15643ca89de1
 
 --- request headers ---
 Accept: application/json
-X-Correlation-Id: qa-63864ed1-bb9d-4f47-9afe-6b133e0349ff
+X-Correlation-Id: qa-2654789c-2da4-4adc-9188-15643ca89de1
 Content-Type: application/json
 
 --- request body ---
-{"handle":"qa-f64ae8090c7f","password":"****"}
+{"handle":"qa-97f5a016198c","password":"****"}
 
---- response: 200 in 32 ms ---
-Date: Wed, 21 Oct 2026 14:49:51 GMT
+--- response: 200 in 8 ms ---
+Date: Wed, 21 Oct 2026 16:02:55 GMT
 Content-Type: application/json
-X-Correlation-Id: qa-63864ed1-bb9d-4f47-9afe-6b133e0349ff
+X-Correlation-Id: qa-2654789c-2da4-4adc-9188-15643ca89de1
 X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
@@ -85,24 +85,24 @@ RateLimit-Remaining: 577
 RateLimit-Reset: 7
 Content-Length: 153
 
-{"accessToken":"****","tokenType":"Bearer","expiresIn":900,"accountId":"acc_0cadb294-2e05-44b3-95ca-2838c4ba5209"}
+{"accessToken":"****","tokenType":"Bearer","expiresIn":900,"accountId":"acc_e60a7f4f-fd90-4b18-b162-74e2ed1b2a9f"}
 ```
 
 ## 3. GET /v1/credits/balance
 
 ```text
 #3 GET http://localhost:7070/v1/credits/balance
-correlation: qa-9b8e7b15-0f5f-4f89-bc01-b0cc87105862
+correlation: qa-dfe85eac-f77c-4f15-b62c-76ec83efd298
 
 --- request headers ---
 Accept: application/json
-X-Correlation-Id: qa-9b8e7b15-0f5f-4f89-bc01-b0cc87105862
+X-Correlation-Id: qa-dfe85eac-f77c-4f15-b62c-76ec83efd298
 Content-Type: application/json
 
---- response: 200 in 11 ms ---
-Date: Wed, 21 Oct 2026 14:49:51 GMT
+--- response: 200 in 5 ms ---
+Date: Wed, 21 Oct 2026 16:02:55 GMT
 Content-Type: application/json
-X-Correlation-Id: qa-9b8e7b15-0f5f-4f89-bc01-b0cc87105862
+X-Correlation-Id: qa-dfe85eac-f77c-4f15-b62c-76ec83efd298
 X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
@@ -116,24 +116,24 @@ RateLimit-Reset: 10
 X-Served-Region: eu
 Content-Length: 89
 
-{"balance":5,"currency":"credits","accountId":"acc_0cadb294-2e05-44b3-95ca-2838c4ba5209"}
+{"balance":5,"currency":"credits","accountId":"acc_e60a7f4f-fd90-4b18-b162-74e2ed1b2a9f"}
 ```
 
 ## 4. GET /v1/credits/balance
 
 ```text
 #4 GET http://localhost:7070/v1/credits/balance
-correlation: qa-8ef319a5-85bd-4369-98fc-6a8007c208fd
+correlation: qa-f0e388e8-a2be-4e90-86a5-46b64e55ceb3
 
 --- request headers ---
 Accept: application/json
-X-Correlation-Id: qa-8ef319a5-85bd-4369-98fc-6a8007c208fd
+X-Correlation-Id: qa-f0e388e8-a2be-4e90-86a5-46b64e55ceb3
 Content-Type: application/json
 
---- response: 200 in 8 ms ---
-Date: Wed, 21 Oct 2026 14:49:52 GMT
+--- response: 200 in 5 ms ---
+Date: Wed, 21 Oct 2026 16:02:55 GMT
 Content-Type: application/json
-X-Correlation-Id: qa-8ef319a5-85bd-4369-98fc-6a8007c208fd
+X-Correlation-Id: qa-f0e388e8-a2be-4e90-86a5-46b64e55ceb3
 X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
@@ -147,24 +147,24 @@ RateLimit-Reset: 10
 X-Served-Region: eu
 Content-Length: 89
 
-{"balance":5,"currency":"credits","accountId":"acc_0cadb294-2e05-44b3-95ca-2838c4ba5209"}
+{"balance":5,"currency":"credits","accountId":"acc_e60a7f4f-fd90-4b18-b162-74e2ed1b2a9f"}
 ```
 
 ## 5. GET /v1/credits/balance
 
 ```text
 #5 GET http://localhost:7070/v1/credits/balance
-correlation: qa-040b134c-31e2-40b7-b816-dc4bd5e758de
+correlation: qa-e5f81fe8-044c-4bcc-bf6f-48ef69f378e5
 
 --- request headers ---
 Accept: application/json
-X-Correlation-Id: qa-040b134c-31e2-40b7-b816-dc4bd5e758de
+X-Correlation-Id: qa-e5f81fe8-044c-4bcc-bf6f-48ef69f378e5
 Content-Type: application/json
 
---- response: 200 in 14 ms ---
-Date: Wed, 21 Oct 2026 14:49:52 GMT
+--- response: 200 in 5 ms ---
+Date: Wed, 21 Oct 2026 16:02:56 GMT
 Content-Type: application/json
-X-Correlation-Id: qa-040b134c-31e2-40b7-b816-dc4bd5e758de
+X-Correlation-Id: qa-e5f81fe8-044c-4bcc-bf6f-48ef69f378e5
 X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
@@ -178,24 +178,24 @@ RateLimit-Reset: 9
 X-Served-Region: eu
 Content-Length: 89
 
-{"balance":5,"currency":"credits","accountId":"acc_0cadb294-2e05-44b3-95ca-2838c4ba5209"}
+{"balance":5,"currency":"credits","accountId":"acc_e60a7f4f-fd90-4b18-b162-74e2ed1b2a9f"}
 ```
 
 ## 6. DELETE /v1/accounts/me
 
 ```text
 #6 DELETE http://localhost:7070/v1/accounts/me
-correlation: qa-0dfecc5a-cc9d-47f0-b884-25f7bf8f4347
+correlation: qa-7f93798f-1c96-4a53-be66-28b1101b6444
 
 --- request headers ---
 Accept: application/json
-X-Correlation-Id: qa-0dfecc5a-cc9d-47f0-b884-25f7bf8f4347
+X-Correlation-Id: qa-7f93798f-1c96-4a53-be66-28b1101b6444
 Content-Type: application/json
 
---- response: 204 in 12 ms ---
-Date: Wed, 21 Oct 2026 14:49:53 GMT
+--- response: 204 in 5 ms ---
+Date: Wed, 21 Oct 2026 16:02:56 GMT
 Content-Type: text/plain
-X-Correlation-Id: qa-0dfecc5a-cc9d-47f0-b884-25f7bf8f4347
+X-Correlation-Id: qa-7f93798f-1c96-4a53-be66-28b1101b6444
 X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
@@ -213,20 +213,20 @@ X-Served-Region: eu
 
 ```text
 #7 POST http://localhost:7070/v1/auth/token
-correlation: qa-84b9f58a-d674-4455-9a65-c7a03df68b27
+correlation: qa-8601101d-c6a9-40ed-9a96-cf7a3a3efbbe
 
 --- request headers ---
 Accept: application/json
-X-Correlation-Id: qa-84b9f58a-d674-4455-9a65-c7a03df68b27
+X-Correlation-Id: qa-8601101d-c6a9-40ed-9a96-cf7a3a3efbbe
 Content-Type: application/json
 
 --- request body ---
-{"handle":"qa-f64ae8090c7f","password":"****"}
+{"handle":"qa-97f5a016198c","password":"****"}
 
---- response: 401 in 12 ms ---
-Date: Wed, 21 Oct 2026 14:49:53 GMT
+--- response: 401 in 6 ms ---
+Date: Wed, 21 Oct 2026 16:02:57 GMT
 Content-Type: application/problem+json
-X-Correlation-Id: qa-84b9f58a-d674-4455-9a65-c7a03df68b27
+X-Correlation-Id: qa-8601101d-c6a9-40ed-9a96-cf7a3a3efbbe
 X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
@@ -236,8 +236,8 @@ Cache-Control: no-store
 Vary: Origin
 RateLimit-Limit: 600
 RateLimit-Remaining: 576
-RateLimit-Reset: 5
+RateLimit-Reset: 6
 Content-Length: 242
 
-{"type":"https://reference-service.example/problems/invalid-credentials","title":"Invalid credentials","status":401,"detail":"Handle or password is wrong.","instance":"/v1/auth/token","correlationId":"qa-84b9f58a-d674-4455-9a65-c7a03df68b27"}
+{"type":"https://reference-service.example/problems/invalid-credentials","title":"Invalid credentials","status":401,"detail":"Handle or password is wrong.","instance":"/v1/auth/token","correlationId":"qa-8601101d-c6a9-40ed-9a96-cf7a3a3efbbe"}
 ```

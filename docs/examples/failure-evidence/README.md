@@ -4,7 +4,7 @@
 |---|---|
 | Test | `com.qaautomation.tests.demo.DeliberateFailureTest#conditionNeverMetFails` |
 | Features | FEAT-DEMO-01 |
-| Run | `api-demo-6` (git `3a9008e0b120`) |
+| Run | `api-demo-7` (git `0b38d3f1e2b6`) |
 | Attempts | 2 |
 | Error | `org.awaitility.core.ConditionTimeoutException` |
 

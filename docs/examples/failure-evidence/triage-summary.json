@@ -1,7 +1,7 @@
 {
   "schemaVersion" : 1,
-  "repo" : "api-automation-framework",
-  "runId" : "api-demo-6",
+  "repo" : "restassured-testng-api-Dotstrap-Automation",
+  "runId" : "api-demo-7",
   "failed" : 4,
   "byCategory" : {
     "LOCATOR_DRIFT" : 0,

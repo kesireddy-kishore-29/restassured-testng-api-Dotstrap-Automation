@@ -7,7 +7,7 @@
 | Healable | yes |
 | Test | `com.qaautomation.tests.demo.DeliberateFailureTest#conditionNeverMetFails` |
 | Features | FEAT-DEMO-01 |
-| Run | `api-demo-6` |
+| Run | `api-demo-7` |
 
 ## Why
 
@@ -21,7 +21,7 @@ A polled condition did not become true in time.
 | operation | `/v1/credits/balance` |
 | url | `http://localhost:7070/v1/credits/balance` |
 | status | `200` |
-| correlationId | `qa-040b134c-31e2-40b7-b816-dc4bd5e758de` |
+| correlationId | `qa-e5f81fe8-044c-4bcc-bf6f-48ef69f378e5` |
 
 ## Error
 
