@@ -53,6 +53,8 @@
     <checkstyle-plugin.version>3.6.0</checkstyle-plugin.version>
     <checkstyle.version>14.3.0</checkstyle.version>
     <allure-maven.version>3.1.0</allure-maven.version>
+    <!-- The report generator (Allure 2 commandline), downloaded by allure-maven on first use. -->
+    <allure-commandline.version>2.39.0</allure-commandline.version>
 
     <!-- Run-time selection: -Dsuite=<suite xml name>, -P<environment>. Evidence volume is the
          RECORD_MODE environment variable (failures | all | off), the same switch in every repo. -->

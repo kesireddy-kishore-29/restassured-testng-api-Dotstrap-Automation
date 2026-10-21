@@ -1,0 +1,41 @@
+[
+  {
+    "name": "ENVIRONMENT (service did not answer)",
+    "matchedStatuses": [
+      "failed",
+      "broken"
+    ],
+    "traceRegex": "(?s).*(ConnectException|UnknownHostException|NoRouteToHost|SSLHandshake|Connection refused|Connection reset|not reachable|ApiTimeoutException|SocketTimeoutException).*"
+  },
+  {
+    "name": "CONTRACT_DRIFT (response no longer matches its contract)",
+    "matchedStatuses": [
+      "failed",
+      "broken"
+    ],
+    "messageRegex": "(?s).*(OpenAPI contract violation|JSON Schema '[^']+' violated).*"
+  },
+  {
+    "name": "TEST_DATA (collided or not cleaned up)",
+    "matchedStatuses": [
+      "failed",
+      "broken"
+    ],
+    "traceRegex": "(?s).*(CleanupFailedException|handle-taken|Test data must be cleaned up|was deleted but can still|still readable after delete).*"
+  },
+  {
+    "name": "TIMING (polled condition never became true)",
+    "matchedStatuses": [
+      "failed",
+      "broken"
+    ],
+    "traceRegex": "(?s).*ConditionTimeoutException.*"
+  },
+  {
+    "name": "PRODUCT_BUG (business assertion failed)",
+    "matchedStatuses": [
+      "failed"
+    ],
+    "traceRegex": "(?s).*(AssertionError|AssertionFailedError).*"
+  }
+]

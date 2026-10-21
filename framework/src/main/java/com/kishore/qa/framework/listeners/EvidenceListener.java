@@ -12,8 +12,12 @@ import com.kishore.qa.framework.evidence.TestIdentity;
 import com.kishore.qa.framework.evidence.TestRecord;
 import com.kishore.qa.framework.evidence.TranscriptRenderer;
 import io.qameta.allure.Allure;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Duration;
 import java.time.Instant;
@@ -21,6 +25,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.slf4j.Logger;
@@ -129,6 +134,7 @@ public final class EvidenceListener
     }
     Map<String, Object> environment = environment();
     recorder.write(environment);
+    writeAllureEnvironment(environment);
     if (config.recordMode().keepsFailureEvidence()) {
       for (TestRecord test : recorder.finalResults()) {
         if ("failed".equals(test.status()) && test.evidence() != null) {
@@ -225,6 +231,30 @@ public final class EvidenceListener
     env.put("os", System.getProperty("os.name") + " " + System.getProperty("os.version"));
     env.put("recordMode", run.recordMode());
     return env;
+  }
+
+  /**
+   * Fills the Allure report's Environment panel with the same (non-secret) facts as the summary.
+   */
+  private void writeAllureEnvironment(Map<String, Object> environment) {
+    String dir = System.getProperty("allure.results.directory");
+    if (dir == null || dir.isBlank()) {
+      return;
+    }
+    Properties properties = new Properties();
+    properties.setProperty("runId", run.runId());
+    properties.setProperty("gitSha", run.gitSha());
+    environment.forEach((key, value) -> properties.setProperty(key, String.valueOf(value)));
+    try {
+      Path results = Files.createDirectories(Path.of(dir));
+      try (Writer out =
+          Files.newBufferedWriter(
+              results.resolve("environment.properties"), StandardCharsets.UTF_8)) {
+        properties.store(out, null);
+      }
+    } catch (IOException e) {
+      LOG.warn("Could not write the Allure environment file: {}", e.getMessage());
+    }
   }
 
   private static TestRecord.ErrorInfo errorInfo(Throwable error) {
