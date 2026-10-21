@@ -5,6 +5,7 @@ Each layer answers a different question. Screenshots below come from real local 
 | Layer | Answers | Where it is written | Where CI puts it |
 |---|---|---|---|
 | Console and TestNG/Surefire reports | Did it pass? | `tests/target/surefire-reports/` | Job log, artifact |
+| Newman HTML report | Did the Postman collection pass? | `reports/newman/index.html` | Pages, `newman/`, next to Allure |
 | Step summary | What happened in this run, in one screen? | `reports/site/summary.md` | Job summary and a sticky pull-request comment |
 | Health dashboard | Are we healthy, and is it getting better or worse? | `reports/site/index.html` | GitHub Pages (nightly) |
 | Run gallery | What did each test do, attempt by attempt? | `run-evidence/…/<run-id>/gallery.html` | Pages, last 10 runs |
@@ -13,6 +14,13 @@ Each layer answers a different question. Screenshots below come from real local 
 | Failure report | One page per failure for a person: category, cause, next action | `failure-report.md` in each bundle | Artifact |
 | Contract coverage | Which documented operations and response codes did the run exercise? | `reports/site/contract-coverage.md` and the dashboard | Pages |
 | Latency | p50 and p95 per endpoint | `reports/site/latency.md` and the dashboard | Pages |
+
+## What CI keeps, and for how long
+
+| Run | `RECORD_MODE` | Kept |
+|---|---|---|
+| Pull request (`ci.yml`) | `failures` | Evidence and reports 14 days; failure bundles 30 days; summary as a PR comment |
+| Nightly (`nightly.yml`) | `all` | Evidence for every test 14 days; failure bundles 30 days; dashboard, gallery, Allure and Newman on Pages with 30 runs of history (the last 10 run folders) |
 
 ## Making them locally
 
@@ -51,7 +59,10 @@ timeline is the replay.
 ## Allure
 
 Allure 2.39 with the run's environment (run ID, git SHA, targets, JVM, record mode), categories that
-mirror the triage rules, and trends carried from the previously published report.
+mirror the triage rules, trends carried from the previously published report, features and stories
+from the `@Feature` IDs, the transcript and timeline attached to each test, and a severity per test:
+an explicit `@Severity` wins; otherwise smoke is a blocker, contract and security are critical, the
+public practice API is minor, the demo is trivial and everything else normal.
 
 ![Allure overview](examples/dashboard/allure-overview.png)
 

@@ -25,7 +25,7 @@ the provider's contract; the framework's JSON Schemas are the consumer's contrac
 | Data is served from the wrong region | `workflows`: requests are served by the account's home region; unknown regions are refused |
 | Secrets leak into evidence | `Redactor` on every transcript, with unit tests; tokens, passwords and credential headers are masked |
 
-## Layers
+## Layers (the pyramid)
 
 | Layer | Where | Runs |
 |---|---|---|
@@ -36,6 +36,31 @@ the provider's contract; the framework's JSON Schemas are the consumer's contrac
 | Postman collection | `postman/` | Every pull request (Newman) |
 
 There is no UI here; the UI flagship covers the browser.
+
+## Postman or code?
+
+| Use the Postman collection for | Use the REST Assured suites for |
+|---|---|
+| Exploring an endpoint, trying a payload by hand | The regression that gates merges |
+| A quick check that a deployment answers | Contracts: OpenAPI and JSON Schema on every response |
+| Sharing a working request with a developer or a product person | Workflows with two actors, ordering and state |
+| Reproducing a bug report step by step | Concurrency, retries, idempotency, timeouts, rate limits |
+| | Test data that is created per test and verifiably cleaned up |
+
+The collection mirrors the smoke and functional scenarios and runs in CI with Newman, so it never
+silently rots; it is kept small on purpose ([ADR 10](adr/0010-postman-alongside-coded-suites.md)).
+
+## Environments
+
+| Profile | Service under test | Used by |
+|---|---|---|
+| `local` (default) | `http://localhost:7070`, started by hand | Development |
+| `ci` | `http://localhost:7070`, started by the workflow | GitHub Actions |
+| `docker` | `http://sut:7070` in `docker-compose.yml` | Not run yet ([known issues](known-issues.md)) |
+
+Each profile is a properties file in `framework/src/main/resources/config/`; any key can be
+overridden by an environment variable (`sut.baseUrl` → `SUT_BASE_URL`). The configuration is
+validated at start-up and reports every problem at once.
 
 ## Test data
 

@@ -14,6 +14,9 @@ Everything below is stated as it is. Where something was not run, it says so.
 
 ## Behaviour to know about
 
+- **Badges and links assume the GitHub account `kesireddy-kishore-29`.** Until the first workflow runs
+  there, the CI and nightly badges show no status and the report link is empty; nothing in this
+  repository claims a CI result.
 - **Pull requests opened by the workflow token do not start other workflows** (a GitHub rule). A
   heal pull request therefore shows no CI until someone pushes to it or closes and reopens it.
 - **The verifier picks the Maven command by OS**: `mvn.cmd` on Windows (needs Maven on `PATH`),

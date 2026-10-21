@@ -13,3 +13,6 @@ a new record that supersedes the old one; old records are not rewritten.
 | [6](0006-governed-self-healing.md) | Self-healing proposes; people merge |
 | [7](0007-static-dashboard-and-allure.md) | A static dashboard for the trend, Allure for the detail |
 | [8](0008-public-targets-never-gate.md) | Targets we do not control never gate a merge |
+| [9](0009-why-java-rest-assured-testng.md) | Why Java, REST Assured and TestNG, in a repository of their own |
+| [10](0010-postman-alongside-coded-suites.md) | A Postman collection alongside the coded suites |
+| [11](0011-transcripts-instead-of-video.md) | API tests record transcripts and timelines, not video |
