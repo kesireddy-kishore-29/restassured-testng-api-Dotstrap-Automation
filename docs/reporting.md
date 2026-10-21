@@ -5,7 +5,7 @@ Each layer answers a different question. Screenshots below come from real local 
 | Layer | Answers | Where it is written | Where CI puts it |
 |---|---|---|---|
 | Console and TestNG/Surefire reports | Did it pass? | `tests/target/surefire-reports/` | Job log, artifact |
-| Newman HTML report | Did the Postman collection pass? | `reports/newman/index.html` | Pages, `newman/`, next to Allure |
+| Newman HTML report | Did the Postman collection pass? (requests, statuses, assertions; no headers or bodies, so no tokens) | `reports/newman/index.html` | Pages, `newman/`, next to Allure |
 | Step summary | What happened in this run, in one screen? | `reports/site/summary.md` | Job summary and a sticky pull-request comment |
 | Health dashboard | Are we healthy, and is it getting better or worse? | `reports/site/index.html` | GitHub Pages (nightly) |
 | Run gallery | What did each test do, attempt by attempt? | `run-evidence/…/<run-id>/gallery.html` | Pages, last 10 runs |

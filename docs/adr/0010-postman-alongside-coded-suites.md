@@ -15,7 +15,11 @@ retries.
 - `postman/` holds a maintained collection with environments and test scripts that mirrors the
   smoke and functional scenarios (28 requests, 32 assertions).
 - Newman runs it in the pull-request gate and in the nightly, with an HTML report
-  (`newman-reporter-htmlextra`) published next to the Allure report.
+  (`newman-reporter-htmlextra`) published next to the Allure report. The report leaves out every
+  header and body (`--reporter-htmlextra-skipSensitiveData`): with them it would publish the
+  bearer tokens, issued tokens and passwords the collection sends and receives. Requests, status
+  codes, timings and test results stay; the redacted request and response detail is in the coded
+  suites' transcripts.
 - The coded REST Assured suites are the regression, the contracts and the workflows. The split is
   explained in the [test strategy](../test-strategy.md#postman-or-code).
 
