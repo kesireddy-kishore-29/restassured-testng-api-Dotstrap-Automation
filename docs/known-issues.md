@@ -28,6 +28,11 @@ Everything below is stated as it is. Where something was not run, it says so.
   (ignored by git).
 - **Latency figures are from a laptop** calling a service on the same machine. Read them as a
   trend between runs, not as performance numbers.
+- **`npm audit` in `postman/` reports 23 advisories** (7 moderate, 15 high, 1 critical; checked
+  2026-10-21) in the dependencies of `newman` 6.2.3 and `newman-reporter-htmlextra` 1.23.1, both
+  the latest releases. They are development tools that run this repository's own collection
+  against local and practice services; `npm audit fix --force` would change major versions and
+  is not applied. Re-check when Newman publishes a new release.
 - **Contract coverage is 18 of 19 operations and 38 of 105 documented response codes.** The one
   operation never called by a test is `GET /openapi.yaml`, which the conformance filter fetches
   outside the transcript. Most of the codes not seen are 429 and 503, which every operation
