@@ -20,7 +20,7 @@ Everything below is stated as it is. Where something was not run, it says so.
 - **Pull requests opened by the workflow token do not start other workflows** (a GitHub rule). A
   heal pull request therefore shows no CI until someone pushes to it or closes and reopens it.
 - **The verifier picks the Maven command by OS**: `mvn.cmd` on Windows (needs Maven on `PATH`),
-  `./mvnw` elsewhere. A heal verification takes about 3.5 minutes locally because every step
+  `./mvnw` elsewhere. A heal verification takes about 3.5 to 5 minutes locally because every step
   starts Maven.
 - **Allure results accumulate** in `tests/target/allure-results` between local runs unless you run
   `mvn clean`. CI always starts clean.

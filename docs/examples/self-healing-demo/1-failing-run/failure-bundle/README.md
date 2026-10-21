@@ -2,11 +2,11 @@
 
 | | |
 |---|---|
-| Test | `com.kishore.qa.tests.contract.ContractTest#creditResourcesMatchTheirContracts` |
+| Test | `com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts` |
 | Features | FEAT-CONTRACT-01 |
-| Run | `api-chaos-2` (git `bf44d507e4af`) |
+| Run | `api-chaos-3` (git `9498ec3b5867`) |
 | Attempts | 3 |
-| Error | `com.kishore.qa.framework.assertions.ContractViolation` |
+| Error | `com.qaautomation.framework.assertions.ContractViolation` |
 
 ## What is in here
 

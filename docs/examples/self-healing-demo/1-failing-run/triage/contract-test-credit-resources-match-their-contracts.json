@@ -1,8 +1,8 @@
 {
   "schemaVersion" : 1,
   "repo" : "api-automation-framework",
-  "runId" : "api-chaos-2",
-  "testId" : "com.kishore.qa.tests.contract.ContractTest#creditResourcesMatchTheirContracts",
+  "runId" : "api-chaos-3",
+  "testId" : "com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts",
   "title" : "Balance, ledger and purchase match their schemas",
   "suite" : "contract",
   "featureIds" : [ "FEAT-CONTRACT-01" ],
@@ -15,7 +15,7 @@
   "needsHumanDecision" : true,
   "nextAction" : "Decide: provider bug (file an issue) or agreed change (update schema + client model).",
   "error" : {
-    "type" : "com.kishore.qa.framework.assertions.ContractViolation",
+    "type" : "com.qaautomation.framework.assertions.ContractViolation",
     "message" : "JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found"
   },
   "failingRequest" : {
@@ -23,7 +23,7 @@
     "operation" : "/v1/credits/balance",
     "url" : "http://localhost:7070/v1/credits/balance",
     "status" : "200",
-    "correlationId" : "qa-aae7afa4-af76-4e2f-8a37-7d8b840ca71d"
+    "correlationId" : "qa-bd225491-9e4f-4a41-82db-afb3ec2802fc"
   },
   "schemaDiff" : {
     "schema" : "balance",
@@ -39,7 +39,7 @@
     "bundle" : "failure-bundles/contract-test-credit-resources-match-their-contracts/",
     "bundleZip" : "failure-bundles/contract-test-credit-resources-match-their-contracts.zip"
   },
-  "gitDiff" : "bf44d50 fix(heal): the ledger's PR-body path uses forward slashes on every OS\n\n tools/src/main/java/com/kishore/qa/tools/healing/HealCommand.java | 4 +++-\n 1 file changed, 3 insertions(+), 1 deletion(-)",
+  "gitDiff" : "9498ec3 docs(examples): failure bundle from a run with the generic package names\n\n docs/examples/failure-evidence/README.md           |   4 +-\n ...rate-failure-test-condition-never-met-fails.zip | Bin 15088 -> 15085 bytes\n docs/examples/failure-evidence/failure-report.md   |   8 +-\n docs/examples/failure-evidence/timeline.html       |  16 +--\n docs/examples/failure-evidence/transcript.md       | 108 ++++++++++-----------\n docs/examples/failure-evidence/triage-summary.json |   2 +-\n 6 files changed, 69 insertions(+), 69 deletions(-)",
   "retryHistory" : [ {
     "attempt" : 1,
     "status" : "retried"

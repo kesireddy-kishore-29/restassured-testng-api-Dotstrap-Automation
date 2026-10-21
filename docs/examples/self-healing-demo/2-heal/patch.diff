@@ -13,8 +13,8 @@
 +    "availableBalance": {
        "type": "integer",
        "minimum": 0
---- a/framework/src/main/java/com/kishore/qa/framework/clients/model/Balance.java
-+++ b/framework/src/main/java/com/kishore/qa/framework/clients/model/Balance.java
+--- a/framework/src/main/java/com/qaautomation/framework/clients/model/Balance.java
++++ b/framework/src/main/java/com/qaautomation/framework/clients/model/Balance.java
 @@ -10,5 +10,5 @@
  @JsonIgnoreProperties(ignoreUnknown = true)
  public record Balance(

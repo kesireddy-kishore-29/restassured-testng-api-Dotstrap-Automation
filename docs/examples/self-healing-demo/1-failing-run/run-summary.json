@@ -1,12 +1,12 @@
 {
   "schemaVersion" : 1,
   "repo" : "api-automation-framework",
-  "runId" : "api-chaos-2",
-  "gitSha" : "bf44d507e4af",
+  "runId" : "api-chaos-3",
+  "gitSha" : "9498ec3b5867",
   "recordMode" : "failures",
-  "startedAt" : "2026-10-21T06:07:59.255403500Z",
-  "finishedAt" : "2026-10-21T06:08:16.770811900Z",
-  "durationMs" : 17515,
+  "startedAt" : "2026-10-21T14:51:05.731745400Z",
+  "finishedAt" : "2026-10-21T14:51:25.059543500Z",
+  "durationMs" : 19327,
   "environment" : {
     "testEnv" : "local",
     "sutBaseUrl" : "http://localhost:7070",
@@ -24,45 +24,45 @@
     "quarantined" : 0
   },
   "tests" : [ {
-    "id" : "com.kishore.qa.tests.contract.ContractTest#accountResourcesMatchTheirContracts",
+    "id" : "com.qaautomation.tests.contract.ContractTest#accountResourcesMatchTheirContracts",
     "title" : "Account, token and public profile match their schemas",
     "suite" : "contract",
     "featureIds" : [ "FEAT-CONTRACT-01", "FEAT-ACCT-03" ],
     "tags" : [ "contract", "smoke" ],
     "status" : "passed",
-    "durationMs" : 2348,
+    "durationMs" : 3417,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:07:59.350Z",
-    "finishedAt" : "2026-10-21T06:08:01.698Z"
+    "startedAt" : "2026-10-21T14:51:05.890Z",
+    "finishedAt" : "2026-10-21T14:51:09.307Z"
   }, {
-    "id" : "com.kishore.qa.tests.contract.ContractTest#conversationResourcesMatchTheirContracts",
+    "id" : "com.qaautomation.tests.contract.ContractTest#conversationResourcesMatchTheirContracts",
     "title" : "Conversation, message, page and read-state match their schemas",
     "suite" : "contract",
     "featureIds" : [ "FEAT-CONTRACT-01" ],
     "tags" : [ "contract" ],
     "status" : "passed",
-    "durationMs" : 2428,
+    "durationMs" : 3601,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:07:59.350Z",
-    "finishedAt" : "2026-10-21T06:08:01.778Z"
+    "startedAt" : "2026-10-21T14:51:05.890Z",
+    "finishedAt" : "2026-10-21T14:51:09.491Z"
   }, {
-    "id" : "com.kishore.qa.tests.contract.ContractTest#creditResourcesMatchTheirContracts",
+    "id" : "com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts",
     "title" : "Balance, ledger and purchase match their schemas",
     "suite" : "contract",
     "featureIds" : [ "FEAT-CONTRACT-01" ],
     "tags" : [ "contract" ],
     "status" : "failed",
-    "durationMs" : 98,
+    "durationMs" : 146,
     "attempt" : 3,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:02.054Z",
-    "finishedAt" : "2026-10-21T06:08:02.152Z",
+    "startedAt" : "2026-10-21T14:51:09.744Z",
+    "finishedAt" : "2026-10-21T14:51:09.890Z",
     "error" : {
-      "type" : "com.kishore.qa.framework.assertions.ContractViolation",
+      "type" : "com.qaautomation.framework.assertions.ContractViolation",
       "message" : "JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found",
-      "stack" : "com.kishore.qa.framework.assertions.ContractViolation: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found\r\n\tat com.kishore.qa.framework.assertions.ResponseAssert.matchesContract(ResponseAssert.java:38)\r\n\tat com.kishore.qa.tests.contract.ContractTest.creditResourcesMatchTheirContracts(ContractTest.java:81)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)\r\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\r\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\r\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\r\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\r\n"
+      "stack" : "com.qaautomation.framework.assertions.ContractViolation: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found\r\n\tat com.qaautomation.framework.assertions.ResponseAssert.matchesContract(ResponseAssert.java:38)\r\n\tat com.qaautomation.tests.contract.ContractTest.creditResourcesMatchTheirContracts(ContractTest.java:81)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)\r\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\r\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\r\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\r\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\r\n"
     },
     "evidence" : {
       "dir" : "contract/contract-test-credit-resources-match-their-contracts/3",
@@ -70,153 +70,153 @@
       "timeline" : "contract/contract-test-credit-resources-match-their-contracts/3/timeline.html"
     }
   }, {
-    "id" : "com.kishore.qa.tests.contract.ContractTest#everyOperationConformsToTheOpenApiDocument",
+    "id" : "com.qaautomation.tests.contract.ContractTest#everyOperationConformsToTheOpenApiDocument",
     "title" : "Every operation in the OpenAPI document answers as documented (checked per response)",
     "suite" : "contract",
     "featureIds" : [ "FEAT-CONTRACT-02" ],
     "tags" : [ "contract" ],
     "status" : "passed",
-    "durationMs" : 2651,
+    "durationMs" : 3905,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:07:59.350Z",
-    "finishedAt" : "2026-10-21T06:08:02.001Z"
+    "startedAt" : "2026-10-21T14:51:05.890Z",
+    "finishedAt" : "2026-10-21T14:51:09.795Z"
   }, {
-    "id" : "com.kishore.qa.tests.functional.AccountsTest#displayNameChangeIsPersisted",
+    "id" : "com.qaautomation.tests.functional.AccountsTest#displayNameChangeIsPersisted",
     "title" : "A new display name is stored and returned",
     "suite" : "functional",
     "featureIds" : [ "FEAT-ACCT-02" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 397,
+    "durationMs" : 403,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:01.836Z",
-    "finishedAt" : "2026-10-21T06:08:02.233Z"
+    "startedAt" : "2026-10-21T14:51:09.438Z",
+    "finishedAt" : "2026-10-21T14:51:09.841Z"
   }, {
-    "id" : "com.kishore.qa.tests.functional.AccountsTest#ownerReadsBackTheAccountAsCreated",
+    "id" : "com.qaautomation.tests.functional.AccountsTest#ownerReadsBackTheAccountAsCreated",
     "title" : "The owner reads back exactly what was created",
     "suite" : "functional",
     "featureIds" : [ "FEAT-ACCT-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 397,
+    "durationMs" : 339,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:01.836Z",
-    "finishedAt" : "2026-10-21T06:08:02.233Z"
+    "startedAt" : "2026-10-21T14:51:09.502Z",
+    "finishedAt" : "2026-10-21T14:51:09.841Z"
   }, {
-    "id" : "com.kishore.qa.tests.functional.AccountsTest#publicProfileExposesNoPrivateFields",
+    "id" : "com.qaautomation.tests.functional.AccountsTest#publicProfileExposesNoPrivateFields",
     "title" : "Anyone signed in sees a public profile with no private fields",
     "suite" : "functional",
     "featureIds" : [ "FEAT-ACCT-03" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 322,
+    "durationMs" : 287,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:02.015Z",
-    "finishedAt" : "2026-10-21T06:08:02.337Z"
+    "startedAt" : "2026-10-21T14:51:09.804Z",
+    "finishedAt" : "2026-10-21T14:51:10.091Z"
   }, {
-    "id" : "com.kishore.qa.tests.functional.ConversationsTest#closedConversationRefusesMessages",
+    "id" : "com.qaautomation.tests.functional.ConversationsTest#closedConversationRefusesMessages",
     "title" : "A closed conversation refuses new messages with 409",
     "suite" : "functional",
     "featureIds" : [ "FEAT-CONV-02" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 1540,
+    "durationMs" : 1807,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:02.183Z",
-    "finishedAt" : "2026-10-21T06:08:03.723Z"
+    "startedAt" : "2026-10-21T14:51:09.849Z",
+    "finishedAt" : "2026-10-21T14:51:11.656Z"
   }, {
-    "id" : "com.kishore.qa.tests.functional.ConversationsTest#twoPeopleExchangeMessages",
+    "id" : "com.qaautomation.tests.functional.ConversationsTest#twoPeopleExchangeMessages",
     "title" : "Two people start a conversation and exchange messages",
     "suite" : "functional",
     "featureIds" : [ "FEAT-CONV-01" ],
     "tags" : [ "regression", "smoke" ],
     "status" : "passed",
-    "durationMs" : 313,
+    "durationMs" : 344,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:02.251Z",
-    "finishedAt" : "2026-10-21T06:08:02.564Z"
+    "startedAt" : "2026-10-21T14:51:09.849Z",
+    "finishedAt" : "2026-10-21T14:51:10.193Z"
   }, {
-    "id" : "com.kishore.qa.tests.functional.ConversationsTest#unreadCountFollowsMessagesAndResetsOnRead",
+    "id" : "com.qaautomation.tests.functional.ConversationsTest#unreadCountFollowsMessagesAndResetsOnRead",
     "title" : "Unread counts follow messages and reset when read",
     "suite" : "functional",
     "featureIds" : [ "FEAT-CONV-03" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 313,
+    "durationMs" : 340,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:02.251Z",
-    "finishedAt" : "2026-10-21T06:08:02.564Z"
+    "startedAt" : "2026-10-21T14:51:09.917Z",
+    "finishedAt" : "2026-10-21T14:51:10.257Z"
   }, {
-    "id" : "com.kishore.qa.tests.negative.AuthBoundaryTest#missingTokenIsUnauthenticated",
+    "id" : "com.qaautomation.tests.negative.AuthBoundaryTest#missingTokenIsUnauthenticated",
     "title" : "No token: 401 unauthenticated with a Bearer challenge",
     "suite" : "negative",
     "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 1262,
+    "durationMs" : 1465,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:02.345Z",
-    "finishedAt" : "2026-10-21T06:08:03.607Z"
+    "startedAt" : "2026-10-21T14:51:10.101Z",
+    "finishedAt" : "2026-10-21T14:51:11.566Z"
   }, {
-    "id" : "com.kishore.qa.tests.negative.AuthBoundaryTest#outsiderCannotReadOrWriteAConversation",
+    "id" : "com.qaautomation.tests.negative.AuthBoundaryTest#outsiderCannotReadOrWriteAConversation",
     "title" : "Someone outside a conversation gets 403, not its content",
     "suite" : "negative",
     "featureIds" : [ "FEAT-AUTHZ-01" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 1411,
+    "durationMs" : 1646,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:02.573Z",
-    "finishedAt" : "2026-10-21T06:08:03.984Z"
+    "startedAt" : "2026-10-21T14:51:10.200Z",
+    "finishedAt" : "2026-10-21T14:51:11.846Z"
   }, {
-    "id" : "com.kishore.qa.tests.negative.AuthBoundaryTest#unknownTokenIsRefused[465fd020]",
+    "id" : "com.qaautomation.tests.negative.AuthBoundaryTest#unknownTokenIsRefused[0]",
     "title" : "A token the service never issued is refused [not-a-real-token-at-all, invalid-token]",
     "suite" : "negative",
     "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 968,
+    "durationMs" : 1270,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:02.637Z",
-    "finishedAt" : "2026-10-21T06:08:03.605Z"
+    "startedAt" : "2026-10-21T14:51:10.296Z",
+    "finishedAt" : "2026-10-21T14:51:11.566Z"
   }, {
-    "id" : "com.kishore.qa.tests.negative.AuthBoundaryTest#unknownTokenIsRefused[89578a53]",
+    "id" : "com.qaautomation.tests.negative.AuthBoundaryTest#unknownTokenIsRefused[1]",
     "title" : "A token the service never issued is refused [eyJhbGciOiJub25lIn0.eyJzdWIiOiJhZG1pbiJ9., invalid-token]",
     "suite" : "negative",
     "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 966,
+    "durationMs" : 1270,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:02.639Z",
-    "finishedAt" : "2026-10-21T06:08:03.605Z"
+    "startedAt" : "2026-10-21T14:51:10.296Z",
+    "finishedAt" : "2026-10-21T14:51:11.566Z"
   }, {
-    "id" : "com.kishore.qa.tests.negative.CreditsNegativeTest#purchaseWithoutIdempotencyKeyIsA400",
+    "id" : "com.qaautomation.tests.negative.CreditsNegativeTest#purchaseWithoutIdempotencyKeyIsA400",
     "title" : "A purchase without an Idempotency-Key is refused with 400",
     "suite" : "negative",
     "featureIds" : [ "FEAT-IDEMP-03", "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "failed",
-    "durationMs" : 182,
+    "durationMs" : 279,
     "attempt" : 3,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:04.458Z",
-    "finishedAt" : "2026-10-21T06:08:04.640Z",
+    "startedAt" : "2026-10-21T14:51:12.222Z",
+    "finishedAt" : "2026-10-21T14:51:12.501Z",
     "error" : {
-      "type" : "com.kishore.qa.framework.assertions.ContractViolation",
+      "type" : "com.qaautomation.framework.assertions.ContractViolation",
       "message" : "JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found",
-      "stack" : "com.kishore.qa.framework.assertions.ContractViolation: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found\r\n\tat com.kishore.qa.framework.assertions.ResponseAssert.matchesContract(ResponseAssert.java:38)\r\n\tat com.kishore.qa.framework.assertions.Contracts.read(Contracts.java:14)\r\n\tat com.kishore.qa.framework.clients.CreditsClient.currentBalance(CreditsClient.java:31)\r\n\tat com.kishore.qa.tests.negative.CreditsNegativeTest.purchaseWithoutIdempotencyKeyIsA400(CreditsNegativeTest.java:50)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)\r\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\r\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\r\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\r\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\r\n"
+      "stack" : "com.qaautomation.framework.assertions.ContractViolation: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found\r\n\tat com.qaautomation.framework.assertions.ResponseAssert.matchesContract(ResponseAssert.java:38)\r\n\tat com.qaautomation.framework.assertions.Contracts.read(Contracts.java:14)\r\n\tat com.qaautomation.framework.clients.CreditsClient.currentBalance(CreditsClient.java:31)\r\n\tat com.qaautomation.tests.negative.CreditsNegativeTest.purchaseWithoutIdempotencyKeyIsA400(CreditsNegativeTest.java:50)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)\r\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\r\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\r\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\r\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\r\n"
     },
     "evidence" : {
       "dir" : "negative/credits-negative-test-purchase-without-idempotency-key-is-a400/3",
@@ -224,21 +224,21 @@
       "timeline" : "negative/credits-negative-test-purchase-without-idempotency-key-is-a400/3/timeline.html"
     }
   }, {
-    "id" : "com.kishore.qa.tests.negative.CreditsNegativeTest#sendingWithNoCreditsIsA402",
+    "id" : "com.qaautomation.tests.negative.CreditsNegativeTest#sendingWithNoCreditsIsA402",
     "title" : "With no credits left, a message is a 402 and nothing is charged",
     "suite" : "negative",
     "featureIds" : [ "FEAT-LEDGER-02", "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "failed",
-    "durationMs" : 373,
+    "durationMs" : 612,
     "attempt" : 3,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:04.518Z",
-    "finishedAt" : "2026-10-21T06:08:04.891Z",
+    "startedAt" : "2026-10-21T14:51:12.600Z",
+    "finishedAt" : "2026-10-21T14:51:13.212Z",
     "error" : {
-      "type" : "com.kishore.qa.framework.assertions.ContractViolation",
+      "type" : "com.qaautomation.framework.assertions.ContractViolation",
       "message" : "JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found",
-      "stack" : "com.kishore.qa.framework.assertions.ContractViolation: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found\r\n\tat com.kishore.qa.framework.assertions.ResponseAssert.matchesContract(ResponseAssert.java:38)\r\n\tat com.kishore.qa.framework.assertions.Contracts.read(Contracts.java:14)\r\n\tat com.kishore.qa.framework.clients.CreditsClient.currentBalance(CreditsClient.java:31)\r\n\tat com.kishore.qa.tests.negative.CreditsNegativeTest.sendingWithNoCreditsIsA402(CreditsNegativeTest.java:33)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)\r\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\r\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\r\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\r\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\r\n"
+      "stack" : "com.qaautomation.framework.assertions.ContractViolation: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found\r\n\tat com.qaautomation.framework.assertions.ResponseAssert.matchesContract(ResponseAssert.java:38)\r\n\tat com.qaautomation.framework.assertions.Contracts.read(Contracts.java:14)\r\n\tat com.qaautomation.framework.clients.CreditsClient.currentBalance(CreditsClient.java:31)\r\n\tat com.qaautomation.tests.negative.CreditsNegativeTest.sendingWithNoCreditsIsA402(CreditsNegativeTest.java:33)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)\r\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\r\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\r\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\r\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\r\n"
     },
     "evidence" : {
       "dir" : "negative/credits-negative-test-sending-with-no-credits-is-a402/3",
@@ -246,141 +246,141 @@
       "timeline" : "negative/credits-negative-test-sending-with-no-credits-is-a402/3/timeline.html"
     }
   }, {
-    "id" : "com.kishore.qa.tests.negative.CreditsNegativeTest#unknownPackIsA422",
+    "id" : "com.qaautomation.tests.negative.CreditsNegativeTest#unknownPackIsA422",
     "title" : "An unknown credit pack is a 422 on packId",
     "suite" : "negative",
     "featureIds" : [ "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 366,
+    "durationMs" : 216,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:03.735Z",
-    "finishedAt" : "2026-10-21T06:08:04.101Z"
+    "startedAt" : "2026-10-21T14:51:11.665Z",
+    "finishedAt" : "2026-10-21T14:51:11.881Z"
   }, {
-    "id" : "com.kishore.qa.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[7c0d0263]",
-    "title" : "An invalid account request is a 422 naming the field [blank display name, NewAccount[handle=qa-7cc1fce264a1, displayName=   , password=pw-2ee4d0e9-fd61-46f6-b7f8-3f271c002067, region=eu], displayName]",
+    "id" : "com.qaautomation.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[0]",
+    "title" : "An invalid account request is a 422 naming the field [handle too short, NewAccount[handle=ab, displayName=Name, password=pw-3c70f069-be08-4452-b419-faee28ab944b, region=eu], handle]",
     "suite" : "negative",
     "featureIds" : [ "FEAT-ACCT-02", "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 190,
+    "durationMs" : 211,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:04.141Z",
-    "finishedAt" : "2026-10-21T06:08:04.331Z"
+    "startedAt" : "2026-10-21T14:51:11.907Z",
+    "finishedAt" : "2026-10-21T14:51:12.118Z"
   }, {
-    "id" : "com.kishore.qa.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[7de902cf]",
-    "title" : "An invalid account request is a 422 naming the field [unknown region, NewAccount[handle=qa-7cc1fce264a1, displayName=Name, password=pw-2ee4d0e9-fd61-46f6-b7f8-3f271c002067, region=mars], region]",
+    "id" : "com.qaautomation.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[1]",
+    "title" : "An invalid account request is a 422 naming the field [handle with capitals, NewAccount[handle=Bad-Handle, displayName=Name, password=pw-3c70f069-be08-4452-b419-faee28ab944b, region=eu], handle]",
     "suite" : "negative",
     "featureIds" : [ "FEAT-ACCT-02", "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 149,
+    "durationMs" : 213,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:04.333Z",
-    "finishedAt" : "2026-10-21T06:08:04.482Z"
+    "startedAt" : "2026-10-21T14:51:11.905Z",
+    "finishedAt" : "2026-10-21T14:51:12.118Z"
   }, {
-    "id" : "com.kishore.qa.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[92b17368]",
-    "title" : "An invalid account request is a 422 naming the field [handle too short, NewAccount[handle=ab, displayName=Name, password=pw-2ee4d0e9-fd61-46f6-b7f8-3f271c002067, region=eu], handle]",
+    "id" : "com.qaautomation.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[2]",
+    "title" : "An invalid account request is a 422 naming the field [blank display name, NewAccount[handle=qa-0869d63b363f, displayName=   , password=pw-3c70f069-be08-4452-b419-faee28ab944b, region=eu], displayName]",
     "suite" : "negative",
     "featureIds" : [ "FEAT-ACCT-02", "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 330,
+    "durationMs" : 152,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:04.169Z",
-    "finishedAt" : "2026-10-21T06:08:04.499Z"
+    "startedAt" : "2026-10-21T14:51:11.856Z",
+    "finishedAt" : "2026-10-21T14:51:12.008Z"
   }, {
-    "id" : "com.kishore.qa.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[ba5c8f2c]",
-    "title" : "An invalid account request is a 422 naming the field [handle with capitals, NewAccount[handle=Bad-Handle, displayName=Name, password=pw-2ee4d0e9-fd61-46f6-b7f8-3f271c002067, region=eu], handle]",
+    "id" : "com.qaautomation.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[3]",
+    "title" : "An invalid account request is a 422 naming the field [password too short, NewAccount[handle=qa-0869d63b363f, displayName=Name, password=short, region=eu], password]",
     "suite" : "negative",
     "featureIds" : [ "FEAT-ACCT-02", "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 290,
+    "durationMs" : 154,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:04.035Z",
-    "finishedAt" : "2026-10-21T06:08:04.325Z"
+    "startedAt" : "2026-10-21T14:51:11.856Z",
+    "finishedAt" : "2026-10-21T14:51:12.010Z"
   }, {
-    "id" : "com.kishore.qa.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[fad7cb55]",
-    "title" : "An invalid account request is a 422 naming the field [password too short, NewAccount[handle=qa-7cc1fce264a1, displayName=Name, password=short, region=eu], password]",
+    "id" : "com.qaautomation.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[4]",
+    "title" : "An invalid account request is a 422 naming the field [unknown region, NewAccount[handle=qa-0869d63b363f, displayName=Name, password=pw-3c70f069-be08-4452-b419-faee28ab944b, region=mars], region]",
     "suite" : "negative",
     "featureIds" : [ "FEAT-ACCT-02", "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 212,
+    "durationMs" : 78,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:04.175Z",
-    "finishedAt" : "2026-10-21T06:08:04.387Z"
+    "startedAt" : "2026-10-21T14:51:12.016Z",
+    "finishedAt" : "2026-10-21T14:51:12.094Z"
   }, {
-    "id" : "com.kishore.qa.tests.negative.ValidationTest#malformedJsonIsA400",
+    "id" : "com.qaautomation.tests.negative.ValidationTest#malformedJsonIsA400",
     "title" : "A body that is not JSON is a 400 malformed-json problem",
     "suite" : "negative",
     "featureIds" : [ "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 179,
+    "durationMs" : 109,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:04.137Z",
-    "finishedAt" : "2026-10-21T06:08:04.316Z"
+    "startedAt" : "2026-10-21T14:51:11.899Z",
+    "finishedAt" : "2026-10-21T14:51:12.008Z"
   }, {
-    "id" : "com.kishore.qa.tests.negative.ValidationTest#takenHandleIsA409",
+    "id" : "com.qaautomation.tests.negative.ValidationTest#takenHandleIsA409",
     "title" : "A handle that is already taken is a 409",
     "suite" : "negative",
     "featureIds" : [ "FEAT-ACCT-01", "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 188,
+    "durationMs" : 155,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:04.337Z",
-    "finishedAt" : "2026-10-21T06:08:04.525Z"
+    "startedAt" : "2026-10-21T14:51:12.016Z",
+    "finishedAt" : "2026-10-21T14:51:12.171Z"
   }, {
-    "id" : "com.kishore.qa.tests.negative.ValidationTest#unknownResourcesAre404",
+    "id" : "com.qaautomation.tests.negative.ValidationTest#unknownResourcesAre404",
     "title" : "Unknown conversations and handles are 404 problems",
     "suite" : "negative",
     "featureIds" : [ "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 334,
+    "durationMs" : 342,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:04.518Z",
-    "finishedAt" : "2026-10-21T06:08:04.852Z"
+    "startedAt" : "2026-10-21T14:51:12.130Z",
+    "finishedAt" : "2026-10-21T14:51:12.472Z"
   }, {
-    "id" : "com.kishore.qa.tests.negative.ValidationTest#wrongContentTypeIsA415",
+    "id" : "com.qaautomation.tests.negative.ValidationTest#wrongContentTypeIsA415",
     "title" : "A body that is not application/json is a 415",
     "suite" : "negative",
     "featureIds" : [ "FEAT-ERR-01" ],
     "tags" : [ "regression" ],
     "status" : "passed",
-    "durationMs" : 87,
+    "durationMs" : 74,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:04.531Z",
-    "finishedAt" : "2026-10-21T06:08:04.618Z"
+    "startedAt" : "2026-10-21T14:51:12.179Z",
+    "finishedAt" : "2026-10-21T14:51:12.253Z"
   }, {
-    "id" : "com.kishore.qa.tests.resilience.IdempotencyTest#concurrentDuplicatesProduceOnePurchase",
+    "id" : "com.qaautomation.tests.resilience.IdempotencyTest#concurrentDuplicatesProduceOnePurchase",
     "title" : "Six concurrent duplicates: one purchase, five replays, one charge",
     "suite" : "resilience",
     "featureIds" : [ "FEAT-IDEMP-01" ],
     "tags" : [ "regression", "resilience" ],
     "status" : "failed",
-    "durationMs" : 202,
+    "durationMs" : 347,
     "attempt" : 3,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:05.271Z",
-    "finishedAt" : "2026-10-21T06:08:05.473Z",
+    "startedAt" : "2026-10-21T14:51:12.960Z",
+    "finishedAt" : "2026-10-21T14:51:13.307Z",
     "error" : {
-      "type" : "com.kishore.qa.framework.assertions.ContractViolation",
+      "type" : "com.qaautomation.framework.assertions.ContractViolation",
       "message" : "JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found",
-      "stack" : "com.kishore.qa.framework.assertions.ContractViolation: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found\r\n\tat com.kishore.qa.framework.assertions.ResponseAssert.matchesContract(ResponseAssert.java:38)\r\n\tat com.kishore.qa.framework.assertions.Contracts.read(Contracts.java:14)\r\n\tat com.kishore.qa.framework.clients.CreditsClient.currentBalance(CreditsClient.java:31)\r\n\tat com.kishore.qa.tests.resilience.IdempotencyTest.concurrentDuplicatesProduceOnePurchase(IdempotencyTest.java:89)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)\r\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\r\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\r\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\r\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\r\n"
+      "stack" : "com.qaautomation.framework.assertions.ContractViolation: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found\r\n\tat com.qaautomation.framework.assertions.ResponseAssert.matchesContract(ResponseAssert.java:38)\r\n\tat com.qaautomation.framework.assertions.Contracts.read(Contracts.java:14)\r\n\tat com.qaautomation.framework.clients.CreditsClient.currentBalance(CreditsClient.java:31)\r\n\tat com.qaautomation.tests.resilience.IdempotencyTest.concurrentDuplicatesProduceOnePurchase(IdempotencyTest.java:89)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)\r\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\r\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\r\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\r\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\r\n"
     },
     "evidence" : {
       "dir" : "resilience/idempotency-test-concurrent-duplicates-produce-one-purchase/3",
@@ -388,21 +388,21 @@
       "timeline" : "resilience/idempotency-test-concurrent-duplicates-produce-one-purchase/3/timeline.html"
     }
   }, {
-    "id" : "com.kishore.qa.tests.resilience.IdempotencyTest#replayReturnsTheOriginalAndChargesOnce",
+    "id" : "com.qaautomation.tests.resilience.IdempotencyTest#replayReturnsTheOriginalAndChargesOnce",
     "title" : "Same key + same body replays the original purchase",
     "suite" : "resilience",
     "featureIds" : [ "FEAT-IDEMP-01" ],
     "tags" : [ "regression", "resilience" ],
     "status" : "failed",
-    "durationMs" : 151,
+    "durationMs" : 315,
     "attempt" : 3,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:05.123Z",
-    "finishedAt" : "2026-10-21T06:08:05.274Z",
+    "startedAt" : "2026-10-21T14:51:13.117Z",
+    "finishedAt" : "2026-10-21T14:51:13.432Z",
     "error" : {
-      "type" : "com.kishore.qa.framework.assertions.ContractViolation",
+      "type" : "com.qaautomation.framework.assertions.ContractViolation",
       "message" : "JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found",
-      "stack" : "com.kishore.qa.framework.assertions.ContractViolation: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found\r\n\tat com.kishore.qa.framework.assertions.ResponseAssert.matchesContract(ResponseAssert.java:38)\r\n\tat com.kishore.qa.framework.assertions.Contracts.read(Contracts.java:14)\r\n\tat com.kishore.qa.framework.clients.CreditsClient.currentBalance(CreditsClient.java:31)\r\n\tat com.kishore.qa.tests.resilience.IdempotencyTest.replayReturnsTheOriginalAndChargesOnce(IdempotencyTest.java:51)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)\r\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\r\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\r\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\r\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\r\n"
+      "stack" : "com.qaautomation.framework.assertions.ContractViolation: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found\r\n\tat com.qaautomation.framework.assertions.ResponseAssert.matchesContract(ResponseAssert.java:38)\r\n\tat com.qaautomation.framework.assertions.Contracts.read(Contracts.java:14)\r\n\tat com.qaautomation.framework.clients.CreditsClient.currentBalance(CreditsClient.java:31)\r\n\tat com.qaautomation.tests.resilience.IdempotencyTest.replayReturnsTheOriginalAndChargesOnce(IdempotencyTest.java:51)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)\r\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\r\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\r\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\r\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\r\n"
     },
     "evidence" : {
       "dir" : "resilience/idempotency-test-replay-returns-the-original-and-charges-once/3",
@@ -410,21 +410,21 @@
       "timeline" : "resilience/idempotency-test-replay-returns-the-original-and-charges-once/3/timeline.html"
     }
   }, {
-    "id" : "com.kishore.qa.tests.resilience.IdempotencyTest#reusingAKeyForADifferentPurchaseIsRefused",
+    "id" : "com.qaautomation.tests.resilience.IdempotencyTest#reusingAKeyForADifferentPurchaseIsRefused",
     "title" : "Same key + different body is a 409 and charges nothing",
     "suite" : "resilience",
     "featureIds" : [ "FEAT-IDEMP-02" ],
     "tags" : [ "regression", "resilience" ],
     "status" : "failed",
-    "durationMs" : 159,
+    "durationMs" : 292,
     "attempt" : 3,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:05.405Z",
-    "finishedAt" : "2026-10-21T06:08:05.564Z",
+    "startedAt" : "2026-10-21T14:51:13.297Z",
+    "finishedAt" : "2026-10-21T14:51:13.589Z",
     "error" : {
-      "type" : "com.kishore.qa.framework.assertions.ContractViolation",
+      "type" : "com.qaautomation.framework.assertions.ContractViolation",
       "message" : "JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found",
-      "stack" : "com.kishore.qa.framework.assertions.ContractViolation: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found\r\n\tat com.kishore.qa.framework.assertions.ResponseAssert.matchesContract(ResponseAssert.java:38)\r\n\tat com.kishore.qa.framework.assertions.Contracts.read(Contracts.java:14)\r\n\tat com.kishore.qa.framework.clients.CreditsClient.currentBalance(CreditsClient.java:31)\r\n\tat com.kishore.qa.tests.resilience.IdempotencyTest.reusingAKeyForADifferentPurchaseIsRefused(IdempotencyTest.java:66)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)\r\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\r\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\r\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\r\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\r\n"
+      "stack" : "com.qaautomation.framework.assertions.ContractViolation: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found\r\n\tat com.qaautomation.framework.assertions.ResponseAssert.matchesContract(ResponseAssert.java:38)\r\n\tat com.qaautomation.framework.assertions.Contracts.read(Contracts.java:14)\r\n\tat com.qaautomation.framework.clients.CreditsClient.currentBalance(CreditsClient.java:31)\r\n\tat com.qaautomation.tests.resilience.IdempotencyTest.reusingAKeyForADifferentPurchaseIsRefused(IdempotencyTest.java:66)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)\r\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\r\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\r\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\r\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\r\n"
     },
     "evidence" : {
       "dir" : "resilience/idempotency-test-reusing-akey-for-adifferent-purchase-is-refused/3",
@@ -432,201 +432,201 @@
       "timeline" : "resilience/idempotency-test-reusing-akey-for-adifferent-purchase-is-refused/3/timeline.html"
     }
   }, {
-    "id" : "com.kishore.qa.tests.resilience.IdempotencyTest#theSameKeyFromTwoAccountsMakesTwoPurchases",
+    "id" : "com.qaautomation.tests.resilience.IdempotencyTest#theSameKeyFromTwoAccountsMakesTwoPurchases",
     "title" : "Keys are scoped per account",
     "suite" : "resilience",
     "featureIds" : [ "FEAT-IDEMP-01" ],
     "tags" : [ "regression", "resilience" ],
     "status" : "passed",
-    "durationMs" : 240,
+    "durationMs" : 348,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:04.950Z",
-    "finishedAt" : "2026-10-21T06:08:05.190Z"
+    "startedAt" : "2026-10-21T14:51:13.257Z",
+    "finishedAt" : "2026-10-21T14:51:13.605Z"
   }, {
-    "id" : "com.kishore.qa.tests.resilience.RetryAndTimeoutTest#clientTimeoutIsEnforcedWithinItsBudget",
+    "id" : "com.qaautomation.tests.resilience.RetryAndTimeoutTest#clientTimeoutIsEnforcedWithinItsBudget",
     "title" : "A slow server cannot hang the client",
     "suite" : "resilience",
     "featureIds" : [ "FEAT-RES-02" ],
     "tags" : [ "regression", "resilience" ],
     "status" : "passed",
-    "durationMs" : 1750,
+    "durationMs" : 1825,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:05.199Z",
-    "finishedAt" : "2026-10-21T06:08:06.949Z"
+    "startedAt" : "2026-10-21T14:51:13.396Z",
+    "finishedAt" : "2026-10-21T14:51:15.221Z"
   }, {
-    "id" : "com.kishore.qa.tests.resilience.RetryAndTimeoutTest#lostResponseIsRetriedWithoutDoubleCharging",
+    "id" : "com.qaautomation.tests.resilience.RetryAndTimeoutTest#lostResponseIsRetriedWithoutDoubleCharging",
     "title" : "A lost response is retried with the same key and the purchase is charged once",
     "suite" : "resilience",
     "featureIds" : [ "FEAT-RES-01", "FEAT-IDEMP-01" ],
     "tags" : [ "regression", "resilience" ],
     "status" : "passed",
-    "durationMs" : 1123,
+    "durationMs" : 1181,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:05.290Z",
-    "finishedAt" : "2026-10-21T06:08:06.413Z"
+    "startedAt" : "2026-10-21T14:51:13.458Z",
+    "finishedAt" : "2026-10-21T14:51:14.639Z"
   }, {
-    "id" : "com.kishore.qa.tests.resilience.RetryAndTimeoutTest#unavailableIsRetriedAfterRetryAfter",
+    "id" : "com.qaautomation.tests.resilience.RetryAndTimeoutTest#unavailableIsRetriedAfterRetryAfter",
     "title" : "A 503 with Retry-After is retried after the wait",
     "suite" : "resilience",
     "featureIds" : [ "FEAT-RES-03" ],
     "tags" : [ "regression", "resilience" ],
     "status" : "passed",
-    "durationMs" : 1107,
+    "durationMs" : 1129,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:05.489Z",
-    "finishedAt" : "2026-10-21T06:08:06.596Z"
+    "startedAt" : "2026-10-21T14:51:13.612Z",
+    "finishedAt" : "2026-10-21T14:51:14.741Z"
   }, {
-    "id" : "com.kishore.qa.tests.security.AuthorizationTest#adminEndpointIsForbiddenToANormalAccount",
+    "id" : "com.qaautomation.tests.security.AuthorizationTest#adminEndpointIsForbiddenToANormalAccount",
     "title" : "A normal account cannot use the admin endpoint",
     "suite" : "security",
     "featureIds" : [ "FEAT-SEC-02" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 88,
+    "durationMs" : 126,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:05.577Z",
-    "finishedAt" : "2026-10-21T06:08:05.665Z"
+    "startedAt" : "2026-10-21T14:51:13.614Z",
+    "finishedAt" : "2026-10-21T14:51:13.740Z"
   }, {
-    "id" : "com.kishore.qa.tests.security.AuthorizationTest#expiredTokenIsRefused",
+    "id" : "com.qaautomation.tests.security.AuthorizationTest#expiredTokenIsRefused",
     "title" : "A token stops working when it expires",
     "suite" : "security",
     "featureIds" : [ "FEAT-SEC-03" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 1313,
+    "durationMs" : 1378,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:05.671Z",
-    "finishedAt" : "2026-10-21T06:08:06.984Z"
+    "startedAt" : "2026-10-21T14:51:13.740Z",
+    "finishedAt" : "2026-10-21T14:51:15.118Z"
   }, {
-    "id" : "com.kishore.qa.tests.security.CorsTest#allowedOriginCanReadTheHeadersTheAppNeeds",
+    "id" : "com.qaautomation.tests.security.CorsTest#allowedOriginCanReadTheHeadersTheAppNeeds",
     "title" : "An allowed origin can read the headers the app needs",
     "suite" : "security",
     "featureIds" : [ "FEAT-CORS-01" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 11,
+    "durationMs" : 16,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:06.421Z",
-    "finishedAt" : "2026-10-21T06:08:06.432Z"
+    "startedAt" : "2026-10-21T14:51:14.654Z",
+    "finishedAt" : "2026-10-21T14:51:14.670Z"
   }, {
-    "id" : "com.kishore.qa.tests.security.CorsTest#allowedOriginPassesPreflight",
+    "id" : "com.qaautomation.tests.security.CorsTest#allowedOriginPassesPreflight",
     "title" : "An allowed origin passes preflight for an idempotent purchase",
     "suite" : "security",
     "featureIds" : [ "FEAT-CORS-01" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 7,
+    "durationMs" : 24,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:06.438Z",
-    "finishedAt" : "2026-10-21T06:08:06.445Z"
+    "startedAt" : "2026-10-21T14:51:14.670Z",
+    "finishedAt" : "2026-10-21T14:51:14.694Z"
   }, {
-    "id" : "com.kishore.qa.tests.security.CorsTest#otherOriginsAreRefused",
+    "id" : "com.qaautomation.tests.security.CorsTest#otherOriginsAreRefused",
     "title" : "Any other origin is refused",
     "suite" : "security",
     "featureIds" : [ "FEAT-CORS-02" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 25,
+    "durationMs" : 47,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:06.451Z",
-    "finishedAt" : "2026-10-21T06:08:06.476Z"
+    "startedAt" : "2026-10-21T14:51:14.702Z",
+    "finishedAt" : "2026-10-21T14:51:14.749Z"
   }, {
-    "id" : "com.kishore.qa.tests.security.RateLimitTest#exceedingTheLimitIs429ThenRecovers",
+    "id" : "com.qaautomation.tests.security.RateLimitTest#exceedingTheLimitIs429ThenRecovers",
     "title" : "Past the limit: 429 with Retry-After, then recovery",
     "suite" : "security",
     "featureIds" : [ "FEAT-RATE-01" ],
     "tags" : [ "security", "regression" ],
     "status" : "passed",
-    "durationMs" : 10202,
+    "durationMs" : 10149,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:06.476Z",
-    "finishedAt" : "2026-10-21T06:08:16.678Z"
+    "startedAt" : "2026-10-21T14:51:14.750Z",
+    "finishedAt" : "2026-10-21T14:51:24.899Z"
   }, {
-    "id" : "com.kishore.qa.tests.security.SecurityHeadersTest#securityHeadersOnEveryResponse[e760d79d]",
-    "title" : "Every response carries the security headers and no server banner [200 health, com.kishore.qa.tests.security.SecurityHeadersTest$$Lambda/0x0000022f128eb470@c8aff26]",
+    "id" : "com.qaautomation.tests.security.SecurityHeadersTest#securityHeadersOnEveryResponse[0]",
+    "title" : "Every response carries the security headers and no server banner [200 health, com.qaautomation.tests.security.SecurityHeadersTest$$Lambda/0x000001f0018ca458@3ce2747f]",
     "suite" : "security",
     "featureIds" : [ "FEAT-SEC-01" ],
     "tags" : [ "security", "regression", "smoke" ],
     "status" : "passed",
-    "durationMs" : 16,
+    "durationMs" : 19,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:06.600Z",
-    "finishedAt" : "2026-10-21T06:08:06.616Z"
+    "startedAt" : "2026-10-21T14:51:14.750Z",
+    "finishedAt" : "2026-10-21T14:51:14.769Z"
   }, {
-    "id" : "com.kishore.qa.tests.security.SecurityHeadersTest#securityHeadersOnEveryResponse[ec47dceb]",
-    "title" : "Every response carries the security headers and no server banner [401 problem, com.kishore.qa.tests.security.SecurityHeadersTest$$Lambda/0x0000022f128eb698@62a8a55e]",
+    "id" : "com.qaautomation.tests.security.SecurityHeadersTest#securityHeadersOnEveryResponse[1]",
+    "title" : "Every response carries the security headers and no server banner [401 problem, com.qaautomation.tests.security.SecurityHeadersTest$$Lambda/0x000001f0018ca680@475fc675]",
     "suite" : "security",
     "featureIds" : [ "FEAT-SEC-01" ],
     "tags" : [ "security", "regression", "smoke" ],
     "status" : "passed",
-    "durationMs" : 16,
+    "durationMs" : 19,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:06.600Z",
-    "finishedAt" : "2026-10-21T06:08:06.616Z"
+    "startedAt" : "2026-10-21T14:51:14.750Z",
+    "finishedAt" : "2026-10-21T14:51:14.769Z"
   }, {
-    "id" : "com.kishore.qa.tests.smoke.HealthSmokeTest#newAccountCanSignInAndReadItself",
+    "id" : "com.qaautomation.tests.smoke.HealthSmokeTest#newAccountCanSignInAndReadItself",
     "title" : "A new account can sign in and read itself back",
     "suite" : "smoke",
     "featureIds" : [ "FEAT-ACCT-01" ],
     "tags" : [ "smoke" ],
     "status" : "passed",
-    "durationMs" : 85,
+    "durationMs" : 118,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:06.622Z",
-    "finishedAt" : "2026-10-21T06:08:06.707Z"
+    "startedAt" : "2026-10-21T14:51:14.780Z",
+    "finishedAt" : "2026-10-21T14:51:14.898Z"
   }, {
-    "id" : "com.kishore.qa.tests.smoke.HealthSmokeTest#serviceReportsUp",
+    "id" : "com.qaautomation.tests.smoke.HealthSmokeTest#serviceReportsUp",
     "title" : "The reference service reports itself up, with its version and regions",
     "suite" : "smoke",
     "featureIds" : [ "FEAT-HEALTH-01" ],
     "tags" : [ "smoke" ],
     "status" : "passed",
-    "durationMs" : 19,
+    "durationMs" : 24,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:06.713Z",
-    "finishedAt" : "2026-10-21T06:08:06.732Z"
+    "startedAt" : "2026-10-21T14:51:14.913Z",
+    "finishedAt" : "2026-10-21T14:51:14.937Z"
   }, {
-    "id" : "com.kishore.qa.tests.workflows.LedgerConsistencyTest#concurrentPurchasesSumCorrectly",
+    "id" : "com.qaautomation.tests.workflows.LedgerConsistencyTest#concurrentPurchasesSumCorrectly",
     "title" : "Ten concurrent purchases are all counted, exactly once",
     "suite" : "workflows",
     "featureIds" : [ "FEAT-LEDGER-03" ],
     "tags" : [ "workflow", "regression" ],
     "status" : "passed",
-    "durationMs" : 324,
+    "durationMs" : 278,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:06.738Z",
-    "finishedAt" : "2026-10-21T06:08:07.062Z"
+    "startedAt" : "2026-10-21T14:51:14.949Z",
+    "finishedAt" : "2026-10-21T14:51:15.227Z"
   }, {
-    "id" : "com.kishore.qa.tests.workflows.LedgerConsistencyTest#historySumsToTheBalance",
+    "id" : "com.qaautomation.tests.workflows.LedgerConsistencyTest#historySumsToTheBalance",
     "title" : "Grants, purchases and spends sum to the balance",
     "suite" : "workflows",
     "featureIds" : [ "FEAT-LEDGER-01" ],
     "tags" : [ "workflow", "regression" ],
     "status" : "failed",
-    "durationMs" : 226,
+    "durationMs" : 190,
     "attempt" : 3,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:07.529Z",
-    "finishedAt" : "2026-10-21T06:08:07.755Z",
+    "startedAt" : "2026-10-21T14:51:15.758Z",
+    "finishedAt" : "2026-10-21T14:51:15.948Z",
     "error" : {
-      "type" : "com.kishore.qa.framework.assertions.ContractViolation",
+      "type" : "com.qaautomation.framework.assertions.ContractViolation",
       "message" : "JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found",
-      "stack" : "com.kishore.qa.framework.assertions.ContractViolation: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found\r\n\tat com.kishore.qa.framework.assertions.ResponseAssert.matchesContract(ResponseAssert.java:38)\r\n\tat com.kishore.qa.framework.assertions.Contracts.read(Contracts.java:14)\r\n\tat com.kishore.qa.framework.clients.CreditsClient.currentBalance(CreditsClient.java:31)\r\n\tat com.kishore.qa.tests.workflows.LedgerConsistencyTest.historySumsToTheBalance(LedgerConsistencyTest.java:52)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)\r\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\r\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\r\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\r\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\r\n"
+      "stack" : "com.qaautomation.framework.assertions.ContractViolation: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found\r\n\tat com.qaautomation.framework.assertions.ResponseAssert.matchesContract(ResponseAssert.java:38)\r\n\tat com.qaautomation.framework.assertions.Contracts.read(Contracts.java:14)\r\n\tat com.qaautomation.framework.clients.CreditsClient.currentBalance(CreditsClient.java:31)\r\n\tat com.qaautomation.tests.workflows.LedgerConsistencyTest.historySumsToTheBalance(LedgerConsistencyTest.java:52)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)\r\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\r\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\r\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\r\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\r\n"
     },
     "evidence" : {
       "dir" : "workflows/ledger-consistency-test-history-sums-to-the-balance/3",
@@ -634,21 +634,21 @@
       "timeline" : "workflows/ledger-consistency-test-history-sums-to-the-balance/3/timeline.html"
     }
   }, {
-    "id" : "com.kishore.qa.tests.workflows.MultiActorConversationTest#twoPeopleConverseAndTheOwnerEndsIt",
+    "id" : "com.qaautomation.tests.workflows.MultiActorConversationTest#twoPeopleConverseAndTheOwnerEndsIt",
     "title" : "Two people exchange messages; an outsider is kept out; closing stops the thread",
     "suite" : "workflows",
     "featureIds" : [ "FEAT-CONV-01", "FEAT-CONV-02", "FEAT-CONV-03", "FEAT-AUTHZ-01", "FEAT-REGION-02" ],
     "tags" : [ "workflow", "regression" ],
     "status" : "failed",
-    "durationMs" : 221,
+    "durationMs" : 345,
     "attempt" : 3,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:07.863Z",
-    "finishedAt" : "2026-10-21T06:08:08.084Z",
+    "startedAt" : "2026-10-21T14:51:16.110Z",
+    "finishedAt" : "2026-10-21T14:51:16.455Z",
     "error" : {
-      "type" : "com.kishore.qa.framework.assertions.ContractViolation",
+      "type" : "com.qaautomation.framework.assertions.ContractViolation",
       "message" : "JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found",
-      "stack" : "com.kishore.qa.framework.assertions.ContractViolation: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found\r\n\tat com.kishore.qa.framework.assertions.ResponseAssert.matchesContract(ResponseAssert.java:38)\r\n\tat com.kishore.qa.framework.assertions.Contracts.read(Contracts.java:14)\r\n\tat com.kishore.qa.framework.clients.CreditsClient.currentBalance(CreditsClient.java:31)\r\n\tat com.kishore.qa.tests.workflows.MultiActorConversationTest.lambda$twoPeopleConverseAndTheOwnerEndsIt$4(MultiActorConversationTest.java:108)\r\n\tat io.qameta.allure.Allure.lambda$step$0(Allure.java:113)\r\n\tat io.qameta.allure.Allure.lambda$step$1(Allure.java:127)\r\n\tat io.qameta.allure.Allure.step(Allure.java:181)\r\n\tat io.qameta.allure.Allure.step(Allure.java:125)\r\n\tat io.qameta.allure.Allure.step(Allure.java:112)\r\n\tat com.kishore.qa.tests.workflows.MultiActorConversationTest.twoPeopleConverseAndTheOwnerEndsIt(MultiActorConversationTest.java:105)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)\r\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\r\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\r\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\r\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\r\n"
+      "stack" : "com.qaautomation.framework.assertions.ContractViolation: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found\r\n\tat com.qaautomation.framework.assertions.ResponseAssert.matchesContract(ResponseAssert.java:38)\r\n\tat com.qaautomation.framework.assertions.Contracts.read(Contracts.java:14)\r\n\tat com.qaautomation.framework.clients.CreditsClient.currentBalance(CreditsClient.java:31)\r\n\tat com.qaautomation.tests.workflows.MultiActorConversationTest.lambda$twoPeopleConverseAndTheOwnerEndsIt$4(MultiActorConversationTest.java:108)\r\n\tat io.qameta.allure.Allure.lambda$step$0(Allure.java:113)\r\n\tat io.qameta.allure.Allure.lambda$step$1(Allure.java:127)\r\n\tat io.qameta.allure.Allure.step(Allure.java:181)\r\n\tat io.qameta.allure.Allure.step(Allure.java:125)\r\n\tat io.qameta.allure.Allure.step(Allure.java:112)\r\n\tat com.qaautomation.tests.workflows.MultiActorConversationTest.twoPeopleConverseAndTheOwnerEndsIt(MultiActorConversationTest.java:105)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\r\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)\r\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:280)\r\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\r\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)\r\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\r\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\r\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\r\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\r\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\r\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\r\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\r\n"
     },
     "evidence" : {
       "dir" : "workflows/multi-actor-conversation-test-two-people-converse-and-the-owner-ends-it/3",
@@ -656,64 +656,64 @@
       "timeline" : "workflows/multi-actor-conversation-test-two-people-converse-and-the-owner-ends-it/3/timeline.html"
     }
   }, {
-    "id" : "com.kishore.qa.tests.workflows.MultiRegionTest#crossRegionConversationLivesInTheRecipientsRegion",
+    "id" : "com.qaautomation.tests.workflows.MultiRegionTest#crossRegionConversationLivesInTheRecipientsRegion",
     "title" : "A cross-region conversation is stored in the recipient's region, for both sides",
     "suite" : "workflows",
     "featureIds" : [ "FEAT-REGION-02" ],
     "tags" : [ "workflow", "regression" ],
     "status" : "passed",
-    "durationMs" : 214,
+    "durationMs" : 274,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:07.069Z",
-    "finishedAt" : "2026-10-21T06:08:07.283Z"
+    "startedAt" : "2026-10-21T14:51:15.235Z",
+    "finishedAt" : "2026-10-21T14:51:15.509Z"
   }, {
-    "id" : "com.kishore.qa.tests.workflows.MultiRegionTest#servedByTheHomeRegionFromAnyEdge[973a7fe8]",
-    "title" : "Requests are served by the home region, whichever edge they arrive at [EU, us]",
-    "suite" : "workflows",
-    "featureIds" : [ "FEAT-REGION-01" ],
-    "tags" : [ "workflow", "regression" ],
-    "status" : "passed",
-    "durationMs" : 192,
-    "attempt" : 1,
-    "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:07.302Z",
-    "finishedAt" : "2026-10-21T06:08:07.494Z"
-  }, {
-    "id" : "com.kishore.qa.tests.workflows.MultiRegionTest#servedByTheHomeRegionFromAnyEdge[9f06eabb]",
-    "title" : "Requests are served by the home region, whichever edge they arrive at [US, in]",
-    "suite" : "workflows",
-    "featureIds" : [ "FEAT-REGION-01" ],
-    "tags" : [ "workflow", "regression" ],
-    "status" : "passed",
-    "durationMs" : 171,
-    "attempt" : 1,
-    "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:07.295Z",
-    "finishedAt" : "2026-10-21T06:08:07.466Z"
-  }, {
-    "id" : "com.kishore.qa.tests.workflows.MultiRegionTest#servedByTheHomeRegionFromAnyEdge[a770fa11]",
+    "id" : "com.qaautomation.tests.workflows.MultiRegionTest#servedByTheHomeRegionFromAnyEdge[0]",
     "title" : "Requests are served by the home region, whichever edge they arrive at [IN, eu]",
     "suite" : "workflows",
     "featureIds" : [ "FEAT-REGION-01" ],
     "tags" : [ "workflow", "regression" ],
     "status" : "passed",
-    "durationMs" : 157,
+    "durationMs" : 97,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:07.291Z",
-    "finishedAt" : "2026-10-21T06:08:07.448Z"
+    "startedAt" : "2026-10-21T14:51:15.516Z",
+    "finishedAt" : "2026-10-21T14:51:15.613Z"
   }, {
-    "id" : "com.kishore.qa.tests.workflows.MultiRegionTest#unknownRegionIsRefused",
+    "id" : "com.qaautomation.tests.workflows.MultiRegionTest#servedByTheHomeRegionFromAnyEdge[1]",
+    "title" : "Requests are served by the home region, whichever edge they arrive at [EU, us]",
+    "suite" : "workflows",
+    "featureIds" : [ "FEAT-REGION-01" ],
+    "tags" : [ "workflow", "regression" ],
+    "status" : "passed",
+    "durationMs" : 111,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-10-21T14:51:15.516Z",
+    "finishedAt" : "2026-10-21T14:51:15.627Z"
+  }, {
+    "id" : "com.qaautomation.tests.workflows.MultiRegionTest#servedByTheHomeRegionFromAnyEdge[2]",
+    "title" : "Requests are served by the home region, whichever edge they arrive at [US, in]",
+    "suite" : "workflows",
+    "featureIds" : [ "FEAT-REGION-01" ],
+    "tags" : [ "workflow", "regression" ],
+    "status" : "passed",
+    "durationMs" : 97,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-10-21T14:51:15.516Z",
+    "finishedAt" : "2026-10-21T14:51:15.613Z"
+  }, {
+    "id" : "com.qaautomation.tests.workflows.MultiRegionTest#unknownRegionIsRefused",
     "title" : "An unknown home region is refused with 422",
     "suite" : "workflows",
     "featureIds" : [ "FEAT-REGION-03" ],
     "tags" : [ "workflow", "regression" ],
     "status" : "passed",
-    "durationMs" : 84,
+    "durationMs" : 128,
     "attempt" : 1,
     "quarantined" : false,
-    "startedAt" : "2026-10-21T06:08:07.502Z",
-    "finishedAt" : "2026-10-21T06:08:07.586Z"
+    "startedAt" : "2026-10-21T14:51:15.628Z",
+    "finishedAt" : "2026-10-21T14:51:15.756Z"
   } ]
 }

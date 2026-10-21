@@ -1,8 +1,8 @@
 {
   "schemaVersion" : 1,
   "repo" : "api-automation-framework",
-  "runId" : "api-chaos-2",
-  "testId" : "com.kishore.qa.tests.resilience.IdempotencyTest#concurrentDuplicatesProduceOnePurchase",
+  "runId" : "api-chaos-3",
+  "testId" : "com.qaautomation.tests.resilience.IdempotencyTest#concurrentDuplicatesProduceOnePurchase",
   "title" : "Six concurrent duplicates: one purchase, five replays, one charge",
   "suite" : "resilience",
   "featureIds" : [ "FEAT-IDEMP-01" ],
@@ -15,7 +15,7 @@
   "needsHumanDecision" : true,
   "nextAction" : "Decide: provider bug (file an issue) or agreed change (update schema + client model).",
   "error" : {
-    "type" : "com.kishore.qa.framework.assertions.ContractViolation",
+    "type" : "com.qaautomation.framework.assertions.ContractViolation",
     "message" : "JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found"
   },
   "failingRequest" : {
@@ -23,7 +23,7 @@
     "operation" : "/v1/credits/balance",
     "url" : "http://localhost:7070/v1/credits/balance",
     "status" : "200",
-    "correlationId" : "qa-34757d83-f5f3-434f-b195-9652f50b9620"
+    "correlationId" : "qa-7fc4af6b-3ea6-44ea-9b70-a11fde33ad76"
   },
   "schemaDiff" : {
     "schema" : "balance",
@@ -39,7 +39,7 @@
     "bundle" : "failure-bundles/idempotency-test-concurrent-duplicates-produce-one-purchase/",
     "bundleZip" : "failure-bundles/idempotency-test-concurrent-duplicates-produce-one-purchase.zip"
   },
-  "gitDiff" : "bf44d50 fix(heal): the ledger's PR-body path uses forward slashes on every OS\n\n tools/src/main/java/com/kishore/qa/tools/healing/HealCommand.java | 4 +++-\n 1 file changed, 3 insertions(+), 1 deletion(-)",
+  "gitDiff" : "9498ec3 docs(examples): failure bundle from a run with the generic package names\n\n docs/examples/failure-evidence/README.md           |   4 +-\n ...rate-failure-test-condition-never-met-fails.zip | Bin 15088 -> 15085 bytes\n docs/examples/failure-evidence/failure-report.md   |   8 +-\n docs/examples/failure-evidence/timeline.html       |  16 +--\n docs/examples/failure-evidence/transcript.md       | 108 ++++++++++-----------\n docs/examples/failure-evidence/triage-summary.json |   2 +-\n 6 files changed, 69 insertions(+), 69 deletions(-)",
   "retryHistory" : [ {
     "attempt" : 1,
     "status" : "retried"

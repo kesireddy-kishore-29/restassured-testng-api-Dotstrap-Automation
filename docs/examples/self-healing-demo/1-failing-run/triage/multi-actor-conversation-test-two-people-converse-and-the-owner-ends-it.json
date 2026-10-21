@@ -1,8 +1,8 @@
 {
   "schemaVersion" : 1,
   "repo" : "api-automation-framework",
-  "runId" : "api-chaos-2",
-  "testId" : "com.kishore.qa.tests.workflows.MultiActorConversationTest#twoPeopleConverseAndTheOwnerEndsIt",
+  "runId" : "api-chaos-3",
+  "testId" : "com.qaautomation.tests.workflows.MultiActorConversationTest#twoPeopleConverseAndTheOwnerEndsIt",
   "title" : "Two people exchange messages; an outsider is kept out; closing stops the thread",
   "suite" : "workflows",
   "featureIds" : [ "FEAT-CONV-01", "FEAT-CONV-02", "FEAT-CONV-03", "FEAT-AUTHZ-01", "FEAT-REGION-02" ],
@@ -15,7 +15,7 @@
   "needsHumanDecision" : true,
   "nextAction" : "Decide: provider bug (file an issue) or agreed change (update schema + client model).",
   "error" : {
-    "type" : "com.kishore.qa.framework.assertions.ContractViolation",
+    "type" : "com.qaautomation.framework.assertions.ContractViolation",
     "message" : "JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found"
   },
   "failingRequest" : {
@@ -23,7 +23,7 @@
     "operation" : "/v1/credits/balance",
     "url" : "http://localhost:7070/v1/credits/balance",
     "status" : "200",
-    "correlationId" : "qa-1b717513-2e27-47d0-95b7-eead6c42f5a9"
+    "correlationId" : "qa-66c6700e-b5da-4e01-902e-598524c7ff90"
   },
   "schemaDiff" : {
     "schema" : "balance",
@@ -39,7 +39,7 @@
     "bundle" : "failure-bundles/multi-actor-conversation-test-two-people-converse-and-the-owner-ends-it/",
     "bundleZip" : "failure-bundles/multi-actor-conversation-test-two-people-converse-and-the-owner-ends-it.zip"
   },
-  "gitDiff" : "bf44d50 fix(heal): the ledger's PR-body path uses forward slashes on every OS\n\n tools/src/main/java/com/kishore/qa/tools/healing/HealCommand.java | 4 +++-\n 1 file changed, 3 insertions(+), 1 deletion(-)",
+  "gitDiff" : "9498ec3 docs(examples): failure bundle from a run with the generic package names\n\n docs/examples/failure-evidence/README.md           |   4 +-\n ...rate-failure-test-condition-never-met-fails.zip | Bin 15088 -> 15085 bytes\n docs/examples/failure-evidence/failure-report.md   |   8 +-\n docs/examples/failure-evidence/timeline.html       |  16 +--\n docs/examples/failure-evidence/transcript.md       | 108 ++++++++++-----------\n docs/examples/failure-evidence/triage-summary.json |   2 +-\n 6 files changed, 69 insertions(+), 69 deletions(-)",
   "retryHistory" : [ {
     "attempt" : 1,
     "status" : "retried"

@@ -1,22 +1,24 @@
-commit 204c6c46224fdff39146def49b3f3ec46bccd630
+commit c32cbb6084f4f14eb9dfd0c0e527025ad7e91770
 Author: kesireddy-kishore-29
-Date:   Wed Oct 21 11:41:29 2026 +0530
+Date:   Wed Oct 21 20:25:58 2026 +0530
 
 fix(heal): contract drift in contract-test-credit-resources-match-their-contracts
 
-The response no longer matches its contract: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200
+The response no longer matches its contract: JSON Schema 'balance'
+violated by GET /v1/credits/balance -> 200
 
 The same fix explains 7 other failing test(s).
 
-Proposed by rule-based; guardrails passed; failing test passed 3/3 and suite 'contract' passed. Needs human review; never auto-merged.
+Proposed by rule-based; guardrails passed; failing test passed 3/3 and
+suite 'contract' passed. Needs human review; never auto-merged.
 
 Healed-By: rule-based
 
 
-diff --git a/framework/src/main/java/com/kishore/qa/framework/clients/model/Balance.java b/framework/src/main/java/com/kishore/qa/framework/clients/model/Balance.java
-index 8a3782d..3cf3f35 100644
---- a/framework/src/main/java/com/kishore/qa/framework/clients/model/Balance.java
-+++ b/framework/src/main/java/com/kishore/qa/framework/clients/model/Balance.java
+diff --git a/framework/src/main/java/com/qaautomation/framework/clients/model/Balance.java b/framework/src/main/java/com/qaautomation/framework/clients/model/Balance.java
+index 5695149..fbb0b6f 100644
+--- a/framework/src/main/java/com/qaautomation/framework/clients/model/Balance.java
++++ b/framework/src/main/java/com/qaautomation/framework/clients/model/Balance.java
 @@ -9,6 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   */
  @JsonIgnoreProperties(ignoreUnknown = true)
@@ -46,7 +48,7 @@ index d5f74d4..4d87ce1 100644
      },
 diff --git a/healing-log.json b/healing-log.json
 new file mode 100644
-index 0000000..2c868f4
+index 0000000..c05b801
 --- /dev/null
 +++ b/healing-log.json
 @@ -0,0 +1,26 @@
@@ -54,15 +56,15 @@ index 0000000..2c868f4
 +  "schemaVersion" : 1,
 +  "entries" : [ {
 +    "date" : "2026-10-21",
-+    "runId" : "api-chaos-2",
-+    "testId" : "com.kishore.qa.tests.contract.ContractTest#creditResourcesMatchTheirContracts",
++    "runId" : "api-chaos-3",
++    "testId" : "com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts",
 +    "category" : "CONTRACT_DRIFT",
 +    "rootCause" : "The response no longer matches its contract: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200",
 +    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
 +    "pr" : "(local branch; PR body at healing/contract-test-credit-resources-match-their-contracts/PR.md)",
 +    "provider" : "rule-based",
 +    "outcome" : "proposed",
-+    "timeToFixMinutes" : 3,
++    "timeToFixMinutes" : 4,
 +    "guardrails" : {
 +      "paths" : "pass",
 +      "patterns" : "pass",

@@ -5,9 +5,9 @@
 | Category | **CONTRACT_DRIFT** (rules, rule `contract-violation`, confidence 0.95) |
 | Next action | Decide: provider bug (file an issue) or agreed change (update schema + client model). |
 | Healable | yes (needs a human decision) |
-| Test | `com.kishore.qa.tests.contract.ContractTest#creditResourcesMatchTheirContracts` |
+| Test | `com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts` |
 | Features | FEAT-CONTRACT-01 |
-| Run | `api-chaos-2` |
+| Run | `api-chaos-3` |
 
 ## Why
 
@@ -21,7 +21,7 @@ The response no longer matches its contract: JSON Schema 'balance' violated by G
 | operation | `/v1/credits/balance` |
 | url | `http://localhost:7070/v1/credits/balance` |
 | status | `200` |
-| correlationId | `qa-aae7afa4-af76-4e2f-8a37-7d8b840ca71d` |
+| correlationId | `qa-bd225491-9e4f-4a41-82db-afb3ec2802fc` |
 
 ## Contract diff
 

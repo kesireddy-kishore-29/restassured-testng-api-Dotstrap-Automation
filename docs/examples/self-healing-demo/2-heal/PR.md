@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | Failure category | `CONTRACT_DRIFT` |
-| Test | `com.kishore.qa.tests.contract.ContractTest#creditResourcesMatchTheirContracts` |
-| Evidence | `failure-bundles/contract-test-credit-resources-match-their-contracts.zip` (run `api-chaos-2`) |
+| Test | `com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts` |
+| Evidence | `failure-bundles/contract-test-credit-resources-match-their-contracts.zip` (run `api-chaos-3`) |
 | Also explains | 7 other failing test(s) with the same cause (below) |
 
 ### Root cause
@@ -15,13 +15,13 @@ The response no longer matches its contract: JSON Schema 'balance' violated by G
 
 ### Other failures with the same cause
 
-- `com.kishore.qa.tests.negative.CreditsNegativeTest#purchaseWithoutIdempotencyKeyIsA400`
-- `com.kishore.qa.tests.negative.CreditsNegativeTest#sendingWithNoCreditsIsA402`
-- `com.kishore.qa.tests.resilience.IdempotencyTest#concurrentDuplicatesProduceOnePurchase`
-- `com.kishore.qa.tests.resilience.IdempotencyTest#replayReturnsTheOriginalAndChargesOnce`
-- `com.kishore.qa.tests.resilience.IdempotencyTest#reusingAKeyForADifferentPurchaseIsRefused`
-- `com.kishore.qa.tests.workflows.LedgerConsistencyTest#historySumsToTheBalance`
-- `com.kishore.qa.tests.workflows.MultiActorConversationTest#twoPeopleConverseAndTheOwnerEndsIt`
+- `com.qaautomation.tests.negative.CreditsNegativeTest#purchaseWithoutIdempotencyKeyIsA400`
+- `com.qaautomation.tests.negative.CreditsNegativeTest#sendingWithNoCreditsIsA402`
+- `com.qaautomation.tests.resilience.IdempotencyTest#concurrentDuplicatesProduceOnePurchase`
+- `com.qaautomation.tests.resilience.IdempotencyTest#replayReturnsTheOriginalAndChargesOnce`
+- `com.qaautomation.tests.resilience.IdempotencyTest#reusingAKeyForADifferentPurchaseIsRefused`
+- `com.qaautomation.tests.workflows.LedgerConsistencyTest#historySumsToTheBalance`
+- `com.qaautomation.tests.workflows.MultiActorConversationTest#twoPeopleConverseAndTheOwnerEndsIt`
 
 The verification below reruns each of them on this branch.
 
@@ -32,7 +32,7 @@ The response of GET /v1/credits/balance no longer has the required field `balanc
 ### Files changed (allowed paths only)
 
 - `framework/src/main/resources/schemas/balance.schema.json`
-- `framework/src/main/java/com/kishore/qa/framework/clients/model/Balance.java`
+- `framework/src/main/java/com/qaautomation/framework/clients/model/Balance.java`
 
 ### Guardrails
 
