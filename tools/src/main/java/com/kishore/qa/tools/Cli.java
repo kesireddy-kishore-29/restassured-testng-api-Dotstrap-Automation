@@ -3,6 +3,7 @@ package com.kishore.qa.tools;
 import com.kishore.qa.tools.healing.HealCommand;
 import com.kishore.qa.tools.quarantine.FlakyHistoryCommand;
 import com.kishore.qa.tools.quarantine.QuarantineCheckCommand;
+import com.kishore.qa.tools.reporting.MergeCommand;
 import com.kishore.qa.tools.reporting.ReportCommand;
 import com.kishore.qa.tools.triage.TriageCommand;
 import java.io.PrintStream;
@@ -29,7 +30,8 @@ public final class Cli {
         new HealCommand(),
         new ReportCommand(),
         new QuarantineCheckCommand(),
-        new FlakyHistoryCommand());
+        new FlakyHistoryCommand(),
+        new MergeCommand());
   }
 
   public static void main(String[] args) {

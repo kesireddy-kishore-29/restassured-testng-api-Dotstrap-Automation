@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- The pull-request gate: every layer against the self-hosted reference service. The public
+     practice API (group booker) runs nightly in the regression, where an outage of a site we do
+     not own cannot block a merge. -->
+<suite name="pr-gate" parallel="methods" thread-count="4" data-provider-thread-count="4">
+  <test name="pr-gate">
+    <groups>
+      <run>
+        <exclude name="quarantine"/>
+        <exclude name="demo-failure"/>
+        <exclude name="booker"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.kishore.qa.tests.*">
+        <exclude name="com.kishore.qa.tests.demo"/>
+      </package>
+    </packages>
+  </test>
+</suite>

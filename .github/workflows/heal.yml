@@ -1,0 +1,88 @@
+name: Heal
+
+# Governed self-healing. Reads the triaged failures of a nightly run and, for the healable
+# categories only, proposes a fix on a heal/* branch. Guardrails are enforced in code (allowed
+# paths, forbidden patterns, no loosened checks); each fix must pass the failing test 3 times and
+# its suite before a pull request is opened. A person reviews and merges; nothing merges here.
+#
+# Pull requests opened with the workflow token do not trigger other workflows (a GitHub rule);
+# close and reopen the pull request, or push to it, to run CI on the proposed fix.
+
+on:
+  workflow_run:
+    workflows: [Nightly]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: Actions run ID of the Nightly run whose failures to heal
+        required: true
+
+concurrency:
+  group: heal
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: read
+
+env:
+  MAVEN_ARGS: -B -ntp
+
+jobs:
+  heal:
+    name: Propose guarded, verified fixes
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+      - name: Download the triaged nightly run
+        uses: actions/download-artifact@v8
+        with:
+          name: merged-run
+          path: run-evidence/api-automation-framework
+          run-id: ${{ inputs.run_id || github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+      - name: Build the reference service, framework and tools
+        run: ./mvnw -DskipTests install -pl sut,framework,tools -am
+      - name: Start the reference service (the verifier reruns the failing test)
+        run: |
+          nohup java -jar sut/target/reference-service.jar > sut.log 2>&1 &
+          for _ in $(seq 1 30); do curl -sf http://localhost:7070/health && exit 0; sleep 1; done
+          cat sut.log; exit 1
+      - name: Labels used by heal pull requests
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create self-healed --color 1d76db --force \
+            --description "Proposed by the healing pipeline; needs human review"
+          gh label create needs-contract-decision --color d93f0b --force \
+            --description "Contract drift: provider bug or agreed change?"
+      - name: Heal (at most 3 pull requests per run)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          run_dir=$(find run-evidence/api-automation-framework -mindepth 1 -maxdepth 1 -type d | head -n 1)
+          java -jar tools/target/qa-tools.jar heal --run "$run_dir" --open-prs --max-prs 3
+      - name: Upload the healing record
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: healing-${{ github.run_id }}
+          path: |
+            run-evidence/api-automation-framework/*/healing/
+            sut.log
+          retention-days: 30
+          if-no-files-found: ignore

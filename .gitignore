@@ -30,3 +30,6 @@ node_modules/
 
 # Flaky history is run state; CI keeps it on the gh-pages branch (data/flaky-history.json).
 flaky-history.json
+
+# Nightly shard downloads (merged with qa-tools merge).
+shards/
