@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<!-- Fast gate for every push and pull request. -->
+<!-- A fast check: the smoke-tagged tests from every package. The pull-request gate is pr-gate.xml. -->
 <suite name="smoke" parallel="methods" thread-count="4">
   <test name="smoke">
     <groups>
