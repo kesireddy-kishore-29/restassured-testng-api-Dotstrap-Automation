@@ -1,7 +1,10 @@
 package com.kishore.qa.tools.triage;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -47,6 +50,24 @@ public record SchemaDiff(
     addAll(NOT_ALLOWED_ONE.matcher(message), unexpected, false);
     addAll(NOT_ALLOWED_MANY.matcher(message), unexpected, true);
     return new SchemaDiff(schema, operation, missing, unexpected, raw);
+  }
+
+  /**
+   * Adds the fields the recorded response carries but the consumer schema does not declare. A
+   * tolerant consumer schema accepts extra fields, so the validator never names them; the response
+   * in the transcript does. Without this, a rename shows only its missing half.
+   */
+  public SchemaDiff withUndeclared(JsonNode responseBody, Set<String> declared) {
+    if (responseBody == null || !responseBody.isObject() || declared.isEmpty()) {
+      return this;
+    }
+    List<String> all = new ArrayList<>(unexpected);
+    for (Map.Entry<String, JsonNode> field : responseBody.properties()) {
+      if (!declared.contains(field.getKey()) && !all.contains(field.getKey())) {
+        all.add(field.getKey());
+      }
+    }
+    return new SchemaDiff(schema, operation, missing, all, raw);
   }
 
   /** One field gone and one new field appeared: most likely a rename. */

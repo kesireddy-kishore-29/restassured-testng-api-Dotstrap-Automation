@@ -20,6 +20,7 @@ import java.util.EnumMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
@@ -49,10 +50,11 @@ public final class TriageCommand implements Command {
     RunSummary summary = RunSummary.read(runDir);
     AiTriage ai = new AiTriage(AnthropicProvider.fromEnvironment(System.getenv()));
     String gitDiff = gitDiffStat();
+    Path schemas = Path.of(args.get("schemas", "framework/src/main/resources/schemas"));
     Map<Category, Integer> counts = new EnumMap<>(Category.class);
     List<TriageRecord> records = new ArrayList<>();
     for (TestResult test : summary.failed()) {
-      TriageRecord record = triage(runDir, summary, test, ai, gitDiff);
+      TriageRecord record = triage(runDir, summary, test, ai, gitDiff, schemas);
       records.add(record);
       counts.merge(record.category(), 1, Integer::sum);
       Json.write(runDir.resolve("triage").resolve(test.slug() + ".json"), record);
@@ -82,13 +84,13 @@ public final class TriageCommand implements Command {
   }
 
   TriageRecord triage(
-      Path runDir, RunSummary summary, TestResult test, AiTriage ai, String gitDiff) {
+      Path runDir, RunSummary summary, TestResult test, AiTriage ai, String gitDiff, Path schemas) {
     List<JsonNode> calls = transcript(runDir, test);
     FailureContext context = new FailureContext(test, calls);
     Classification classification = ai.refine(rules.classify(context), context);
     SchemaDiff diff =
         classification.category() == Category.CONTRACT_DRIFT
-            ? SchemaDiff.parse(test.errorMessage())
+            ? withUndeclared(SchemaDiff.parse(test.errorMessage()), context, schemas)
             : null;
     Map<String, Object> failingRequest = new LinkedHashMap<>();
     context
@@ -196,5 +198,31 @@ public final class TriageCommand implements Command {
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }
+  }
+
+  /** The consumer schema's declared properties, compared with the failing call's response. */
+  static SchemaDiff withUndeclared(SchemaDiff diff, FailureContext context, Path schemas) {
+    if (diff.schema() == null) {
+      return diff;
+    }
+    Path schemaFile = schemas.resolve(diff.schema() + ".schema.json");
+    if (!Files.exists(schemaFile)) {
+      return diff;
+    }
+    Set<String> declared = new java.util.HashSet<>();
+    Json.read(schemaFile).path("properties").fieldNames().forEachRemaining(declared::add);
+    return context
+        .failingCall()
+        .map(call -> call.path("responseBody").asText(""))
+        .filter(body -> body.startsWith("{"))
+        .map(
+            body -> {
+              try {
+                return diff.withUndeclared(Json.mapper().readTree(body), declared);
+              } catch (java.io.IOException e) {
+                return diff;
+              }
+            })
+        .orElse(diff);
   }
 }

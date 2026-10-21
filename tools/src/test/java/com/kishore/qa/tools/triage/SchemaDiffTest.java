@@ -36,4 +36,22 @@ public class SchemaDiffTest {
     assertThat(diff.unexpected()).isEmpty();
     assertThat(diff.looksLikeRename()).isFalse();
   }
+
+  @Test
+  public void aToleratedNewFieldInTheResponseCompletesTheRename() throws Exception {
+    SchemaDiff diff =
+        SchemaDiff.parse(
+            "JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n"
+                + "  - $: required property 'balance' not found");
+    com.fasterxml.jackson.databind.JsonNode body =
+        com.kishore.qa.tools.shared.Json.mapper()
+            .readTree("{\"availableBalance\":5,\"currency\":\"credits\",\"accountId\":\"acc_1\"}");
+
+    SchemaDiff completed =
+        diff.withUndeclared(body, java.util.Set.of("balance", "currency", "accountId"));
+
+    org.assertj.core.api.Assertions.assertThat(completed.unexpected())
+        .containsExactly("availableBalance");
+    org.assertj.core.api.Assertions.assertThat(completed.looksLikeRename()).isTrue();
+  }
 }
