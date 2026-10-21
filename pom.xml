@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.kishore.qa</groupId>
+  <groupId>com.qaautomation</groupId>
   <artifactId>api-automation-framework</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
@@ -134,7 +134,7 @@
         <version>${mockito.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.kishore.qa</groupId>
+        <groupId>com.qaautomation</groupId>
         <artifactId>framework</artifactId>
         <version>${project.version}</version>
       </dependency>

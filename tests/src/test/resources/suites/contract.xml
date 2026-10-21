@@ -9,7 +9,7 @@
       </run>
     </groups>
     <packages>
-      <package name="com.kishore.qa.tests.contract"/>
+      <package name="com.qaautomation.tests.contract"/>
     </packages>
   </test>
 </suite>

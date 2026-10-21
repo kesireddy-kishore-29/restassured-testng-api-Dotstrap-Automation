@@ -22,15 +22,15 @@ and a public practice API, with failure triage and governed self-healing.
 | Practice | Where it is |
 |---|---|
 | Layered framework: typed clients, request specs, assertions, test data | [`framework/`](framework/) |
-| Two contract layers: the provider's OpenAPI document on every response, plus consumer JSON Schemas | [`ContractConformanceFilter`](framework/src/main/java/com/kishore/qa/framework/core/ContractConformanceFilter.java), [`schemas/`](framework/src/main/resources/schemas/) |
-| Custom AssertJ assertions (`assertThatResponse(...).matchesContract(...)`) | [`ResponseAssert`](framework/src/main/java/com/kishore/qa/framework/assertions/ResponseAssert.java) |
-| Idempotency, retries with backoff, timeouts, rate limits | `resilience` and `negative` suites, [`RetryPolicy`](framework/src/main/java/com/kishore/qa/framework/core/RetryPolicy.java) |
-| Authorization across two real actors | [`MultiActorConversationTest`](tests/src/test/java/com/kishore/qa/tests/workflows/MultiActorConversationTest.java) |
-| Test data created per test and verifiably cleaned up | [`TestAccount`](framework/src/main/java/com/kishore/qa/framework/data/TestAccount.java), [`ManagedBooking`](framework/src/main/java/com/kishore/qa/framework/data/ManagedBooking.java) |
-| Configuration validated at start-up, every problem reported at once | [`ConfigLoader`](framework/src/main/java/com/kishore/qa/framework/config/ConfigLoader.java) |
-| Secrets masked in every artifact | [`Redactor`](framework/src/main/java/com/kishore/qa/framework/core/Redactor.java) |
+| Two contract layers: the provider's OpenAPI document on every response, plus consumer JSON Schemas | [`ContractConformanceFilter`](framework/src/main/java/com/qaautomation/framework/core/ContractConformanceFilter.java), [`schemas/`](framework/src/main/resources/schemas/) |
+| Custom AssertJ assertions (`assertThatResponse(...).matchesContract(...)`) | [`ResponseAssert`](framework/src/main/java/com/qaautomation/framework/assertions/ResponseAssert.java) |
+| Idempotency, retries with backoff, timeouts, rate limits | `resilience` and `negative` suites, [`RetryPolicy`](framework/src/main/java/com/qaautomation/framework/core/RetryPolicy.java) |
+| Authorization across two real actors | [`MultiActorConversationTest`](tests/src/test/java/com/qaautomation/tests/workflows/MultiActorConversationTest.java) |
+| Test data created per test and verifiably cleaned up | [`TestAccount`](framework/src/main/java/com/qaautomation/framework/data/TestAccount.java), [`ManagedBooking`](framework/src/main/java/com/qaautomation/framework/data/ManagedBooking.java) |
+| Configuration validated at start-up, every problem reported at once | [`ConfigLoader`](framework/src/main/java/com/qaautomation/framework/config/ConfigLoader.java) |
+| Secrets masked in every artifact | [`Redactor`](framework/src/main/java/com/qaautomation/framework/core/Redactor.java) |
 | Failure evidence: transcript, timeline, failure bundle, run gallery | [docs/reporting.md](docs/reporting.md) |
-| Triage into seven categories, rules first | [`tools/…/triage`](tools/src/main/java/com/kishore/qa/tools/triage/) |
+| Triage into seven categories, rules first | [`tools/…/triage`](tools/src/main/java/com/qaautomation/tools/triage/) |
 | Self-healing with guardrails in code, never auto-merged | [docs/self-healing.md](docs/self-healing.md) |
 | Health dashboard, Allure with history, contract coverage, latency | [docs/reporting.md](docs/reporting.md) |
 | Flaky tests and quarantine with owners and expiry dates | [`quarantine.json`](quarantine.json), [test strategy](docs/test-strategy.md#flaky-tests-and-quarantine) |

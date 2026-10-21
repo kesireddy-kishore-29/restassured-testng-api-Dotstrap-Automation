@@ -10,7 +10,7 @@
       </run>
     </groups>
     <packages>
-      <package name="com.kishore.qa.tests.*"/>
+      <package name="com.qaautomation.tests.*"/>
     </packages>
   </test>
 </suite>

@@ -8,7 +8,7 @@
       </run>
     </groups>
     <packages>
-      <package name="com.kishore.qa.tests.demo"/>
+      <package name="com.qaautomation.tests.demo"/>
     </packages>
   </test>
 </suite>

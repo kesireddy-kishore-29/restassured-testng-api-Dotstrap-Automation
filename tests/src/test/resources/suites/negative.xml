@@ -9,7 +9,7 @@
       </run>
     </groups>
     <packages>
-      <package name="com.kishore.qa.tests.negative"/>
+      <package name="com.qaautomation.tests.negative"/>
     </packages>
   </test>
 </suite>

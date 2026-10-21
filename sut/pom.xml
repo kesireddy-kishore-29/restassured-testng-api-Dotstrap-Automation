@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.kishore.qa</groupId>
+    <groupId>com.qaautomation</groupId>
     <artifactId>api-automation-framework</artifactId>
     <version>1.0.0</version>
   </parent>
@@ -49,7 +49,7 @@
               <createDependencyReducedPom>false</createDependencyReducedPom>
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>com.kishore.qa.sut.Main</mainClass>
+                  <mainClass>com.qaautomation.sut.Main</mainClass>
                 </transformer>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
               </transformers>
@@ -74,7 +74,7 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <configuration>
-          <mainClass>com.kishore.qa.sut.Main</mainClass>
+          <mainClass>com.qaautomation.sut.Main</mainClass>
         </configuration>
       </plugin>
     </plugins>

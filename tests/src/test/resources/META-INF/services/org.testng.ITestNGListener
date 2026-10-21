@@ -1,4 +1,4 @@
-com.kishore.qa.framework.listeners.TraceabilityListener
-com.kishore.qa.framework.listeners.SutAvailabilityListener
-com.kishore.qa.framework.listeners.EvidenceListener
-com.kishore.qa.framework.listeners.RetryTransformer
+com.qaautomation.framework.listeners.TraceabilityListener
+com.qaautomation.framework.listeners.SutAvailabilityListener
+com.qaautomation.framework.listeners.EvidenceListener
+com.qaautomation.framework.listeners.RetryTransformer

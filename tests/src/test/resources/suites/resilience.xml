@@ -9,7 +9,7 @@
       </run>
     </groups>
     <packages>
-      <package name="com.kishore.qa.tests.resilience"/>
+      <package name="com.qaautomation.tests.resilience"/>
     </packages>
   </test>
 </suite>
