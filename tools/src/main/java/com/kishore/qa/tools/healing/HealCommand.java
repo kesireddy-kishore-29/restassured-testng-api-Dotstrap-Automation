@@ -160,116 +160,140 @@ public final class HealCommand implements Command {
               + "-"
               + LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE);
       git.createBranch(branch);
-      write(repoRoot, patch);
-      String suite = lead.triage().path("suite").asText("regression");
-      List<Verifier.Step> steps = new ArrayList<>(verifier.verify(lead.testId(), suite));
-      // The same fix must also turn every other failure it claims to explain green.
-      for (Candidate other : others) {
-        if (steps.stream().allMatch(Verifier.Step::passed)) {
-          steps.add(verifier.rerun(other.testId()));
+      // Whatever happens below, the repository ends on the branch it started on.
+      try {
+        write(repoRoot, patch);
+        String suite = lead.triage().path("suite").asText("regression");
+        List<Verifier.Step> steps = new ArrayList<>(verifier.verify(lead.testId(), suite));
+        // The same fix must also turn every other failure it claims to explain green.
+        for (Candidate other : others) {
+          if (steps.stream().allMatch(Verifier.Step::passed)) {
+            steps.add(verifier.rerun(other.testId()));
+          }
         }
-      }
-      boolean verified = steps.stream().allMatch(Verifier.Step::passed);
-      Map<String, Object> verification = new LinkedHashMap<>();
-      verification.put("runs", 3);
-      verification.put(
-          "passed",
-          steps.stream().filter(s -> s.passed() && s.name().startsWith("failing test")).count());
-      verification.put(
-          "suite", steps.stream().anyMatch(s -> s.passed() && s.name().startsWith("surrounding")));
-      verification.put(
-          "alsoExplained",
-          steps.stream().filter(s -> s.passed() && s.name().startsWith("also explained")).count());
-      String rootCause = lead.triage().path("reason").asText();
-      List<String> alsoExplains = others.stream().map(Candidate::testId).toList();
-      String body =
-          PullRequestBody.render(
-              patch,
-              rootCause,
-              "`"
-                  + lead.triage().path("evidence").path("bundleZip").asText()
-                  + "` (run `"
-                  + lead.triage().path("runId").asText()
-                  + "`)",
-              violations,
-              steps,
-              category.needsHumanDecision(),
-              alsoExplains);
-      writeText(healDir.resolve("PR.md"), body);
-      Json.write(healDir.resolve("patch.json"), patch);
-      writeText(healDir.resolve("patch.diff"), unifiedDiff(patch));
-      if (!verified) {
-        git.discardChanges();
-        git.switchTo(startBranch);
-        git.deleteBranch(branch);
-        out.println("Verification failed for " + lead.testId() + "; branch discarded");
-        record(
-            logFile,
-            runDir,
+        boolean verified = steps.stream().allMatch(Verifier.Step::passed);
+        Map<String, Object> verification = new LinkedHashMap<>();
+        verification.put("runs", 3);
+        verification.put(
+            "passed",
+            steps.stream().filter(s -> s.passed() && s.name().startsWith("failing test")).count());
+        verification.put(
+            "suite",
+            steps.stream().anyMatch(s -> s.passed() && s.name().startsWith("surrounding")));
+        verification.put(
+            "alsoExplained",
+            steps.stream()
+                .filter(s -> s.passed() && s.name().startsWith("also explained"))
+                .count());
+        String rootCause = lead.triage().path("reason").asText();
+        List<String> alsoExplains = others.stream().map(Candidate::testId).toList();
+        String body =
+            PullRequestBody.render(
+                patch,
+                rootCause,
+                "`"
+                    + lead.triage().path("evidence").path("bundleZip").asText()
+                    + "` (run `"
+                    + lead.triage().path("runId").asText()
+                    + "`)",
+                violations,
+                steps,
+                category.needsHumanDecision(),
+                alsoExplains);
+        writeText(healDir.resolve("PR.md"), body);
+        Json.write(healDir.resolve("patch.json"), patch);
+        writeText(healDir.resolve("patch.diff"), unifiedDiff(patch));
+        if (!verified) {
+          git.discardChanges();
+          git.switchTo(startBranch);
+          git.deleteBranch(branch);
+          out.println("Verification failed for " + lead.testId() + "; branch discarded");
+          record(
+              logFile,
+              runDir,
+              entry(
+                  today,
+                  lead.triage(),
+                  branch,
+                  "",
+                  patch,
+                  "failed-verification",
+                  lead.started(),
+                  guardResult,
+                  verification));
+          continue;
+        }
+        HealingLog.Entry entry =
             entry(
                 today,
                 lead.triage(),
                 branch,
-                "",
+                "(local branch; PR body at "
+                    + runDir.relativize(healDir.resolve("PR.md")).toString().replace('\\', '/')
+                    + ")",
                 patch,
-                "failed-verification",
+                "proposed",
                 lead.started(),
                 guardResult,
-                verification));
-        continue;
+                verification);
+        Json.write(logFile, HealingLog.read(logFile).plus(entry));
+        git.commitAll(
+            "fix(heal): "
+                + category.name().toLowerCase(Locale.ROOT).replace('_', ' ')
+                + " in "
+                + lead.slug()
+                + "\n\n"
+                + rootCause
+                + (others.isEmpty()
+                    ? ""
+                    : "\n\nThe same fix explains " + others.size() + " other failing test(s).")
+                + "\n\nProposed by "
+                + patch.provider()
+                + "; guardrails passed; failing test passed 3/3 "
+                + "and suite '"
+                + suite
+                + "' passed. Needs human review; never auto-merged.\n\nHealed-By: "
+                + patch.provider());
+        String prUrl = args.flag("open-prs") ? openPullRequest(runner, branch, body, category) : "";
+        git.switchTo(startBranch);
+        Json.write(
+            runDir.resolve("healing").resolve("healing-log.json"),
+            HealingLog.read(logFile).plus(entry));
+        opened++;
+        out.println(
+            "Proposed "
+                + branch
+                + (others.isEmpty() ? "" : " (also explains " + others.size() + " other failures)")
+                + (prUrl.isEmpty() ? "" : " -> " + prUrl));
+        summary.add(Map.of("testId", lead.testId(), "outcome", "proposed", "branch", branch));
+        others.forEach(
+            o ->
+                summary.add(
+                    Map.of("testId", o.testId(), "outcome", "same-fix-as", "branch", branch)));
+      } catch (RuntimeException e) {
+        abandon(git, startBranch, branch);
+        out.println("Heal of " + lead.testId() + " stopped by an error; branch discarded: " + e);
+        summary.add(Map.of("testId", lead.testId(), "outcome", "error"));
       }
-      HealingLog.Entry entry =
-          entry(
-              today,
-              lead.triage(),
-              branch,
-              "(local branch; PR body at "
-                  + runDir.relativize(healDir.resolve("PR.md")).toString().replace('\\', '/')
-                  + ")",
-              patch,
-              "proposed",
-              lead.started(),
-              guardResult,
-              verification);
-      Json.write(logFile, HealingLog.read(logFile).plus(entry));
-      git.commitAll(
-          "fix(heal): "
-              + category.name().toLowerCase(Locale.ROOT).replace('_', ' ')
-              + " in "
-              + lead.slug()
-              + "\n\n"
-              + rootCause
-              + (others.isEmpty()
-                  ? ""
-                  : "\n\nThe same fix explains " + others.size() + " other failing test(s).")
-              + "\n\nProposed by "
-              + patch.provider()
-              + "; guardrails passed; failing test passed 3/3 "
-              + "and suite '"
-              + suite
-              + "' passed. Needs human review; never auto-merged.\n\nHealed-By: "
-              + patch.provider());
-      String prUrl = args.flag("open-prs") ? openPullRequest(runner, branch, body, category) : "";
-      git.switchTo(startBranch);
-      Json.write(
-          runDir.resolve("healing").resolve("healing-log.json"),
-          HealingLog.read(logFile).plus(entry));
-      opened++;
-      out.println(
-          "Proposed "
-              + branch
-              + (others.isEmpty() ? "" : " (also explains " + others.size() + " other failures)")
-              + (prUrl.isEmpty() ? "" : " -> " + prUrl));
-      summary.add(Map.of("testId", lead.testId(), "outcome", "proposed", "branch", branch));
-      others.forEach(
-          o ->
-              summary.add(
-                  Map.of("testId", o.testId(), "outcome", "same-fix-as", "branch", branch)));
     }
     Json.write(
         runDir.resolve("healing").resolve("healing-summary.json"),
         Map.of("aiStep", ai.status(), "results", summary));
     return 0;
+  }
+
+  /** Best effort: each step runs even if the one before it failed. */
+  private static void abandon(Git git, String startBranch, String branch) {
+    List<Runnable> steps =
+        List.of(
+            git::discardChanges, () -> git.switchTo(startBranch), () -> git.deleteBranch(branch));
+    for (Runnable step : steps) {
+      try {
+        step.run();
+      } catch (RuntimeException ignored) {
+        // Keep going: the next step may still restore the start branch.
+      }
+    }
   }
 
   private static HealingLog.Entry entry(
