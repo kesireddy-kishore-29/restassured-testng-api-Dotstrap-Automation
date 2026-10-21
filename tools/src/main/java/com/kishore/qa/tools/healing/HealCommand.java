@@ -223,7 +223,9 @@ public final class HealCommand implements Command {
               today,
               lead.triage(),
               branch,
-              "(local branch; PR body at " + runDir.relativize(healDir.resolve("PR.md")) + ")",
+              "(local branch; PR body at "
+                  + runDir.relativize(healDir.resolve("PR.md")).toString().replace('\\', '/')
+                  + ")",
               patch,
               "proposed",
               lead.started(),
