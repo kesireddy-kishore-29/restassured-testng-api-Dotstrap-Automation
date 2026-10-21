@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import org.testng.annotations.Test;
 
 public class QuarantineTest {
@@ -107,5 +108,14 @@ public class QuarantineTest {
         .extracting(FlakyHistory.Occurrence::testId)
         .doesNotContain("t#old");
     assertThat(history.countsSince(TODAY, 14)).containsEntry("t#a", 3);
+  }
+
+  @Test
+  public void aProposedQuarantineIsOwnedByTheNamedOwnerOrTheRepositoryOwnerNeverAGuess() {
+    assertThat(FlakyHistoryCommand.owner(Optional.of("@qa-team"), Optional.of("acme")))
+        .contains("@qa-team");
+    assertThat(FlakyHistoryCommand.owner(Optional.empty(), Optional.of("acme"))).contains("@acme");
+    assertThat(FlakyHistoryCommand.owner(Optional.of(" "), Optional.of("@acme"))).contains("@acme");
+    assertThat(FlakyHistoryCommand.owner(Optional.empty(), Optional.empty())).isEmpty();
   }
 }

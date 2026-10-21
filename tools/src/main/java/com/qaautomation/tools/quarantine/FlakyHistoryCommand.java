@@ -15,13 +15,14 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 /**
  * {@code qa-tools flaky-history [--run <dir>] [--propose]}: appends the run's flaky tests to
  * flaky-history.json; with {@code --propose}, a test flaky 3+ times in 14 days and not yet
  * quarantined is added to quarantine.json (owner, 14-day expiry) and tagged in its source, ready
- * for a pull request.
+ * for a pull request. The owner is {@code --owner} or, in GitHub Actions, the repository owner.
  */
 public final class FlakyHistoryCommand implements Command {
 
@@ -72,12 +73,20 @@ public final class FlakyHistoryCommand implements Command {
       boolean already =
           quarantine.entriesOrEmpty().stream().anyMatch(q -> testId.equals(q.testId()));
       if (e.getValue() >= THRESHOLD && !already) {
+        Optional<String> owner =
+            owner(args.get("owner"), Optional.ofNullable(System.getenv("GITHUB_REPOSITORY_OWNER")));
+        if (owner.isEmpty()) {
+          out.println(
+              "flaky-history: --owner is required to propose a quarantine"
+                  + " (in GitHub Actions it defaults to the repository owner)");
+          return 2;
+        }
         tagInSource(sources, testId);
         proposals.add(
             new QuarantineEntry(
                 testId,
                 testId.substring(testId.indexOf('#') + 1),
-                args.get("owner", "@kesireddy-kishore-29"),
+                owner.get(),
                 "Flaky " + e.getValue() + " times in " + WINDOW_DAYS + " days (auto-proposed)",
                 today.plusDays(WINDOW_DAYS).toString(),
                 ""));
@@ -89,6 +98,17 @@ public final class FlakyHistoryCommand implements Command {
     out.println("Quarantine proposals: " + proposals.size());
     proposals.forEach(p -> out.println("  + " + p.testId() + " (" + p.reason() + ")"));
     return 0;
+  }
+
+  /**
+   * The owner of a proposed quarantine: {@code --owner}, else the repository owner GitHub Actions
+   * provides ({@code GITHUB_REPOSITORY_OWNER}), else none. No person is ever assumed.
+   */
+  static Optional<String> owner(Optional<String> explicit, Optional<String> repositoryOwner) {
+    if (explicit.filter(o -> !o.isBlank()).isPresent()) {
+      return explicit;
+    }
+    return repositoryOwner.filter(o -> !o.isBlank()).map(o -> o.startsWith("@") ? o : "@" + o);
   }
 
   private static void tagInSource(Path sources, String testId) {
