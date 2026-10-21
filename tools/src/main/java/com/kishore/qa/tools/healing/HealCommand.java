@@ -238,22 +238,8 @@ public final class HealCommand implements Command {
                 verification);
         Json.write(logFile, HealingLog.read(logFile).plus(entry));
         git.commitAll(
-            "fix(heal): "
-                + category.name().toLowerCase(Locale.ROOT).replace('_', ' ')
-                + " in "
-                + lead.slug()
-                + "\n\n"
-                + rootCause
-                + (others.isEmpty()
-                    ? ""
-                    : "\n\nThe same fix explains " + others.size() + " other failing test(s).")
-                + "\n\nProposed by "
-                + patch.provider()
-                + "; guardrails passed; failing test passed 3/3 "
-                + "and suite '"
-                + suite
-                + "' passed. Needs human review; never auto-merged.\n\nHealed-By: "
-                + patch.provider());
+            commitMessage(
+                category, lead.slug(), rootCause, others.size(), suite, patch.provider()));
         String prUrl = args.flag("open-prs") ? openPullRequest(runner, branch, body, category) : "";
         git.switchTo(startBranch);
         Json.write(
@@ -282,11 +268,61 @@ public final class HealCommand implements Command {
     return 0;
   }
 
+  /** The heal commit message, within the commit rules: header and every line at most 100. */
+  static String commitMessage(
+      Category category, String slug, String reason, int others, String suite, String provider) {
+    String header =
+        "fix(heal): " + category.name().toLowerCase(Locale.ROOT).replace('_', ' ') + " in " + slug;
+    List<String> lines = new ArrayList<>();
+    lines.add(header.substring(0, Math.min(100, header.length())));
+    lines.add("");
+    lines.addAll(wrap(reason, 72));
+    if (others > 0) {
+      lines.add("");
+      lines.addAll(wrap("The same fix explains " + others + " other failing test(s).", 72));
+    }
+    lines.add("");
+    lines.addAll(
+        wrap(
+            "Proposed by "
+                + provider
+                + "; guardrails passed; failing test passed 3/3 and suite '"
+                + suite
+                + "' passed. Needs human review; never auto-merged.",
+            72));
+    lines.add("");
+    lines.add("Healed-By: " + provider);
+    return String.join("\n", lines);
+  }
+
+  /** Words joined into lines of at most {@code width} characters; a longer word is cut. */
+  static List<String> wrap(String text, int width) {
+    List<String> lines = new ArrayList<>();
+    StringBuilder line = new StringBuilder();
+    for (String word : text.strip().split("\\s+")) {
+      for (String piece = word;
+          !piece.isEmpty();
+          piece = piece.substring(Math.min(width, piece.length()))) {
+        String chunk = piece.substring(0, Math.min(width, piece.length()));
+        if (!line.isEmpty() && line.length() + 1 + chunk.length() > width) {
+          lines.add(line.toString());
+          line = new StringBuilder(chunk);
+        } else {
+          line.append(line.isEmpty() ? "" : " ").append(chunk);
+        }
+      }
+    }
+    if (!line.isEmpty()) {
+      lines.add(line.toString());
+    }
+    return lines;
+  }
+
   /** Best effort: each step runs even if the one before it failed. */
   private static void abandon(Git git, String startBranch, String branch) {
+    // Safe: the heal starts only from a clean tree, so nothing but the patch is discarded.
     List<Runnable> steps =
-        List.of(
-            git::discardChanges, () -> git.switchTo(startBranch), () -> git.deleteBranch(branch));
+        List.of(git::resetHard, () -> git.switchTo(startBranch), () -> git.deleteBranch(branch));
     for (Runnable step : steps) {
       try {
         step.run();

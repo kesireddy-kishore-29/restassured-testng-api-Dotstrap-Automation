@@ -30,4 +30,28 @@ public class HealGroupingTest {
     assertThat(HealCommand.fingerprint(patch("A#one", "{\"x\":1}")))
         .isNotEqualTo(HealCommand.fingerprint(patch("A#one", "{\"y\":1}")));
   }
+
+  @Test
+  public void theCommitMessageKeepsEveryLineWithinTheCommitRules() {
+    String message =
+        HealCommand.commitMessage(
+            Category.CONTRACT_DRIFT,
+            "a-very-long-test-slug-".repeat(6),
+            "The response no longer matches its contract: " + "x".repeat(150),
+            7,
+            "contract",
+            RuleBasedHealer.NAME);
+
+    List<String> lines = message.lines().toList();
+    assertThat(lines.getFirst()).startsWith("fix(heal): contract drift in ").hasSizeLessThan(101);
+    assertThat(lines).allSatisfy(l -> assertThat(l.length()).isLessThanOrEqualTo(100));
+    assertThat(message).contains("The same fix explains 7 other failing test(s).");
+    assertThat(lines.getLast()).isEqualTo("Healed-By: rule-based");
+  }
+
+  @Test
+  public void wrapsWordsAndCutsAWordLongerThanTheWidth() {
+    assertThat(HealCommand.wrap("aa bb cc", 5)).containsExactly("aa bb", "cc");
+    assertThat(HealCommand.wrap("abcdefgh", 3)).containsExactly("abc", "def", "gh");
+  }
 }

@@ -35,6 +35,11 @@ public final class Git {
     require(List.of("git", "checkout", "--", "."));
   }
 
+  /** Drops staged and unstaged changes; the healer calls it only on its own heal branch. */
+  public void resetHard() {
+    require(List.of("git", "reset", "-q", "--hard"));
+  }
+
   public void deleteBranch(String name) {
     require(List.of("git", "branch", "-D", name));
   }
