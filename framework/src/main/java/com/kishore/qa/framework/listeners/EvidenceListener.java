@@ -174,6 +174,19 @@ public final class EvidenceListener
             .add(writer.attemptDir(id, context.attempt()));
       }
       recorder.add(record);
+      recorder.addCalls(
+          context.transcript().exchanges().stream()
+              .map(
+                  e ->
+                      new RunRecorder.CallMetric(
+                          id.testId(),
+                          context.attempt(),
+                          e.method(),
+                          e.pathTemplate(),
+                          java.net.URI.create(e.url()).getHost(),
+                          e.status(),
+                          e.durationMs()))
+              .toList());
     } finally {
       TestContext.end();
     }

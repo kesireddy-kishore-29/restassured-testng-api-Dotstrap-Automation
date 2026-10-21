@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "features": [
+    {
+      "id": "FEAT-HEALTH-01",
+      "requirement": "Health endpoint reports status, version, region"
+    },
+    {
+      "id": "FEAT-ACCT-01",
+      "requirement": "Create an account and read it back as the owner"
+    },
+    {
+      "id": "FEAT-ACCT-02",
+      "requirement": "Update the profile; invalid input is a 422 problem"
+    },
+    {
+      "id": "FEAT-ACCT-03",
+      "requirement": "Public profile lookup exposes no private fields"
+    },
+    {
+      "id": "FEAT-CONTRACT-01",
+      "requirement": "Responses match their JSON Schema"
+    },
+    {
+      "id": "FEAT-CONTRACT-02",
+      "requirement": "Requests and responses conform to the OpenAPI document"
+    },
+    {
+      "id": "FEAT-ERR-01",
+      "requirement": "Every error is RFC 7807 application/problem+json"
+    },
+    {
+      "id": "FEAT-AUTHZ-01",
+      "requirement": "Auth boundaries: 401 without/with bad token, 403 for a non-participant"
+    },
+    {
+      "id": "FEAT-CONV-01",
+      "requirement": "Start a conversation and exchange messages"
+    },
+    {
+      "id": "FEAT-CONV-02",
+      "requirement": "A closed conversation refuses further messages (409)"
+    },
+    {
+      "id": "FEAT-CONV-03",
+      "requirement": "Unread counts and mark-as-read"
+    },
+    {
+      "id": "FEAT-IDEMP-01",
+      "requirement": "Same key + same body replays the original result; no double charge"
+    },
+    {
+      "id": "FEAT-IDEMP-02",
+      "requirement": "Same key + different body is a 409"
+    },
+    {
+      "id": "FEAT-IDEMP-03",
+      "requirement": "A purchase without an Idempotency-Key is refused (400)"
+    },
+    {
+      "id": "FEAT-RATE-01",
+      "requirement": "429 with Retry-After, then recovery"
+    },
+    {
+      "id": "FEAT-CORS-01",
+      "requirement": "Allowed origin passes preflight with the right headers"
+    },
+    {
+      "id": "FEAT-CORS-02",
+      "requirement": "Disallowed origin receives no allow header"
+    },
+    {
+      "id": "FEAT-LEDGER-01",
+      "requirement": "Purchase updates balance and history consistently"
+    },
+    {
+      "id": "FEAT-LEDGER-02",
+      "requirement": "Spending with no credits is a 402"
+    },
+    {
+      "id": "FEAT-LEDGER-03",
+      "requirement": "Concurrent purchases sum correctly"
+    },
+    {
+      "id": "FEAT-REGION-01",
+      "requirement": "Requests are served by the account's home region"
+    },
+    {
+      "id": "FEAT-REGION-02",
+      "requirement": "A cross-region conversation is stored in the recipient's region"
+    },
+    {
+      "id": "FEAT-REGION-03",
+      "requirement": "Unknown region is a 422"
+    },
+    {
+      "id": "FEAT-SEC-01",
+      "requirement": "Security headers on every response"
+    },
+    {
+      "id": "FEAT-SEC-02",
+      "requirement": "Admin endpoint is forbidden to a normal account"
+    },
+    {
+      "id": "FEAT-SEC-03",
+      "requirement": "An expired token is refused"
+    },
+    {
+      "id": "FEAT-RES-01",
+      "requirement": "Dropped response + retry with the same key: no double charge"
+    },
+    {
+      "id": "FEAT-RES-02",
+      "requirement": "Client timeout is enforced"
+    },
+    {
+      "id": "FEAT-RES-03",
+      "requirement": "503 + Retry-After is honoured by the retry policy"
+    },
+    {
+      "id": "FEAT-AUTH-01",
+      "requirement": "Restful-Booker: valid credentials receive a token"
+    },
+    {
+      "id": "FEAT-AUTH-02",
+      "requirement": "Restful-Booker: writes without a valid token are refused"
+    },
+    {
+      "id": "FEAT-BOOK-01",
+      "requirement": "Restful-Booker: create a booking"
+    },
+    {
+      "id": "FEAT-BOOK-02",
+      "requirement": "Restful-Booker: read a booking back exactly as created"
+    },
+    {
+      "id": "FEAT-BOOK-03",
+      "requirement": "Restful-Booker: update a booking with a token"
+    },
+    {
+      "id": "FEAT-BOOK-04",
+      "requirement": "Restful-Booker: delete a booking and verify it is gone"
+    },
+    {
+      "id": "FEAT-NEG-01",
+      "requirement": "Restful-Booker: unknown resource returns 404"
+    },
+    {
+      "id": "FEAT-DEMO-01",
+      "requirement": "Deliberate-failure demo (never part of a gating run)"
+    }
+  ]
+}

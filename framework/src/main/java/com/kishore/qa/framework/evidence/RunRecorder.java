@@ -31,6 +31,22 @@ public final class RunRecorder {
     attempts.add(record);
   }
 
+  /** One HTTP call, without bodies: kept for every test so coverage and latency are complete. */
+  public record CallMetric(
+      String testId,
+      int attempt,
+      String method,
+      String operation,
+      String host,
+      Integer status,
+      long durationMs) {}
+
+  private final List<CallMetric> calls = new ArrayList<>();
+
+  public synchronized void addCalls(List<CallMetric> metrics) {
+    calls.addAll(metrics);
+  }
+
   /** The last attempt of each test, with "flaky" when it passed after a retry. */
   public synchronized List<TestRecord> finalResults() {
     Map<String, TestRecord> last = new LinkedHashMap<>();
@@ -108,6 +124,9 @@ public final class RunRecorder {
       Files.createDirectories(run.runDir());
       EvidenceWriter.write(run.runDir().resolve("run-summary.json"), Json.pretty(summary));
       EvidenceWriter.write(run.runDir().resolve("flaky-report.json"), Json.pretty(flakyReport));
+      synchronized (this) {
+        EvidenceWriter.write(run.runDir().resolve("calls.json"), Json.pretty(calls));
+      }
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }
