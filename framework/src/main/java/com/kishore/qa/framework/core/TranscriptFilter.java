@@ -11,6 +11,8 @@ import io.restassured.http.Headers;
 import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
 import io.restassured.specification.FilterableResponseSpecification;
+import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.time.Instant;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -47,7 +49,9 @@ public final class TranscriptFilter implements Filter {
       test.transcript().add(exchange);
       attach(exchange);
       return response;
-    } catch (RuntimeException e) {
+    } catch (Exception e) {
+      // REST Assured (Groovy) throws checked exceptions such as SocketTimeoutException
+      // undeclared; catch them too, so a call that never got an answer is still in the transcript.
       Exchange failed =
           exchange(
               sequence,
@@ -59,8 +63,21 @@ public final class TranscriptFilter implements Filter {
               e.getClass().getSimpleName() + ": " + e.getMessage());
       test.transcript().add(failed);
       attach(failed);
-      throw e;
+      throw unchecked(e);
     }
+  }
+
+  /**
+   * Rethrows unchanged when unchecked; wraps checked ones, keeping the cause for the retry policy.
+   */
+  private static RuntimeException unchecked(Exception e) {
+    if (e instanceof RuntimeException runtime) {
+      return runtime;
+    }
+    if (e instanceof IOException io) {
+      return new UncheckedIOException(io);
+    }
+    return new IllegalStateException(e);
   }
 
   private static Exchange exchange(

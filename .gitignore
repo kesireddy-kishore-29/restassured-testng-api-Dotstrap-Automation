@@ -25,3 +25,6 @@ node_modules/
 .env.*
 !.env.example
 *.log
+
+# Flaky history is run state; CI keeps it on the gh-pages branch (data/flaky-history.json).
+flaky-history.json

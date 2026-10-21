@@ -1,5 +1,8 @@
 package com.kishore.qa.tools;
 
+import com.kishore.qa.tools.quarantine.FlakyHistoryCommand;
+import com.kishore.qa.tools.quarantine.QuarantineCheckCommand;
+import com.kishore.qa.tools.triage.TriageCommand;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -18,8 +21,12 @@ public final class Cli {
     available.forEach(c -> commands.put(c.name(), c));
   }
 
+  public static List<Command> allCommands() {
+    return List.of(new TriageCommand(), new QuarantineCheckCommand(), new FlakyHistoryCommand());
+  }
+
   public static void main(String[] args) {
-    int code = new Cli(List.of()).run(args, System.out);
+    int code = new Cli(allCommands()).run(args, System.out);
     System.exit(code);
   }
 

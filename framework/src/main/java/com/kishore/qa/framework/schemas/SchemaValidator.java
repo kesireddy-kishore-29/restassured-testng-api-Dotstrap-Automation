@@ -37,7 +37,13 @@ public final class SchemaValidator {
   public static List<String> validate(String schemaName, String json) {
     Schema schema = CACHE.computeIfAbsent(schemaName, SchemaValidator::load);
     List<Error> errors = schema.validate(json, InputFormat.JSON);
-    return errors.stream().map(e -> e.getInstanceLocation() + ": " + e.getMessage()).toList();
+    return errors.stream().map(SchemaValidator::describe).toList();
+  }
+
+  /** "$.items[0].id: message", with the document root shown as "$". */
+  private static String describe(Error error) {
+    String location = String.valueOf(error.getInstanceLocation());
+    return (location.isEmpty() ? "$" : location) + ": " + error.getMessage();
   }
 
   private static Schema load(String schemaName) {
