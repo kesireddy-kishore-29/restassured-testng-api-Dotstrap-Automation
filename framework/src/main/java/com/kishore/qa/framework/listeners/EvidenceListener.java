@@ -79,6 +79,15 @@ public final class EvidenceListener
     if (!method.isTestMethod()) {
       return;
     }
+    // An explicit @Severity on the test wins; otherwise the groups decide.
+    if (result
+            .getMethod()
+            .getConstructorOrMethod()
+            .getMethod()
+            .getAnnotation(io.qameta.allure.Severity.class)
+        == null) {
+      Allure.label("severity", Severity.of(result.getMethod().getGroups()));
+    }
     TestContext.current()
         .ifPresent(
             context -> {
