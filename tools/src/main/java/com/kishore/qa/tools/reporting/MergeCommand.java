@@ -15,10 +15,10 @@ import java.nio.file.StandardCopyOption;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.stream.Stream;
 
 /**
@@ -94,28 +94,41 @@ public final class MergeCommand implements Command {
     return 0;
   }
 
+  /** When a test ran in several shards, its worst result counts. */
+  private static final Map<String, Integer> SEVERITY =
+      Map.of("failed", 0, "flaky", 1, "passed", 2, "skipped", 3);
+
   /**
-   * One summary for all shards: totals added up, tests listed once, sorted, and the wall-clock span
-   * from the first shard's start to the last shard's finish.
+   * One summary for all shards: each test listed once (a test that ran in several shards keeps its
+   * worst result), totals counted from that list, and the wall-clock span from the first shard's
+   * start to the last shard's finish.
    */
   static ObjectNode merge(List<JsonNode> summaries) {
     ObjectNode merged = summaries.getFirst().deepCopy();
-    ObjectNode totals = Json.mapper().createObjectNode();
-    List<JsonNode> tests = new ArrayList<>();
+    Map<String, JsonNode> byId = new TreeMap<>();
     Instant started = null;
     Instant finished = null;
     for (JsonNode s : summaries) {
-      for (Map.Entry<String, JsonNode> total : s.path("totals").properties()) {
-        totals.put(
-            total.getKey(), totals.path(total.getKey()).asLong() + total.getValue().asLong());
+      for (JsonNode test : s.path("tests")) {
+        byId.merge(
+            test.path("id").asText(),
+            test,
+            (seen, next) -> severity(next) < severity(seen) ? next : seen);
       }
-      s.path("tests").forEach(tests::add);
       Instant start = Instant.parse(s.path("startedAt").asText());
       Instant finish = Instant.parse(s.path("finishedAt").asText());
       started = started == null || start.isBefore(started) ? start : started;
       finished = finished == null || finish.isAfter(finished) ? finish : finished;
     }
-    tests.sort(Comparator.comparing(t -> t.path("id").asText()));
+    List<JsonNode> tests = new ArrayList<>(byId.values());
+    ObjectNode totals = Json.mapper().createObjectNode();
+    totals.put("total", tests.size());
+    for (String status : List.of("passed", "failed", "skipped", "flaky")) {
+      totals.put(
+          status, tests.stream().filter(t -> status.equals(t.path("status").asText())).count());
+    }
+    totals.put(
+        "quarantined", tests.stream().filter(t -> t.path("quarantined").asBoolean()).count());
     merged.set("totals", totals);
     merged.set("tests", Json.mapper().createArrayNode().addAll(tests));
     merged.put("startedAt", String.valueOf(started));
@@ -123,6 +136,10 @@ public final class MergeCommand implements Command {
     merged.put("durationMs", Duration.between(started, finished).toMillis());
     merged.put("shards", summaries.size());
     return merged;
+  }
+
+  private static int severity(JsonNode test) {
+    return SEVERITY.getOrDefault(test.path("status").asText(), 9);
   }
 
   static List<Path> findRuns(Path from) {

@@ -3,6 +3,7 @@ package com.kishore.qa.tools.reporting;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.kishore.qa.tools.shared.Json;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -88,6 +89,31 @@ public class MergeCommandTest {
     assertThat(Json.read(into.resolve("flaky-report.json")).path("flaky").size()).isEqualTo(1);
     assertThat(into.resolve("functional/a-test/1/meta.json")).exists();
     assertThat(into.resolve("functional/b-test/1/meta.json")).exists();
+  }
+
+  @Test
+  public void aTestThatRanInSeveralShardsCountsOnceWithItsWorstResult() {
+    ObjectNode passed = summary("passed");
+    ObjectNode failed = summary("failed");
+
+    ObjectNode merged = MergeCommand.merge(List.of(passed, failed, passed));
+
+    assertThat(merged.path("tests").size()).isEqualTo(1);
+    assertThat(merged.path("tests").get(0).path("status").asText()).isEqualTo("failed");
+    assertThat(merged.path("totals").path("total").asInt()).isEqualTo(1);
+    assertThat(merged.path("totals").path("failed").asInt()).isEqualTo(1);
+    assertThat(merged.path("totals").path("passed").asInt()).isZero();
+  }
+
+  private static ObjectNode summary(String status) {
+    ObjectNode s = Json.mapper().createObjectNode();
+    s.put("startedAt", "2026-10-21T02:00:00Z");
+    s.put("finishedAt", "2026-10-21T02:00:10Z");
+    s.putArray("tests")
+        .addObject()
+        .put("id", "com.example.SetupTest#prepare")
+        .put("status", status);
+    return s;
   }
 
   @Test
