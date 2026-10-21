@@ -1,5 +1,6 @@
 package com.kishore.qa.tools;
 
+import com.kishore.qa.tools.healing.HealCommand;
 import com.kishore.qa.tools.quarantine.FlakyHistoryCommand;
 import com.kishore.qa.tools.quarantine.QuarantineCheckCommand;
 import com.kishore.qa.tools.triage.TriageCommand;
@@ -22,7 +23,11 @@ public final class Cli {
   }
 
   public static List<Command> allCommands() {
-    return List.of(new TriageCommand(), new QuarantineCheckCommand(), new FlakyHistoryCommand());
+    return List.of(
+        new TriageCommand(),
+        new HealCommand(),
+        new QuarantineCheckCommand(),
+        new FlakyHistoryCommand());
   }
 
   public static void main(String[] args) {

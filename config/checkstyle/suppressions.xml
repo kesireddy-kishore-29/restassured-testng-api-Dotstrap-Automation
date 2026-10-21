@@ -9,6 +9,8 @@
   <!-- The single honoured back-off: a server's Retry-After. Bounded (5 s cap, max 3 retries),
        injectable, and never used to wait for application state. See docs/test-strategy.md. -->
   <suppress checks="RegexpSingleline" id="noHardWait" files="[\/]core[\/]Sleeper\.java$"/>
+  <!-- The healing guardrails DEFINE the forbidden patterns (sleep, disabled tests) as regexes. -->
+  <suppress checks="RegexpSingleline" files="[\/]healing[\/]Guardrails\.java$"/>
   <!-- Command-line tools write their report to stdout by design. -->
   <suppress checks="RegexpSingleline" id="noSystemOut" files="[\/]tools[\/]src[\/]main[\/]"/>
   <!-- Guardrail unit tests contain the forbidden patterns as string fixtures on purpose. -->
