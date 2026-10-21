@@ -1,0 +1,24 @@
+--- a/framework/src/main/resources/schemas/balance.schema.json
++++ b/framework/src/main/resources/schemas/balance.schema.json
+@@ -5,10 +5,10 @@
+   "type": "object",
+   "required": [
+-    "balance",
++    "availableBalance",
+     "currency",
+     "accountId"
+   ],
+   "properties": {
+-    "balance": {
++    "availableBalance": {
+       "type": "integer",
+       "minimum": 0
+--- a/framework/src/main/java/com/kishore/qa/framework/clients/model/Balance.java
++++ b/framework/src/main/java/com/kishore/qa/framework/clients/model/Balance.java
+@@ -10,5 +10,5 @@
+ @JsonIgnoreProperties(ignoreUnknown = true)
+ public record Balance(
+-    @JsonProperty("balance") int balance,
++    @JsonProperty("availableBalance") int balance,
+     @JsonProperty("currency") String currency,
+     @JsonProperty("accountId") String accountId) {}

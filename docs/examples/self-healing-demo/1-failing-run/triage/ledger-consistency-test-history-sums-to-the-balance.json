@@ -1,0 +1,54 @@
+{
+  "schemaVersion" : 1,
+  "repo" : "api-automation-framework",
+  "runId" : "api-chaos-2",
+  "testId" : "com.kishore.qa.tests.workflows.LedgerConsistencyTest#historySumsToTheBalance",
+  "title" : "Grants, purchases and spends sum to the balance",
+  "suite" : "workflows",
+  "featureIds" : [ "FEAT-LEDGER-01" ],
+  "category" : "CONTRACT_DRIFT",
+  "confidence" : 0.95,
+  "classifiedBy" : "rules",
+  "rule" : "contract-violation",
+  "reason" : "The response no longer matches its contract: JSON Schema 'balance' violated by GET /v1/credits/balance -> 200",
+  "healable" : true,
+  "needsHumanDecision" : true,
+  "nextAction" : "Decide: provider bug (file an issue) or agreed change (update schema + client model).",
+  "error" : {
+    "type" : "com.kishore.qa.framework.assertions.ContractViolation",
+    "message" : "JSON Schema 'balance' violated by GET /v1/credits/balance -> 200:\n  - $: required property 'balance' not found"
+  },
+  "failingRequest" : {
+    "method" : "GET",
+    "operation" : "/v1/credits/balance",
+    "url" : "http://localhost:7070/v1/credits/balance",
+    "status" : "200",
+    "correlationId" : "qa-e225c556-3ff6-4b1e-afd3-25ecd620f79d"
+  },
+  "schemaDiff" : {
+    "schema" : "balance",
+    "operation" : "GET /v1/credits/balance",
+    "missing" : [ "balance" ],
+    "unexpected" : [ "availableBalance" ],
+    "raw" : [ "$: required property 'balance' not found" ]
+  },
+  "evidence" : {
+    "attemptDir" : "workflows/ledger-consistency-test-history-sums-to-the-balance/3",
+    "transcript" : "workflows/ledger-consistency-test-history-sums-to-the-balance/3/transcript.md",
+    "timeline" : "workflows/ledger-consistency-test-history-sums-to-the-balance/3/timeline.html",
+    "bundle" : "failure-bundles/ledger-consistency-test-history-sums-to-the-balance/",
+    "bundleZip" : "failure-bundles/ledger-consistency-test-history-sums-to-the-balance.zip"
+  },
+  "gitDiff" : "bf44d50 fix(heal): the ledger's PR-body path uses forward slashes on every OS\n\n tools/src/main/java/com/kishore/qa/tools/healing/HealCommand.java | 4 +++-\n 1 file changed, 3 insertions(+), 1 deletion(-)",
+  "retryHistory" : [ {
+    "attempt" : 1,
+    "status" : "retried"
+  }, {
+    "attempt" : 2,
+    "status" : "retried"
+  }, {
+    "attempt" : 3,
+    "status" : "failed"
+  } ],
+  "aiStep" : "skipped (ANTHROPIC_API_KEY not set)"
+}
