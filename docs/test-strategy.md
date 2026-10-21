@@ -29,7 +29,7 @@ the provider's contract; the framework's JSON Schemas are the consumer's contrac
 
 | Layer | Where | Runs |
 |---|---|---|
-| Framework unit tests (config, retry policy, redaction, schemas, transcripts) | `framework/src/test` | Every build |
+| Framework unit tests (config, retry policy, redaction, schemas, transcripts, test ids) | `framework/src/test` | Every build |
 | Tool unit tests (triage, guardrails, healers, reports, merge) | `tools/src/test` | Every build |
 | API suites against the reference service | `tests/` | Every pull request (`pr-gate`) |
 | API suites against Restful-Booker | `tests/…/booker` | Nightly |
