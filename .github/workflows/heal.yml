@@ -49,7 +49,7 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: merged-run
-          path: run-evidence/api-automation-framework
+          path: run-evidence/restassured-testng-api-Dotstrap-Automation
           run-id: ${{ inputs.run_id || github.event.workflow_run.id }}
           github-token: ${{ github.token }}
       - name: Build the reference service, framework and tools
@@ -74,7 +74,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          run_dir=$(find run-evidence/api-automation-framework -mindepth 1 -maxdepth 1 -type d | head -n 1)
+          run_dir=$(find run-evidence/restassured-testng-api-Dotstrap-Automation -mindepth 1 -maxdepth 1 -type d | head -n 1)
           java -jar tools/target/qa-tools.jar heal --run "$run_dir" --open-prs --max-prs 3
       - name: Upload the healing record
         if: always()
@@ -82,7 +82,7 @@ jobs:
         with:
           name: healing-${{ github.run_id }}
           path: |
-            run-evidence/api-automation-framework/*/healing/
+            run-evidence/restassured-testng-api-Dotstrap-Automation/*/healing/
             sut.log
           retention-days: 30
           if-no-files-found: ignore

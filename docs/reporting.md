@@ -26,8 +26,8 @@ Each layer answers a different question. Screenshots below come from real local 
 
 ```bash
 ./mvnw verify -pl tests -Dsuite=regression
-java -jar tools/target/qa-tools.jar triage --run run-evidence/api-automation-framework/<run-id>
-java -jar tools/target/qa-tools.jar report --run run-evidence/api-automation-framework/<run-id> --out reports/site
+java -jar tools/target/qa-tools.jar triage --run run-evidence/restassured-testng-api-Dotstrap-Automation/<run-id>
+java -jar tools/target/qa-tools.jar report --run run-evidence/restassured-testng-api-Dotstrap-Automation/<run-id> --out reports/site
 scripts/allure-report.sh [previous-report-dir]      # pass the last report to carry its trend
 ```
 

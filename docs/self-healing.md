@@ -90,8 +90,8 @@ On the heal branch, in order, stopping at the first red step:
 ## Running it
 
 ```bash
-java -jar tools/target/qa-tools.jar triage --run run-evidence/api-automation-framework/<run-id>
-java -jar tools/target/qa-tools.jar heal --run run-evidence/api-automation-framework/<run-id>
+java -jar tools/target/qa-tools.jar triage --run run-evidence/restassured-testng-api-Dotstrap-Automation/<run-id>
+java -jar tools/target/qa-tools.jar heal --run run-evidence/restassured-testng-api-Dotstrap-Automation/<run-id>
 # in CI, heal.yml adds --open-prs after a failed nightly
 ```
 

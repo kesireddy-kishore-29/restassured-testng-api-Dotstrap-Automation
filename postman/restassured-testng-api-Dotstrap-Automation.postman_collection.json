@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "6f1d7c2e-3a8b-4e3f-9a51-2b7c4d9e8f10",
-    "name": "API Automation Framework \u2014 smoke & functional",
+    "name": "restassured-testng-api-Dotstrap-Automation \u2014 smoke & functional",
     "description": "Mirrors the coded smoke and functional suites for exploration, quick checks and sharing. The coded REST Assured suites remain the regression gate (see docs/test-strategy.md). Folders run in order; data is unique per run and deleted (and verified gone) at the end.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },

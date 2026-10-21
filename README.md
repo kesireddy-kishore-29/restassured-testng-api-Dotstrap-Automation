@@ -1,11 +1,11 @@
-# api-automation-framework
+# restassured-testng-api-Dotstrap-Automation
 
 API test automation in Java 21 with REST Assured and TestNG, against a self-hosted reference service
 and a public practice API, with failure triage and governed self-healing.
 
-[![CI](https://github.com/kesireddy-kishore-29/api-automation-framework/actions/workflows/ci.yml/badge.svg)](https://github.com/kesireddy-kishore-29/api-automation-framework/actions/workflows/ci.yml)
-[![Nightly](https://github.com/kesireddy-kishore-29/api-automation-framework/actions/workflows/nightly.yml/badge.svg)](https://github.com/kesireddy-kishore-29/api-automation-framework/actions/workflows/nightly.yml)
-[![Report](https://img.shields.io/badge/report-GitHub%20Pages-2a78d6)](https://kesireddy-kishore-29.github.io/api-automation-framework/)
+[![CI](https://github.com/kesireddy-kishore-29/restassured-testng-api-Dotstrap-Automation/actions/workflows/ci.yml/badge.svg)](https://github.com/kesireddy-kishore-29/restassured-testng-api-Dotstrap-Automation/actions/workflows/ci.yml)
+[![Nightly](https://github.com/kesireddy-kishore-29/restassured-testng-api-Dotstrap-Automation/actions/workflows/nightly.yml/badge.svg)](https://github.com/kesireddy-kishore-29/restassured-testng-api-Dotstrap-Automation/actions/workflows/nightly.yml)
+[![Report](https://img.shields.io/badge/report-GitHub%20Pages-2a78d6)](https://kesireddy-kishore-29.github.io/restassured-testng-api-Dotstrap-Automation/)
 
 ![Test health dashboard from a real local run](docs/examples/dashboard/hero.png)
 
@@ -149,10 +149,10 @@ configuration or data is used, and its private backend is never called.
 
 ## Family of repos
 
-- **api-automation-framework** (this one): the API flagship.
-- [**ui-automation-framework**](https://github.com/kesireddy-kishore-29/ui-automation-framework): the UI flagship in Playwright and TypeScript, with the same triage, healing and dashboard (the dashboard template is shared byte for byte).
-- [**selenium-java-ui-framework**](https://github.com/kesireddy-kishore-29/selenium-java-ui-framework): the same Sauce Demo scenarios as the UI flagship in Selenium 4 and Java, with the same feature IDs and evidence layout.
-- [**python-pytest-automation-framework**](https://github.com/kesireddy-kishore-29/python-pytest-automation-framework): API and UI tests in Python; its API tests reuse this repository's reference service in CI.
+- **restassured-testng-api-Dotstrap-Automation** (this one): the API flagship.
+- [**playwright-typescript-ui-Dotstrap-Automation**](https://github.com/kesireddy-kishore-29/playwright-typescript-ui-Dotstrap-Automation): the UI flagship in Playwright and TypeScript, with the same triage, healing and dashboard (the dashboard template is shared byte for byte).
+- [**selenium-java-testng-ui-Dotstrap-Automation**](https://github.com/kesireddy-kishore-29/selenium-java-testng-ui-Dotstrap-Automation): the same Sauce Demo scenarios as the UI flagship in Selenium 4 and Java, with the same feature IDs and evidence layout.
+- [**Python-pytest-playwright-Dotstrap-Automation**](https://github.com/kesireddy-kishore-29/Python-pytest-playwright-Dotstrap-Automation): API and UI tests in Python; its API tests reuse this repository's reference service in CI.
 
 ## How to run
 
@@ -165,8 +165,8 @@ java -jar sut/target/reference-service.jar &        # reference service on :7070
 ./mvnw verify -pl tests -Dsuite=regression          # everything, both targets (60 tests)
 ./mvnw verify -pl tests -Dsuite=demo-failure        # four tests that fail on purpose
 
-java -jar tools/target/qa-tools.jar triage --run run-evidence/api-automation-framework/<run-id>
-java -jar tools/target/qa-tools.jar report --run run-evidence/api-automation-framework/<run-id> --out reports/site
+java -jar tools/target/qa-tools.jar triage --run run-evidence/restassured-testng-api-Dotstrap-Automation/<run-id>
+java -jar tools/target/qa-tools.jar report --run run-evidence/restassured-testng-api-Dotstrap-Automation/<run-id> --out reports/site
 scripts/allure-report.sh                             # Allure with trend history
 cd postman && npm ci && npm run newman              # the Postman collection
 ```

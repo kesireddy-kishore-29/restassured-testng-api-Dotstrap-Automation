@@ -45,7 +45,7 @@ jobs:
     env:
       RECORD_MODE: failures
       RUN_ID: ci-${{ github.run_id }}-${{ github.run_attempt }}
-      RUN_DIR: run-evidence/api-automation-framework/ci-${{ github.run_id }}-${{ github.run_attempt }}
+      RUN_DIR: run-evidence/restassured-testng-api-Dotstrap-Automation/ci-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-java@v6

@@ -3,7 +3,7 @@ info:
   title: Reference Service
   version: 1.0.0
   description: |
-    Self-hosted system under test for the API automation framework. It exposes behaviour public
+    Self-hosted system under test for restassured-testng-api-Dotstrap-Automation. It exposes behaviour public
     demo APIs lack: idempotency keys, rate limits, CORS, a credit ledger, multi-region data
     residency and RFC 7807 errors. Every error is `application/problem+json`.
 

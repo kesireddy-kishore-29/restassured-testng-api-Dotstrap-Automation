@@ -57,7 +57,7 @@ public class GuardrailsTest {
       {"tests/src/test/resources/suites/regression.xml"},
       {".github/workflows/ci.yml"},
       {"sut/src/main/java/com/qaautomation/sut/Main.java"},
-      {"postman/api-automation-framework.postman_collection.json"},
+      {"postman/restassured-testng-api-Dotstrap-Automation.postman_collection.json"},
       {"docs/adr/0001-why-java.md"},
       {"tools/src/main/java/com/qaautomation/tools/healing/Guardrails.java"},
     };

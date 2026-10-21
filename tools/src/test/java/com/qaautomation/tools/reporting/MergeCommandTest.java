@@ -28,7 +28,7 @@ public class MergeCommandTest {
             "schemaVersion",
             1,
             "repo",
-            "api-automation-framework",
+            "restassured-testng-api-Dotstrap-Automation",
             "runId",
             "nightly-1",
             "startedAt",
@@ -53,14 +53,15 @@ public class MergeCommandTest {
   public void combinesShardsIntoOneRun() throws IOException {
     Path root = Files.createTempDirectory("merge");
     shard(
-        root.resolve("shards/evidence-security/api-automation-framework/nightly-1"),
+        root.resolve(
+            "shards/evidence-security/restassured-testng-api-Dotstrap-Automation/nightly-1"),
         "b-test",
         "failed",
         "2026-10-21T02:00:00Z",
         "2026-10-21T02:00:30Z",
         false);
     shard(
-        root.resolve("shards/evidence-booker/api-automation-framework/nightly-1"),
+        root.resolve("shards/evidence-booker/restassured-testng-api-Dotstrap-Automation/nightly-1"),
         "a-test",
         "passed",
         "2026-10-21T02:00:05Z",

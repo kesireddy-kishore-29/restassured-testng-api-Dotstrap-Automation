@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.qaautomation</groupId>
-  <artifactId>api-automation-framework</artifactId>
+  <artifactId>restassured-testng-api-Dotstrap-Automation</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
-  <name>API Automation Framework</name>
+  <name>restassured-testng-api-Dotstrap-Automation</name>
   <description>REST Assured + TestNG API test framework with a self-hosted reference service,
     governed self-healing and layered reporting.</description>
 

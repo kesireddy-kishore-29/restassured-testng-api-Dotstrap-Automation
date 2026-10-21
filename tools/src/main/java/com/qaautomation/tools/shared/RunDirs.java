@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 /** Locates run directories: {@code <evidenceRoot>/<repo>/<runId>/run-summary.json}. */
 public final class RunDirs {
 
-  public static final String REPO = "api-automation-framework";
+  public static final String REPO = "restassured-testng-api-Dotstrap-Automation";
 
   private RunDirs() {}
 
