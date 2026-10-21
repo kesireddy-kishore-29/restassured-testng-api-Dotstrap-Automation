@@ -5,9 +5,9 @@
 | Category | **TIMING** (rules, rule `await-timeout`, confidence 0.80) |
 | Next action | Propose a wait-on-condition fix; never a hard wait or a longer timeout. |
 | Healable | yes |
-| Test | `com.kishore.qa.tests.demo.DeliberateFailureTest#conditionNeverMetFails` |
+| Test | `com.qaautomation.tests.demo.DeliberateFailureTest#conditionNeverMetFails` |
 | Features | FEAT-DEMO-01 |
-| Run | `api-demo-5` |
+| Run | `api-demo-6` |
 
 ## Why
 
@@ -21,12 +21,12 @@ A polled condition did not become true in time.
 | operation | `/v1/credits/balance` |
 | url | `http://localhost:7070/v1/credits/balance` |
 | status | `200` |
-| correlationId | `qa-86fb5cb9-77e8-4b4b-ab7d-fdfd346dc3e1` |
+| correlationId | `qa-040b134c-31e2-40b7-b816-dc4bd5e758de` |
 
 ## Error
 
 ```text
-Condition with alias 'balance reaches 99 (it never will)' didn't complete within 2 seconds because condition with Lambda expression in com.kishore.qa.tests.demo.DeliberateFailureTest was not fulfilled.
+Condition with alias 'balance reaches 99 (it never will)' didn't complete within 2 seconds because condition with Lambda expression in com.qaautomation.tests.demo.DeliberateFailureTest was not fulfilled.
 ```
 
 ## Evidence

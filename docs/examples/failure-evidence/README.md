@@ -2,9 +2,9 @@
 
 | | |
 |---|---|
-| Test | `com.kishore.qa.tests.demo.DeliberateFailureTest#conditionNeverMetFails` |
+| Test | `com.qaautomation.tests.demo.DeliberateFailureTest#conditionNeverMetFails` |
 | Features | FEAT-DEMO-01 |
-| Run | `api-demo-5` (git `024ae29465b9`) |
+| Run | `api-demo-6` (git `3a9008e0b120`) |
 | Attempts | 2 |
 | Error | `org.awaitility.core.ConditionTimeoutException` |
 
