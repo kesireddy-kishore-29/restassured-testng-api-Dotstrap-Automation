@@ -6,8 +6,8 @@
 |---|---|
 | Failure category | `CONTRACT_DRIFT` |
 | Test | `com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts` |
-| Evidence | `failure-bundles/contract-test-credit-resources-match-their-contracts.zip` (run `api-chaos-4`) |
-| Also explains | 7 other failing test(s) with the same cause (below) |
+| Evidence | `failure-bundles/contract-test-credit-resources-match-their-contracts.zip` (run `api-chaos-5`) |
+| Also explains | 8 other failing test(s) with the same cause (below) |
 
 ### Root cause
 
@@ -17,6 +17,7 @@ The response no longer matches its contract: JSON Schema 'balance' violated by G
 
 - `com.qaautomation.tests.negative.CreditsNegativeTest#purchaseWithoutIdempotencyKeyIsA400`
 - `com.qaautomation.tests.negative.CreditsNegativeTest#sendingWithNoCreditsIsA402`
+- `com.qaautomation.tests.contract.ErrorContractTest#startingAConversationWithNoCreditsIsA402`
 - `com.qaautomation.tests.resilience.IdempotencyTest#concurrentDuplicatesProduceOnePurchase`
 - `com.qaautomation.tests.resilience.IdempotencyTest#replayReturnsTheOriginalAndChargesOnce`
 - `com.qaautomation.tests.resilience.IdempotencyTest#reusingAKeyForADifferentPurchaseIsRefused`
@@ -51,6 +52,7 @@ Before: the test failed in the triaged run.
 | surrounding suite 'contract' | passed |
 | also explained: CreditsNegativeTest#purchaseWithoutIdempotencyKeyIsA400 | passed |
 | also explained: CreditsNegativeTest#sendingWithNoCreditsIsA402 | passed |
+| also explained: ErrorContractTest#startingAConversationWithNoCreditsIsA402 | passed |
 | also explained: IdempotencyTest#concurrentDuplicatesProduceOnePurchase | passed |
 | also explained: IdempotencyTest#replayReturnsTheOriginalAndChargesOnce | passed |
 | also explained: IdempotencyTest#reusingAKeyForADifferentPurchaseIsRefused | passed |

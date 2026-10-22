@@ -4,7 +4,7 @@
 |---|---|
 | Test | `com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts` |
 | Features | FEAT-CONTRACT-01 |
-| Run | `api-chaos-4` (git `0e480f8ca1f4`) |
+| Run | `api-chaos-5` (git `2039d0055a07`) |
 | Attempts | 3 |
 | Error | `com.qaautomation.framework.assertions.ContractViolation` |
 

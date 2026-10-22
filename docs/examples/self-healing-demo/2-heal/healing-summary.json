@@ -1,36 +1,40 @@
 {
-  "aiStep" : "skipped (ANTHROPIC_API_KEY not set)",
   "results" : [ {
-    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
-    "testId" : "com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts",
-    "outcome" : "proposed"
+    "outcome" : "proposed",
+    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261022",
+    "testId" : "com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts"
   }, {
-    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
-    "testId" : "com.qaautomation.tests.negative.CreditsNegativeTest#purchaseWithoutIdempotencyKeyIsA400",
-    "outcome" : "same-fix-as"
+    "outcome" : "same-fix-as",
+    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261022",
+    "testId" : "com.qaautomation.tests.negative.CreditsNegativeTest#purchaseWithoutIdempotencyKeyIsA400"
   }, {
-    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
-    "testId" : "com.qaautomation.tests.negative.CreditsNegativeTest#sendingWithNoCreditsIsA402",
-    "outcome" : "same-fix-as"
+    "outcome" : "same-fix-as",
+    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261022",
+    "testId" : "com.qaautomation.tests.negative.CreditsNegativeTest#sendingWithNoCreditsIsA402"
   }, {
-    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
-    "testId" : "com.qaautomation.tests.resilience.IdempotencyTest#concurrentDuplicatesProduceOnePurchase",
-    "outcome" : "same-fix-as"
+    "outcome" : "same-fix-as",
+    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261022",
+    "testId" : "com.qaautomation.tests.contract.ErrorContractTest#startingAConversationWithNoCreditsIsA402"
   }, {
-    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
-    "testId" : "com.qaautomation.tests.resilience.IdempotencyTest#replayReturnsTheOriginalAndChargesOnce",
-    "outcome" : "same-fix-as"
+    "outcome" : "same-fix-as",
+    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261022",
+    "testId" : "com.qaautomation.tests.resilience.IdempotencyTest#concurrentDuplicatesProduceOnePurchase"
   }, {
-    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
-    "testId" : "com.qaautomation.tests.resilience.IdempotencyTest#reusingAKeyForADifferentPurchaseIsRefused",
-    "outcome" : "same-fix-as"
+    "outcome" : "same-fix-as",
+    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261022",
+    "testId" : "com.qaautomation.tests.resilience.IdempotencyTest#replayReturnsTheOriginalAndChargesOnce"
   }, {
-    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
-    "testId" : "com.qaautomation.tests.workflows.LedgerConsistencyTest#historySumsToTheBalance",
-    "outcome" : "same-fix-as"
+    "outcome" : "same-fix-as",
+    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261022",
+    "testId" : "com.qaautomation.tests.resilience.IdempotencyTest#reusingAKeyForADifferentPurchaseIsRefused"
   }, {
-    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021",
-    "testId" : "com.qaautomation.tests.workflows.MultiActorConversationTest#twoPeopleConverseAndTheOwnerEndsIt",
-    "outcome" : "same-fix-as"
-  } ]
+    "outcome" : "same-fix-as",
+    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261022",
+    "testId" : "com.qaautomation.tests.workflows.LedgerConsistencyTest#historySumsToTheBalance"
+  }, {
+    "outcome" : "same-fix-as",
+    "branch" : "heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261022",
+    "testId" : "com.qaautomation.tests.workflows.MultiActorConversationTest#twoPeopleConverseAndTheOwnerEndsIt"
+  } ],
+  "aiStep" : "skipped (ANTHROPIC_API_KEY not set)"
 }

@@ -7,7 +7,7 @@
 | Healable | yes (needs a human decision) |
 | Test | `com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts` |
 | Features | FEAT-CONTRACT-01 |
-| Run | `api-chaos-4` |
+| Run | `api-chaos-5` |
 
 ## Why
 
@@ -21,7 +21,7 @@ The response no longer matches its contract: JSON Schema 'balance' violated by G
 | operation | `/v1/credits/balance` |
 | url | `http://localhost:7070/v1/credits/balance` |
 | status | `200` |
-| correlationId | `qa-06ce5df3-060b-42fd-843f-4e2a36dd0933` |
+| correlationId | `qa-9f5e5574-dbac-4074-9be3-f5795bdcd209` |
 
 ## Contract diff
 

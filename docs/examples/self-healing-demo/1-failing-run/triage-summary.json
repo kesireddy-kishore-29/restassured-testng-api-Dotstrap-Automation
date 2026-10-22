@@ -1,13 +1,13 @@
 {
   "schemaVersion" : 1,
   "repo" : "restassured-testng-api-Dotstrap-Automation",
-  "runId" : "api-chaos-4",
-  "failed" : 8,
+  "runId" : "api-chaos-5",
+  "failed" : 9,
   "byCategory" : {
     "LOCATOR_DRIFT" : 0,
     "TIMING" : 0,
     "TEST_DATA" : 0,
-    "CONTRACT_DRIFT" : 8,
+    "CONTRACT_DRIFT" : 9,
     "ENVIRONMENT" : 0,
     "PRODUCT_BUG" : 0,
     "UNKNOWN" : 0

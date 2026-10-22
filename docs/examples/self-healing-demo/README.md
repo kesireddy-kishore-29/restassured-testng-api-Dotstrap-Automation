@@ -1,7 +1,7 @@
 # Self-healing demo: a renamed response field (contract drift)
 
-Everything in this folder comes from one real local run on 2026-10-21 (run IDs `api-chaos-4` and
-`api-chaos-healed-4`). Nothing was edited except one thing: the commit view in
+Everything in this folder comes from one real local run on 2026-10-22 (run IDs `api-chaos-5` and
+`api-chaos-healed-5`). Nothing was edited except one thing: the commit view in
 `2-heal/heal-commit.patch` leaves out the author's email.
 
 ## The scenario
@@ -15,19 +15,19 @@ client model still expect `balance`.
 
 | Step | Command | Result |
 |---|---|---|
-| 1. PR gate on `main` | `RUN_ID=api-chaos-4 ./mvnw verify -pl tests -Dsuite=pr-gate` | 43 passed, **8 failed** ([run-summary](1-failing-run/run-summary.json)) |
-| 2. Triage | `java -jar tools/target/qa-tools.jar triage --run run-evidence/restassured-testng-api-Dotstrap-Automation/api-chaos-4` | 8 × `CONTRACT_DRIFT`, one cause: `balance` missing, `availableBalance` undeclared ([triage](1-failing-run/triage/)) |
-| 3. Heal | `java -jar tools/target/qa-tools.jar heal --run run-evidence/restassured-testng-api-Dotstrap-Automation/api-chaos-4` | One branch for the one root cause: `heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261021` |
-| 4. PR gate on the heal branch | `RUN_ID=api-chaos-healed-4 ./mvnw verify -pl tests -Dsuite=pr-gate` | **51 passed**, 0 failed ([run-summary](3-healed-run/run-summary.json)) |
+| 1. PR gate on `main` | `RUN_ID=api-chaos-5 ./mvnw verify -pl tests -Dsuite=pr-gate` | 106 passed, **9 failed** ([run-summary](1-failing-run/run-summary.json)) |
+| 2. Triage | `java -jar tools/target/qa-tools.jar triage --run run-evidence/restassured-testng-api-Dotstrap-Automation/api-chaos-5` | 9 × `CONTRACT_DRIFT`, one cause: `balance` missing, `availableBalance` undeclared ([triage](1-failing-run/triage/)) |
+| 3. Heal | `java -jar tools/target/qa-tools.jar heal --run run-evidence/restassured-testng-api-Dotstrap-Automation/api-chaos-5` | One branch for the one root cause: `heal/contract-drift/contract-test-credit-resources-match-their-contracts-20261022` |
+| 4. PR gate on the heal branch | `RUN_ID=api-chaos-healed-5 ./mvnw verify -pl tests -Dsuite=pr-gate` | **115 passed**, 0 failed ([run-summary](3-healed-run/run-summary.json)) |
 
-The heal took 3 min 23 s. Inside it:
+The heal took 5 min 1 s, wall clock, including its verification runs. Inside it:
 
 1. The rule-based healer proposed a two-line change: the `balance` consumer schema and the
    `@JsonProperty` of the `Balance` model ([patch.diff](2-heal/patch.diff)). No test changed. The
    ledger contract also has a `balance` field and was left alone.
 2. The guardrails passed: allowed paths only, no forbidden constructs, no loosened checks.
 3. The verifier built the framework, ran the lead failing test 3 times and its suite (`contract`),
-   then re-ran each of the 7 other failures the same fix claims to explain. All passed
+   then re-ran each of the 8 other failures the same fix claims to explain. All passed
    ([PR.md](2-heal/PR.md)).
 4. The heal was committed on its branch with an entry in `healing-log.json`
    ([heal-commit.patch](2-heal/heal-commit.patch), [healing-log.json](2-heal/healing-log.json)).
@@ -42,16 +42,16 @@ The heal took 3 min 23 s. Inside it:
 | `1-failing-run/failure-bundle/` | The lead failure's bundle (zip), its one-page report, the call transcript and the timeline |
 | `2-heal/PR.md` | The pull-request body the healer wrote |
 | `2-heal/patch.diff` | The proposed change |
-| `2-heal/healing-summary.json` | One `proposed`, seven `same-fix-as` |
+| `2-heal/healing-summary.json` | One `proposed`, eight `same-fix-as` |
 | `2-heal/healing-log.json` | The ledger entry: guardrails, verification, time to fix |
 | `2-heal/heal-commit.patch` | The commit on the heal branch |
-| `3-healed-run/run-summary.json` | The same gate on the heal branch: 51/51 |
+| `3-healed-run/run-summary.json` | The same gate on the heal branch: 115/115 |
 
 ## What this demo did not do
 
-- **No pull request was opened.** The repository has no remote yet. In CI, `heal.yml` runs the same
-  command with `--open-prs`, which pushes the branch and opens the pull request with the labels
-  `self-healed` and `needs-contract-decision`.
+- **No pull request was opened.** The run was local, with no remote involved. In CI, `heal.yml` runs
+  the same command with `--open-prs`, which pushes the branch and opens the pull request with the
+  labels `self-healed` and `needs-contract-decision`.
 - **The AI step was skipped.** `ANTHROPIC_API_KEY` was not set. The rule-based healer handled
   this case on its own.
 - **Nobody merged anything.** Contract drift needs a human decision first: is the provider wrong,

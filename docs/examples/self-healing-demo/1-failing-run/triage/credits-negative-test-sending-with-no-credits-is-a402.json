@@ -1,7 +1,7 @@
 {
   "schemaVersion" : 1,
   "repo" : "restassured-testng-api-Dotstrap-Automation",
-  "runId" : "api-chaos-4",
+  "runId" : "api-chaos-5",
   "testId" : "com.qaautomation.tests.negative.CreditsNegativeTest#sendingWithNoCreditsIsA402",
   "title" : "With no credits left, a message is a 402 and nothing is charged",
   "suite" : "negative",
@@ -23,7 +23,7 @@
     "operation" : "/v1/credits/balance",
     "url" : "http://localhost:7070/v1/credits/balance",
     "status" : "200",
-    "correlationId" : "qa-ad3a08f2-98cd-4342-9ef2-4223a25c2f3c"
+    "correlationId" : "qa-8d8efa92-8c8c-44dc-b7af-de34e7e23e83"
   },
   "schemaDiff" : {
     "schema" : "balance",
@@ -39,7 +39,7 @@
     "bundle" : "failure-bundles/credits-negative-test-sending-with-no-credits-is-a402/",
     "bundleZip" : "failure-bundles/credits-negative-test-sending-with-no-credits-is-a402.zip"
   },
-  "gitDiff" : "0e480f8 docs(examples): dashboard, gallery, Allure and a failure bundle under the new name\n\n docs/examples/README.md                            |   4 +-\n docs/examples/dashboard/allure-overview.png        | Bin 61169 -> 61095 bytes\n docs/examples/dashboard/dashboard-390px.png        | Bin 295735 -> 292066 bytes\n docs/examples/dashboard/dashboard-dark.png         | Bin 311817 -> 308476 bytes\n docs/examples/dashboard/dashboard-light.png        | Bin 305407 -> 302069 bytes\n docs/examples/dashboard/hero.png                   | Bin 56267 -> 53430 bytes\n docs/examples/dashboard/run-gallery.png            | Bin 103886 -> 106563 bytes\n docs/examples/failure-evidence/README.md           |   2 +-\n ...rate-failure-test-condition-never-met-fails.zip | Bin 15085 -> 15274 bytes\n docs/examples/failure-evidence/failure-report.md   |   4 +-\n docs/examples/failure-evidence/timeline.html       |  16 ++--\n docs/examples/failure-evidence/transcript.md       | 106 ++++++++++-----------\n docs/examples/failure-evidence/triage-summary.json |   4 +-\n 13 files changed, 68 insertions(+), 68 deletions(-)",
+  "gitDiff" : "2039d00 test(contract): every documented error on every operation\n\n docs/known-issues.md                               |   9 +-\n docs/test-strategy.md                              |   1 +\n .../framework/clients/ContractProbe.java           |  45 +++\n .../com/qaautomation/framework/clients/Sut.java    |  27 ++\n .../framework/config/ConfigLoader.java             |   3 +\n .../framework/config/FrameworkConfig.java          |   1 +\n .../com/qaautomation/framework/core/ApiClient.java |  18 +-\n framework/src/main/resources/config/ci.properties  |   4 +\n .../src/main/resources/config/docker.properties    |   4 +\n .../src/main/resources/config/local.properties     |   4 +\n .../framework/config/ConfigLoaderTest.java         |   2 +\n .../tests/contract/ErrorContractTest.java          | 389 +++++++++++++++++++++\n 12 files changed, 500 insertions(+), 7 deletions(-)",
   "retryHistory" : [ {
     "attempt" : 1,
     "status" : "retried"
