@@ -9,6 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public record Balance(
-    @JsonProperty("balance") int balance,
+    @JsonProperty("availableBalance") int balance,
     @JsonProperty("currency") String currency,
     @JsonProperty("accountId") String accountId) {}

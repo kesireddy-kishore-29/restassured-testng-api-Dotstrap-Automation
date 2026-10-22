@@ -4,12 +4,12 @@
   "title": "balance",
   "type": "object",
   "required": [
-    "balance",
+    "availableBalance",
     "currency",
     "accountId"
   ],
   "properties": {
-    "balance": {
+    "availableBalance": {
       "type": "integer",
       "minimum": 0
     },
