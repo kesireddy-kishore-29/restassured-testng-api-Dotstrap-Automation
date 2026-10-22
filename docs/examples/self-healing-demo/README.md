@@ -22,7 +22,7 @@ client model still expect `balance`.
 
 The heal took 5 min 1 s, wall clock, including its verification runs. Inside it:
 
-1. The rule-based healer proposed a two-line change: the `balance` consumer schema and the
+1. The rule-based healer proposed a three-line change: the `balance` consumer schema and the
    `@JsonProperty` of the `Balance` model ([patch.diff](2-heal/patch.diff)). No test changed. The
    ledger contract also has a `balance` field and was left alone.
 2. The guardrails passed: allowed paths only, no forbidden constructs, no loosened checks.

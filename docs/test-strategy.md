@@ -76,7 +76,7 @@ validated at start-up and reports every problem at once.
 ## What gates a merge
 
 The pull-request gate (`ci.yml`) is: formatting, Checkstyle, compile with `-Werror`, framework and
-tool unit tests, the `pr-gate` suite (51 tests against the reference service), the quarantine
+tool unit tests, the `pr-gate` suite (115 tests against the reference service), the quarantine
 policy check and Newman. Quarantined tests still run but cannot fail the gate. The public practice
 API is excluded on purpose: its outages must not block a merge.
 
