@@ -1,6 +1,9 @@
 package com.qaautomation.framework.clients;
 
+import com.qaautomation.framework.auth.SutTokenProvider;
+import com.qaautomation.framework.auth.TokenProvider;
 import com.qaautomation.framework.config.Config;
+import com.qaautomation.framework.config.Credentials;
 import com.qaautomation.framework.config.FrameworkConfig;
 import com.qaautomation.framework.core.Endpoint;
 import com.qaautomation.framework.core.RequestSpecs;
@@ -8,6 +11,7 @@ import com.qaautomation.framework.core.RetryPolicy;
 import com.qaautomation.framework.core.Sleeper;
 import com.qaautomation.framework.data.Region;
 import com.qaautomation.framework.data.TestAccount;
+import java.time.Clock;
 import java.time.Duration;
 import java.util.Optional;
 import java.util.function.Supplier;
@@ -101,6 +105,29 @@ public final class Sut {
 
   public AdminClient admin(TestAccount as) {
     return new AdminClient(endpoint, Optional.of(as.bearer()));
+  }
+
+  /** Signed in as the service's seeded administrator ({@code sut.adminHandle}). */
+  public AdminClient administrator() {
+    Credentials admin = config.sutAdmin();
+    TokenProvider tokens =
+        new SutTokenProvider(auth(), admin.username(), admin.password(), Clock.systemUTC());
+    return new AdminClient(endpoint, Optional.of(tokens::token));
+  }
+
+  /** Any operation, unauthenticated, never retried (error-contract tests). */
+  public ContractProbe probe() {
+    return new ContractProbe(withoutRetries(), Optional.empty());
+  }
+
+  /** Any operation as this account, never retried (error-contract tests). */
+  public ContractProbe probe(TestAccount as) {
+    return new ContractProbe(withoutRetries(), Optional.of(as.bearer()));
+  }
+
+  private Endpoint withoutRetries() {
+    return new Endpoint(
+        endpoint.baseUri(), endpoint.specs(), RetryPolicy.none(config.readTimeout()));
   }
 
   public CorsClient cors() {

@@ -33,10 +33,11 @@ Everything below is stated as it is. Where something was not run, it says so.
   the latest releases. They are development tools that run this repository's own collection
   against local and practice services; `npm audit fix --force` would change major versions and
   is not applied. Re-check when Newman publishes a new release.
-- **Contract coverage is 18 of 19 operations and 38 of 105 documented response codes.** The one
-  operation never called by a test is `GET /openapi.yaml`, which the conformance filter fetches
-  outside the transcript. Most of the codes not seen are 429 and 503, which every operation
-  documents but only the rate-limit and resilience suites provoke, on a few operations.
+- **429 and 503 on every operation come from the service's own mechanisms, provoked on purpose.**
+  The error-contract suite reaches them by using up one token's rate-limit window and by the
+  test-only `X-Fault: unavailable-once` header, so they show the documented answers, not load or
+  outage behaviour. (Before 2026-10-22 these and other error codes were documented but never
+  provoked; contract coverage was 38 of 105 response codes and is now 105 of 105.)
 
 ## Findings against the public practice API (Restful-Booker)
 

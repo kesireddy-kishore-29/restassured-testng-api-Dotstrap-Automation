@@ -84,6 +84,8 @@ public final class ConfigLoader {
     URI booker = url("booker.baseUrl");
     String bookerUser = required("booker.username");
     String bookerPassword = required("booker.password");
+    String adminHandle = required("sut.adminHandle");
+    String adminPassword = required("sut.adminPassword");
     Duration connect = millis("http.connectTimeoutMs", 100, 60_000);
     Duration read = millis("http.readTimeoutMs", 100, 120_000);
     int retries = integer("http.maxRetries", 0, 3);
@@ -100,6 +102,7 @@ public final class ConfigLoader {
         sut,
         booker,
         new Credentials(bookerUser, bookerPassword),
+        new Credentials(adminHandle, adminPassword),
         connect,
         read,
         retries,

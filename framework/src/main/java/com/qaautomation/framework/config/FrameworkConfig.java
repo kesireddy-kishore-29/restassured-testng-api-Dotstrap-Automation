@@ -13,6 +13,7 @@ public record FrameworkConfig(
     URI sutBaseUrl,
     URI bookerBaseUrl,
     Credentials bookerCredentials,
+    Credentials sutAdmin,
     Duration connectTimeout,
     Duration readTimeout,
     int maxRetries,

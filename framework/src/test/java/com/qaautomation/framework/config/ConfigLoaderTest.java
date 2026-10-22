@@ -16,6 +16,8 @@ public class ConfigLoaderTest {
     p.setProperty("booker.baseUrl", "https://restful-booker.herokuapp.com");
     p.setProperty("booker.username", "admin");
     p.setProperty("booker.password", "password123");
+    p.setProperty("sut.adminHandle", "admin");
+    p.setProperty("sut.adminPassword", "admin-demo-password");
     p.setProperty("http.connectTimeoutMs", "5000");
     p.setProperty("http.readTimeoutMs", "15000");
     p.setProperty("http.maxRetries", "2");

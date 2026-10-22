@@ -91,18 +91,30 @@ public abstract class ApiClient {
   /** A POST whose body is sent verbatim with this content type (negative tests: bad JSON, 415). */
   protected ApiResponse postRaw(
       String path, String rawBody, String contentType, CallOptions options, Object... pathParams) {
+    return sendRaw(Method.POST, path, rawBody, contentType, options, pathParams);
+  }
+
+  /** Any method with its body sent verbatim with this content type; never retried. */
+  protected ApiResponse sendRaw(
+      Method method,
+      String path,
+      String rawBody,
+      String contentType,
+      CallOptions options,
+      Object... pathParams) {
     return retryPolicy.execute(
-        "POST " + path,
+        method + " " + path,
         false,
         () -> {
           RequestSpecification spec = given().spec(specs.forBase(baseUri));
           bearerToken.ifPresent(token -> spec.auth().oauth2(token.get()));
           spec.headers(options.headers()).contentType(contentType).body(rawBody);
-          return new ApiResponse("POST", path, spec.request("POST", path, pathParams));
+          return new ApiResponse(
+              method.name(), path, spec.request(method.name(), path, pathParams));
         });
   }
 
-  private ApiResponse send(
+  protected ApiResponse send(
       Method method, String path, Object body, CallOptions options, Object... pathParams) {
     boolean repeatable = method.idempotent || options.idempotencyKey().isPresent();
     return retryPolicy.execute(

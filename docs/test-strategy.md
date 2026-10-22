@@ -15,6 +15,7 @@ the provider's contract; the framework's JSON Schemas are the consumer's contrac
 | Risk | Covered by |
 |---|---|
 | A response drifts from the contract | Every response from the reference service is checked against the OpenAPI document; key responses also against consumer JSON Schemas (`contract` suite plus every client call) |
+| A documented error is never actually returned, or comes back in another shape | `contract` (`ErrorContractTest`): every documented error code provoked on every operation that documents it (401, 400/415/422, 403, 404, 402, 429, 503), each answer checked against the document; with the other suites, 105 of 105 documented response codes on 19 of 19 operations |
 | An error looks different per endpoint | `negative`: every error is RFC 7807 problem JSON with the documented status, data-driven over 16 cases |
 | One person can read or change another person's data | `security` and `workflows`: two real actors, each boundary checked through HTTP |
 | A retried purchase charges twice | `resilience`: replay with the same idempotency key, concurrent duplicates, a different body with a reused key |
