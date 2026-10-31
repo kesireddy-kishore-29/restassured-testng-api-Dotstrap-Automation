@@ -1,0 +1,156 @@
+# Transcript: A deleted booking is gone (404 on read)
+
+| | |
+|---|---|
+| Test | `com.qaautomation.tests.booker.BookingCrudTest#deletedBookingIsGone` |
+| Features | FEAT-BOOK-04 |
+| Attempt | 1 |
+| Status | passed |
+| Calls | 5 |
+
+Secrets (tokens, passwords, credential headers) are masked as `****`.
+
+| # | Call | Status | ms | Correlation ID |
+|---|---|---|---|---|
+| 1 | `POST /booking` | 200 | 919 | `qa-aac0c0a1-9406-45f0-a300-a77da49c6e12` |
+| 2 | `POST /auth` | 200 | 254 | `qa-2ba8801a-414e-40d7-80d8-98e90bbb029d` |
+| 3 | `DELETE /booking/{id}` | 201 | 266 | `qa-94724b27-8530-4122-b447-7374ad2ef738` |
+| 4 | `GET /booking/{id}` | 404 | 231 | `qa-cc6e949b-fd87-42c1-b99f-a2959548f051` |
+| 5 | `GET /booking/{id}` | 404 | 252 | `qa-58622a61-5327-4387-b2b7-c651ca2848c2` |
+
+## 1. POST /booking
+
+```text
+#1 POST https://restful-booker.herokuapp.com/booking
+correlation: qa-aac0c0a1-9406-45f0-a300-a77da49c6e12
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-aac0c0a1-9406-45f0-a300-a77da49c6e12
+Content-Type: application/json
+
+--- request body ---
+{"firstname":"QA","lastname":"Guest-cc9c220f","totalprice":120,"depositpaid":true,"bookingdates":{"checkin":"2026-11-23","checkout":"2026-11-26"},"additionalneeds":"Breakfast"}
+
+--- response: 200 in 919 ms ---
+Content-Length: 205
+Content-Type: application/json; charset=utf-8
+Date: Sat, 24 Oct 2026 07:25:03 GMT
+Etag: W/"cd-b8bD6jjbndSUbsPeC6DIOrlGR+g"
+Nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+Report-To: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=Gkq6DoaXTHVN977gIQ%2F3WJeIuI2M3xFAAD8nmVHPr1k%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1792826703"}],"max_age":3600}
+Reporting-Endpoints: heroku-nel="https://nel.heroku.com/reports?s=Gkq6DoaXTHVN977gIQ%2F3WJeIuI2M3xFAAD8nmVHPr1k%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1792826703"
+Server: Heroku
+Via: 1.1 heroku-router
+X-Powered-By: Express
+
+{"bookingid":2203,"booking":{"firstname":"QA","lastname":"Guest-cc9c220f","totalprice":120,"depositpaid":true,"bookingdates":{"checkin":"2026-11-23","checkout":"2026-11-26"},"additionalneeds":"Breakfast"}}
+```
+
+## 2. POST /auth
+
+```text
+#2 POST https://restful-booker.herokuapp.com/auth
+correlation: qa-2ba8801a-414e-40d7-80d8-98e90bbb029d
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-2ba8801a-414e-40d7-80d8-98e90bbb029d
+Content-Type: application/json
+
+--- request body ---
+{"username":"admin","password":"****"}
+
+--- response: 200 in 254 ms ---
+Content-Length: 27
+Content-Type: application/json; charset=utf-8
+Date: Sat, 24 Oct 2026 07:25:04 GMT
+Etag: W/"1b-b9fNDSDQioZKHzhmlB8cuTNr+Bs"
+Nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+Report-To: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=ingr2iNOCCjo67H4HtudDbG21PL7olOqCC4vxwOLXvs%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1792826704"}],"max_age":3600}
+Reporting-Endpoints: heroku-nel="https://nel.heroku.com/reports?s=ingr2iNOCCjo67H4HtudDbG21PL7olOqCC4vxwOLXvs%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1792826704"
+Server: Heroku
+Via: 1.1 heroku-router
+X-Powered-By: Express
+
+{"token":"****"}
+```
+
+## 3. DELETE /booking/{id}
+
+```text
+#3 DELETE https://restful-booker.herokuapp.com/booking/2203
+correlation: qa-94724b27-8530-4122-b447-7374ad2ef738
+
+--- request headers ---
+Accept: application/json
+Cookie: ****
+X-Correlation-Id: qa-94724b27-8530-4122-b447-7374ad2ef738
+Content-Type: application/json
+
+--- response: 201 in 266 ms ---
+Content-Length: 7
+Content-Type: text/plain; charset=utf-8
+Date: Sat, 24 Oct 2026 07:25:04 GMT
+Etag: W/"7-rM9AyJuqT6iOan/xHh+AW+7K/T8"
+Nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+Report-To: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=ingr2iNOCCjo67H4HtudDbG21PL7olOqCC4vxwOLXvs%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1792826704"}],"max_age":3600}
+Reporting-Endpoints: heroku-nel="https://nel.heroku.com/reports?s=ingr2iNOCCjo67H4HtudDbG21PL7olOqCC4vxwOLXvs%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1792826704"
+Server: Heroku
+Via: 1.1 heroku-router
+X-Powered-By: Express
+
+Created
+```
+
+## 4. GET /booking/{id}
+
+```text
+#4 GET https://restful-booker.herokuapp.com/booking/2203
+correlation: qa-cc6e949b-fd87-42c1-b99f-a2959548f051
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-cc6e949b-fd87-42c1-b99f-a2959548f051
+Content-Type: application/json
+
+--- response: 404 in 231 ms ---
+Content-Length: 9
+Content-Type: text/plain; charset=utf-8
+Date: Sat, 24 Oct 2026 07:25:04 GMT
+Etag: W/"9-0gXL1ngzMqISxa6S1zx3F4wtLyg"
+Nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+Report-To: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=ingr2iNOCCjo67H4HtudDbG21PL7olOqCC4vxwOLXvs%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1792826704"}],"max_age":3600}
+Reporting-Endpoints: heroku-nel="https://nel.heroku.com/reports?s=ingr2iNOCCjo67H4HtudDbG21PL7olOqCC4vxwOLXvs%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1792826704"
+Server: Heroku
+Via: 1.1 heroku-router
+X-Powered-By: Express
+
+Not Found
+```
+
+## 5. GET /booking/{id}
+
+```text
+#5 GET https://restful-booker.herokuapp.com/booking/2203
+correlation: qa-58622a61-5327-4387-b2b7-c651ca2848c2
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-58622a61-5327-4387-b2b7-c651ca2848c2
+Content-Type: application/json
+
+--- response: 404 in 252 ms ---
+Content-Length: 9
+Content-Type: text/plain; charset=utf-8
+Date: Sat, 24 Oct 2026 07:25:05 GMT
+Etag: W/"9-0gXL1ngzMqISxa6S1zx3F4wtLyg"
+Nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+Report-To: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=pvKXOLNfH7KSYrwITJDwli1Ka1d2RF%2F9wqiy2YSk7y8%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1792826705"}],"max_age":3600}
+Reporting-Endpoints: heroku-nel="https://nel.heroku.com/reports?s=pvKXOLNfH7KSYrwITJDwli1Ka1d2RF%2F9wqiy2YSk7y8%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1792826705"
+Server: Heroku
+Via: 1.1 heroku-router
+X-Powered-By: Express
+
+Not Found
+```

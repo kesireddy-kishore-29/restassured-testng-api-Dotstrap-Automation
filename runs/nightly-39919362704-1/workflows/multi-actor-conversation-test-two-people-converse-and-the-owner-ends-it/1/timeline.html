@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timeline</title>
+<style>
+:root{--bg:#fff;--fg:#1d2433;--muted:#5b6475;--line:#e3e7ef;--ok:#1f8f5f;--warn:#b7791f;--bad:#c53030}
+@media (prefers-color-scheme:dark){:root{--bg:#121722;--fg:#e6e9f0;--muted:#9aa3b5;--line:#273044}}
+body{margin:0;padding:24px 16px;background:var(--bg);color:var(--fg);
+  font:14px/1.5 system-ui,sans-serif}
+h1{font-size:18px;margin:0 0 4px} p{color:var(--muted);margin:0 0 16px}
+table{width:100%;border-collapse:collapse}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+.n,.ms{color:var(--muted);white-space:nowrap} .s{font-weight:600}
+.s.ok{color:var(--ok)} .s.warn{color:var(--warn)} .s.bad{color:var(--bad)}
+.bar{position:relative;width:45%;min-width:160px}
+.bar span{position:absolute;top:8px;height:10px;border-radius:3px}
+.bar span.ok{background:var(--ok)} .bar span.warn{background:var(--warn)}
+.bar span.bad{background:var(--bad)}
+code{font-size:13px}
+</style></head><body>
+<h1>Two people exchange messages; an outsider is kept out; closing stops the thread</h1>
+<p>com.qaautomation.tests.workflows.MultiActorConversationTest#twoPeopleConverseAndTheOwnerEndsIt · passed · 33 call(s) over 3498 ms</p>
+<table><tr><td class="n">1</td><td class="call"><code>POST /v1/accounts</code></td><td class="s ok">201</td><td class="ms">389 ms</td><td class="bar"><span class="ok" style="left:25.47%;width:11.12%" title="+891 ms"></span></td></tr>
+<tr><td class="n">2</td><td class="call"><code>POST /v1/accounts</code></td><td class="s ok">201</td><td class="ms">101 ms</td><td class="bar"><span class="ok" style="left:44.43%;width:2.89%" title="+1554 ms"></span></td></tr>
+<tr><td class="n">3</td><td class="call"><code>POST /v1/accounts</code></td><td class="s ok">201</td><td class="ms">69 ms</td><td class="bar"><span class="ok" style="left:48.37%;width:1.97%" title="+1692 ms"></span></td></tr>
+<tr><td class="n">4</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">46 ms</td><td class="bar"><span class="ok" style="left:51.80%;width:1.32%" title="+1812 ms"></span></td></tr>
+<tr><td class="n">5</td><td class="call"><code>POST /v1/conversations</code></td><td class="s ok">201</td><td class="ms">24 ms</td><td class="bar"><span class="ok" style="left:53.63%;width:0.69%" title="+1876 ms"></span></td></tr>
+<tr><td class="n">6</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">10 ms</td><td class="bar"><span class="ok" style="left:60.72%;width:0.60%" title="+2124 ms"></span></td></tr>
+<tr><td class="n">7</td><td class="call"><code>GET /v1/conversations</code></td><td class="s ok">200</td><td class="ms">10 ms</td><td class="bar"><span class="ok" style="left:61.18%;width:0.60%" title="+2140 ms"></span></td></tr>
+<tr><td class="n">8</td><td class="call"><code>GET /v1/conversations/{id}/messages</code></td><td class="s ok">200</td><td class="ms">21 ms</td><td class="bar"><span class="ok" style="left:62.12%;width:0.60%" title="+2173 ms"></span></td></tr>
+<tr><td class="n">9</td><td class="call"><code>POST /v1/conversations/{id}/read</code></td><td class="s ok">200</td><td class="ms">21 ms</td><td class="bar"><span class="ok" style="left:63.21%;width:0.60%" title="+2211 ms"></span></td></tr>
+<tr><td class="n">10</td><td class="call"><code>GET /v1/conversations/{id}</code></td><td class="s ok">200</td><td class="ms">12 ms</td><td class="bar"><span class="ok" style="left:64.12%;width:0.60%" title="+2243 ms"></span></td></tr>
+<tr><td class="n">11</td><td class="call"><code>POST /v1/conversations/{id}/messages</code></td><td class="s ok">201</td><td class="ms">15 ms</td><td class="bar"><span class="ok" style="left:65.21%;width:0.60%" title="+2281 ms"></span></td></tr>
+<tr><td class="n">12</td><td class="call"><code>POST /v1/conversations/{id}/messages</code></td><td class="s ok">201</td><td class="ms">13 ms</td><td class="bar"><span class="ok" style="left:66.18%;width:0.60%" title="+2315 ms"></span></td></tr>
+<tr><td class="n">13</td><td class="call"><code>GET /v1/conversations/{id}</code></td><td class="s ok">200</td><td class="ms">6 ms</td><td class="bar"><span class="ok" style="left:66.81%;width:0.60%" title="+2337 ms"></span></td></tr>
+<tr><td class="n">14</td><td class="call"><code>GET /v1/conversations/{id}/messages</code></td><td class="s ok">200</td><td class="ms">11 ms</td><td class="bar"><span class="ok" style="left:67.30%;width:0.60%" title="+2354 ms"></span></td></tr>
+<tr><td class="n">15</td><td class="call"><code>GET /v1/credits/balance</code></td><td class="s ok">200</td><td class="ms">21 ms</td><td class="bar"><span class="ok" style="left:67.84%;width:0.60%" title="+2373 ms"></span></td></tr>
+<tr><td class="n">16</td><td class="call"><code>GET /v1/credits/balance</code></td><td class="s ok">200</td><td class="ms">11 ms</td><td class="bar"><span class="ok" style="left:68.95%;width:0.60%" title="+2412 ms"></span></td></tr>
+<tr><td class="n">17</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">27 ms</td><td class="bar"><span class="ok" style="left:69.61%;width:0.77%" title="+2435 ms"></span></td></tr>
+<tr><td class="n">18</td><td class="call"><code>GET /v1/conversations/{id}</code></td><td class="s warn">403</td><td class="ms">5 ms</td><td class="bar"><span class="warn" style="left:71.07%;width:0.60%" title="+2486 ms"></span></td></tr>
+<tr><td class="n">19</td><td class="call"><code>GET /v1/conversations/{id}/messages</code></td><td class="s warn">403</td><td class="ms">7 ms</td><td class="bar"><span class="warn" style="left:93.05%;width:0.60%" title="+3255 ms"></span></td></tr>
+<tr><td class="n">20</td><td class="call"><code>POST /v1/conversations/{id}/messages</code></td><td class="s warn">403</td><td class="ms">8 ms</td><td class="bar"><span class="warn" style="left:94.00%;width:0.60%" title="+3288 ms"></span></td></tr>
+<tr><td class="n">21</td><td class="call"><code>GET /v1/conversations</code></td><td class="s ok">200</td><td class="ms">6 ms</td><td class="bar"><span class="ok" style="left:94.97%;width:0.60%" title="+3322 ms"></span></td></tr>
+<tr><td class="n">22</td><td class="call"><code>GET /v1/credits/balance</code></td><td class="s ok">200</td><td class="ms">4 ms</td><td class="bar"><span class="ok" style="left:95.28%;width:0.60%" title="+3333 ms"></span></td></tr>
+<tr><td class="n">23</td><td class="call"><code>POST /v1/conversations/{id}/close</code></td><td class="s ok">200</td><td class="ms">7 ms</td><td class="bar"><span class="ok" style="left:95.57%;width:0.60%" title="+3343 ms"></span></td></tr>
+<tr><td class="n">24</td><td class="call"><code>POST /v1/conversations/{id}/close</code></td><td class="s ok">200</td><td class="ms">7 ms</td><td class="bar"><span class="ok" style="left:95.97%;width:0.60%" title="+3357 ms"></span></td></tr>
+<tr><td class="n">25</td><td class="call"><code>GET /v1/conversations/{id}/messages</code></td><td class="s ok">200</td><td class="ms">6 ms</td><td class="bar"><span class="ok" style="left:96.43%;width:0.60%" title="+3373 ms"></span></td></tr>
+<tr><td class="n">26</td><td class="call"><code>POST /v1/conversations/{id}/messages</code></td><td class="s warn">409</td><td class="ms">5 ms</td><td class="bar"><span class="warn" style="left:96.77%;width:0.60%" title="+3385 ms"></span></td></tr>
+<tr><td class="n">27</td><td class="call"><code>GET /v1/credits/balance</code></td><td class="s ok">200</td><td class="ms">6 ms</td><td class="bar"><span class="ok" style="left:97.68%;width:0.60%" title="+3417 ms"></span></td></tr>
+<tr><td class="n">28</td><td class="call"><code>DELETE /v1/accounts/me</code></td><td class="s ok">204</td><td class="ms">4 ms</td><td class="bar"><span class="ok" style="left:98.03%;width:0.60%" title="+3429 ms"></span></td></tr>
+<tr><td class="n">29</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s warn">401</td><td class="ms">20 ms</td><td class="bar"><span class="warn" style="left:98.28%;width:0.60%" title="+3438 ms"></span></td></tr>
+<tr><td class="n">30</td><td class="call"><code>DELETE /v1/accounts/me</code></td><td class="s ok">204</td><td class="ms">6 ms</td><td class="bar"><span class="ok" style="left:99.03%;width:0.60%" title="+3464 ms"></span></td></tr>
+<tr><td class="n">31</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s warn">401</td><td class="ms">4 ms</td><td class="bar"><span class="warn" style="left:99.37%;width:0.60%" title="+3476 ms"></span></td></tr>
+<tr><td class="n">32</td><td class="call"><code>DELETE /v1/accounts/me</code></td><td class="s ok">204</td><td class="ms">5 ms</td><td class="bar"><span class="ok" style="left:99.63%;width:0.60%" title="+3485 ms"></span></td></tr>
+<tr><td class="n">33</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s warn">401</td><td class="ms">4 ms</td><td class="bar"><span class="warn" style="left:99.89%;width:0.60%" title="+3494 ms"></span></td></tr>
+</table>
+</body></html>

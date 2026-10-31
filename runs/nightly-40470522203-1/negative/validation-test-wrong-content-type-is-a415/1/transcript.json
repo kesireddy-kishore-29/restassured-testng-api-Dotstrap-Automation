@@ -1,0 +1,34 @@
+[ {
+  "sequence" : 1,
+  "startedAt" : "2026-10-27T08:00:30.445769278Z",
+  "durationMs" : 26,
+  "method" : "POST",
+  "pathTemplate" : "/v1/accounts",
+  "url" : "http://localhost:7070/v1/accounts",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "X-Correlation-Id" : "qa-9ab8f1ed-8b1d-4075-b62b-82a2f9ad5c4c",
+    "Content-Type" : "text/plain; charset=ISO-8859-1"
+  },
+  "requestBody" : "handle=qa-x",
+  "status" : 415,
+  "responseHeaders" : {
+    "Date" : "Tue, 27 Oct 2026 08:00:30 GMT",
+    "Content-Type" : "application/problem+json",
+    "X-Correlation-Id" : "qa-9ab8f1ed-8b1d-4075-b62b-82a2f9ad5c4c",
+    "X-Content-Type-Options" : "nosniff",
+    "X-Frame-Options" : "DENY",
+    "Content-Security-Policy" : "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy" : "no-referrer",
+    "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+    "Cache-Control" : "no-store",
+    "Vary" : "Origin",
+    "RateLimit-Limit" : "600",
+    "RateLimit-Remaining" : "585",
+    "RateLimit-Reset" : "9",
+    "Content-Length" : "252"
+  },
+  "responseBody" : "{\"type\":\"https://reference-service.example/problems/unsupported-media-type\",\"title\":\"Unsupported media type\",\"status\":415,\"detail\":\"Send the body as application/json.\",\"instance\":\"/v1/accounts\",\"correlationId\":\"qa-9ab8f1ed-8b1d-4075-b62b-82a2f9ad5c4c\"}",
+  "correlationId" : "qa-9ab8f1ed-8b1d-4075-b62b-82a2f9ad5c4c",
+  "contractViolations" : [ ]
+} ]

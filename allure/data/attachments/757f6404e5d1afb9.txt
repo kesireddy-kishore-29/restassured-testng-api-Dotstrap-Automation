@@ -1,0 +1,22 @@
+#3 GET http://localhost:7070/health
+correlation: qa-a5aa093d-5fe6-4f63-a5d4-546956a75ac5
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-a5aa093d-5fe6-4f63-a5d4-546956a75ac5
+Content-Type: application/json
+
+--- response: 200 in 9 ms ---
+Date: Sat, 31 Oct 2026 08:31:37 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-a5aa093d-5fe6-4f63-a5d4-546956a75ac5
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+Content-Length: 95
+
+{"status":"UP","version":"1.0.0","region":"eu","regions":["in","eu","us"],"faultsEnabled":true}

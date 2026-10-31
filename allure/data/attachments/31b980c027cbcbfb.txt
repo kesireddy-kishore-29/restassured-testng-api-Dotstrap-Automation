@@ -1,0 +1,29 @@
+#75 POST http://localhost:7070/v1/conversations/cnv_3b3e5342-55f4-4fd3-9e3b-6bcd98950984/messages
+correlation: qa-ba107b77-bd76-4aa8-bacd-bc0519d8e5df
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-ba107b77-bd76-4aa8-bacd-bc0519d8e5df
+Content-Type: application/json
+
+--- request body ---
+{"body":"Hi"}
+
+--- response: 429 in 4 ms ---
+Date: Sat, 31 Oct 2026 08:31:38 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-ba107b77-bd76-4aa8-bacd-bc0519d8e5df
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 0
+RateLimit-Reset: 8
+Retry-After: 8
+Content-Length: 293
+
+{"type":"https://reference-service.example/problems/rate-limited","title":"Too many requests","status":429,"detail":"Slow down; retry after 8 second(s).","instance":"/v1/conversations/cnv_3b3e5342-55f4-4fd3-9e3b-6bcd98950984/messages","correlationId":"qa-ba107b77-bd76-4aa8-bacd-bc0519d8e5df"}

@@ -1,0 +1,34 @@
+[ {
+  "sequence" : 1,
+  "startedAt" : "2026-10-24T07:25:02.747412928Z",
+  "durationMs" : 22,
+  "method" : "GET",
+  "pathTemplate" : "/v1/accounts/me",
+  "url" : "http://localhost:7070/v1/accounts/me",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "X-Correlation-Id" : "qa-e87a4d02-9bb3-4c0b-93bc-c4ec6b8bec78",
+    "Content-Type" : "application/json"
+  },
+  "status" : 401,
+  "responseHeaders" : {
+    "Date" : "Sat, 24 Oct 2026 07:25:02 GMT",
+    "Content-Type" : "application/problem+json",
+    "X-Correlation-Id" : "qa-e87a4d02-9bb3-4c0b-93bc-c4ec6b8bec78",
+    "X-Content-Type-Options" : "nosniff",
+    "X-Frame-Options" : "DENY",
+    "Content-Security-Policy" : "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy" : "no-referrer",
+    "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+    "Cache-Control" : "no-store",
+    "Vary" : "Origin",
+    "RateLimit-Limit" : "60",
+    "RateLimit-Remaining" : "59",
+    "RateLimit-Reset" : "10",
+    "WWW-Authenticate" : "Bearer error=\"invalid_token\"",
+    "Content-Length" : "231"
+  },
+  "responseBody" : "{\"type\":\"https://reference-service.example/problems/invalid-token\",\"title\":\"Invalid token\",\"status\":401,\"detail\":\"The token is not recognised.\",\"instance\":\"/v1/accounts/me\",\"correlationId\":\"qa-e87a4d02-9bb3-4c0b-93bc-c4ec6b8bec78\"}",
+  "correlationId" : "qa-e87a4d02-9bb3-4c0b-93bc-c4ec6b8bec78",
+  "contractViolations" : [ ]
+} ]

@@ -1,0 +1,28 @@
+{
+  "schemaVersion" : 1,
+  "repo" : "restassured-testng-api-Dotstrap-Automation",
+  "runId" : "nightly-41028588619-1",
+  "gitSha" : "3882e046fc32a5097e682ed500378eaf1fd442f8",
+  "recordMode" : "all",
+  "test" : {
+    "id" : "com.qaautomation.tests.contract.ContractTest#conversationResourcesMatchTheirContracts",
+    "title" : "Conversation, message, page and read-state match their schemas",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-CONTRACT-01" ],
+    "tags" : [ "contract" ],
+    "status" : "passed",
+    "durationMs" : 330,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-10-30T08:46:06.355Z",
+    "finishedAt" : "2026-10-30T08:46:06.685Z"
+  },
+  "environment" : {
+    "testEnv" : "ci",
+    "sutBaseUrl" : "http://localhost:7070",
+    "bookerBaseUrl" : "https://restful-booker.herokuapp.com",
+    "java" : "21.0.13",
+    "os" : "Linux 7.0.0-1017-azure",
+    "recordMode" : "all"
+  }
+}

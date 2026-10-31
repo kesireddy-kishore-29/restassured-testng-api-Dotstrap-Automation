@@ -1,0 +1,28 @@
+{
+  "schemaVersion" : 1,
+  "repo" : "restassured-testng-api-Dotstrap-Automation",
+  "runId" : "nightly-39919362704-1",
+  "gitSha" : "3882e046fc32a5097e682ed500378eaf1fd442f8",
+  "recordMode" : "all",
+  "test" : {
+    "id" : "com.qaautomation.tests.negative.AuthBoundaryTest#unknownTokenIsRefused[0]",
+    "title" : "A token the service never issued is refused [not-a-real-token-at-all, invalid-token]",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01" ],
+    "tags" : [ "security", "regression" ],
+    "status" : "passed",
+    "durationMs" : 83,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-10-23T07:41:17.650Z",
+    "finishedAt" : "2026-10-23T07:41:17.733Z"
+  },
+  "environment" : {
+    "testEnv" : "ci",
+    "sutBaseUrl" : "http://localhost:7070",
+    "bookerBaseUrl" : "https://restful-booker.herokuapp.com",
+    "java" : "21.0.12.1",
+    "os" : "Linux 7.0.0-1017-azure",
+    "recordMode" : "all"
+  }
+}

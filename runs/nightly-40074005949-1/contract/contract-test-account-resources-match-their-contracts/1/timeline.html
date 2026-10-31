@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timeline</title>
+<style>
+:root{--bg:#fff;--fg:#1d2433;--muted:#5b6475;--line:#e3e7ef;--ok:#1f8f5f;--warn:#b7791f;--bad:#c53030}
+@media (prefers-color-scheme:dark){:root{--bg:#121722;--fg:#e6e9f0;--muted:#9aa3b5;--line:#273044}}
+body{margin:0;padding:24px 16px;background:var(--bg);color:var(--fg);
+  font:14px/1.5 system-ui,sans-serif}
+h1{font-size:18px;margin:0 0 4px} p{color:var(--muted);margin:0 0 16px}
+table{width:100%;border-collapse:collapse}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+.n,.ms{color:var(--muted);white-space:nowrap} .s{font-weight:600}
+.s.ok{color:var(--ok)} .s.warn{color:var(--warn)} .s.bad{color:var(--bad)}
+.bar{position:relative;width:45%;min-width:160px}
+.bar span{position:absolute;top:8px;height:10px;border-radius:3px}
+.bar span.ok{background:var(--ok)} .bar span.warn{background:var(--warn)}
+.bar span.bad{background:var(--bad)}
+code{font-size:13px}
+</style></head><body>
+<h1>Account, token and public profile match their schemas</h1>
+<p>com.qaautomation.tests.contract.ContractTest#accountResourcesMatchTheirContracts · passed · 11 call(s) over 1578 ms</p>
+<table><tr><td class="n">1</td><td class="call"><code>POST /v1/accounts</code></td><td class="s ok">201</td><td class="ms">367 ms</td><td class="bar"><span class="ok" style="left:39.04%;width:23.26%" title="+616 ms"></span></td></tr>
+<tr><td class="n">2</td><td class="call"><code>POST /v1/accounts</code></td><td class="s ok">201</td><td class="ms">22 ms</td><td class="bar"><span class="ok" style="left:77.44%;width:1.39%" title="+1222 ms"></span></td></tr>
+<tr><td class="n">3</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">44 ms</td><td class="bar"><span class="ok" style="left:80.04%;width:2.79%" title="+1263 ms"></span></td></tr>
+<tr><td class="n">4</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">18 ms</td><td class="bar"><span class="ok" style="left:83.78%;width:1.14%" title="+1322 ms"></span></td></tr>
+<tr><td class="n">5</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">27 ms</td><td class="bar"><span class="ok" style="left:85.30%;width:1.71%" title="+1346 ms"></span></td></tr>
+<tr><td class="n">6</td><td class="call"><code>GET /v1/accounts/{handle}</code></td><td class="s ok">200</td><td class="ms">36 ms</td><td class="bar"><span class="ok" style="left:90.05%;width:2.28%" title="+1421 ms"></span></td></tr>
+<tr><td class="n">7</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">19 ms</td><td class="bar"><span class="ok" style="left:94.30%;width:1.20%" title="+1488 ms"></span></td></tr>
+<tr><td class="n">8</td><td class="call"><code>DELETE /v1/accounts/me</code></td><td class="s ok">204</td><td class="ms">18 ms</td><td class="bar"><span class="ok" style="left:96.07%;width:1.14%" title="+1516 ms"></span></td></tr>
+<tr><td class="n">9</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s warn">401</td><td class="ms">8 ms</td><td class="bar"><span class="warn" style="left:97.85%;width:0.60%" title="+1544 ms"></span></td></tr>
+<tr><td class="n">10</td><td class="call"><code>DELETE /v1/accounts/me</code></td><td class="s ok">204</td><td class="ms">5 ms</td><td class="bar"><span class="ok" style="left:98.92%;width:0.60%" title="+1561 ms"></span></td></tr>
+<tr><td class="n">11</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s warn">401</td><td class="ms">8 ms</td><td class="bar"><span class="warn" style="left:99.49%;width:0.60%" title="+1570 ms"></span></td></tr>
+</table>
+</body></html>

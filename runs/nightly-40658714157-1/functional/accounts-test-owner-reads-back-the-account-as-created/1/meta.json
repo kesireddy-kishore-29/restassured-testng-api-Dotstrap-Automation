@@ -1,0 +1,28 @@
+{
+  "schemaVersion" : 1,
+  "repo" : "restassured-testng-api-Dotstrap-Automation",
+  "runId" : "nightly-40658714157-1",
+  "gitSha" : "3882e046fc32a5097e682ed500378eaf1fd442f8",
+  "recordMode" : "all",
+  "test" : {
+    "id" : "com.qaautomation.tests.functional.AccountsTest#ownerReadsBackTheAccountAsCreated",
+    "title" : "The owner reads back exactly what was created",
+    "suite" : "functional",
+    "featureIds" : [ "FEAT-ACCT-01" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 1470,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-10-28T08:42:51.461Z",
+    "finishedAt" : "2026-10-28T08:42:52.931Z"
+  },
+  "environment" : {
+    "testEnv" : "ci",
+    "sutBaseUrl" : "http://localhost:7070",
+    "bookerBaseUrl" : "https://restful-booker.herokuapp.com",
+    "java" : "21.0.13",
+    "os" : "Linux 7.0.0-1017-azure",
+    "recordMode" : "all"
+  }
+}

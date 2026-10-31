@@ -1,0 +1,29 @@
+#5 POST http://localhost:7070/v1/credits/purchases
+correlation: qa-6d8ef383-5b6a-4e2c-8b08-500513b8cdd8
+
+--- request headers ---
+Accept: application/json
+Idempotency-Key: qa-396d2d0337864cb7b07de0977a756544
+X-Fault-Key: a6677023-9943-4f44-b42c-acebff91bf1c
+X-Fault: unavailable-once
+X-Correlation-Id: qa-6d8ef383-5b6a-4e2c-8b08-500513b8cdd8
+Content-Type: application/json
+
+--- request body ---
+{"packId":"pack-10"}
+
+--- response: 503 in 20 ms ---
+Date: Sat, 31 Oct 2026 08:31:36 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-6d8ef383-5b6a-4e2c-8b08-500513b8cdd8
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+Retry-After: 1
+Content-Length: 265
+
+{"type":"https://reference-service.example/problems/fault-injected","title":"Service unavailable (injected)","status":503,"detail":"Injected outage; retry after 1 second.","instance":"/v1/credits/purchases","correlationId":"qa-6d8ef383-5b6a-4e2c-8b08-500513b8cdd8"}

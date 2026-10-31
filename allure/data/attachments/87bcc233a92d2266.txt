@@ -1,0 +1,29 @@
+#3 PATCH http://localhost:7070/v1/accounts/me
+correlation: qa-2d49f154-e360-410c-acac-bedcb835baa4
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-2d49f154-e360-410c-acac-bedcb835baa4
+Content-Type: application/json
+
+--- request body ---
+{"displayName":"Ava Lindqvist"}
+
+--- response: 200 in 43 ms ---
+Date: Sat, 31 Oct 2026 08:31:24 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-2d49f154-e360-410c-acac-bedcb835baa4
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 179
+
+{"id":"acc_45eb778a-a1f7-4f03-80cd-c4e680c18596","handle":"qa-565111c3f675","displayName":"Ava Lindqvist","region":"eu","role":"user","createdAt":"2026-10-31T08:31:23.874407976Z"}

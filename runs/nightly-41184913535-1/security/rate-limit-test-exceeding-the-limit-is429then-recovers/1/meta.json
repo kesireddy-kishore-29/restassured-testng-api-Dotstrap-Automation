@@ -1,0 +1,28 @@
+{
+  "schemaVersion" : 1,
+  "repo" : "restassured-testng-api-Dotstrap-Automation",
+  "runId" : "nightly-41184913535-1",
+  "gitSha" : "3882e046fc32a5097e682ed500378eaf1fd442f8",
+  "recordMode" : "all",
+  "test" : {
+    "id" : "com.qaautomation.tests.security.RateLimitTest#exceedingTheLimitIs429ThenRecovers",
+    "title" : "Past the limit: 429 with Retry-After, then recovery",
+    "suite" : "security",
+    "featureIds" : [ "FEAT-RATE-01" ],
+    "tags" : [ "security", "regression" ],
+    "status" : "passed",
+    "durationMs" : 12210,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-10-31T08:31:36.167Z",
+    "finishedAt" : "2026-10-31T08:31:48.377Z"
+  },
+  "environment" : {
+    "testEnv" : "ci",
+    "sutBaseUrl" : "http://localhost:7070",
+    "bookerBaseUrl" : "https://restful-booker.herokuapp.com",
+    "java" : "21.0.13",
+    "os" : "Linux 7.0.0-1017-azure",
+    "recordMode" : "all"
+  }
+}

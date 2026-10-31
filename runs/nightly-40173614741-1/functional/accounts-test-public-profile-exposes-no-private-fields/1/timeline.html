@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timeline</title>
+<style>
+:root{--bg:#fff;--fg:#1d2433;--muted:#5b6475;--line:#e3e7ef;--ok:#1f8f5f;--warn:#b7791f;--bad:#c53030}
+@media (prefers-color-scheme:dark){:root{--bg:#121722;--fg:#e6e9f0;--muted:#9aa3b5;--line:#273044}}
+body{margin:0;padding:24px 16px;background:var(--bg);color:var(--fg);
+  font:14px/1.5 system-ui,sans-serif}
+h1{font-size:18px;margin:0 0 4px} p{color:var(--muted);margin:0 0 16px}
+table{width:100%;border-collapse:collapse}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+.n,.ms{color:var(--muted);white-space:nowrap} .s{font-weight:600}
+.s.ok{color:var(--ok)} .s.warn{color:var(--warn)} .s.bad{color:var(--bad)}
+.bar{position:relative;width:45%;min-width:160px}
+.bar span{position:absolute;top:8px;height:10px;border-radius:3px}
+.bar span.ok{background:var(--ok)} .bar span.warn{background:var(--warn)}
+.bar span.bad{background:var(--bad)}
+code{font-size:13px}
+</style></head><body>
+<h1>Anyone signed in sees a public profile with no private fields</h1>
+<p>com.qaautomation.tests.functional.AccountsTest#publicProfileExposesNoPrivateFields · passed · 11 call(s) over 286 ms</p>
+<table><tr><td class="n">1</td><td class="call"><code>POST /v1/accounts</code></td><td class="s ok">201</td><td class="ms">17 ms</td><td class="bar"><span class="ok" style="left:2.80%;width:5.94%" title="+8 ms"></span></td></tr>
+<tr><td class="n">2</td><td class="call"><code>POST /v1/accounts</code></td><td class="s ok">201</td><td class="ms">16 ms</td><td class="bar"><span class="ok" style="left:13.64%;width:5.59%" title="+39 ms"></span></td></tr>
+<tr><td class="n">3</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">21 ms</td><td class="bar"><span class="ok" style="left:24.48%;width:7.34%" title="+70 ms"></span></td></tr>
+<tr><td class="n">4</td><td class="call"><code>GET /v1/accounts/{handle}</code></td><td class="s ok">200</td><td class="ms">19 ms</td><td class="bar"><span class="ok" style="left:34.97%;width:6.64%" title="+100 ms"></span></td></tr>
+<tr><td class="n">5</td><td class="call"><code>GET /v1/accounts/{handle}</code></td><td class="s ok">200</td><td class="ms">23 ms</td><td class="bar"><span class="ok" style="left:52.10%;width:8.04%" title="+149 ms"></span></td></tr>
+<tr><td class="n">6</td><td class="call"><code>GET /v1/accounts/{handle}</code></td><td class="s ok">200</td><td class="ms">7 ms</td><td class="bar"><span class="ok" style="left:62.59%;width:2.45%" title="+179 ms"></span></td></tr>
+<tr><td class="n">7</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">14 ms</td><td class="bar"><span class="ok" style="left:70.28%;width:4.90%" title="+201 ms"></span></td></tr>
+<tr><td class="n">8</td><td class="call"><code>DELETE /v1/accounts/me</code></td><td class="s ok">204</td><td class="ms">8 ms</td><td class="bar"><span class="ok" style="left:78.32%;width:2.80%" title="+224 ms"></span></td></tr>
+<tr><td class="n">9</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s warn">401</td><td class="ms">10 ms</td><td class="bar"><span class="warn" style="left:84.62%;width:3.50%" title="+242 ms"></span></td></tr>
+<tr><td class="n">10</td><td class="call"><code>DELETE /v1/accounts/me</code></td><td class="s ok">204</td><td class="ms">11 ms</td><td class="bar"><span class="ok" style="left:89.86%;width:3.85%" title="+257 ms"></span></td></tr>
+<tr><td class="n">11</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s warn">401</td><td class="ms">10 ms</td><td class="bar"><span class="warn" style="left:96.50%;width:3.50%" title="+276 ms"></span></td></tr>
+</table>
+</body></html>

@@ -1,0 +1,26 @@
+#72 GET http://localhost:7070/v1/conversations
+correlation: qa-21c2d962-ff9e-4c22-8180-4391d343e6e3
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-21c2d962-ff9e-4c22-8180-4391d343e6e3
+Content-Type: application/json
+
+--- response: 429 in 37 ms ---
+Date: Sat, 31 Oct 2026 08:31:37 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-21c2d962-ff9e-4c22-8180-4391d343e6e3
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 0
+RateLimit-Reset: 8
+Retry-After: 8
+Content-Length: 243
+
+{"type":"https://reference-service.example/problems/rate-limited","title":"Too many requests","status":429,"detail":"Slow down; retry after 8 second(s).","instance":"/v1/conversations","correlationId":"qa-21c2d962-ff9e-4c22-8180-4391d343e6e3"}

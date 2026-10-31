@@ -1,0 +1,26 @@
+#4 GET http://localhost:7070/v1/accounts/qa-nobody-here
+correlation: qa-27fe2313-97a0-47d0-b595-e6a8d4d12d4c
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-27fe2313-97a0-47d0-b595-e6a8d4d12d4c
+Content-Type: application/json
+
+--- response: 404 in 31 ms ---
+Date: Sat, 31 Oct 2026 08:31:37 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-27fe2313-97a0-47d0-b595-e6a8d4d12d4c
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 247
+
+{"type":"https://reference-service.example/problems/not-found","title":"Not found","status":404,"detail":"No account with handle 'qa-nobody-here'.","instance":"/v1/accounts/qa-nobody-here","correlationId":"qa-27fe2313-97a0-47d0-b595-e6a8d4d12d4c"}

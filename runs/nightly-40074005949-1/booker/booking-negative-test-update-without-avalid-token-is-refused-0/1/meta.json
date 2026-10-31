@@ -1,0 +1,28 @@
+{
+  "schemaVersion" : 1,
+  "repo" : "restassured-testng-api-Dotstrap-Automation",
+  "runId" : "nightly-40074005949-1",
+  "gitSha" : "3882e046fc32a5097e682ed500378eaf1fd442f8",
+  "recordMode" : "all",
+  "test" : {
+    "id" : "com.qaautomation.tests.booker.BookingNegativeTest#updateWithoutAValidTokenIsRefused[0]",
+    "title" : "An update without a valid token is refused and changes nothing [Optional.empty]",
+    "suite" : "booker",
+    "featureIds" : [ "FEAT-AUTH-02" ],
+    "tags" : [ "regression", "booker" ],
+    "status" : "passed",
+    "durationMs" : 1629,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-10-24T07:25:06.300Z",
+    "finishedAt" : "2026-10-24T07:25:07.929Z"
+  },
+  "environment" : {
+    "testEnv" : "ci",
+    "sutBaseUrl" : "http://localhost:7070",
+    "bookerBaseUrl" : "https://restful-booker.herokuapp.com",
+    "java" : "21.0.12.1",
+    "os" : "Linux 7.0.0-1017-azure",
+    "recordMode" : "all"
+  }
+}

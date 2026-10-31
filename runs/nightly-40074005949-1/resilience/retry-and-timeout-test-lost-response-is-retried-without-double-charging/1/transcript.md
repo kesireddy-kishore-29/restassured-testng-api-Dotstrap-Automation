@@ -1,0 +1,259 @@
+# Transcript: A lost response is retried with the same key and the purchase is charged once
+
+| | |
+|---|---|
+| Test | `com.qaautomation.tests.resilience.RetryAndTimeoutTest#lostResponseIsRetriedWithoutDoubleCharging` |
+| Features | FEAT-RES-01, FEAT-IDEMP-01 |
+| Attempt | 1 |
+| Status | passed |
+| Calls | 7 |
+
+Secrets (tokens, passwords, credential headers) are masked as `****`.
+
+| # | Call | Status | ms | Correlation ID |
+|---|---|---|---|---|
+| 1 | `POST /v1/accounts` | 201 | 420 | `qa-613584a4-e208-4899-8981-e0984a5511d7` |
+| 2 | `POST /v1/auth/token` | 200 | 99 | `qa-75afacef-330f-436d-b293-0e5cdfefb7d4` |
+| 3 | `POST /v1/credits/purchases` | 503 | 127 | `qa-bab0994a-4bc3-4da9-b8c9-76617c2a3b5d` |
+| 4 | `POST /v1/credits/purchases` | 200 | 13 | `qa-49d4b4ee-b4fd-4d4a-9586-98f5aad42423` |
+| 5 | `GET /v1/credits/ledger` | 200 | 22 | `qa-3199065d-8d4c-468d-aa36-40d7d5f63b95` |
+| 6 | `DELETE /v1/accounts/me` | 204 | 13 | `qa-b8b6b706-4bba-481e-967d-a2c2cea7c83b` |
+| 7 | `POST /v1/auth/token` | 401 | 12 | `qa-5e9b00bd-55b9-4707-bfd4-23fbe69c2096` |
+
+## 1. POST /v1/accounts
+
+```text
+#1 POST http://localhost:7070/v1/accounts
+correlation: qa-613584a4-e208-4899-8981-e0984a5511d7
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-613584a4-e208-4899-8981-e0984a5511d7
+Content-Type: application/json
+
+--- request body ---
+{"handle":"qa-cd24cb753816","displayName":"QA cd24cb753816","password":"****","region":"eu"}
+
+--- response: 201 in 420 ms ---
+Date: Sat, 24 Oct 2026 07:25:05 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-613584a4-e208-4899-8981-e0984a5511d7
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 597
+RateLimit-Reset: 10
+Location: /v1/accounts/qa-cd24cb753816
+X-Served-Region: eu
+Content-Length: 181
+
+{"id":"acc_46f5960d-d166-4471-b381-494a15d8caa4","handle":"qa-cd24cb753816","displayName":"QA cd24cb753816","region":"eu","role":"user","createdAt":"2026-10-24T07:25:05.518304660Z"}
+```
+
+## 2. POST /v1/auth/token
+
+```text
+#2 POST http://localhost:7070/v1/auth/token
+correlation: qa-75afacef-330f-436d-b293-0e5cdfefb7d4
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-75afacef-330f-436d-b293-0e5cdfefb7d4
+Content-Type: application/json
+
+--- request body ---
+{"handle":"qa-cd24cb753816","password":"****"}
+
+--- response: 200 in 99 ms ---
+Date: Sat, 24 Oct 2026 07:25:05 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-75afacef-330f-436d-b293-0e5cdfefb7d4
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 588
+RateLimit-Reset: 10
+Content-Length: 153
+
+{"accessToken":"****","tokenType":"Bearer","expiresIn":900,"accountId":"acc_46f5960d-d166-4471-b381-494a15d8caa4"}
+```
+
+## 3. POST /v1/credits/purchases
+
+```text
+#3 POST http://localhost:7070/v1/credits/purchases
+correlation: qa-bab0994a-4bc3-4da9-b8c9-76617c2a3b5d
+
+--- request headers ---
+Accept: application/json
+Idempotency-Key: qa-547e20894ed14501ae4d2911889fc935
+X-Fault-Key: fedd1bbc-9f0a-489a-a1c1-ef6d3a347bff
+X-Fault: drop-response
+X-Correlation-Id: qa-bab0994a-4bc3-4da9-b8c9-76617c2a3b5d
+Content-Type: application/json
+
+--- request body ---
+{"packId":"pack-10"}
+
+--- response: 503 in 127 ms ---
+Date: Sat, 24 Oct 2026 07:25:06 GMT
+Content-Type: application/problem+json;charset=utf-8
+X-Correlation-Id: qa-bab0994a-4bc3-4da9-b8c9-76617c2a3b5d
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: eu
+Location: /v1/credits/purchases/pur_758d6fcd-955c-4d34-96b3-b96924f548e6
+Retry-After: 1
+Content-Length: 285
+
+{"type":"https://reference-service.example/problems/fault-injected","title":"Service unavailable (injected)","status":503,"detail":"Injected: the request completed but the response was lost.","instance":"/v1/credits/purchases","correlationId":"qa-bab0994a-4bc3-4da9-b8c9-76617c2a3b5d"}
+```
+
+## 4. POST /v1/credits/purchases
+
+```text
+#4 POST http://localhost:7070/v1/credits/purchases
+correlation: qa-49d4b4ee-b4fd-4d4a-9586-98f5aad42423
+
+--- request headers ---
+Accept: application/json
+Idempotency-Key: qa-547e20894ed14501ae4d2911889fc935
+X-Fault-Key: fedd1bbc-9f0a-489a-a1c1-ef6d3a347bff
+X-Fault: drop-response
+X-Correlation-Id: qa-49d4b4ee-b4fd-4d4a-9586-98f5aad42423
+Content-Type: application/json
+
+--- request body ---
+{"packId":"pack-10"}
+
+--- response: 200 in 13 ms ---
+Date: Sat, 24 Oct 2026 07:25:07 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-49d4b4ee-b4fd-4d4a-9586-98f5aad42423
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 9
+X-Served-Region: eu
+Location: /v1/credits/purchases/pur_758d6fcd-955c-4d34-96b3-b96924f548e6
+Idempotent-Replayed: true
+Content-Length: 144
+
+{"id":"pur_758d6fcd-955c-4d34-96b3-b96924f548e6","packId":"pack-10","credits":10,"balanceAfter":15,"createdAt":"2026-10-24T07:25:06.171218894Z"}
+```
+
+## 5. GET /v1/credits/ledger
+
+```text
+#5 GET http://localhost:7070/v1/credits/ledger
+correlation: qa-3199065d-8d4c-468d-aa36-40d7d5f63b95
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-3199065d-8d4c-468d-aa36-40d7d5f63b95
+Content-Type: application/json
+
+--- response: 200 in 22 ms ---
+Date: Sat, 24 Oct 2026 07:25:07 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-3199065d-8d4c-468d-aa36-40d7d5f63b95
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 57
+RateLimit-Reset: 9
+X-Served-Region: eu
+Content-Length: 398
+
+{"items":[{"id":"led_900f9216-48d2-462a-9111-1106a43ffd43","type":"grant","amount":5,"balanceAfter":5,"reference":"welcome-grant","createdAt":"2026-10-24T07:25:05.518320429Z"},{"id":"led_e97a0346-81c7-40b2-bdd8-ea6b59814c5d","type":"purchase","amount":10,"balanceAfter":15,"reference":"pur_758d6fcd-955c-4d34-96b3-b96924f548e6","createdAt":"2026-10-24T07:25:06.171218894Z"}],"total":2,"balance":15}
+```
+
+## 6. DELETE /v1/accounts/me
+
+```text
+#6 DELETE http://localhost:7070/v1/accounts/me
+correlation: qa-b8b6b706-4bba-481e-967d-a2c2cea7c83b
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-b8b6b706-4bba-481e-967d-a2c2cea7c83b
+Content-Type: application/json
+
+--- response: 204 in 13 ms ---
+Date: Sat, 24 Oct 2026 07:25:07 GMT
+Content-Type: text/plain
+X-Correlation-Id: qa-b8b6b706-4bba-481e-967d-a2c2cea7c83b
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 56
+RateLimit-Reset: 9
+X-Served-Region: eu
+```
+
+## 7. POST /v1/auth/token
+
+```text
+#7 POST http://localhost:7070/v1/auth/token
+correlation: qa-5e9b00bd-55b9-4707-bfd4-23fbe69c2096
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-5e9b00bd-55b9-4707-bfd4-23fbe69c2096
+Content-Type: application/json
+
+--- request body ---
+{"handle":"qa-cd24cb753816","password":"****"}
+
+--- response: 401 in 12 ms ---
+Date: Sat, 24 Oct 2026 07:25:07 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-5e9b00bd-55b9-4707-bfd4-23fbe69c2096
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 579
+RateLimit-Reset: 9
+Content-Length: 242
+
+{"type":"https://reference-service.example/problems/invalid-credentials","title":"Invalid credentials","status":401,"detail":"Handle or password is wrong.","instance":"/v1/auth/token","correlationId":"qa-5e9b00bd-55b9-4707-bfd4-23fbe69c2096"}
+```

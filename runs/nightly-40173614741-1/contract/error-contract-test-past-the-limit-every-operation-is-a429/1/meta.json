@@ -1,0 +1,28 @@
+{
+  "schemaVersion" : 1,
+  "repo" : "restassured-testng-api-Dotstrap-Automation",
+  "runId" : "nightly-40173614741-1",
+  "gitSha" : "3882e046fc32a5097e682ed500378eaf1fd442f8",
+  "recordMode" : "all",
+  "test" : {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#pastTheLimitEveryOperationIsA429",
+    "title" : "Past its rate limit, a token gets a 429 problem from every operation",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RATE-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "security", "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 10587,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-10-25T07:40:25.760Z",
+    "finishedAt" : "2026-10-25T07:40:36.347Z"
+  },
+  "environment" : {
+    "testEnv" : "ci",
+    "sutBaseUrl" : "http://localhost:7070",
+    "bookerBaseUrl" : "https://restful-booker.herokuapp.com",
+    "java" : "21.0.12.1",
+    "os" : "Linux 7.0.0-1017-azure",
+    "recordMode" : "all"
+  }
+}

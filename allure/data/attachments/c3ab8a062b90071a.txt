@@ -1,0 +1,26 @@
+#6 GET http://localhost:7070/v1/accounts/qa-dd3cbbc1003a
+correlation: qa-ef9cb733-2499-44d9-90fc-595dd0867853
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-ef9cb733-2499-44d9-90fc-595dd0867853
+Content-Type: application/json
+
+--- response: 200 in 15 ms ---
+Date: Sat, 31 Oct 2026 08:31:37 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-ef9cb733-2499-44d9-90fc-595dd0867853
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 74
+
+{"handle":"qa-dd3cbbc1003a","displayName":"QA dd3cbbc1003a","region":"us"}

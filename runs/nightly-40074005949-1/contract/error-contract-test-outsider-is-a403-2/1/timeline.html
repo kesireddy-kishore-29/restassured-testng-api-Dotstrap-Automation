@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timeline</title>
+<style>
+:root{--bg:#fff;--fg:#1d2433;--muted:#5b6475;--line:#e3e7ef;--ok:#1f8f5f;--warn:#b7791f;--bad:#c53030}
+@media (prefers-color-scheme:dark){:root{--bg:#121722;--fg:#e6e9f0;--muted:#9aa3b5;--line:#273044}}
+body{margin:0;padding:24px 16px;background:var(--bg);color:var(--fg);
+  font:14px/1.5 system-ui,sans-serif}
+h1{font-size:18px;margin:0 0 4px} p{color:var(--muted);margin:0 0 16px}
+table{width:100%;border-collapse:collapse}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+.n,.ms{color:var(--muted);white-space:nowrap} .s{font-weight:600}
+.s.ok{color:var(--ok)} .s.warn{color:var(--warn)} .s.bad{color:var(--bad)}
+.bar{position:relative;width:45%;min-width:160px}
+.bar span{position:absolute;top:8px;height:10px;border-radius:3px}
+.bar span.ok{background:var(--ok)} .bar span.warn{background:var(--warn)}
+.bar span.bad{background:var(--bad)}
+code{font-size:13px}
+</style></head><body>
+<h1>Every conversation operation answers an outsider with a 403 problem [POST /v1/conversations/{id}/messages]</h1>
+<p>com.qaautomation.tests.contract.ErrorContractTest#outsiderIsA403[2] · passed · 14 call(s) over 1133 ms</p>
+<table><tr><td class="n">1</td><td class="call"><code>POST /v1/accounts</code></td><td class="s ok">201</td><td class="ms">60 ms</td><td class="bar"><span class="ok" style="left:0.79%;width:5.30%" title="+9 ms"></span></td></tr>
+<tr><td class="n">2</td><td class="call"><code>POST /v1/accounts</code></td><td class="s ok">201</td><td class="ms">25 ms</td><td class="bar"><span class="ok" style="left:7.15%;width:2.21%" title="+81 ms"></span></td></tr>
+<tr><td class="n">3</td><td class="call"><code>POST /v1/accounts</code></td><td class="s ok">201</td><td class="ms">13 ms</td><td class="bar"><span class="ok" style="left:12.44%;width:1.15%" title="+141 ms"></span></td></tr>
+<tr><td class="n">4</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">24 ms</td><td class="bar"><span class="ok" style="left:15.09%;width:2.12%" title="+171 ms"></span></td></tr>
+<tr><td class="n">5</td><td class="call"><code>POST /v1/conversations</code></td><td class="s ok">201</td><td class="ms">19 ms</td><td class="bar"><span class="ok" style="left:18.45%;width:1.68%" title="+209 ms"></span></td></tr>
+<tr><td class="n">6</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">17 ms</td><td class="bar"><span class="ok" style="left:20.83%;width:1.50%" title="+236 ms"></span></td></tr>
+<tr><td class="n">7</td><td class="call"><code>POST /v1/conversations/{id}/messages</code></td><td class="s warn">403</td><td class="ms">16 ms</td><td class="bar"><span class="warn" style="left:23.57%;width:1.41%" title="+267 ms"></span></td></tr>
+<tr><td class="n">8</td><td class="call"><code>DELETE /v1/accounts/me</code></td><td class="s ok">204</td><td class="ms">44 ms</td><td class="bar"><span class="ok" style="left:79.08%;width:3.88%" title="+896 ms"></span></td></tr>
+<tr><td class="n">9</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s warn">401</td><td class="ms">10 ms</td><td class="bar"><span class="warn" style="left:84.47%;width:0.88%" title="+957 ms"></span></td></tr>
+<tr><td class="n">10</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">23 ms</td><td class="bar"><span class="ok" style="left:85.97%;width:2.03%" title="+974 ms"></span></td></tr>
+<tr><td class="n">11</td><td class="call"><code>DELETE /v1/accounts/me</code></td><td class="s ok">204</td><td class="ms">22 ms</td><td class="bar"><span class="ok" style="left:88.79%;width:1.94%" title="+1006 ms"></span></td></tr>
+<tr><td class="n">12</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s warn">401</td><td class="ms">21 ms</td><td class="bar"><span class="warn" style="left:91.53%;width:1.85%" title="+1037 ms"></span></td></tr>
+<tr><td class="n">13</td><td class="call"><code>DELETE /v1/accounts/me</code></td><td class="s ok">204</td><td class="ms">25 ms</td><td class="bar"><span class="ok" style="left:95.41%;width:2.21%" title="+1081 ms"></span></td></tr>
+<tr><td class="n">14</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s warn">401</td><td class="ms">11 ms</td><td class="bar"><span class="warn" style="left:99.03%;width:0.97%" title="+1122 ms"></span></td></tr>
+</table>
+</body></html>

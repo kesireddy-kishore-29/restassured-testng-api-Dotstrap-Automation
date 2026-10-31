@@ -1,0 +1,94 @@
+{
+  "schemaVersion" : 1,
+  "runs" : [ {
+    "runId" : "nightly-39919362704-1",
+    "date" : "2026-10-23",
+    "total" : 124,
+    "passed" : 124,
+    "failed" : 0,
+    "flaky" : 0,
+    "skipped" : 0,
+    "durationMs" : 53400,
+    "passRate" : 1.0
+  }, {
+    "runId" : "nightly-40074005949-1",
+    "date" : "2026-10-24",
+    "total" : 124,
+    "passed" : 124,
+    "failed" : 0,
+    "flaky" : 0,
+    "skipped" : 0,
+    "durationMs" : 37612,
+    "passRate" : 1.0
+  }, {
+    "runId" : "nightly-40173614741-1",
+    "date" : "2026-10-25",
+    "total" : 124,
+    "passed" : 124,
+    "failed" : 0,
+    "flaky" : 0,
+    "skipped" : 0,
+    "durationMs" : 18036,
+    "passRate" : 1.0
+  }, {
+    "runId" : "nightly-40288649085-1",
+    "date" : "2026-10-26",
+    "total" : 124,
+    "passed" : 124,
+    "failed" : 0,
+    "flaky" : 0,
+    "skipped" : 0,
+    "durationMs" : 18046,
+    "passRate" : 1.0
+  }, {
+    "runId" : "nightly-40470522203-1",
+    "date" : "2026-10-27",
+    "total" : 124,
+    "passed" : 124,
+    "failed" : 0,
+    "flaky" : 0,
+    "skipped" : 0,
+    "durationMs" : 27085,
+    "passRate" : 1.0
+  }, {
+    "runId" : "nightly-40658714157-1",
+    "date" : "2026-10-28",
+    "total" : 124,
+    "passed" : 124,
+    "failed" : 0,
+    "flaky" : 0,
+    "skipped" : 0,
+    "durationMs" : 18589,
+    "passRate" : 1.0
+  }, {
+    "runId" : "nightly-40843581949-1",
+    "date" : "2026-10-29",
+    "total" : 124,
+    "passed" : 124,
+    "failed" : 0,
+    "flaky" : 0,
+    "skipped" : 0,
+    "durationMs" : 21406,
+    "passRate" : 1.0
+  }, {
+    "runId" : "nightly-41028588619-1",
+    "date" : "2026-10-30",
+    "total" : 124,
+    "passed" : 124,
+    "failed" : 0,
+    "flaky" : 0,
+    "skipped" : 0,
+    "durationMs" : 27249,
+    "passRate" : 1.0
+  }, {
+    "runId" : "nightly-41184913535-1",
+    "date" : "2026-10-31",
+    "total" : 124,
+    "passed" : 124,
+    "failed" : 0,
+    "flaky" : 0,
+    "skipped" : 0,
+    "durationMs" : 25330,
+    "passRate" : 1.0
+  } ]
+}

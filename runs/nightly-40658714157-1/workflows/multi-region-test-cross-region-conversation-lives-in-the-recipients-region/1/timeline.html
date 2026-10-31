@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timeline</title>
+<style>
+:root{--bg:#fff;--fg:#1d2433;--muted:#5b6475;--line:#e3e7ef;--ok:#1f8f5f;--warn:#b7791f;--bad:#c53030}
+@media (prefers-color-scheme:dark){:root{--bg:#121722;--fg:#e6e9f0;--muted:#9aa3b5;--line:#273044}}
+body{margin:0;padding:24px 16px;background:var(--bg);color:var(--fg);
+  font:14px/1.5 system-ui,sans-serif}
+h1{font-size:18px;margin:0 0 4px} p{color:var(--muted);margin:0 0 16px}
+table{width:100%;border-collapse:collapse}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+.n,.ms{color:var(--muted);white-space:nowrap} .s{font-weight:600}
+.s.ok{color:var(--ok)} .s.warn{color:var(--warn)} .s.bad{color:var(--bad)}
+.bar{position:relative;width:45%;min-width:160px}
+.bar span{position:absolute;top:8px;height:10px;border-radius:3px}
+.bar span.ok{background:var(--ok)} .bar span.warn{background:var(--warn)}
+.bar span.bad{background:var(--bad)}
+code{font-size:13px}
+</style></head><body>
+<h1>A cross-region conversation is stored in the recipient's region, for both sides</h1>
+<p>com.qaautomation.tests.workflows.MultiRegionTest#crossRegionConversationLivesInTheRecipientsRegion · passed · 11 call(s) over 1686 ms</p>
+<table><tr><td class="n">1</td><td class="call"><code>POST /v1/accounts</code></td><td class="s ok">201</td><td class="ms">302 ms</td><td class="bar"><span class="ok" style="left:38.73%;width:17.91%" title="+653 ms"></span></td></tr>
+<tr><td class="n">2</td><td class="call"><code>POST /v1/accounts</code></td><td class="s ok">201</td><td class="ms">47 ms</td><td class="bar"><span class="ok" style="left:69.75%;width:2.79%" title="+1176 ms"></span></td></tr>
+<tr><td class="n">3</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">24 ms</td><td class="bar"><span class="ok" style="left:75.27%;width:1.42%" title="+1269 ms"></span></td></tr>
+<tr><td class="n">4</td><td class="call"><code>POST /v1/conversations</code></td><td class="s ok">201</td><td class="ms">48 ms</td><td class="bar"><span class="ok" style="left:80.07%;width:2.85%" title="+1350 ms"></span></td></tr>
+<tr><td class="n">5</td><td class="call"><code>GET /v1/conversations/{id}</code></td><td class="s ok">200</td><td class="ms">19 ms</td><td class="bar"><span class="ok" style="left:88.49%;width:1.13%" title="+1492 ms"></span></td></tr>
+<tr><td class="n">6</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">19 ms</td><td class="bar"><span class="ok" style="left:90.21%;width:1.13%" title="+1521 ms"></span></td></tr>
+<tr><td class="n">7</td><td class="call"><code>GET /v1/conversations/{id}</code></td><td class="s ok">200</td><td class="ms">8 ms</td><td class="bar"><span class="ok" style="left:91.99%;width:0.60%" title="+1551 ms"></span></td></tr>
+<tr><td class="n">8</td><td class="call"><code>DELETE /v1/accounts/me</code></td><td class="s ok">204</td><td class="ms">11 ms</td><td class="bar"><span class="ok" style="left:93.89%;width:0.65%" title="+1583 ms"></span></td></tr>
+<tr><td class="n">9</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s warn">401</td><td class="ms">33 ms</td><td class="bar"><span class="warn" style="left:95.61%;width:1.96%" title="+1612 ms"></span></td></tr>
+<tr><td class="n">10</td><td class="call"><code>DELETE /v1/accounts/me</code></td><td class="s ok">204</td><td class="ms">9 ms</td><td class="bar"><span class="ok" style="left:98.58%;width:0.60%" title="+1662 ms"></span></td></tr>
+<tr><td class="n">11</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s warn">401</td><td class="ms">9 ms</td><td class="bar"><span class="warn" style="left:99.47%;width:0.60%" title="+1677 ms"></span></td></tr>
+</table>
+</body></html>

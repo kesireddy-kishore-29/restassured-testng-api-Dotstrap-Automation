@@ -1,0 +1,21 @@
+#2 GET https://restful-booker.herokuapp.com/booking/259
+correlation: qa-e4c261a4-5d48-4e5e-a09b-cc8bdb77da92
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-e4c261a4-5d48-4e5e-a09b-cc8bdb77da92
+Content-Type: application/json
+
+--- response: 200 in 196 ms ---
+Content-Length: 181
+Content-Type: application/json; charset=utf-8
+Date: Sat, 31 Oct 2026 08:31:36 GMT
+Etag: W/"b5-18oBhPwZaxhxZ9YiZvcNL1Pings"
+Nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+Report-To: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=jmol7ns3f7bfgETJOpPvmDFD%2FSyZcRcSEmhNdujhKF4%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1793435496"}],"max_age":3600}
+Reporting-Endpoints: heroku-nel="https://nel.heroku.com/reports?s=jmol7ns3f7bfgETJOpPvmDFD%2FSyZcRcSEmhNdujhKF4%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1793435496"
+Server: Heroku
+Via: 1.1 heroku-router
+X-Powered-By: Express
+
+{"firstname":"Ada","lastname":"Guest-6756c9db","totalprice":240,"depositpaid":true,"bookingdates":{"checkin":"2026-11-30","checkout":"2026-12-03"},"additionalneeds":"Late check-in"}

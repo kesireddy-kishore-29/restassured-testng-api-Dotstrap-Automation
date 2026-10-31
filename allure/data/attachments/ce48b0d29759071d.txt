@@ -1,0 +1,28 @@
+#5 POST http://localhost:7070/v1/auth/token
+correlation: qa-f072831b-a832-4d86-88c7-1253dc5895df
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-f072831b-a832-4d86-88c7-1253dc5895df
+Content-Type: text/plain; charset=ISO-8859-1
+
+--- request body ---
+plain=text
+
+--- response: 415 in 43 ms ---
+Date: Sat, 31 Oct 2026 08:31:33 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-f072831b-a832-4d86-88c7-1253dc5895df
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 548
+RateLimit-Reset: 9
+Content-Length: 254
+
+{"type":"https://reference-service.example/problems/unsupported-media-type","title":"Unsupported media type","status":415,"detail":"Send the body as application/json.","instance":"/v1/auth/token","correlationId":"qa-f072831b-a832-4d86-88c7-1253dc5895df"}

@@ -1,0 +1,35 @@
+[ {
+  "sequence" : 1,
+  "startedAt" : "2026-10-28T08:42:52.223473409Z",
+  "durationMs" : 13,
+  "method" : "POST",
+  "pathTemplate" : "/v1/conversations/{id}/messages",
+  "url" : "http://localhost:7070/v1/conversations/cnv_any/messages",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "X-Correlation-Id" : "qa-0add0965-cde9-46ea-9fac-4f2a6f4121e7",
+    "Content-Type" : "application/json"
+  },
+  "requestBody" : "{\"body\":\"Hi\"}",
+  "status" : 401,
+  "responseHeaders" : {
+    "Date" : "Wed, 28 Oct 2026 08:42:52 GMT",
+    "Content-Type" : "application/problem+json",
+    "X-Correlation-Id" : "qa-0add0965-cde9-46ea-9fac-4f2a6f4121e7",
+    "X-Content-Type-Options" : "nosniff",
+    "X-Frame-Options" : "DENY",
+    "Content-Security-Policy" : "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy" : "no-referrer",
+    "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+    "Cache-Control" : "no-store",
+    "Vary" : "Origin",
+    "RateLimit-Limit" : "600",
+    "RateLimit-Remaining" : "501",
+    "RateLimit-Reset" : "9",
+    "WWW-Authenticate" : "Bearer",
+    "Content-Length" : "269"
+  },
+  "responseBody" : "{\"type\":\"https://reference-service.example/problems/unauthenticated\",\"title\":\"Authentication required\",\"status\":401,\"detail\":\"Send Authorization: Bearer <token>.\",\"instance\":\"/v1/conversations/cnv_any/messages\",\"correlationId\":\"qa-0add0965-cde9-46ea-9fac-4f2a6f4121e7\"}",
+  "correlationId" : "qa-0add0965-cde9-46ea-9fac-4f2a6f4121e7",
+  "contractViolations" : [ ]
+} ]

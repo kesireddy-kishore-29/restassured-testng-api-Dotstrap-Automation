@@ -1,0 +1,28 @@
+{
+  "schemaVersion" : 1,
+  "repo" : "restassured-testng-api-Dotstrap-Automation",
+  "runId" : "nightly-41184913535-1",
+  "gitSha" : "3882e046fc32a5097e682ed500378eaf1fd442f8",
+  "recordMode" : "all",
+  "test" : {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[16]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/credits/purchases, 415]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 373,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-10-31T08:31:36.641Z",
+    "finishedAt" : "2026-10-31T08:31:37.014Z"
+  },
+  "environment" : {
+    "testEnv" : "ci",
+    "sutBaseUrl" : "http://localhost:7070",
+    "bookerBaseUrl" : "https://restful-booker.herokuapp.com",
+    "java" : "21.0.13",
+    "os" : "Linux 7.0.0-1017-azure",
+    "recordMode" : "all"
+  }
+}

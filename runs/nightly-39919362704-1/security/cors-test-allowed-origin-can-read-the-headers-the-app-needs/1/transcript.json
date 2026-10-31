@@ -1,0 +1,33 @@
+[ {
+  "sequence" : 1,
+  "startedAt" : "2026-10-23T07:41:41.508112556Z",
+  "durationMs" : 12,
+  "method" : "GET",
+  "pathTemplate" : "/health",
+  "url" : "http://localhost:7070/health",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "Origin" : "https://app.example.test",
+    "X-Correlation-Id" : "qa-4a6b4ae3-0b83-4650-9b6f-0c3d8a83f661",
+    "Content-Type" : "application/json"
+  },
+  "status" : 200,
+  "responseHeaders" : {
+    "Date" : "Fri, 23 Oct 2026 07:41:41 GMT",
+    "Content-Type" : "application/json",
+    "X-Correlation-Id" : "qa-4a6b4ae3-0b83-4650-9b6f-0c3d8a83f661",
+    "X-Content-Type-Options" : "nosniff",
+    "X-Frame-Options" : "DENY",
+    "Content-Security-Policy" : "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy" : "no-referrer",
+    "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+    "Cache-Control" : "no-store",
+    "Vary" : "Origin",
+    "Access-Control-Allow-Origin" : "https://app.example.test",
+    "Access-Control-Expose-Headers" : "Location, Retry-After, RateLimit-Limit, RateLimit-Remaining, RateLimit-Reset, Idempotent-Replayed, X-Correlation-Id, X-Served-Region, X-Data-Region",
+    "Content-Length" : "95"
+  },
+  "responseBody" : "{\"status\":\"UP\",\"version\":\"1.0.0\",\"region\":\"eu\",\"regions\":[\"in\",\"eu\",\"us\"],\"faultsEnabled\":true}",
+  "correlationId" : "qa-4a6b4ae3-0b83-4650-9b6f-0c3d8a83f661",
+  "contractViolations" : [ ]
+} ]

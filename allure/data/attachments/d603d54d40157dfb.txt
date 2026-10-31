@@ -1,0 +1,26 @@
+#1 GET http://localhost:7070/v1/accounts/me
+correlation: qa-af8f734a-1360-471f-9ef7-1b952cd156de
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-af8f734a-1360-471f-9ef7-1b952cd156de
+Content-Type: application/json
+
+--- response: 401 in 15 ms ---
+Date: Sat, 31 Oct 2026 08:31:39 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-af8f734a-1360-471f-9ef7-1b952cd156de
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 592
+RateLimit-Reset: 9
+WWW-Authenticate: Bearer
+Content-Length: 250
+
+{"type":"https://reference-service.example/problems/unauthenticated","title":"Authentication required","status":401,"detail":"Send Authorization: Bearer <token>.","instance":"/v1/accounts/me","correlationId":"qa-af8f734a-1360-471f-9ef7-1b952cd156de"}

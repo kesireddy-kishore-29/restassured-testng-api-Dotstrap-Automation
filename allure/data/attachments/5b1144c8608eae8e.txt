@@ -1,0 +1,30 @@
+#4 POST http://localhost:7070/v1/credits/purchases
+correlation: qa-40680ea0-a689-4200-965b-33daf49cee6f
+
+--- request headers ---
+Accept: application/json
+Idempotency-Key: qa-16b8d2bd188c49efaf12f7ca98bdd805
+X-Correlation-Id: qa-40680ea0-a689-4200-965b-33daf49cee6f
+Content-Type: application/json
+
+--- request body ---
+{"packId":"pack-50"}
+
+--- response: 409 in 3 ms ---
+Date: Sat, 31 Oct 2026 08:31:30 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-40680ea0-a689-4200-965b-33daf49cee6f
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 334
+
+{"type":"https://reference-service.example/problems/idempotency-key-reused","title":"Idempotency-Key reused with a different request","status":409,"detail":"This key already completed a different purchase. Use a new key for a new purchase.","instance":"/v1/credits/purchases","correlationId":"qa-40680ea0-a689-4200-965b-33daf49cee6f"}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion" : 1,
+  "repo" : "restassured-testng-api-Dotstrap-Automation",
+  "runId" : "nightly-40173614741-1",
+  "gitSha" : "3882e046fc32a5097e682ed500378eaf1fd442f8",
+  "recordMode" : "all",
+  "test" : {
+    "id" : "com.qaautomation.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[2]",
+    "title" : "An invalid account request is a 422 naming the field [blank display name, NewAccount[handle=qa-e2babd3f081d, displayName=   , password=pw-0838f2b8-a51d-4b7d-8233-0196ff0962fb, region=eu], displayName]",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-ACCT-02", "FEAT-ERR-01" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 2629,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-10-25T07:40:23.042Z",
+    "finishedAt" : "2026-10-25T07:40:25.671Z"
+  },
+  "environment" : {
+    "testEnv" : "ci",
+    "sutBaseUrl" : "http://localhost:7070",
+    "bookerBaseUrl" : "https://restful-booker.herokuapp.com",
+    "java" : "21.0.12.1",
+    "os" : "Linux 7.0.0-1017-azure",
+    "recordMode" : "all"
+  }
+}

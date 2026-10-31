@@ -1,0 +1,28 @@
+{
+  "schemaVersion" : 1,
+  "repo" : "restassured-testng-api-Dotstrap-Automation",
+  "runId" : "nightly-40843581949-1",
+  "gitSha" : "3882e046fc32a5097e682ed500378eaf1fd442f8",
+  "recordMode" : "all",
+  "test" : {
+    "id" : "com.qaautomation.tests.security.SecurityHeadersTest#securityHeadersOnEveryResponse[0]",
+    "title" : "Every response carries the security headers and no server banner [200 health, com.qaautomation.tests.security.SecurityHeadersTest$$Lambda/0x00007429b842d150@70895f4c]",
+    "suite" : "security",
+    "featureIds" : [ "FEAT-SEC-01" ],
+    "tags" : [ "security", "regression", "smoke" ],
+    "status" : "passed",
+    "durationMs" : 1669,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-10-29T08:38:58.036Z",
+    "finishedAt" : "2026-10-29T08:38:59.705Z"
+  },
+  "environment" : {
+    "testEnv" : "ci",
+    "sutBaseUrl" : "http://localhost:7070",
+    "bookerBaseUrl" : "https://restful-booker.herokuapp.com",
+    "java" : "21.0.13",
+    "os" : "Linux 7.0.0-1017-azure",
+    "recordMode" : "all"
+  }
+}

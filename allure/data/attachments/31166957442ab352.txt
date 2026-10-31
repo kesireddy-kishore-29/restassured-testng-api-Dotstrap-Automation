@@ -1,0 +1,31 @@
+#4 POST http://localhost:7070/v1/conversations
+correlation: qa-bcca2655-4707-4a00-8d9b-a0044b9a46aa
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-bcca2655-4707-4a00-8d9b-a0044b9a46aa
+Content-Type: application/json
+
+--- request body ---
+{"recipientHandle":"qa-ba5beb370377","subject":"Lunch?","message":"Free on Friday?"}
+
+--- response: 201 in 53 ms ---
+Date: Sat, 31 Oct 2026 08:31:34 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-bcca2655-4707-4a00-8d9b-a0044b9a46aa
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: eu
+Location: /v1/conversations/cnv_804fd8f0-410a-4245-aca8-30dbab20d4ed
+X-Data-Region: eu
+Content-Length: 229
+
+{"id":"cnv_804fd8f0-410a-4245-aca8-30dbab20d4ed","subject":"Lunch?","status":"open","region":"eu","participants":["qa-eafcd85cdf8a","qa-ba5beb370377"],"messageCount":1,"unreadCount":0,"createdAt":"2026-10-31T08:31:35.020316297Z"}

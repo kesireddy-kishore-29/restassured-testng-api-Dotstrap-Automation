@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timeline</title>
+<style>
+:root{--bg:#fff;--fg:#1d2433;--muted:#5b6475;--line:#e3e7ef;--ok:#1f8f5f;--warn:#b7791f;--bad:#c53030}
+@media (prefers-color-scheme:dark){:root{--bg:#121722;--fg:#e6e9f0;--muted:#9aa3b5;--line:#273044}}
+body{margin:0;padding:24px 16px;background:var(--bg);color:var(--fg);
+  font:14px/1.5 system-ui,sans-serif}
+h1{font-size:18px;margin:0 0 4px} p{color:var(--muted);margin:0 0 16px}
+table{width:100%;border-collapse:collapse}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+.n,.ms{color:var(--muted);white-space:nowrap} .s{font-weight:600}
+.s.ok{color:var(--ok)} .s.warn{color:var(--warn)} .s.bad{color:var(--bad)}
+.bar{position:relative;width:45%;min-width:160px}
+.bar span{position:absolute;top:8px;height:10px;border-radius:3px}
+.bar span.ok{background:var(--ok)} .bar span.warn{background:var(--warn)}
+.bar span.bad{background:var(--bad)}
+code{font-size:13px}
+</style></head><body>
+<h1>Grants, purchases and spends sum to the balance</h1>
+<p>com.qaautomation.tests.workflows.LedgerConsistencyTest#historySumsToTheBalance · passed · 13 call(s) over 2275 ms</p>
+<table><tr><td class="n">1</td><td class="call"><code>POST /v1/accounts</code></td><td class="s ok">201</td><td class="ms">387 ms</td><td class="bar"><span class="ok" style="left:39.25%;width:17.01%" title="+893 ms"></span></td></tr>
+<tr><td class="n">2</td><td class="call"><code>POST /v1/accounts</code></td><td class="s ok">201</td><td class="ms">96 ms</td><td class="bar"><span class="ok" style="left:68.22%;width:4.22%" title="+1552 ms"></span></td></tr>
+<tr><td class="n">3</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">24 ms</td><td class="bar"><span class="ok" style="left:75.08%;width:1.05%" title="+1708 ms"></span></td></tr>
+<tr><td class="n">4</td><td class="call"><code>POST /v1/credits/purchases</code></td><td class="s ok">201</td><td class="ms">71 ms</td><td class="bar"><span class="ok" style="left:79.96%;width:3.12%" title="+1819 ms"></span></td></tr>
+<tr><td class="n">5</td><td class="call"><code>POST /v1/credits/purchases</code></td><td class="s ok">201</td><td class="ms">23 ms</td><td class="bar"><span class="ok" style="left:84.88%;width:1.01%" title="+1931 ms"></span></td></tr>
+<tr><td class="n">6</td><td class="call"><code>POST /v1/conversations</code></td><td class="s ok">201</td><td class="ms">22 ms</td><td class="bar"><span class="ok" style="left:86.64%;width:0.97%" title="+1971 ms"></span></td></tr>
+<tr><td class="n">7</td><td class="call"><code>GET /v1/credits/ledger</code></td><td class="s ok">200</td><td class="ms">40 ms</td><td class="bar"><span class="ok" style="left:88.31%;width:1.76%" title="+2009 ms"></span></td></tr>
+<tr><td class="n">8</td><td class="call"><code>GET /v1/credits/balance</code></td><td class="s ok">200</td><td class="ms">25 ms</td><td class="bar"><span class="ok" style="left:93.36%;width:1.10%" title="+2124 ms"></span></td></tr>
+<tr><td class="n">9</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">19 ms</td><td class="bar"><span class="ok" style="left:95.38%;width:0.84%" title="+2170 ms"></span></td></tr>
+<tr><td class="n">10</td><td class="call"><code>DELETE /v1/accounts/me</code></td><td class="s ok">204</td><td class="ms">7 ms</td><td class="bar"><span class="ok" style="left:96.57%;width:0.60%" title="+2197 ms"></span></td></tr>
+<tr><td class="n">11</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s warn">401</td><td class="ms">12 ms</td><td class="bar"><span class="warn" style="left:97.10%;width:0.60%" title="+2209 ms"></span></td></tr>
+<tr><td class="n">12</td><td class="call"><code>DELETE /v1/accounts/me</code></td><td class="s ok">204</td><td class="ms">11 ms</td><td class="bar"><span class="ok" style="left:98.29%;width:0.60%" title="+2236 ms"></span></td></tr>
+<tr><td class="n">13</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s warn">401</td><td class="ms">23 ms</td><td class="bar"><span class="warn" style="left:98.99%;width:1.01%" title="+2252 ms"></span></td></tr>
+</table>
+</body></html>

@@ -1,0 +1,31 @@
+#4 POST http://localhost:7070/v1/conversations
+correlation: qa-9eb3e3ed-4d3a-410c-9bc0-566356f55d7e
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-9eb3e3ed-4d3a-410c-9bc0-566356f55d7e
+Content-Type: application/json
+
+--- request body ---
+{"recipientHandle":"qa-ca3780579a9d","subject":"Across regions","message":"Namaste"}
+
+--- response: 201 in 108 ms ---
+Date: Sat, 31 Oct 2026 08:31:36 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-9eb3e3ed-4d3a-410c-9bc0-566356f55d7e
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: in
+Location: /v1/conversations/cnv_a068a631-942c-4402-9be0-c092daecce66
+X-Data-Region: eu
+Content-Length: 237
+
+{"id":"cnv_a068a631-942c-4402-9be0-c092daecce66","subject":"Across regions","status":"open","region":"eu","participants":["qa-bbc65d4cfe3c","qa-ca3780579a9d"],"messageCount":1,"unreadCount":0,"createdAt":"2026-10-31T08:31:36.291331826Z"}

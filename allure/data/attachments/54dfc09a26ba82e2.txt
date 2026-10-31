@@ -1,0 +1,29 @@
+#10 POST http://localhost:7070/v1/conversations/cnv_b17562f3-01de-4c2d-81d6-a53c0e2d94f5/messages
+correlation: qa-ab3879f2-da93-427b-92f4-e60eaa7873fd
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-ab3879f2-da93-427b-92f4-e60eaa7873fd
+Content-Type: application/json
+
+--- request body ---
+{"body":"6"}
+
+--- response: 402 in 19 ms ---
+Date: Sat, 31 Oct 2026 08:31:37 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-ab3879f2-da93-427b-92f4-e60eaa7873fd
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 53
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 320
+
+{"type":"https://reference-service.example/problems/insufficient-credits","title":"Insufficient credits","status":402,"detail":"Sending a message costs 1 credit; the balance is 0.","instance":"/v1/conversations/cnv_b17562f3-01de-4c2d-81d6-a53c0e2d94f5/messages","correlationId":"qa-ab3879f2-da93-427b-92f4-e60eaa7873fd"}

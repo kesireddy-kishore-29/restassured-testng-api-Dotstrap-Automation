@@ -1,0 +1,28 @@
+{
+  "schemaVersion" : 1,
+  "repo" : "restassured-testng-api-Dotstrap-Automation",
+  "runId" : "nightly-40470522203-1",
+  "gitSha" : "3882e046fc32a5097e682ed500378eaf1fd442f8",
+  "recordMode" : "all",
+  "test" : {
+    "id" : "com.qaautomation.tests.security.CorsTest#allowedOriginCanReadTheHeadersTheAppNeeds",
+    "title" : "An allowed origin can read the headers the app needs",
+    "suite" : "security",
+    "featureIds" : [ "FEAT-CORS-01" ],
+    "tags" : [ "security", "regression" ],
+    "status" : "passed",
+    "durationMs" : 38,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-10-27T08:00:26.625Z",
+    "finishedAt" : "2026-10-27T08:00:26.663Z"
+  },
+  "environment" : {
+    "testEnv" : "ci",
+    "sutBaseUrl" : "http://localhost:7070",
+    "bookerBaseUrl" : "https://restful-booker.herokuapp.com",
+    "java" : "21.0.12.1",
+    "os" : "Linux 7.0.0-1017-azure",
+    "recordMode" : "all"
+  }
+}

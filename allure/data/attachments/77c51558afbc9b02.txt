@@ -1,0 +1,25 @@
+#3 GET http://localhost:7070/v1/accounts/me
+correlation: qa-f179c6ed-1e6e-411d-b1de-28d1111b3e8d
+
+--- request headers ---
+Accept: application/json
+X-Fault: unavailable-once
+X-Fault-Key: b5a03e71-90ba-498a-bbc2-d82b184638ab
+X-Correlation-Id: qa-f179c6ed-1e6e-411d-b1de-28d1111b3e8d
+Content-Type: application/json
+
+--- response: 503 in 69 ms ---
+Date: Sat, 31 Oct 2026 08:31:29 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-f179c6ed-1e6e-411d-b1de-28d1111b3e8d
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+Retry-After: 1
+Content-Length: 259
+
+{"type":"https://reference-service.example/problems/fault-injected","title":"Service unavailable (injected)","status":503,"detail":"Injected outage; retry after 1 second.","instance":"/v1/accounts/me","correlationId":"qa-f179c6ed-1e6e-411d-b1de-28d1111b3e8d"}

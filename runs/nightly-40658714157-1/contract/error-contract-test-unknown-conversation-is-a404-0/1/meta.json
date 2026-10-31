@@ -1,0 +1,28 @@
+{
+  "schemaVersion" : 1,
+  "repo" : "restassured-testng-api-Dotstrap-Automation",
+  "runId" : "nightly-40658714157-1",
+  "gitSha" : "3882e046fc32a5097e682ed500378eaf1fd442f8",
+  "recordMode" : "all",
+  "test" : {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#unknownConversationIsA404[0]",
+    "title" : "Every conversation operation answers an unknown id with a 404 problem [GET /v1/conversations/{id}]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 152,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-10-28T08:42:53.581Z",
+    "finishedAt" : "2026-10-28T08:42:53.733Z"
+  },
+  "environment" : {
+    "testEnv" : "ci",
+    "sutBaseUrl" : "http://localhost:7070",
+    "bookerBaseUrl" : "https://restful-booker.herokuapp.com",
+    "java" : "21.0.12.1",
+    "os" : "Linux 7.0.0-1017-azure",
+    "recordMode" : "all"
+  }
+}

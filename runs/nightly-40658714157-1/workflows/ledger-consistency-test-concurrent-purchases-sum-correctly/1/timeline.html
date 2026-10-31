@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timeline</title>
+<style>
+:root{--bg:#fff;--fg:#1d2433;--muted:#5b6475;--line:#e3e7ef;--ok:#1f8f5f;--warn:#b7791f;--bad:#c53030}
+@media (prefers-color-scheme:dark){:root{--bg:#121722;--fg:#e6e9f0;--muted:#9aa3b5;--line:#273044}}
+body{margin:0;padding:24px 16px;background:var(--bg);color:var(--fg);
+  font:14px/1.5 system-ui,sans-serif}
+h1{font-size:18px;margin:0 0 4px} p{color:var(--muted);margin:0 0 16px}
+table{width:100%;border-collapse:collapse}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+.n,.ms{color:var(--muted);white-space:nowrap} .s{font-weight:600}
+.s.ok{color:var(--ok)} .s.warn{color:var(--warn)} .s.bad{color:var(--bad)}
+.bar{position:relative;width:45%;min-width:160px}
+.bar span{position:absolute;top:8px;height:10px;border-radius:3px}
+.bar span.ok{background:var(--ok)} .bar span.warn{background:var(--warn)}
+.bar span.bad{background:var(--bad)}
+code{font-size:13px}
+</style></head><body>
+<h1>Ten concurrent purchases are all counted, exactly once</h1>
+<p>com.qaautomation.tests.workflows.LedgerConsistencyTest#concurrentPurchasesSumCorrectly · passed · 25 call(s) over 1643 ms</p>
+<table><tr><td class="n">1</td><td class="call"><code>POST /v1/accounts</code></td><td class="s ok">201</td><td class="ms">302 ms</td><td class="bar"><span class="ok" style="left:39.50%;width:18.38%" title="+649 ms"></span></td></tr>
+<tr><td class="n">8</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">44 ms</td><td class="bar"><span class="ok" style="left:73.52%;width:2.68%" title="+1208 ms"></span></td></tr>
+<tr><td class="n">5</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">57 ms</td><td class="bar"><span class="ok" style="left:72.98%;width:3.47%" title="+1199 ms"></span></td></tr>
+<tr><td class="n">4</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">60 ms</td><td class="bar"><span class="ok" style="left:72.85%;width:3.65%" title="+1197 ms"></span></td></tr>
+<tr><td class="n">2</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">62 ms</td><td class="bar"><span class="ok" style="left:72.85%;width:3.77%" title="+1197 ms"></span></td></tr>
+<tr><td class="n">6</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">60 ms</td><td class="bar"><span class="ok" style="left:73.10%;width:3.65%" title="+1201 ms"></span></td></tr>
+<tr><td class="n">9</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">52 ms</td><td class="bar"><span class="ok" style="left:73.58%;width:3.16%" title="+1209 ms"></span></td></tr>
+<tr><td class="n">3</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">66 ms</td><td class="bar"><span class="ok" style="left:72.85%;width:4.02%" title="+1197 ms"></span></td></tr>
+<tr><td class="n">7</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">62 ms</td><td class="bar"><span class="ok" style="left:73.28%;width:3.77%" title="+1204 ms"></span></td></tr>
+<tr><td class="n">11</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">56 ms</td><td class="bar"><span class="ok" style="left:73.83%;width:3.41%" title="+1213 ms"></span></td></tr>
+<tr><td class="n">10</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">66 ms</td><td class="bar"><span class="ok" style="left:73.77%;width:4.02%" title="+1212 ms"></span></td></tr>
+<tr><td class="n">20</td><td class="call"><code>POST /v1/credits/purchases</code></td><td class="s ok">201</td><td class="ms">17 ms</td><td class="bar"><span class="ok" style="left:82.65%;width:1.03%" title="+1358 ms"></span></td></tr>
+<tr><td class="n">13</td><td class="call"><code>POST /v1/credits/purchases</code></td><td class="s ok">201</td><td class="ms">45 ms</td><td class="bar"><span class="ok" style="left:80.95%;width:2.74%" title="+1330 ms"></span></td></tr>
+<tr><td class="n">12</td><td class="call"><code>POST /v1/credits/purchases</code></td><td class="s ok">201</td><td class="ms">50 ms</td><td class="bar"><span class="ok" style="left:80.83%;width:3.04%" title="+1328 ms"></span></td></tr>
+<tr><td class="n">18</td><td class="call"><code>POST /v1/credits/purchases</code></td><td class="s ok">201</td><td class="ms">31 ms</td><td class="bar"><span class="ok" style="left:82.05%;width:1.89%" title="+1348 ms"></span></td></tr>
+<tr><td class="n">16</td><td class="call"><code>POST /v1/credits/purchases</code></td><td class="s ok">201</td><td class="ms">45 ms</td><td class="bar"><span class="ok" style="left:81.38%;width:2.74%" title="+1337 ms"></span></td></tr>
+<tr><td class="n">19</td><td class="call"><code>POST /v1/credits/purchases</code></td><td class="s ok">201</td><td class="ms">28 ms</td><td class="bar"><span class="ok" style="left:82.35%;width:1.70%" title="+1353 ms"></span></td></tr>
+<tr><td class="n">21</td><td class="call"><code>POST /v1/credits/purchases</code></td><td class="s ok">201</td><td class="ms">13 ms</td><td class="bar"><span class="ok" style="left:83.32%;width:0.79%" title="+1369 ms"></span></td></tr>
+<tr><td class="n">14</td><td class="call"><code>POST /v1/credits/purchases</code></td><td class="s ok">201</td><td class="ms">48 ms</td><td class="bar"><span class="ok" style="left:81.07%;width:2.92%" title="+1332 ms"></span></td></tr>
+<tr><td class="n">15</td><td class="call"><code>POST /v1/credits/purchases</code></td><td class="s ok">201</td><td class="ms">49 ms</td><td class="bar"><span class="ok" style="left:81.31%;width:2.98%" title="+1336 ms"></span></td></tr>
+<tr><td class="n">17</td><td class="call"><code>POST /v1/credits/purchases</code></td><td class="s ok">201</td><td class="ms">56 ms</td><td class="bar"><span class="ok" style="left:81.50%;width:3.41%" title="+1339 ms"></span></td></tr>
+<tr><td class="n">22</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">23 ms</td><td class="bar"><span class="ok" style="left:86.31%;width:1.40%" title="+1418 ms"></span></td></tr>
+<tr><td class="n">23</td><td class="call"><code>GET /v1/credits/ledger</code></td><td class="s ok">200</td><td class="ms">80 ms</td><td class="bar"><span class="ok" style="left:88.25%;width:4.87%" title="+1450 ms"></span></td></tr>
+<tr><td class="n">24</td><td class="call"><code>DELETE /v1/accounts/me</code></td><td class="s ok">204</td><td class="ms">5 ms</td><td class="bar"><span class="ok" style="left:97.32%;width:0.60%" title="+1599 ms"></span></td></tr>
+<tr><td class="n">25</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s warn">401</td><td class="ms">32 ms</td><td class="bar"><span class="warn" style="left:98.05%;width:1.95%" title="+1611 ms"></span></td></tr>
+</table>
+</body></html>

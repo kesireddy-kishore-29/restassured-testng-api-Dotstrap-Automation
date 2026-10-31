@@ -1,0 +1,28 @@
+{
+  "schemaVersion" : 1,
+  "repo" : "restassured-testng-api-Dotstrap-Automation",
+  "runId" : "nightly-40843581949-1",
+  "gitSha" : "3882e046fc32a5097e682ed500378eaf1fd442f8",
+  "recordMode" : "all",
+  "test" : {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outsiderIsA403[3]",
+    "title" : "Every conversation operation answers an outsider with a 403 problem [POST /v1/conversations/{id}/read]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "security", "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 3469,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-10-29T08:38:56.240Z",
+    "finishedAt" : "2026-10-29T08:38:59.709Z"
+  },
+  "environment" : {
+    "testEnv" : "ci",
+    "sutBaseUrl" : "http://localhost:7070",
+    "bookerBaseUrl" : "https://restful-booker.herokuapp.com",
+    "java" : "21.0.13",
+    "os" : "Linux 7.0.0-1017-azure",
+    "recordMode" : "all"
+  }
+}

@@ -1,0 +1,27 @@
+#9 GET http://localhost:7070/v1/conversations/cnv_c16030b4-d96c-4e71-8322-90fff444e01b
+correlation: qa-95c91292-195a-42eb-b324-4c268025e67a
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-95c91292-195a-42eb-b324-4c268025e67a
+Content-Type: application/json
+
+--- response: 200 in 8 ms ---
+Date: Sat, 31 Oct 2026 08:31:24 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-95c91292-195a-42eb-b324-4c268025e67a
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 57
+RateLimit-Reset: 10
+X-Served-Region: eu
+X-Data-Region: eu
+Content-Length: 230
+
+{"id":"cnv_c16030b4-d96c-4e71-8322-90fff444e01b","subject":"Updates","status":"open","region":"eu","participants":["qa-1f11842434d6","qa-c41c76b13601"],"messageCount":2,"unreadCount":0,"createdAt":"2026-10-31T08:31:24.625722495Z"}
