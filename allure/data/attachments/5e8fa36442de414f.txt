@@ -1,0 +1,30 @@
+#5 POST http://localhost:7070/v1/credits/purchases
+correlation: qa-1331fef9-35b6-4317-808d-71242e8cba18
+
+--- request headers ---
+Accept: application/json
+Idempotency-Key: qa-2267560fafef4af5bd6e6a654aadb949
+X-Correlation-Id: qa-1331fef9-35b6-4317-808d-71242e8cba18
+Content-Type: application/json
+
+--- request body ---
+{"packId":"pack-0"}
+
+--- response: 422 in 11 ms ---
+Date: Sat, 07 Nov 2026 08:54:59 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-1331fef9-35b6-4317-808d-71242e8cba18
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 315
+
+{"type":"https://reference-service.example/problems/validation-failed","title":"Validation failed","status":422,"detail":"One or more fields are invalid.","instance":"/v1/credits/purchases","correlationId":"qa-1331fef9-35b6-4317-808d-71242e8cba18","errors":[{"field":"packId","message":"one of: pack-10, pack-50"}]}

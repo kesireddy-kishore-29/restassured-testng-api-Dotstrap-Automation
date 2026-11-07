@@ -1,0 +1,63 @@
+[ {
+  "sequence" : 1,
+  "startedAt" : "2026-11-02T09:38:42.294656219Z",
+  "durationMs" : 15,
+  "method" : "OPTIONS",
+  "pathTemplate" : "/v1/accounts/me",
+  "url" : "http://localhost:7070/v1/accounts/me",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "Access-Control-Request-Method" : "GET",
+    "Access-Control-Request-Headers" : "Authorization",
+    "Origin" : "https://evil.example",
+    "X-Correlation-Id" : "qa-5abbfa98-2e86-4b14-8c99-b1b290f67e58",
+    "Content-Type" : "application/json"
+  },
+  "status" : 403,
+  "responseHeaders" : {
+    "Date" : "Mon, 02 Nov 2026 09:38:42 GMT",
+    "Content-Type" : "application/problem+json",
+    "X-Correlation-Id" : "qa-5abbfa98-2e86-4b14-8c99-b1b290f67e58",
+    "X-Content-Type-Options" : "nosniff",
+    "X-Frame-Options" : "DENY",
+    "Content-Security-Policy" : "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy" : "no-referrer",
+    "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+    "Cache-Control" : "no-store",
+    "Vary" : "Origin",
+    "Content-Length" : "258"
+  },
+  "responseBody" : "{\"type\":\"https://reference-service.example/problems/cors-origin-denied\",\"title\":\"Origin not allowed\",\"status\":403,\"detail\":\"Origin 'https://evil.example' is not allowed.\",\"instance\":\"/v1/accounts/me\",\"correlationId\":\"qa-5abbfa98-2e86-4b14-8c99-b1b290f67e58\"}",
+  "correlationId" : "qa-5abbfa98-2e86-4b14-8c99-b1b290f67e58",
+  "contractViolations" : [ ]
+}, {
+  "sequence" : 2,
+  "startedAt" : "2026-11-02T09:38:43.073525160Z",
+  "durationMs" : 13,
+  "method" : "GET",
+  "pathTemplate" : "/health",
+  "url" : "http://localhost:7070/health",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "Origin" : "https://evil.example",
+    "X-Correlation-Id" : "qa-523eca7b-7388-48bf-b561-4f4a312b3a8d",
+    "Content-Type" : "application/json"
+  },
+  "status" : 200,
+  "responseHeaders" : {
+    "Date" : "Mon, 02 Nov 2026 09:38:43 GMT",
+    "Content-Type" : "application/json",
+    "X-Correlation-Id" : "qa-523eca7b-7388-48bf-b561-4f4a312b3a8d",
+    "X-Content-Type-Options" : "nosniff",
+    "X-Frame-Options" : "DENY",
+    "Content-Security-Policy" : "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy" : "no-referrer",
+    "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+    "Cache-Control" : "no-store",
+    "Vary" : "Origin",
+    "Content-Length" : "95"
+  },
+  "responseBody" : "{\"status\":\"UP\",\"version\":\"1.0.0\",\"region\":\"eu\",\"regions\":[\"in\",\"eu\",\"us\"],\"faultsEnabled\":true}",
+  "correlationId" : "qa-523eca7b-7388-48bf-b561-4f4a312b3a8d",
+  "contractViolations" : [ ]
+} ]

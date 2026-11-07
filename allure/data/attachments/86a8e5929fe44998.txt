@@ -1,0 +1,26 @@
+#79 GET http://localhost:7070/v1/credits/ledger
+correlation: qa-09859e4e-eac1-4614-b0e1-43280ec36ac7
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-09859e4e-eac1-4614-b0e1-43280ec36ac7
+Content-Type: application/json
+
+--- response: 429 in 3 ms ---
+Date: Sat, 07 Nov 2026 08:55:00 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-09859e4e-eac1-4614-b0e1-43280ec36ac7
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 0
+RateLimit-Reset: 9
+Retry-After: 9
+Content-Length: 244
+
+{"type":"https://reference-service.example/problems/rate-limited","title":"Too many requests","status":429,"detail":"Slow down; retry after 9 second(s).","instance":"/v1/credits/ledger","correlationId":"qa-09859e4e-eac1-4614-b0e1-43280ec36ac7"}

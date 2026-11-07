@@ -1,0 +1,28 @@
+#6 POST http://localhost:7070/v1/auth/token
+correlation: qa-36d65984-b1a9-449d-84a3-ae55d03708b9
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-36d65984-b1a9-449d-84a3-ae55d03708b9
+Content-Type: application/json
+
+--- request body ---
+{"handle":"qa-cb9214400c6a","password":"****"}
+
+--- response: 401 in 5 ms ---
+Date: Sat, 07 Nov 2026 08:55:05 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-36d65984-b1a9-449d-84a3-ae55d03708b9
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 570
+RateLimit-Reset: 8
+Content-Length: 242
+
+{"type":"https://reference-service.example/problems/invalid-credentials","title":"Invalid credentials","status":401,"detail":"Handle or password is wrong.","instance":"/v1/auth/token","correlationId":"qa-36d65984-b1a9-449d-84a3-ae55d03708b9"}

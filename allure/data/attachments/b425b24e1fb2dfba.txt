@@ -1,0 +1,29 @@
+#5 POST http://localhost:7070/v1/conversations/cnv_8b8dda57-a000-4d39-88b7-d73b8f8804a0/messages
+correlation: qa-e9da178a-fc99-4723-b497-09f238ce2af1
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-e9da178a-fc99-4723-b497-09f238ce2af1
+Content-Type: application/json
+
+--- request body ---
+{"body":" "}
+
+--- response: 422 in 23 ms ---
+Date: Sat, 07 Nov 2026 08:54:59 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-e9da178a-fc99-4723-b497-09f238ce2af1
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 363
+
+{"type":"https://reference-service.example/problems/validation-failed","title":"Validation failed","status":422,"detail":"One or more fields are invalid.","instance":"/v1/conversations/cnv_8b8dda57-a000-4d39-88b7-d73b8f8804a0/messages","correlationId":"qa-e9da178a-fc99-4723-b497-09f238ce2af1","errors":[{"field":"body","message":"1-2000 characters, not blank"}]}

@@ -1,0 +1,27 @@
+#23 GET http://localhost:7070/v1/credits/ledger
+correlation: qa-b297aa8d-44fa-4cf0-9b19-c7a5412180ad
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-b297aa8d-44fa-4cf0-9b19-c7a5412180ad
+Content-Type: application/json
+
+--- response: 200 in 129 ms ---
+Date: Sat, 07 Nov 2026 08:55:03 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-b297aa8d-44fa-4cf0-9b19-c7a5412180ad
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: us
+Content-Encoding: gzip
+Content-Length: 755
+
+{"items":[{"id":"led_1076bec4-5ed0-4934-9e67-44c599a2471c","type":"grant","amount":5,"balanceAfter":5,"reference":"welcome-grant","createdAt":"2026-11-07T08:55:03.098605708Z"},{"id":"led_f663ede6-78ad-4f3d-865e-65bad03646fa","type":"purchase","amount":10,"balanceAfter":15,"reference":"pur_237a76e0-420a-465e-b12f-e4d9dae66b4c","createdAt":"2026-11-07T08:55:03.775352784Z"},{"id":"led_6b7f6236-0dde-429d-8528-5e7fad6615b4","type":"purchase","amount":10,"balanceAfter":25,"reference":"pur_8753f957-d256-4a28-aa21-cff9a6eba98f","createdAt":"2026-11-07T08:55:03.775429585Z"},{"id":"led_24aa399d-50e8-4e36-a4be-d85307184bde","type":"purchase","amount":10,"balanceAfter":35,"reference":"pur_b4f89743-cd70-44f2-9d6e-e9c64019948a","createdAt":"2026-11-07T08:55:03.775518963Z"},{"id":"led_46e36bf3-5e61-4afb-b9c0-7cfd03fe7e69","type":"purchase","amount":10,"balanceAfter":45,"reference":"pur_98a2b4c7-c570-43ca-b693-49f680a4944f","createdAt":"2026-11-07T08:55:03.775577253Z"},{"id":"led_f3043b01-d6ea-414c-873b-3530dd1b1f65","type":"purchase","amount":10,"balanceAfter":55,"reference":"pur_b688c057-da08-4aa0-b20e-49c93b53b4fc","createdAt":"2026-11-07T08:55:03.775762992Z"},{"id":"led_919eea52-1d0d-461d-bee5-6c983f1ee733","type":"purchase","amount":10,"balanceAfter":65,"reference":"pur_caf69948-c58f-41d3-bd3a-ec10c447a8e7","createdAt":"2026-11-07T08:55:03.776129503Z"},{"id":"led_751db588-f852-4dad-83ee-42a0bce79655","type":"purchase","amount":10,"balanceAfter":75,"reference":"pur_ee827c75-7491-408f-8256-f0cb49c1a676","createdAt":"2026-11-07T08:55:03.778876035Z"},{"id":"led_1112da0d-4f32-42c9-8f6c-c63cf799daa2","type":"purchase","amount":10,"balanceAfter":85,"reference":"pur_8e4f60fc-3ad1-4165-a43f-f90a32562568","createdAt":"2026-11-07T08:55:03.782525479Z"},{"id":"led_1aa286c4-91f7-448b-b8bf-16d750e8b52c","type":"purchase","amount":10,"balanceAfter":95,"reference":"pur_a89d2213-115a-4f84-a1a2-bd061886d755","createdAt":"2026-11-07T08:55:03.783181321Z"},{"id":"led_24356a69-733b-4529-9695-254914ca3857","type":"purchase","amount":10,"balanceAfter":105,"reference":"pur_4fa532e1-a699-4b1b-a9c5-56adee77fefa","createdAt":"2026-11-07T08:55:03.792779014Z"}],"total":11,"balance":105}

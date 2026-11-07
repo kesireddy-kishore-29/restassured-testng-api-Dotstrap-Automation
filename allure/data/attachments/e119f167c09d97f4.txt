@@ -1,0 +1,26 @@
+#70 GET http://localhost:7070/v1/accounts/qa-6abce7271396
+correlation: qa-676fc1ed-b355-4a9b-969a-81db91870681
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-676fc1ed-b355-4a9b-969a-81db91870681
+Content-Type: application/json
+
+--- response: 429 in 8 ms ---
+Date: Sat, 07 Nov 2026 08:55:00 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-676fc1ed-b355-4a9b-969a-81db91870681
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 0
+RateLimit-Reset: 9
+Retry-After: 9
+Content-Length: 254
+
+{"type":"https://reference-service.example/problems/rate-limited","title":"Too many requests","status":429,"detail":"Slow down; retry after 9 second(s).","instance":"/v1/accounts/qa-6abce7271396","correlationId":"qa-676fc1ed-b355-4a9b-969a-81db91870681"}

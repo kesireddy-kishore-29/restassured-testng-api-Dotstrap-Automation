@@ -1,0 +1,26 @@
+#8 GET http://localhost:7070/v1/conversations/cnv_f6bc242c-8d63-44e3-9a34-4f249fc09461/messages
+correlation: qa-d190728c-fbdc-4677-8b68-551d5546db4f
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-d190728c-fbdc-4677-8b68-551d5546db4f
+Content-Type: application/json
+
+--- response: 200 in 42 ms ---
+Date: Sat, 07 Nov 2026 08:55:04 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-d190728c-fbdc-4677-8b68-551d5546db4f
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: us
+Content-Length: 234
+
+{"items":[{"id":"msg_dc1e1317-5407-4d4a-b8f7-faee0011d2a1","conversationId":"cnv_f6bc242c-8d63-44e3-9a34-4f249fc09461","sender":"qa-d7c0b6ef3c99","body":"Hi Ben, got a minute?","createdAt":"2026-11-07T08:55:03.821516272Z"}],"total":1}

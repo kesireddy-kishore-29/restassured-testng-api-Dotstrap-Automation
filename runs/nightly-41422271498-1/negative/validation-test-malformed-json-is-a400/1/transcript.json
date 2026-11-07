@@ -1,0 +1,34 @@
+[ {
+  "sequence" : 1,
+  "startedAt" : "2026-11-02T09:38:43.302369997Z",
+  "durationMs" : 13,
+  "method" : "POST",
+  "pathTemplate" : "/v1/accounts",
+  "url" : "http://localhost:7070/v1/accounts",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "X-Correlation-Id" : "qa-1787bd0f-57ac-473a-a9c5-e1a5d5db16bd",
+    "Content-Type" : "application/json"
+  },
+  "requestBody" : "{\"handle\": ",
+  "status" : 400,
+  "responseHeaders" : {
+    "Date" : "Mon, 02 Nov 2026 09:38:43 GMT",
+    "Content-Type" : "application/problem+json",
+    "X-Correlation-Id" : "qa-1787bd0f-57ac-473a-a9c5-e1a5d5db16bd",
+    "X-Content-Type-Options" : "nosniff",
+    "X-Frame-Options" : "DENY",
+    "Content-Security-Policy" : "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy" : "no-referrer",
+    "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+    "Cache-Control" : "no-store",
+    "Vary" : "Origin",
+    "RateLimit-Limit" : "600",
+    "RateLimit-Remaining" : "577",
+    "RateLimit-Reset" : "8",
+    "Content-Length" : "253"
+  },
+  "responseBody" : "{\"type\":\"https://reference-service.example/problems/malformed-json\",\"title\":\"Malformed JSON body\",\"status\":400,\"detail\":\"The body is not valid JSON for this operation.\",\"instance\":\"/v1/accounts\",\"correlationId\":\"qa-1787bd0f-57ac-473a-a9c5-e1a5d5db16bd\"}",
+  "correlationId" : "qa-1787bd0f-57ac-473a-a9c5-e1a5d5db16bd",
+  "contractViolations" : [ ]
+} ]

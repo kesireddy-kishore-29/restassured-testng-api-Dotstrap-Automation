@@ -1,0 +1,351 @@
+# Transcript: Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/accounts, 415]
+
+| | |
+|---|---|
+| Test | `com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[4]` |
+| Features | FEAT-ERR-01, FEAT-CONTRACT-02 |
+| Attempt | 1 |
+| Status | passed |
+| Calls | 10 |
+
+Secrets (tokens, passwords, credential headers) are masked as `****`.
+
+| # | Call | Status | ms | Correlation ID |
+|---|---|---|---|---|
+| 1 | `POST /v1/accounts` | 201 | 22 | `qa-b4190c05-732f-4f5a-b220-bc3bd954c9ac` |
+| 2 | `POST /v1/accounts` | 201 | 25 | `qa-45255f8f-e088-4f7d-8a2e-f7206fdb00f8` |
+| 3 | `POST /v1/auth/token` | 200 | 12 | `qa-3d71e525-9d6a-4052-9a1e-fdebacce9a05` |
+| 4 | `POST /v1/conversations` | 201 | 18 | `qa-f85111d3-4e5f-4607-8be5-0c2590a57842` |
+| 5 | `POST /v1/accounts` | 415 | 8 | `qa-10bbc6c3-4b9d-4732-bf1c-8e03492786ea` |
+| 6 | `POST /v1/auth/token` | 200 | 15 | `qa-fb5ccdae-53b7-4ea1-bd5a-624f380364de` |
+| 7 | `DELETE /v1/accounts/me` | 204 | 5 | `qa-2fd86854-e50a-48d8-9cce-92ca75730dbe` |
+| 8 | `POST /v1/auth/token` | 401 | 17 | `qa-80f7203c-eea7-46b6-8fb1-9868883dc049` |
+| 9 | `DELETE /v1/accounts/me` | 204 | 10 | `qa-c9541a4a-4926-453d-943e-01d32659bf1a` |
+| 10 | `POST /v1/auth/token` | 401 | 8 | `qa-7e4be69a-dc6d-4599-800f-269844d39bb3` |
+
+## 1. POST /v1/accounts
+
+```text
+#1 POST http://localhost:7070/v1/accounts
+correlation: qa-b4190c05-732f-4f5a-b220-bc3bd954c9ac
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-b4190c05-732f-4f5a-b220-bc3bd954c9ac
+Content-Type: application/json
+
+--- request body ---
+{"handle":"qa-f988cfa07894","displayName":"QA f988cfa07894","password":"****","region":"eu"}
+
+--- response: 201 in 22 ms ---
+Date: Wed, 04 Nov 2026 09:28:02 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-b4190c05-732f-4f5a-b220-bc3bd954c9ac
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 506
+RateLimit-Reset: 9
+Location: /v1/accounts/qa-f988cfa07894
+X-Served-Region: eu
+Content-Length: 181
+
+{"id":"acc_50ba5492-2e66-44d8-9e25-6fbe3be8b553","handle":"qa-f988cfa07894","displayName":"QA f988cfa07894","region":"eu","role":"user","createdAt":"2026-11-04T09:28:02.388882863Z"}
+```
+
+## 2. POST /v1/accounts
+
+```text
+#2 POST http://localhost:7070/v1/accounts
+correlation: qa-45255f8f-e088-4f7d-8a2e-f7206fdb00f8
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-45255f8f-e088-4f7d-8a2e-f7206fdb00f8
+Content-Type: application/json
+
+--- request body ---
+{"handle":"qa-19199b45503a","displayName":"QA 19199b45503a","password":"****","region":"eu"}
+
+--- response: 201 in 25 ms ---
+Date: Wed, 04 Nov 2026 09:28:02 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-45255f8f-e088-4f7d-8a2e-f7206fdb00f8
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 494
+RateLimit-Reset: 9
+Location: /v1/accounts/qa-19199b45503a
+X-Served-Region: eu
+Content-Length: 181
+
+{"id":"acc_3e878b41-b51c-41a1-a190-041ed9cad891","handle":"qa-19199b45503a","displayName":"QA 19199b45503a","region":"eu","role":"user","createdAt":"2026-11-04T09:28:02.433004014Z"}
+```
+
+## 3. POST /v1/auth/token
+
+```text
+#3 POST http://localhost:7070/v1/auth/token
+correlation: qa-3d71e525-9d6a-4052-9a1e-fdebacce9a05
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-3d71e525-9d6a-4052-9a1e-fdebacce9a05
+Content-Type: application/json
+
+--- request body ---
+{"handle":"qa-f988cfa07894","password":"****"}
+
+--- response: 200 in 12 ms ---
+Date: Wed, 04 Nov 2026 09:28:02 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-3d71e525-9d6a-4052-9a1e-fdebacce9a05
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 481
+RateLimit-Reset: 9
+Content-Length: 153
+
+{"accessToken":"****","tokenType":"Bearer","expiresIn":900,"accountId":"acc_50ba5492-2e66-44d8-9e25-6fbe3be8b553"}
+```
+
+## 4. POST /v1/conversations
+
+```text
+#4 POST http://localhost:7070/v1/conversations
+correlation: qa-f85111d3-4e5f-4607-8be5-0c2590a57842
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-f85111d3-4e5f-4607-8be5-0c2590a57842
+Content-Type: application/json
+
+--- request body ---
+{"recipientHandle":"qa-19199b45503a","subject":"Error contract","message":"Hi"}
+
+--- response: 201 in 18 ms ---
+Date: Wed, 04 Nov 2026 09:28:02 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-f85111d3-4e5f-4607-8be5-0c2590a57842
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: eu
+Location: /v1/conversations/cnv_9bc12db6-6b61-4cd0-a24e-00f7cc4e74ff
+X-Data-Region: eu
+Content-Length: 237
+
+{"id":"cnv_9bc12db6-6b61-4cd0-a24e-00f7cc4e74ff","subject":"Error contract","status":"open","region":"eu","participants":["qa-f988cfa07894","qa-19199b45503a"],"messageCount":1,"unreadCount":0,"createdAt":"2026-11-04T09:28:02.520048929Z"}
+```
+
+## 5. POST /v1/accounts
+
+```text
+#5 POST http://localhost:7070/v1/accounts
+correlation: qa-10bbc6c3-4b9d-4732-bf1c-8e03492786ea
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-10bbc6c3-4b9d-4732-bf1c-8e03492786ea
+Content-Type: text/plain; charset=ISO-8859-1
+
+--- request body ---
+plain=text
+
+--- response: 415 in 8 ms ---
+Date: Wed, 04 Nov 2026 09:28:02 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-10bbc6c3-4b9d-4732-bf1c-8e03492786ea
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 474
+RateLimit-Reset: 9
+Content-Length: 252
+
+{"type":"https://reference-service.example/problems/unsupported-media-type","title":"Unsupported media type","status":415,"detail":"Send the body as application/json.","instance":"/v1/accounts","correlationId":"qa-10bbc6c3-4b9d-4732-bf1c-8e03492786ea"}
+```
+
+## 6. POST /v1/auth/token
+
+```text
+#6 POST http://localhost:7070/v1/auth/token
+correlation: qa-fb5ccdae-53b7-4ea1-bd5a-624f380364de
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-fb5ccdae-53b7-4ea1-bd5a-624f380364de
+Content-Type: application/json
+
+--- request body ---
+{"handle":"qa-19199b45503a","password":"****"}
+
+--- response: 200 in 15 ms ---
+Date: Wed, 04 Nov 2026 09:28:02 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-fb5ccdae-53b7-4ea1-bd5a-624f380364de
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 469
+RateLimit-Reset: 9
+Content-Length: 153
+
+{"accessToken":"****","tokenType":"Bearer","expiresIn":900,"accountId":"acc_3e878b41-b51c-41a1-a190-041ed9cad891"}
+```
+
+## 7. DELETE /v1/accounts/me
+
+```text
+#7 DELETE http://localhost:7070/v1/accounts/me
+correlation: qa-2fd86854-e50a-48d8-9cce-92ca75730dbe
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-2fd86854-e50a-48d8-9cce-92ca75730dbe
+Content-Type: application/json
+
+--- response: 204 in 5 ms ---
+Date: Wed, 04 Nov 2026 09:28:02 GMT
+Content-Type: text/plain
+X-Correlation-Id: qa-2fd86854-e50a-48d8-9cce-92ca75730dbe
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: eu
+```
+
+## 8. POST /v1/auth/token
+
+```text
+#8 POST http://localhost:7070/v1/auth/token
+correlation: qa-80f7203c-eea7-46b6-8fb1-9868883dc049
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-80f7203c-eea7-46b6-8fb1-9868883dc049
+Content-Type: application/json
+
+--- request body ---
+{"handle":"qa-19199b45503a","password":"****"}
+
+--- response: 401 in 17 ms ---
+Date: Wed, 04 Nov 2026 09:28:02 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-80f7203c-eea7-46b6-8fb1-9868883dc049
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 461
+RateLimit-Reset: 9
+Content-Length: 242
+
+{"type":"https://reference-service.example/problems/invalid-credentials","title":"Invalid credentials","status":401,"detail":"Handle or password is wrong.","instance":"/v1/auth/token","correlationId":"qa-80f7203c-eea7-46b6-8fb1-9868883dc049"}
+```
+
+## 9. DELETE /v1/accounts/me
+
+```text
+#9 DELETE http://localhost:7070/v1/accounts/me
+correlation: qa-c9541a4a-4926-453d-943e-01d32659bf1a
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-c9541a4a-4926-453d-943e-01d32659bf1a
+Content-Type: application/json
+
+--- response: 204 in 10 ms ---
+Date: Wed, 04 Nov 2026 09:28:02 GMT
+Content-Type: text/plain
+X-Correlation-Id: qa-c9541a4a-4926-453d-943e-01d32659bf1a
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+```
+
+## 10. POST /v1/auth/token
+
+```text
+#10 POST http://localhost:7070/v1/auth/token
+correlation: qa-7e4be69a-dc6d-4599-800f-269844d39bb3
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-7e4be69a-dc6d-4599-800f-269844d39bb3
+Content-Type: application/json
+
+--- request body ---
+{"handle":"qa-f988cfa07894","password":"****"}
+
+--- response: 401 in 8 ms ---
+Date: Wed, 04 Nov 2026 09:28:02 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-7e4be69a-dc6d-4599-800f-269844d39bb3
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 455
+RateLimit-Reset: 9
+Content-Length: 242
+
+{"type":"https://reference-service.example/problems/invalid-credentials","title":"Invalid credentials","status":401,"detail":"Handle or password is wrong.","instance":"/v1/auth/token","correlationId":"qa-7e4be69a-dc6d-4599-800f-269844d39bb3"}
+```

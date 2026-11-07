@@ -1,0 +1,28 @@
+#5 POST http://localhost:7070/v1/accounts
+correlation: qa-1105256a-f838-4bd3-809f-d9e8c9dbb33a
+
+--- request headers ---
+Accept: application/json
+X-Fault-Key: bf46b343-c860-4c5a-ac69-03e868d2227f
+X-Fault: unavailable-once
+X-Correlation-Id: qa-1105256a-f838-4bd3-809f-d9e8c9dbb33a
+Content-Type: application/json
+
+--- request body ---
+{"handle":"qa-60558cee2d7f","displayName":"QA 60558cee2d7f","password":"****","region":"eu"}
+
+--- response: 503 in 18 ms ---
+Date: Sat, 07 Nov 2026 08:54:57 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-1105256a-f838-4bd3-809f-d9e8c9dbb33a
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+Retry-After: 1
+Content-Length: 256
+
+{"type":"https://reference-service.example/problems/fault-injected","title":"Service unavailable (injected)","status":503,"detail":"Injected outage; retry after 1 second.","instance":"/v1/accounts","correlationId":"qa-1105256a-f838-4bd3-809f-d9e8c9dbb33a"}

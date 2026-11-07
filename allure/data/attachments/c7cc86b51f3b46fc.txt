@@ -1,0 +1,29 @@
+#5 PATCH http://localhost:7070/v1/accounts/me
+correlation: qa-52bf38a7-4f2e-4a04-8d1d-8ce09252a04a
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-52bf38a7-4f2e-4a04-8d1d-8ce09252a04a
+Content-Type: application/json
+
+--- request body ---
+{"broken": 
+
+--- response: 400 in 24 ms ---
+Date: Sat, 07 Nov 2026 08:54:58 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-52bf38a7-4f2e-4a04-8d1d-8ce09252a04a
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 256
+
+{"type":"https://reference-service.example/problems/malformed-json","title":"Malformed JSON body","status":400,"detail":"The body is not valid JSON for this operation.","instance":"/v1/accounts/me","correlationId":"qa-52bf38a7-4f2e-4a04-8d1d-8ce09252a04a"}

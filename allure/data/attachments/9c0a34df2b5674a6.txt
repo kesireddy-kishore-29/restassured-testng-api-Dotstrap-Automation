@@ -1,0 +1,26 @@
+#19 GET http://localhost:7070/v1/admin/stats
+correlation: qa-4b352751-4aad-4ce3-8bdf-9ef18aad0232
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-4b352751-4aad-4ce3-8bdf-9ef18aad0232
+Content-Type: application/json
+
+--- response: 403 in 8 ms ---
+Date: Sat, 07 Nov 2026 08:54:57 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-4b352751-4aad-4ce3-8bdf-9ef18aad0232
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 49
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 215
+
+{"type":"https://reference-service.example/problems/forbidden","title":"Forbidden","status":403,"detail":"Administrators only.","instance":"/v1/admin/stats","correlationId":"qa-4b352751-4aad-4ce3-8bdf-9ef18aad0232"}

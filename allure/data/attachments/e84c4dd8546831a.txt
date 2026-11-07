@@ -1,0 +1,26 @@
+#7 GET http://localhost:7070/v1/conversations/cnv_4fcba5f5-22ca-4909-9301-e088feb504bc/messages
+correlation: qa-6ebe3306-6dc0-4381-8d2d-425b27d6c881
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-6ebe3306-6dc0-4381-8d2d-425b27d6c881
+Content-Type: application/json
+
+--- response: 200 in 32 ms ---
+Date: Sat, 07 Nov 2026 08:54:57 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-6ebe3306-6dc0-4381-8d2d-425b27d6c881
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 432
+
+{"items":[{"id":"msg_a376c86a-ba89-4b0b-86c4-31640f35c9de","conversationId":"cnv_4fcba5f5-22ca-4909-9301-e088feb504bc","sender":"qa-2ffd5c56d349","body":"Free on Friday?","createdAt":"2026-11-07T08:54:57.054276296Z"},{"id":"msg_9f1f24b4-69ab-4a96-a8b1-e65cd14ee7bf","conversationId":"cnv_4fcba5f5-22ca-4909-9301-e088feb504bc","sender":"qa-dba04b462315","body":"Friday works","createdAt":"2026-11-07T08:54:57.195990492Z"}],"total":2}

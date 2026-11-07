@@ -1,0 +1,25 @@
+#5 DELETE http://localhost:7070/v1/accounts/me
+correlation: qa-7c5e9d53-7634-4f31-b644-873723d92088
+
+--- request headers ---
+Accept: application/json
+X-Fault-Key: fb155d32-751c-4b4b-b5ce-9889f471e77c
+X-Fault: unavailable-once
+X-Correlation-Id: qa-7c5e9d53-7634-4f31-b644-873723d92088
+Content-Type: application/json
+
+--- response: 503 in 28 ms ---
+Date: Sat, 07 Nov 2026 08:54:58 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-7c5e9d53-7634-4f31-b644-873723d92088
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+Retry-After: 1
+Content-Length: 259
+
+{"type":"https://reference-service.example/problems/fault-injected","title":"Service unavailable (injected)","status":503,"detail":"Injected outage; retry after 1 second.","instance":"/v1/accounts/me","correlationId":"qa-7c5e9d53-7634-4f31-b644-873723d92088"}

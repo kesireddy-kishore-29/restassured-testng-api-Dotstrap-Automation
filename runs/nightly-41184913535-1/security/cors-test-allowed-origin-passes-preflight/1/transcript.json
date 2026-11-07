@@ -1,0 +1,37 @@
+[ {
+  "sequence" : 1,
+  "startedAt" : "2026-10-31T08:31:37.955582907Z",
+  "durationMs" : 9,
+  "method" : "OPTIONS",
+  "pathTemplate" : "/v1/credits/purchases",
+  "url" : "http://localhost:7070/v1/credits/purchases",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "Origin" : "https://app.example.test",
+    "Access-Control-Request-Headers" : "Authorization, Idempotency-Key, Content-Type",
+    "Access-Control-Request-Method" : "POST",
+    "X-Correlation-Id" : "qa-9de55c79-3334-4634-a3b4-d1311379caef",
+    "Content-Type" : "application/json"
+  },
+  "status" : 204,
+  "responseHeaders" : {
+    "Date" : "Sat, 31 Oct 2026 08:31:37 GMT",
+    "Content-Type" : "text/plain",
+    "X-Correlation-Id" : "qa-9de55c79-3334-4634-a3b4-d1311379caef",
+    "X-Content-Type-Options" : "nosniff",
+    "X-Frame-Options" : "DENY",
+    "Content-Security-Policy" : "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy" : "no-referrer",
+    "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+    "Cache-Control" : "no-store",
+    "Vary" : "Origin",
+    "Access-Control-Allow-Origin" : "https://app.example.test",
+    "Access-Control-Expose-Headers" : "Location, Retry-After, RateLimit-Limit, RateLimit-Remaining, RateLimit-Reset, Idempotent-Replayed, X-Correlation-Id, X-Served-Region, X-Data-Region",
+    "Access-Control-Allow-Methods" : "GET, POST, PATCH, DELETE, OPTIONS",
+    "Access-Control-Allow-Headers" : "Authorization, Content-Type, Idempotency-Key, X-Correlation-Id",
+    "Access-Control-Max-Age" : "600"
+  },
+  "responseBody" : "",
+  "correlationId" : "qa-9de55c79-3334-4634-a3b4-d1311379caef",
+  "contractViolations" : [ ]
+} ]

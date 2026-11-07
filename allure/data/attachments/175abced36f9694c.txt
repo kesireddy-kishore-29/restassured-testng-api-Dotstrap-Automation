@@ -1,0 +1,27 @@
+#6 GET http://localhost:7070/v1/conversations/cnv_3911f3d7-2ac7-41d4-8cb3-005efe986bbf
+correlation: qa-bef6c28d-ca41-4009-bffe-735faf17f3d6
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-bef6c28d-ca41-4009-bffe-735faf17f3d6
+Content-Type: application/json
+
+--- response: 200 in 10 ms ---
+Date: Sat, 07 Nov 2026 08:54:56 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-bef6c28d-ca41-4009-bffe-735faf17f3d6
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 57
+RateLimit-Reset: 10
+X-Served-Region: eu
+X-Data-Region: eu
+Content-Length: 237
+
+{"id":"cnv_3911f3d7-2ac7-41d4-8cb3-005efe986bbf","subject":"Contract check","status":"open","region":"eu","participants":["qa-041006f7c684","qa-68c4badebcca"],"messageCount":1,"unreadCount":0,"createdAt":"2026-11-07T08:54:56.764905690Z"}

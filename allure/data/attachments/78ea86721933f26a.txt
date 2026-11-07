@@ -1,0 +1,28 @@
+#2 POST http://localhost:7070/v1/accounts
+correlation: qa-b4b43707-f658-437c-bee5-24a05c92759c
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-b4b43707-f658-437c-bee5-24a05c92759c
+Content-Type: application/json
+
+--- request body ---
+{"handle":"qa-c610f0d17b57","displayName":"Copy","password":"****","region":"eu"}
+
+--- response: 409 in 16 ms ---
+Date: Sat, 07 Nov 2026 08:54:55 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-b4b43707-f658-437c-bee5-24a05c92759c
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 592
+RateLimit-Reset: 10
+Content-Length: 245
+
+{"type":"https://reference-service.example/problems/handle-taken","title":"Handle already taken","status":409,"detail":"The handle 'qa-c610f0d17b57' is in use.","instance":"/v1/accounts","correlationId":"qa-b4b43707-f658-437c-bee5-24a05c92759c"}

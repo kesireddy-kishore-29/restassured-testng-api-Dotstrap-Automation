@@ -1,0 +1,29 @@
+#7 POST http://localhost:7070/v1/conversations/cnv_c05e22f4-999b-4a78-8f5d-5511b61048a1/messages
+correlation: qa-e6316804-745b-452a-8f4f-3a37658eba4f
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-e6316804-745b-452a-8f4f-3a37658eba4f
+Content-Type: application/json
+
+--- request body ---
+{"body":"One more thing"}
+
+--- response: 409 in 15 ms ---
+Date: Sat, 07 Nov 2026 08:55:04 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-e6316804-745b-452a-8f4f-3a37658eba4f
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 329
+
+{"type":"https://reference-service.example/problems/conversation-closed","title":"Conversation closed","status":409,"detail":"The conversation has been closed and accepts no more messages.","instance":"/v1/conversations/cnv_c05e22f4-999b-4a78-8f5d-5511b61048a1/messages","correlationId":"qa-e6316804-745b-452a-8f4f-3a37658eba4f"}

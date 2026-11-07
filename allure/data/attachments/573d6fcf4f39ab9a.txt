@@ -1,0 +1,25 @@
+#5 GET http://localhost:7070/v1/credits/ledger
+correlation: qa-b3015554-53c8-41ae-80c4-353a1ca1d93f
+
+--- request headers ---
+Accept: application/json
+X-Fault-Key: ba5809fc-3915-432c-a934-f2f9105b9458
+X-Fault: unavailable-once
+X-Correlation-Id: qa-b3015554-53c8-41ae-80c4-353a1ca1d93f
+Content-Type: application/json
+
+--- response: 503 in 12 ms ---
+Date: Sat, 07 Nov 2026 08:54:59 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-b3015554-53c8-41ae-80c4-353a1ca1d93f
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+Retry-After: 1
+Content-Length: 262
+
+{"type":"https://reference-service.example/problems/fault-injected","title":"Service unavailable (injected)","status":503,"detail":"Injected outage; retry after 1 second.","instance":"/v1/credits/ledger","correlationId":"qa-b3015554-53c8-41ae-80c4-353a1ca1d93f"}

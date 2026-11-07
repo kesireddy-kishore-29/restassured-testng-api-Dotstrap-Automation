@@ -1,0 +1,26 @@
+#15 POST http://localhost:7070/v1/conversations/cnv_29f07667-104b-4896-9215-6161c227f5f6/close
+correlation: qa-08d0da05-ad66-48d6-b8ac-30992571f441
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-08d0da05-ad66-48d6-b8ac-30992571f441
+Content-Type: application/json
+
+--- response: 200 in 9 ms ---
+Date: Sat, 07 Nov 2026 08:54:57 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-08d0da05-ad66-48d6-b8ac-30992571f441
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 53
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 284
+
+{"id":"cnv_29f07667-104b-4896-9215-6161c227f5f6","subject":"OpenAPI journey","status":"closed","region":"us","participants":["qa-11e043837aa3","qa-54baac353985"],"messageCount":2,"unreadCount":0,"createdAt":"2026-11-07T08:54:56.871189074Z","closedAt":"2026-11-07T08:54:57.001534187Z"}

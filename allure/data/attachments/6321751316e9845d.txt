@@ -1,0 +1,26 @@
+#5 GET http://localhost:7070/v1/credits/ledger
+correlation: qa-795ee098-c5ba-4f7f-a158-d0e8212d4b5f
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-795ee098-c5ba-4f7f-a158-d0e8212d4b5f
+Content-Type: application/json
+
+--- response: 200 in 26 ms ---
+Date: Sat, 07 Nov 2026 08:54:56 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-795ee098-c5ba-4f7f-a158-d0e8212d4b5f
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 57
+RateLimit-Reset: 10
+X-Served-Region: in
+Content-Length: 398
+
+{"items":[{"id":"led_21962a81-3fd1-4c8b-bbcc-a83ccd5a886d","type":"grant","amount":5,"balanceAfter":5,"reference":"welcome-grant","createdAt":"2026-11-07T08:54:56.349866297Z"},{"id":"led_0ddcc0c1-6dbd-4bf9-8784-39f20ed5480c","type":"purchase","amount":10,"balanceAfter":15,"reference":"pur_029483b0-3c8c-4ee2-8faa-8859e077a123","createdAt":"2026-11-07T08:54:56.825870774Z"}],"total":2,"balance":15}

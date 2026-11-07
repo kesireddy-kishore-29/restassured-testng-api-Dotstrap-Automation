@@ -1,0 +1,26 @@
+#9 GET http://localhost:7070/v1/conversations
+correlation: qa-3076c3df-1eb5-44d0-8413-e098327ccee6
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-3076c3df-1eb5-44d0-8413-e098327ccee6
+Content-Type: application/json
+
+--- response: 200 in 17 ms ---
+Date: Sat, 07 Nov 2026 08:54:56 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-3076c3df-1eb5-44d0-8413-e098327ccee6
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 55
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 260
+
+{"items":[{"id":"cnv_29f07667-104b-4896-9215-6161c227f5f6","subject":"OpenAPI journey","status":"open","region":"us","participants":["qa-11e043837aa3","qa-54baac353985"],"messageCount":1,"unreadCount":0,"createdAt":"2026-11-07T08:54:56.871189074Z"}],"total":1}
