@@ -1,0 +1,26 @@
+#7 GET http://localhost:7070/v1/credits/ledger
+correlation: qa-3fc4ba3a-8f87-4b14-99ac-062490e26dcc
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-3fc4ba3a-8f87-4b14-99ac-062490e26dcc
+Content-Type: application/json
+
+--- response: 200 in 13 ms ---
+Date: Sat, 14 Nov 2026 09:05:20 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-3fc4ba3a-8f87-4b14-99ac-062490e26dcc
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 56
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 791
+
+{"items":[{"id":"led_fbf55273-5f4b-43ba-91f9-6fcc9c4056f7","type":"grant","amount":5,"balanceAfter":5,"reference":"welcome-grant","createdAt":"2026-11-14T09:05:19.984596620Z"},{"id":"led_86b97b6f-ae2c-4e54-919f-e4475b80d1d0","type":"purchase","amount":10,"balanceAfter":15,"reference":"pur_4d98b1b7-6893-4199-a804-807d86ae5474","createdAt":"2026-11-14T09:05:20.139743461Z"},{"id":"led_8e18bb45-891d-4354-ae55-54ef49b3db65","type":"purchase","amount":50,"balanceAfter":65,"reference":"pur_5d60735a-97df-43ab-93bc-b9c5cc60b9b5","createdAt":"2026-11-14T09:05:20.165285818Z"},{"id":"led_18e46b0b-5282-4070-86ab-3357f7b34668","type":"spend","amount":-1,"balanceAfter":64,"reference":"cnv_4f52ebda-9a5c-44c5-a34f-2d3ce5f5d900","createdAt":"2026-11-14T09:05:20.187174138Z"}],"total":4,"balance":64}

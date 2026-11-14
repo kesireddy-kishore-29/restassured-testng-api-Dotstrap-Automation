@@ -1,0 +1,29 @@
+#9 POST http://localhost:7070/v1/conversations/cnv_4257afa8-6265-4cb8-b73f-d0ee692d9b6a/messages
+correlation: qa-57bbaac6-2579-4be8-a334-3e7a743ba852
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-57bbaac6-2579-4be8-a334-3e7a743ba852
+Content-Type: application/json
+
+--- request body ---
+{"body":"Let me in"}
+
+--- response: 403 in 13 ms ---
+Date: Sat, 14 Nov 2026 09:05:22 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-57bbaac6-2579-4be8-a334-3e7a743ba852
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 57
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 294
+
+{"type":"https://reference-service.example/problems/forbidden","title":"Forbidden","status":403,"detail":"You are not a participant in this conversation.","instance":"/v1/conversations/cnv_4257afa8-6265-4cb8-b73f-d0ee692d9b6a/messages","correlationId":"qa-57bbaac6-2579-4be8-a334-3e7a743ba852"}

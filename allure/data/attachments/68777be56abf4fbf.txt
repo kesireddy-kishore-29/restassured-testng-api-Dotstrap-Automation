@@ -1,0 +1,29 @@
+#5 PATCH http://localhost:7070/v1/accounts/me
+correlation: qa-f140d7cd-9ce8-481d-aea2-aaa1379109ec
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-f140d7cd-9ce8-481d-aea2-aaa1379109ec
+Content-Type: application/json
+
+--- request body ---
+{"displayName":"   "}
+
+--- response: 422 in 21 ms ---
+Date: Sat, 14 Nov 2026 09:05:11 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-f140d7cd-9ce8-481d-aea2-aaa1379109ec
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 316
+
+{"type":"https://reference-service.example/problems/validation-failed","title":"Validation failed","status":422,"detail":"One or more fields are invalid.","instance":"/v1/accounts/me","correlationId":"qa-f140d7cd-9ce8-481d-aea2-aaa1379109ec","errors":[{"field":"displayName","message":"1-60 characters, not blank"}]}

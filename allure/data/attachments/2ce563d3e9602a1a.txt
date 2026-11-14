@@ -1,0 +1,29 @@
+#6 PATCH http://localhost:7070/v1/accounts/me
+correlation: qa-fd645fd7-e0d2-4b5a-871d-bf0eed0c1ea7
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-fd645fd7-e0d2-4b5a-871d-bf0eed0c1ea7
+Content-Type: application/json
+
+--- request body ---
+{"displayName":"Ava Contract"}
+
+--- response: 200 in 38 ms ---
+Date: Sat, 14 Nov 2026 09:05:09 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-fd645fd7-e0d2-4b5a-871d-bf0eed0c1ea7
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 178
+
+{"id":"acc_77bd12dc-5685-4444-a5cf-dd5adcbfd71a","handle":"qa-fc5029d7a71e","displayName":"Ava Contract","region":"eu","role":"user","createdAt":"2026-11-14T09:05:09.125520528Z"}

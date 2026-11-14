@@ -1,0 +1,26 @@
+#21 GET http://localhost:7070/v1/conversations
+correlation: qa-025c76fb-300c-428c-9ae6-46206f0484ae
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-025c76fb-300c-428c-9ae6-46206f0484ae
+Content-Type: application/json
+
+--- response: 200 in 4 ms ---
+Date: Sat, 14 Nov 2026 09:05:20 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-025c76fb-300c-428c-9ae6-46206f0484ae
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 56
+RateLimit-Reset: 10
+X-Served-Region: in
+Content-Length: 22
+
+{"items":[],"total":0}

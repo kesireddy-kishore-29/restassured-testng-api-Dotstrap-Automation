@@ -1,0 +1,170 @@
+[ {
+  "sequence" : 1,
+  "startedAt" : "2026-11-08T09:09:12.717708907Z",
+  "durationMs" : 25,
+  "method" : "POST",
+  "pathTemplate" : "/v1/accounts",
+  "url" : "http://localhost:7070/v1/accounts",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "X-Correlation-Id" : "qa-1030556b-069c-4dd8-a2ec-f30828f5c87c",
+    "Content-Type" : "application/json"
+  },
+  "requestBody" : "{\"handle\":\"qa-60ba8b2a9594\",\"displayName\":\"QA 60ba8b2a9594\",\"password\":\"****\",\"region\":\"eu\"}",
+  "status" : 201,
+  "responseHeaders" : {
+    "Date" : "Sun, 08 Nov 2026 09:09:12 GMT",
+    "Content-Type" : "application/json",
+    "X-Correlation-Id" : "qa-1030556b-069c-4dd8-a2ec-f30828f5c87c",
+    "X-Content-Type-Options" : "nosniff",
+    "X-Frame-Options" : "DENY",
+    "Content-Security-Policy" : "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy" : "no-referrer",
+    "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+    "Cache-Control" : "no-store",
+    "Vary" : "Origin",
+    "RateLimit-Limit" : "600",
+    "RateLimit-Remaining" : "577",
+    "RateLimit-Reset" : "9",
+    "Location" : "/v1/accounts/qa-60ba8b2a9594",
+    "X-Served-Region" : "eu",
+    "Content-Length" : "181"
+  },
+  "responseBody" : "{\"id\":\"acc_d48beb4b-3d2a-4d74-9e78-8724fd7ec934\",\"handle\":\"qa-60ba8b2a9594\",\"displayName\":\"QA 60ba8b2a9594\",\"region\":\"eu\",\"role\":\"user\",\"createdAt\":\"2026-11-08T09:09:12.735442842Z\"}",
+  "correlationId" : "qa-1030556b-069c-4dd8-a2ec-f30828f5c87c",
+  "contractViolations" : [ ]
+}, {
+  "sequence" : 2,
+  "startedAt" : "2026-11-08T09:09:12.759144657Z",
+  "durationMs" : 21,
+  "method" : "POST",
+  "pathTemplate" : "/v1/auth/token",
+  "url" : "http://localhost:7070/v1/auth/token",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "X-Correlation-Id" : "qa-f7f39d1c-445d-4514-8b70-dd3dc0fb76fb",
+    "Content-Type" : "application/json"
+  },
+  "requestBody" : "{\"handle\":\"qa-60ba8b2a9594\",\"password\":\"****\"}",
+  "status" : 200,
+  "responseHeaders" : {
+    "Date" : "Sun, 08 Nov 2026 09:09:12 GMT",
+    "Content-Type" : "application/json",
+    "X-Correlation-Id" : "qa-f7f39d1c-445d-4514-8b70-dd3dc0fb76fb",
+    "X-Content-Type-Options" : "nosniff",
+    "X-Frame-Options" : "DENY",
+    "Content-Security-Policy" : "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy" : "no-referrer",
+    "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+    "Cache-Control" : "no-store",
+    "Vary" : "Origin",
+    "RateLimit-Limit" : "600",
+    "RateLimit-Remaining" : "574",
+    "RateLimit-Reset" : "9",
+    "Content-Length" : "153"
+  },
+  "responseBody" : "{\"accessToken\":\"****\",\"tokenType\":\"Bearer\",\"expiresIn\":900,\"accountId\":\"acc_d48beb4b-3d2a-4d74-9e78-8724fd7ec934\"}",
+  "correlationId" : "qa-f7f39d1c-445d-4514-8b70-dd3dc0fb76fb",
+  "contractViolations" : [ ]
+}, {
+  "sequence" : 3,
+  "startedAt" : "2026-11-08T09:09:12.788301810Z",
+  "durationMs" : 811,
+  "method" : "GET",
+  "pathTemplate" : "/v1/accounts/me",
+  "url" : "http://localhost:7070/v1/accounts/me",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "X-Fault-Key" : "904c3218-69ee-40fe-a882-8978e4824355",
+    "X-Fault" : "latency=4000",
+    "X-Correlation-Id" : "qa-946d46d5-aec7-4fd2-a6e3-91d0aa96c93f",
+    "Content-Type" : "application/json"
+  },
+  "responseHeaders" : { },
+  "correlationId" : "qa-946d46d5-aec7-4fd2-a6e3-91d0aa96c93f",
+  "error" : "SocketTimeoutException: Read timed out",
+  "contractViolations" : [ ]
+}, {
+  "sequence" : 4,
+  "startedAt" : "2026-11-08T09:09:13.604058083Z",
+  "durationMs" : 805,
+  "method" : "GET",
+  "pathTemplate" : "/v1/accounts/me",
+  "url" : "http://localhost:7070/v1/accounts/me",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "X-Fault-Key" : "904c3218-69ee-40fe-a882-8978e4824355",
+    "X-Fault" : "latency=4000",
+    "X-Correlation-Id" : "qa-462ba787-74c4-4d52-a28d-aa5c6fd02da7",
+    "Content-Type" : "application/json"
+  },
+  "responseHeaders" : { },
+  "correlationId" : "qa-462ba787-74c4-4d52-a28d-aa5c6fd02da7",
+  "error" : "SocketTimeoutException: Read timed out",
+  "contractViolations" : [ ]
+}, {
+  "sequence" : 5,
+  "startedAt" : "2026-11-08T09:09:14.418475354Z",
+  "durationMs" : 6,
+  "method" : "DELETE",
+  "pathTemplate" : "/v1/accounts/me",
+  "url" : "http://localhost:7070/v1/accounts/me",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "X-Correlation-Id" : "qa-1f782dcf-104e-4ede-924c-8eecf12a9b06",
+    "Content-Type" : "application/json"
+  },
+  "status" : 204,
+  "responseHeaders" : {
+    "Date" : "Sun, 08 Nov 2026 09:09:14 GMT",
+    "Content-Type" : "text/plain",
+    "X-Correlation-Id" : "qa-1f782dcf-104e-4ede-924c-8eecf12a9b06",
+    "X-Content-Type-Options" : "nosniff",
+    "X-Frame-Options" : "DENY",
+    "Content-Security-Policy" : "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy" : "no-referrer",
+    "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+    "Cache-Control" : "no-store",
+    "Vary" : "Origin",
+    "RateLimit-Limit" : "60",
+    "RateLimit-Remaining" : "59",
+    "RateLimit-Reset" : "10",
+    "X-Served-Region" : "eu"
+  },
+  "responseBody" : "",
+  "correlationId" : "qa-1f782dcf-104e-4ede-924c-8eecf12a9b06",
+  "contractViolations" : [ ]
+}, {
+  "sequence" : 6,
+  "startedAt" : "2026-11-08T09:09:14.429804168Z",
+  "durationMs" : 5,
+  "method" : "POST",
+  "pathTemplate" : "/v1/auth/token",
+  "url" : "http://localhost:7070/v1/auth/token",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "X-Correlation-Id" : "qa-95697933-88b4-491c-a015-87870eefc59c",
+    "Content-Type" : "application/json"
+  },
+  "requestBody" : "{\"handle\":\"qa-60ba8b2a9594\",\"password\":\"****\"}",
+  "status" : 401,
+  "responseHeaders" : {
+    "Date" : "Sun, 08 Nov 2026 09:09:14 GMT",
+    "Content-Type" : "application/problem+json",
+    "X-Correlation-Id" : "qa-95697933-88b4-491c-a015-87870eefc59c",
+    "X-Content-Type-Options" : "nosniff",
+    "X-Frame-Options" : "DENY",
+    "Content-Security-Policy" : "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy" : "no-referrer",
+    "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+    "Cache-Control" : "no-store",
+    "Vary" : "Origin",
+    "RateLimit-Limit" : "600",
+    "RateLimit-Remaining" : "570",
+    "RateLimit-Reset" : "7",
+    "Content-Length" : "242"
+  },
+  "responseBody" : "{\"type\":\"https://reference-service.example/problems/invalid-credentials\",\"title\":\"Invalid credentials\",\"status\":401,\"detail\":\"Handle or password is wrong.\",\"instance\":\"/v1/auth/token\",\"correlationId\":\"qa-95697933-88b4-491c-a015-87870eefc59c\"}",
+  "correlationId" : "qa-95697933-88b4-491c-a015-87870eefc59c",
+  "contractViolations" : [ ]
+} ]

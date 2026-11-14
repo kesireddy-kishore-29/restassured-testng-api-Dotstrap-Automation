@@ -1,0 +1,29 @@
+#3 POST http://localhost:7070/v1/conversations/cnv_does-not-exist/messages
+correlation: qa-b3efeeb2-6e8d-4432-b73d-4b2f318dc5dc
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-b3efeeb2-6e8d-4432-b73d-4b2f318dc5dc
+Content-Type: application/json
+
+--- request body ---
+{"body":"Hi"}
+
+--- response: 404 in 6 ms ---
+Date: Sat, 14 Nov 2026 09:05:13 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-b3efeeb2-6e8d-4432-b73d-4b2f318dc5dc
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 262
+
+{"type":"https://reference-service.example/problems/not-found","title":"Not found","status":404,"detail":"No conversation 'cnv_does-not-exist'.","instance":"/v1/conversations/cnv_does-not-exist/messages","correlationId":"qa-b3efeeb2-6e8d-4432-b73d-4b2f318dc5dc"}

@@ -1,0 +1,127 @@
+[ {
+  "operation" : "DELETE /v1/accounts/me",
+  "count" : 152,
+  "p50" : 13,
+  "p95" : 35,
+  "max" : 57
+}, {
+  "operation" : "GET /health",
+  "count" : 6,
+  "p50" : 12,
+  "p95" : 422,
+  "max" : 422
+}, {
+  "operation" : "GET /openapi.yaml",
+  "count" : 1,
+  "p50" : 18,
+  "p95" : 18,
+  "max" : 18
+}, {
+  "operation" : "GET /v1/accounts/me",
+  "count" : 180,
+  "p50" : 10,
+  "p95" : 30,
+  "max" : 421
+}, {
+  "operation" : "GET /v1/accounts/{handle}",
+  "count" : 10,
+  "p50" : 19,
+  "p95" : 28,
+  "max" : 28
+}, {
+  "operation" : "GET /v1/admin/stats",
+  "count" : 6,
+  "p50" : 14,
+  "p95" : 42,
+  "max" : 42
+}, {
+  "operation" : "GET /v1/conversations",
+  "count" : 7,
+  "p50" : 12,
+  "p95" : 32,
+  "max" : 32
+}, {
+  "operation" : "GET /v1/conversations/{id}",
+  "count" : 16,
+  "p50" : 11,
+  "p95" : 78,
+  "max" : 78
+}, {
+  "operation" : "GET /v1/conversations/{id}/messages",
+  "count" : 14,
+  "p50" : 12,
+  "p95" : 24,
+  "max" : 24
+}, {
+  "operation" : "GET /v1/credits/balance",
+  "count" : 16,
+  "p50" : 12,
+  "p95" : 53,
+  "max" : 53
+}, {
+  "operation" : "GET /v1/credits/ledger",
+  "count" : 10,
+  "p50" : 13,
+  "p95" : 49,
+  "max" : 49
+}, {
+  "operation" : "OPTIONS /v1/accounts/me",
+  "count" : 1,
+  "p50" : 17,
+  "p95" : 17,
+  "max" : 17
+}, {
+  "operation" : "OPTIONS /v1/credits/purchases",
+  "count" : 1,
+  "p50" : 19,
+  "p95" : 19,
+  "max" : 19
+}, {
+  "operation" : "PATCH /v1/accounts/me",
+  "count" : 8,
+  "p50" : 24,
+  "p95" : 42,
+  "max" : 42
+}, {
+  "operation" : "POST /v1/accounts",
+  "count" : 163,
+  "p50" : 32,
+  "p95" : 481,
+  "max" : 539
+}, {
+  "operation" : "POST /v1/auth/token",
+  "count" : 323,
+  "p50" : 21,
+  "p95" : 59,
+  "max" : 94
+}, {
+  "operation" : "POST /v1/conversations",
+  "count" : 61,
+  "p50" : 18,
+  "p95" : 47,
+  "max" : 60
+}, {
+  "operation" : "POST /v1/conversations/{id}/close",
+  "count" : 9,
+  "p50" : 13,
+  "p95" : 49,
+  "max" : 49
+}, {
+  "operation" : "POST /v1/conversations/{id}/messages",
+  "count" : 28,
+  "p50" : 16,
+  "p95" : 35,
+  "max" : 51
+}, {
+  "operation" : "POST /v1/conversations/{id}/read",
+  "count" : 9,
+  "p50" : 13,
+  "p95" : 27,
+  "max" : 27
+}, {
+  "operation" : "POST /v1/credits/purchases",
+  "count" : 36,
+  "p50" : 21,
+  "p95" : 69,
+  "max" : 72
+} ]

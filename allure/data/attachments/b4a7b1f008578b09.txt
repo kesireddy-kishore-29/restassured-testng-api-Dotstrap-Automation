@@ -1,0 +1,27 @@
+#10 GET http://localhost:7070/v1/conversations/cnv_add6a7b9-4dea-4907-82bd-ead260484d70
+correlation: qa-82d8155f-202b-434a-b81f-6a2e13cc5b11
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-82d8155f-202b-434a-b81f-6a2e13cc5b11
+Content-Type: application/json
+
+--- response: 200 in 10 ms ---
+Date: Sat, 14 Nov 2026 09:05:19 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-82d8155f-202b-434a-b81f-6a2e13cc5b11
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 56
+RateLimit-Reset: 10
+X-Served-Region: us
+X-Data-Region: us
+Content-Length: 238
+
+{"id":"cnv_add6a7b9-4dea-4907-82bd-ead260484d70","subject":"Project kickoff","status":"open","region":"us","participants":["qa-9a0e0c011326","qa-00c0a9947bb9"],"messageCount":1,"unreadCount":0,"createdAt":"2026-11-14T09:05:19.659575838Z"}

@@ -1,0 +1,31 @@
+#5 POST http://localhost:7070/v1/conversations
+correlation: qa-680130d8-812e-4810-9426-34d053e84dda
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-680130d8-812e-4810-9426-34d053e84dda
+Content-Type: application/json
+
+--- request body ---
+{"recipientHandle":"qa-00c0a9947bb9","subject":"Project kickoff","message":"Hi Ben, got a minute?"}
+
+--- response: 201 in 18 ms ---
+Date: Sat, 14 Nov 2026 09:05:19 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-680130d8-812e-4810-9426-34d053e84dda
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: eu
+Location: /v1/conversations/cnv_add6a7b9-4dea-4907-82bd-ead260484d70
+X-Data-Region: us
+Content-Length: 238
+
+{"id":"cnv_add6a7b9-4dea-4907-82bd-ead260484d70","subject":"Project kickoff","status":"open","region":"us","participants":["qa-9a0e0c011326","qa-00c0a9947bb9"],"messageCount":1,"unreadCount":0,"createdAt":"2026-11-14T09:05:19.659575838Z"}

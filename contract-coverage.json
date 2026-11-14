@@ -1,0 +1,82 @@
+{
+  "operations" : [ {
+    "operation" : "GET /health",
+    "documented" : [ "200" ],
+    "exercised" : [ "200" ]
+  }, {
+    "operation" : "GET /openapi.yaml",
+    "documented" : [ "200" ],
+    "exercised" : [ "200" ]
+  }, {
+    "operation" : "POST /v1/auth/token",
+    "documented" : [ "200", "400", "401", "415", "422", "429", "503" ],
+    "exercised" : [ "200", "400", "401", "415", "422", "429", "503" ]
+  }, {
+    "operation" : "POST /v1/accounts",
+    "documented" : [ "201", "400", "409", "415", "422", "429", "503" ],
+    "exercised" : [ "201", "400", "409", "415", "422", "429", "503" ]
+  }, {
+    "operation" : "GET /v1/accounts/me",
+    "documented" : [ "200", "401", "429", "503" ],
+    "exercised" : [ "200", "401", "429", "503" ]
+  }, {
+    "operation" : "PATCH /v1/accounts/me",
+    "documented" : [ "200", "400", "401", "415", "422", "429", "503" ],
+    "exercised" : [ "200", "400", "401", "415", "422", "429", "503" ]
+  }, {
+    "operation" : "DELETE /v1/accounts/me",
+    "documented" : [ "204", "401", "429", "503" ],
+    "exercised" : [ "204", "401", "429", "503" ]
+  }, {
+    "operation" : "GET /v1/accounts/{handle}",
+    "documented" : [ "200", "401", "404", "429", "503" ],
+    "exercised" : [ "200", "401", "404", "429", "503" ]
+  }, {
+    "operation" : "POST /v1/conversations",
+    "documented" : [ "201", "400", "401", "402", "415", "422", "429", "503" ],
+    "exercised" : [ "201", "400", "401", "402", "415", "422", "429", "503" ]
+  }, {
+    "operation" : "GET /v1/conversations",
+    "documented" : [ "200", "401", "429", "503" ],
+    "exercised" : [ "200", "401", "429", "503" ]
+  }, {
+    "operation" : "GET /v1/conversations/{id}",
+    "documented" : [ "200", "401", "403", "404", "429", "503" ],
+    "exercised" : [ "200", "401", "403", "404", "429", "503" ]
+  }, {
+    "operation" : "GET /v1/conversations/{id}/messages",
+    "documented" : [ "200", "401", "403", "404", "429", "503" ],
+    "exercised" : [ "200", "401", "403", "404", "429", "503" ]
+  }, {
+    "operation" : "POST /v1/conversations/{id}/messages",
+    "documented" : [ "201", "400", "401", "402", "403", "404", "409", "415", "422", "429", "503" ],
+    "exercised" : [ "201", "400", "401", "402", "403", "404", "409", "415", "422", "429", "503" ]
+  }, {
+    "operation" : "POST /v1/conversations/{id}/read",
+    "documented" : [ "200", "401", "403", "404", "429", "503" ],
+    "exercised" : [ "200", "401", "403", "404", "429", "503" ]
+  }, {
+    "operation" : "POST /v1/conversations/{id}/close",
+    "documented" : [ "200", "401", "403", "404", "429", "503" ],
+    "exercised" : [ "200", "401", "403", "404", "429", "503" ]
+  }, {
+    "operation" : "GET /v1/credits/balance",
+    "documented" : [ "200", "401", "429", "503" ],
+    "exercised" : [ "200", "401", "429", "503" ]
+  }, {
+    "operation" : "GET /v1/credits/ledger",
+    "documented" : [ "200", "401", "429", "503" ],
+    "exercised" : [ "200", "401", "429", "503" ]
+  }, {
+    "operation" : "POST /v1/credits/purchases",
+    "documented" : [ "200", "201", "400", "401", "409", "415", "422", "429", "503" ],
+    "exercised" : [ "200", "201", "400", "401", "409", "415", "422", "429", "503" ]
+  }, {
+    "operation" : "GET /v1/admin/stats",
+    "documented" : [ "200", "401", "403", "429", "503" ],
+    "exercised" : [ "200", "401", "403", "429", "503" ]
+  } ],
+  "operationsCalled" : 19,
+  "codesDocumented" : 105,
+  "codesExercised" : 105
+}

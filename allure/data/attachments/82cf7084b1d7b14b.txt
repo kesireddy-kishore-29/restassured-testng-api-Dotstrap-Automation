@@ -1,0 +1,25 @@
+#5 GET http://localhost:7070/v1/admin/stats
+correlation: qa-f4928ca9-31b0-4582-b83a-c07f159da020
+
+--- request headers ---
+Accept: application/json
+X-Fault: unavailable-once
+X-Fault-Key: a389c16f-6f60-471d-83e5-ffaeaa428af3
+X-Correlation-Id: qa-f4928ca9-31b0-4582-b83a-c07f159da020
+Content-Type: application/json
+
+--- response: 503 in 16 ms ---
+Date: Sat, 14 Nov 2026 09:05:12 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-f4928ca9-31b0-4582-b83a-c07f159da020
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+Retry-After: 1
+Content-Length: 259
+
+{"type":"https://reference-service.example/problems/fault-injected","title":"Service unavailable (injected)","status":503,"detail":"Injected outage; retry after 1 second.","instance":"/v1/admin/stats","correlationId":"qa-f4928ca9-31b0-4582-b83a-c07f159da020"}

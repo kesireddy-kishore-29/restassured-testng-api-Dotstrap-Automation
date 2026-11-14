@@ -1,0 +1,26 @@
+#3 GET http://localhost:7070/v1/conversations/cnv_does-not-exist
+correlation: qa-faadb6dc-0b4b-4eec-a60d-0ee3e43de455
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-faadb6dc-0b4b-4eec-a60d-0ee3e43de455
+Content-Type: application/json
+
+--- response: 404 in 78 ms ---
+Date: Sat, 14 Nov 2026 09:05:20 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-faadb6dc-0b4b-4eec-a60d-0ee3e43de455
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 253
+
+{"type":"https://reference-service.example/problems/not-found","title":"Not found","status":404,"detail":"No conversation 'cnv_does-not-exist'.","instance":"/v1/conversations/cnv_does-not-exist","correlationId":"qa-faadb6dc-0b4b-4eec-a60d-0ee3e43de455"}

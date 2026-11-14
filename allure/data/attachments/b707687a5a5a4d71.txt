@@ -1,0 +1,26 @@
+#11 GET http://localhost:7070/v1/credits/ledger
+correlation: qa-6455e4c5-3286-457b-976f-6d41ba8a6edc
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-6455e4c5-3286-457b-976f-6d41ba8a6edc
+Content-Type: application/json
+
+--- response: 200 in 13 ms ---
+Date: Sat, 14 Nov 2026 09:05:22 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-6455e4c5-3286-457b-976f-6d41ba8a6edc
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 52
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 1169
+
+{"items":[{"id":"led_3bd29420-76e8-4cb1-bebc-d0ca98568d8f","type":"grant","amount":5,"balanceAfter":5,"reference":"welcome-grant","createdAt":"2026-11-14T09:05:21.976843336Z"},{"id":"led_a66a7c88-13e8-4b03-9681-31b113f0a72e","type":"spend","amount":-1,"balanceAfter":4,"reference":"cnv_207ef721-0994-428e-a2bd-dadf1bc28240","createdAt":"2026-11-14T09:05:22.080823848Z"},{"id":"led_fc804b60-dc21-4dce-8efa-afdb6df5e6d7","type":"spend","amount":-1,"balanceAfter":3,"reference":"msg_5b242615-6530-4bab-b7bd-a8ba7356a3d8","createdAt":"2026-11-14T09:05:22.115124327Z"},{"id":"led_a26c2f2a-0673-464c-9b3e-68f30ad4f9fd","type":"spend","amount":-1,"balanceAfter":2,"reference":"msg_c7467ce0-4a92-46a8-83a4-e122df019be0","createdAt":"2026-11-14T09:05:22.162298057Z"},{"id":"led_f88379aa-17a5-40b2-94a9-3af6e2c7c356","type":"spend","amount":-1,"balanceAfter":1,"reference":"msg_6486615e-80b9-4b00-83a5-d1e4de2e427c","createdAt":"2026-11-14T09:05:22.187639615Z"},{"id":"led_68a5089e-b1d0-4682-b023-a7a1e37122a4","type":"spend","amount":-1,"balanceAfter":0,"reference":"msg_04446e06-c676-40a2-9255-b8e02e000202","createdAt":"2026-11-14T09:05:22.201872038Z"}],"total":6,"balance":0}

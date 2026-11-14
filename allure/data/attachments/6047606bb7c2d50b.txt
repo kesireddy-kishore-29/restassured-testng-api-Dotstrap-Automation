@@ -1,0 +1,25 @@
+#1 OPTIONS http://localhost:7070/v1/accounts/me
+correlation: qa-a06f278c-e45f-43b5-b3ee-8bcd2c846252
+
+--- request headers ---
+Accept: application/json
+Origin: https://evil.example
+Access-Control-Request-Headers: Authorization
+Access-Control-Request-Method: GET
+X-Correlation-Id: qa-a06f278c-e45f-43b5-b3ee-8bcd2c846252
+Content-Type: application/json
+
+--- response: 403 in 17 ms ---
+Date: Sat, 14 Nov 2026 09:05:19 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-a06f278c-e45f-43b5-b3ee-8bcd2c846252
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+Content-Length: 258
+
+{"type":"https://reference-service.example/problems/cors-origin-denied","title":"Origin not allowed","status":403,"detail":"Origin 'https://evil.example' is not allowed.","instance":"/v1/accounts/me","correlationId":"qa-a06f278c-e45f-43b5-b3ee-8bcd2c846252"}

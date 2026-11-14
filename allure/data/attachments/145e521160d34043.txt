@@ -1,0 +1,26 @@
+#6 GET http://localhost:7070/v1/admin/stats
+correlation: qa-04ed079e-cd05-44df-88ff-41be864c0e93
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-04ed079e-cd05-44df-88ff-41be864c0e93
+Content-Type: application/json
+
+--- response: 200 in 12 ms ---
+Date: Sat, 14 Nov 2026 09:05:13 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-04ed079e-cd05-44df-88ff-41be864c0e93
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 46
+
+{"accounts":9,"conversations":2,"purchases":0}

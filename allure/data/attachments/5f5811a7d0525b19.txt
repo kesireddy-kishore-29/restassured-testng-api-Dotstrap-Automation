@@ -1,0 +1,29 @@
+#6 POST http://localhost:7070/v1/conversations/cnv_3ea90f16-2aa9-48e9-acbe-0b75e9b02772/messages
+correlation: qa-1be231f3-596b-4cc2-829b-fe1408ab72d8
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-1be231f3-596b-4cc2-829b-fe1408ab72d8
+Content-Type: application/json
+
+--- request body ---
+{"body":"Friday works"}
+
+--- response: 201 in 16 ms ---
+Date: Sat, 14 Nov 2026 09:05:22 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-1be231f3-596b-4cc2-829b-fe1408ab72d8
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 203
+
+{"id":"msg_7f1fc159-f5a3-4fff-8856-78c411500ca5","conversationId":"cnv_3ea90f16-2aa9-48e9-acbe-0b75e9b02772","sender":"qa-6e6c43660173","body":"Friday works","createdAt":"2026-11-14T09:05:22.946941671Z"}

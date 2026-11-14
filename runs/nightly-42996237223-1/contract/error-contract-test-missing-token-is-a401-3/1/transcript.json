@@ -1,0 +1,34 @@
+[ {
+  "sequence" : 1,
+  "startedAt" : "2026-11-11T09:34:36.009302579Z",
+  "durationMs" : 9,
+  "method" : "GET",
+  "pathTemplate" : "/v1/accounts/{handle}",
+  "url" : "http://localhost:7070/v1/accounts/qa-anyone",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "X-Correlation-Id" : "qa-b26414be-a559-4263-9b53-7ff146581bbe",
+    "Content-Type" : "application/json"
+  },
+  "status" : 401,
+  "responseHeaders" : {
+    "Date" : "Wed, 11 Nov 2026 09:34:36 GMT",
+    "Content-Type" : "application/problem+json",
+    "X-Correlation-Id" : "qa-b26414be-a559-4263-9b53-7ff146581bbe",
+    "X-Content-Type-Options" : "nosniff",
+    "X-Frame-Options" : "DENY",
+    "Content-Security-Policy" : "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy" : "no-referrer",
+    "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+    "Cache-Control" : "no-store",
+    "Vary" : "Origin",
+    "RateLimit-Limit" : "600",
+    "RateLimit-Remaining" : "575",
+    "RateLimit-Reset" : "9",
+    "WWW-Authenticate" : "Bearer",
+    "Content-Length" : "257"
+  },
+  "responseBody" : "{\"type\":\"https://reference-service.example/problems/unauthenticated\",\"title\":\"Authentication required\",\"status\":401,\"detail\":\"Send Authorization: Bearer <token>.\",\"instance\":\"/v1/accounts/qa-anyone\",\"correlationId\":\"qa-b26414be-a559-4263-9b53-7ff146581bbe\"}",
+  "correlationId" : "qa-b26414be-a559-4263-9b53-7ff146581bbe",
+  "contractViolations" : [ ]
+} ]

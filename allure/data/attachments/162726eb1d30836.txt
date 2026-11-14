@@ -1,0 +1,25 @@
+#5 GET http://localhost:7070/v1/credits/balance
+correlation: qa-98a7f4f7-e55a-40e6-b626-6eab279b51ad
+
+--- request headers ---
+Accept: application/json
+X-Fault: unavailable-once
+X-Fault-Key: dfb8c8d8-d74f-4924-ad98-6b2984204fce
+X-Correlation-Id: qa-98a7f4f7-e55a-40e6-b626-6eab279b51ad
+Content-Type: application/json
+
+--- response: 503 in 53 ms ---
+Date: Sat, 14 Nov 2026 09:05:12 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-98a7f4f7-e55a-40e6-b626-6eab279b51ad
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+Retry-After: 1
+Content-Length: 263
+
+{"type":"https://reference-service.example/problems/fault-injected","title":"Service unavailable (injected)","status":503,"detail":"Injected outage; retry after 1 second.","instance":"/v1/credits/balance","correlationId":"qa-98a7f4f7-e55a-40e6-b626-6eab279b51ad"}

@@ -1,0 +1,41 @@
+# Transcript: An unknown booking is a 404
+
+| | |
+|---|---|
+| Test | `com.qaautomation.tests.booker.BookingNegativeTest#unknownBookingIsA404` |
+| Features | FEAT-NEG-01 |
+| Attempt | 1 |
+| Status | passed |
+| Calls | 1 |
+
+Secrets (tokens, passwords, credential headers) are masked as `****`.
+
+| # | Call | Status | ms | Correlation ID |
+|---|---|---|---|---|
+| 1 | `GET /booking/{id}` | 404 | 585 | `qa-5ff688cd-4981-4aad-a60e-fa0c34d9cc33` |
+
+## 1. GET /booking/{id}
+
+```text
+#1 GET https://restful-booker.herokuapp.com/booking/999999999
+correlation: qa-5ff688cd-4981-4aad-a60e-fa0c34d9cc33
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-5ff688cd-4981-4aad-a60e-fa0c34d9cc33
+Content-Type: application/json
+
+--- response: 404 in 585 ms ---
+Content-Length: 9
+Content-Type: text/plain; charset=utf-8
+Date: Wed, 11 Nov 2026 09:34:18 GMT
+Etag: W/"9-0gXL1ngzMqISxa6S1zx3F4wtLyg"
+Nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+Report-To: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=BNDcEa%2BxubcF4mW1goauF%2FIHdwAVJGkbBgAmznH58%2Bk%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1794389658"}],"max_age":3600}
+Reporting-Endpoints: heroku-nel="https://nel.heroku.com/reports?s=BNDcEa%2BxubcF4mW1goauF%2FIHdwAVJGkbBgAmznH58%2Bk%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1794389658"
+Server: Heroku
+Via: 1.1 heroku-router
+X-Powered-By: Express
+
+Not Found
+```

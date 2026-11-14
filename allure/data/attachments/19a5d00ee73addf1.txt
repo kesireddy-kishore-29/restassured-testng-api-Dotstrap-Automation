@@ -1,0 +1,26 @@
+#76 POST http://localhost:7070/v1/conversations/cnv_bdf12797-22ef-469d-ac29-eb72798fe03b/read
+correlation: qa-f1ea3322-6cde-410a-8aea-991b1dbcfa12
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-f1ea3322-6cde-410a-8aea-991b1dbcfa12
+Content-Type: application/json
+
+--- response: 429 in 5 ms ---
+Date: Sat, 14 Nov 2026 09:05:13 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-f1ea3322-6cde-410a-8aea-991b1dbcfa12
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 0
+RateLimit-Reset: 9
+Retry-After: 9
+Content-Length: 289
+
+{"type":"https://reference-service.example/problems/rate-limited","title":"Too many requests","status":429,"detail":"Slow down; retry after 9 second(s).","instance":"/v1/conversations/cnv_bdf12797-22ef-469d-ac29-eb72798fe03b/read","correlationId":"qa-f1ea3322-6cde-410a-8aea-991b1dbcfa12"}
