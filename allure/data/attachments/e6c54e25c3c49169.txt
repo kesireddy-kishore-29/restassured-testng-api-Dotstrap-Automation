@@ -1,0 +1,26 @@
+#1 GET http://localhost:7070/v1/credits/balance
+correlation: qa-0338d24a-c999-45a1-918b-535f13ed0d09
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-0338d24a-c999-45a1-918b-535f13ed0d09
+Content-Type: application/json
+
+--- response: 401 in 53 ms ---
+Date: Sat, 21 Nov 2026 09:57:10 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-0338d24a-c999-45a1-918b-535f13ed0d09
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 492
+RateLimit-Reset: 8
+WWW-Authenticate: Bearer
+Content-Length: 254
+
+{"type":"https://reference-service.example/problems/unauthenticated","title":"Authentication required","status":401,"detail":"Send Authorization: Bearer <token>.","instance":"/v1/credits/balance","correlationId":"qa-0338d24a-c999-45a1-918b-535f13ed0d09"}

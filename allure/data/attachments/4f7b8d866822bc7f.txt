@@ -1,0 +1,26 @@
+#7 GET http://localhost:7070/v1/accounts/me
+correlation: qa-f2b63115-fd49-453d-8836-a57cef017dd4
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-f2b63115-fd49-453d-8836-a57cef017dd4
+Content-Type: application/json
+
+--- response: 401 in 4 ms ---
+Date: Sat, 21 Nov 2026 09:57:06 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-f2b63115-fd49-453d-8836-a57cef017dd4
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 55
+RateLimit-Reset: 10
+WWW-Authenticate: Bearer error="invalid_token"
+Content-Length: 223
+
+{"type":"https://reference-service.example/problems/token-expired","title":"Token expired","status":401,"detail":"Request a new token.","instance":"/v1/accounts/me","correlationId":"qa-f2b63115-fd49-453d-8836-a57cef017dd4"}

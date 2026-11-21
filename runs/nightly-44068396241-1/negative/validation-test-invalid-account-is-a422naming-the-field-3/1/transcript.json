@@ -1,0 +1,34 @@
+[ {
+  "sequence" : 1,
+  "startedAt" : "2026-11-17T10:50:10.264347131Z",
+  "durationMs" : 306,
+  "method" : "POST",
+  "pathTemplate" : "/v1/accounts",
+  "url" : "http://localhost:7070/v1/accounts",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "X-Correlation-Id" : "qa-fb593ed9-4716-41c6-b30f-251fcc2f5b1f",
+    "Content-Type" : "application/json"
+  },
+  "requestBody" : "{\"handle\":\"qa-152f9eb98435\",\"displayName\":\"Name\",\"password\":\"****\",\"region\":\"eu\"}",
+  "status" : 422,
+  "responseHeaders" : {
+    "Date" : "Tue, 17 Nov 2026 10:50:10 GMT",
+    "Content-Type" : "application/problem+json",
+    "X-Correlation-Id" : "qa-fb593ed9-4716-41c6-b30f-251fcc2f5b1f",
+    "X-Content-Type-Options" : "nosniff",
+    "X-Frame-Options" : "DENY",
+    "Content-Security-Policy" : "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy" : "no-referrer",
+    "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+    "Cache-Control" : "no-store",
+    "Vary" : "Origin",
+    "RateLimit-Limit" : "600",
+    "RateLimit-Remaining" : "593",
+    "RateLimit-Reset" : "10",
+    "Content-Length" : "299"
+  },
+  "responseBody" : "{\"type\":\"https://reference-service.example/problems/validation-failed\",\"title\":\"Validation failed\",\"status\":422,\"detail\":\"One or more fields are invalid.\",\"instance\":\"/v1/accounts\",\"correlationId\":\"qa-fb593ed9-4716-41c6-b30f-251fcc2f5b1f\",\"errors\":[{\"field\":\"password\",\"message\":\"8-72 characters\"}]}",
+  "correlationId" : "qa-fb593ed9-4716-41c6-b30f-251fcc2f5b1f",
+  "contractViolations" : [ ]
+} ]

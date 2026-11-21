@@ -1,0 +1,34 @@
+#3 POST http://localhost:7070/v1/credits/purchases
+correlation: qa-209602da-f48a-4782-b816-433aaf1da646
+
+--- request headers ---
+Accept: application/json
+X-Fault: drop-response
+Idempotency-Key: qa-3a064f42e35f453f8d7bd1565d7abed9
+X-Fault-Key: bfa68865-b1c2-41c3-b347-c6dd184d09fd
+X-Correlation-Id: qa-209602da-f48a-4782-b816-433aaf1da646
+Content-Type: application/json
+
+--- request body ---
+{"packId":"pack-10"}
+
+--- response: 503 in 17 ms ---
+Date: Sat, 21 Nov 2026 09:57:11 GMT
+Content-Type: application/problem+json;charset=utf-8
+X-Correlation-Id: qa-209602da-f48a-4782-b816-433aaf1da646
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: eu
+Location: /v1/credits/purchases/pur_32c35720-97da-42b7-bcb3-19f0b1f7d3dd
+Retry-After: 1
+Content-Length: 285
+
+{"type":"https://reference-service.example/problems/fault-injected","title":"Service unavailable (injected)","status":503,"detail":"Injected: the request completed but the response was lost.","instance":"/v1/credits/purchases","correlationId":"qa-209602da-f48a-4782-b816-433aaf1da646"}

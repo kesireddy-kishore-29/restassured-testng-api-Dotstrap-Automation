@@ -1,0 +1,31 @@
+#8 POST http://localhost:7070/v1/credits/purchases
+correlation: qa-cb19c1ed-b8da-44a2-a5f1-cc7ded868a0d
+
+--- request headers ---
+Accept: application/json
+Idempotency-Key: qa-4e465168788d4b068d7a48bf285f06ce
+X-Correlation-Id: qa-cb19c1ed-b8da-44a2-a5f1-cc7ded868a0d
+Content-Type: application/json
+
+--- request body ---
+{"packId":"pack-10"}
+
+--- response: 201 in 65 ms ---
+Date: Sat, 21 Nov 2026 09:57:10 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-cb19c1ed-b8da-44a2-a5f1-cc7ded868a0d
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: eu
+Location: /v1/credits/purchases/pur_3cba8b75-c77a-4258-8c37-8da8a1c60b3a
+Content-Length: 144
+
+{"id":"pur_3cba8b75-c77a-4258-8c37-8da8a1c60b3a","packId":"pack-10","credits":10,"balanceAfter":15,"createdAt":"2026-11-21T09:57:10.971370978Z"}

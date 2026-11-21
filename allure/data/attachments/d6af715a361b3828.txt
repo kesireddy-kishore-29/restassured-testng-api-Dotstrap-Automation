@@ -1,0 +1,29 @@
+#5 POST http://localhost:7070/v1/conversations/cnv_61f12827-12a6-495d-bf27-da54ed76f23a/messages
+correlation: qa-3dd47f10-85f6-40e1-b1e9-f0376d625950
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-3dd47f10-85f6-40e1-b1e9-f0376d625950
+Content-Type: text/plain; charset=ISO-8859-1
+
+--- request body ---
+plain=text
+
+--- response: 415 in 46 ms ---
+Date: Sat, 21 Nov 2026 09:57:12 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-3dd47f10-85f6-40e1-b1e9-f0376d625950
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 307
+
+{"type":"https://reference-service.example/problems/unsupported-media-type","title":"Unsupported media type","status":415,"detail":"Send the body as application/json.","instance":"/v1/conversations/cnv_61f12827-12a6-495d-bf27-da54ed76f23a/messages","correlationId":"qa-3dd47f10-85f6-40e1-b1e9-f0376d625950"}

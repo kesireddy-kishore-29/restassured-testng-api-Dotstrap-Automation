@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timeline</title>
+<style>
+:root{--bg:#fff;--fg:#1d2433;--muted:#5b6475;--line:#e3e7ef;--ok:#1f8f5f;--warn:#b7791f;--bad:#c53030}
+@media (prefers-color-scheme:dark){:root{--bg:#121722;--fg:#e6e9f0;--muted:#9aa3b5;--line:#273044}}
+body{margin:0;padding:24px 16px;background:var(--bg);color:var(--fg);
+  font:14px/1.5 system-ui,sans-serif}
+h1{font-size:18px;margin:0 0 4px} p{color:var(--muted);margin:0 0 16px}
+table{width:100%;border-collapse:collapse}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+.n,.ms{color:var(--muted);white-space:nowrap} .s{font-weight:600}
+.s.ok{color:var(--ok)} .s.warn{color:var(--warn)} .s.bad{color:var(--bad)}
+.bar{position:relative;width:45%;min-width:160px}
+.bar span{position:absolute;top:8px;height:10px;border-radius:3px}
+.bar span.ok{background:var(--ok)} .bar span.warn{background:var(--warn)}
+.bar span.bad{background:var(--bad)}
+code{font-size:13px}
+</style></head><body>
+<h1>Past the limit: 429 with Retry-After, then recovery</h1>
+<p>com.qaautomation.tests.security.RateLimitTest#exceedingTheLimitIs429ThenRecovers · passed · 83 call(s) over 11724 ms</p>
+<table><tr><td class="n">1</td><td class="call"><code>POST /v1/accounts</code></td><td class="s ok">201</td><td class="ms">353 ms</td><td class="bar"><span class="ok" style="left:5.93%;width:3.01%" title="+695 ms"></span></td></tr>
+<tr><td class="n">2</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s ok">200</td><td class="ms">42 ms</td><td class="bar"><span class="ok" style="left:11.66%;width:0.60%" title="+1367 ms"></span></td></tr>
+<tr><td class="n">3</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">49 ms</td><td class="bar"><span class="ok" style="left:12.35%;width:0.60%" title="+1448 ms"></span></td></tr>
+<tr><td class="n">4</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">11 ms</td><td class="bar"><span class="ok" style="left:13.25%;width:0.60%" title="+1554 ms"></span></td></tr>
+<tr><td class="n">5</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">11 ms</td><td class="bar"><span class="ok" style="left:13.40%;width:0.60%" title="+1571 ms"></span></td></tr>
+<tr><td class="n">6</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">21 ms</td><td class="bar"><span class="ok" style="left:13.62%;width:0.60%" title="+1597 ms"></span></td></tr>
+<tr><td class="n">7</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">19 ms</td><td class="bar"><span class="ok" style="left:13.86%;width:0.60%" title="+1625 ms"></span></td></tr>
+<tr><td class="n">8</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">9 ms</td><td class="bar"><span class="ok" style="left:14.11%;width:0.60%" title="+1654 ms"></span></td></tr>
+<tr><td class="n">9</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">11 ms</td><td class="bar"><span class="ok" style="left:14.24%;width:0.60%" title="+1669 ms"></span></td></tr>
+<tr><td class="n">10</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">11 ms</td><td class="bar"><span class="ok" style="left:14.41%;width:0.60%" title="+1690 ms"></span></td></tr>
+<tr><td class="n">11</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">9 ms</td><td class="bar"><span class="ok" style="left:14.58%;width:0.60%" title="+1709 ms"></span></td></tr>
+<tr><td class="n">12</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">8 ms</td><td class="bar"><span class="ok" style="left:14.73%;width:0.60%" title="+1727 ms"></span></td></tr>
+<tr><td class="n">13</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">15 ms</td><td class="bar"><span class="ok" style="left:14.84%;width:0.60%" title="+1740 ms"></span></td></tr>
+<tr><td class="n">14</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">9 ms</td><td class="bar"><span class="ok" style="left:15.03%;width:0.60%" title="+1762 ms"></span></td></tr>
+<tr><td class="n">15</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">8 ms</td><td class="bar"><span class="ok" style="left:15.17%;width:0.60%" title="+1778 ms"></span></td></tr>
+<tr><td class="n">16</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">9 ms</td><td class="bar"><span class="ok" style="left:15.28%;width:0.60%" title="+1792 ms"></span></td></tr>
+<tr><td class="n">17</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">9 ms</td><td class="bar"><span class="ok" style="left:15.43%;width:0.60%" title="+1809 ms"></span></td></tr>
+<tr><td class="n">18</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">11 ms</td><td class="bar"><span class="ok" style="left:15.57%;width:0.60%" title="+1826 ms"></span></td></tr>
+<tr><td class="n">19</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">7 ms</td><td class="bar"><span class="ok" style="left:15.75%;width:0.60%" title="+1846 ms"></span></td></tr>
+<tr><td class="n">20</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">7 ms</td><td class="bar"><span class="ok" style="left:15.86%;width:0.60%" title="+1860 ms"></span></td></tr>
+<tr><td class="n">21</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">10 ms</td><td class="bar"><span class="ok" style="left:15.97%;width:0.60%" title="+1872 ms"></span></td></tr>
+<tr><td class="n">22</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">8 ms</td><td class="bar"><span class="ok" style="left:16.14%;width:0.60%" title="+1892 ms"></span></td></tr>
+<tr><td class="n">23</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">7 ms</td><td class="bar"><span class="ok" style="left:16.27%;width:0.60%" title="+1907 ms"></span></td></tr>
+<tr><td class="n">24</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">8 ms</td><td class="bar"><span class="ok" style="left:16.37%;width:0.60%" title="+1919 ms"></span></td></tr>
+<tr><td class="n">25</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">8 ms</td><td class="bar"><span class="ok" style="left:16.49%;width:0.60%" title="+1933 ms"></span></td></tr>
+<tr><td class="n">26</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">9 ms</td><td class="bar"><span class="ok" style="left:16.60%;width:0.60%" title="+1946 ms"></span></td></tr>
+<tr><td class="n">27</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">6 ms</td><td class="bar"><span class="ok" style="left:16.72%;width:0.60%" title="+1960 ms"></span></td></tr>
+<tr><td class="n">28</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">7 ms</td><td class="bar"><span class="ok" style="left:16.83%;width:0.60%" title="+1973 ms"></span></td></tr>
+<tr><td class="n">29</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">10 ms</td><td class="bar"><span class="ok" style="left:16.94%;width:0.60%" title="+1986 ms"></span></td></tr>
+<tr><td class="n">30</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">5 ms</td><td class="bar"><span class="ok" style="left:17.08%;width:0.60%" title="+2002 ms"></span></td></tr>
+<tr><td class="n">31</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">5 ms</td><td class="bar"><span class="ok" style="left:17.17%;width:0.60%" title="+2013 ms"></span></td></tr>
+<tr><td class="n">32</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">8 ms</td><td class="bar"><span class="ok" style="left:17.26%;width:0.60%" title="+2024 ms"></span></td></tr>
+<tr><td class="n">33</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">7 ms</td><td class="bar"><span class="ok" style="left:17.43%;width:0.60%" title="+2043 ms"></span></td></tr>
+<tr><td class="n">34</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">22 ms</td><td class="bar"><span class="ok" style="left:17.60%;width:0.60%" title="+2063 ms"></span></td></tr>
+<tr><td class="n">35</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">9 ms</td><td class="bar"><span class="ok" style="left:17.89%;width:0.60%" title="+2098 ms"></span></td></tr>
+<tr><td class="n">36</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">9 ms</td><td class="bar"><span class="ok" style="left:18.03%;width:0.60%" title="+2114 ms"></span></td></tr>
+<tr><td class="n">37</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">6 ms</td><td class="bar"><span class="ok" style="left:18.18%;width:0.60%" title="+2131 ms"></span></td></tr>
+<tr><td class="n">38</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">5 ms</td><td class="bar"><span class="ok" style="left:18.29%;width:0.60%" title="+2144 ms"></span></td></tr>
+<tr><td class="n">39</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">8 ms</td><td class="bar"><span class="ok" style="left:18.37%;width:0.60%" title="+2154 ms"></span></td></tr>
+<tr><td class="n">40</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">9 ms</td><td class="bar"><span class="ok" style="left:18.50%;width:0.60%" title="+2169 ms"></span></td></tr>
+<tr><td class="n">41</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">9 ms</td><td class="bar"><span class="ok" style="left:18.66%;width:0.60%" title="+2188 ms"></span></td></tr>
+<tr><td class="n">42</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">5 ms</td><td class="bar"><span class="ok" style="left:18.77%;width:0.60%" title="+2201 ms"></span></td></tr>
+<tr><td class="n">43</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">5 ms</td><td class="bar"><span class="ok" style="left:18.87%;width:0.60%" title="+2212 ms"></span></td></tr>
+<tr><td class="n">44</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">8 ms</td><td class="bar"><span class="ok" style="left:18.95%;width:0.60%" title="+2222 ms"></span></td></tr>
+<tr><td class="n">45</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">8 ms</td><td class="bar"><span class="ok" style="left:19.10%;width:0.60%" title="+2239 ms"></span></td></tr>
+<tr><td class="n">46</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">11 ms</td><td class="bar"><span class="ok" style="left:19.23%;width:0.60%" title="+2255 ms"></span></td></tr>
+<tr><td class="n">47</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">9 ms</td><td class="bar"><span class="ok" style="left:19.42%;width:0.60%" title="+2277 ms"></span></td></tr>
+<tr><td class="n">48</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">13 ms</td><td class="bar"><span class="ok" style="left:19.57%;width:0.60%" title="+2294 ms"></span></td></tr>
+<tr><td class="n">49</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">6 ms</td><td class="bar"><span class="ok" style="left:19.73%;width:0.60%" title="+2313 ms"></span></td></tr>
+<tr><td class="n">50</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">11 ms</td><td class="bar"><span class="ok" style="left:19.85%;width:0.60%" title="+2327 ms"></span></td></tr>
+<tr><td class="n">51</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">8 ms</td><td class="bar"><span class="ok" style="left:20.01%;width:0.60%" title="+2346 ms"></span></td></tr>
+<tr><td class="n">52</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">15 ms</td><td class="bar"><span class="ok" style="left:20.17%;width:0.60%" title="+2365 ms"></span></td></tr>
+<tr><td class="n">53</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">11 ms</td><td class="bar"><span class="ok" style="left:20.36%;width:0.60%" title="+2387 ms"></span></td></tr>
+<tr><td class="n">54</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">8 ms</td><td class="bar"><span class="ok" style="left:20.55%;width:0.60%" title="+2409 ms"></span></td></tr>
+<tr><td class="n">55</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">7 ms</td><td class="bar"><span class="ok" style="left:20.66%;width:0.60%" title="+2422 ms"></span></td></tr>
+<tr><td class="n">56</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">6 ms</td><td class="bar"><span class="ok" style="left:20.77%;width:0.60%" title="+2435 ms"></span></td></tr>
+<tr><td class="n">57</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">6 ms</td><td class="bar"><span class="ok" style="left:20.87%;width:0.60%" title="+2447 ms"></span></td></tr>
+<tr><td class="n">58</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">6 ms</td><td class="bar"><span class="ok" style="left:20.97%;width:0.60%" title="+2458 ms"></span></td></tr>
+<tr><td class="n">59</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">5 ms</td><td class="bar"><span class="ok" style="left:21.05%;width:0.60%" title="+2468 ms"></span></td></tr>
+<tr><td class="n">60</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">6 ms</td><td class="bar"><span class="ok" style="left:21.13%;width:0.60%" title="+2477 ms"></span></td></tr>
+<tr><td class="n">61</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">4 ms</td><td class="bar"><span class="ok" style="left:21.22%;width:0.60%" title="+2488 ms"></span></td></tr>
+<tr><td class="n">62</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">4 ms</td><td class="bar"><span class="ok" style="left:21.29%;width:0.60%" title="+2496 ms"></span></td></tr>
+<tr><td class="n">63</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">11 ms</td><td class="bar"><span class="warn" style="left:21.37%;width:0.60%" title="+2506 ms"></span></td></tr>
+<tr><td class="n">64</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">4 ms</td><td class="bar"><span class="warn" style="left:26.08%;width:0.60%" title="+3058 ms"></span></td></tr>
+<tr><td class="n">65</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">6 ms</td><td class="bar"><span class="warn" style="left:30.42%;width:0.60%" title="+3567 ms"></span></td></tr>
+<tr><td class="n">66</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">4 ms</td><td class="bar"><span class="warn" style="left:34.79%;width:0.60%" title="+4079 ms"></span></td></tr>
+<tr><td class="n">67</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">6 ms</td><td class="bar"><span class="warn" style="left:39.13%;width:0.60%" title="+4588 ms"></span></td></tr>
+<tr><td class="n">68</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">4 ms</td><td class="bar"><span class="warn" style="left:43.50%;width:0.60%" title="+5100 ms"></span></td></tr>
+<tr><td class="n">69</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">4 ms</td><td class="bar"><span class="warn" style="left:47.83%;width:0.60%" title="+5608 ms"></span></td></tr>
+<tr><td class="n">70</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">4 ms</td><td class="bar"><span class="warn" style="left:52.17%;width:0.60%" title="+6116 ms"></span></td></tr>
+<tr><td class="n">71</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">4 ms</td><td class="bar"><span class="warn" style="left:56.51%;width:0.60%" title="+6625 ms"></span></td></tr>
+<tr><td class="n">72</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">4 ms</td><td class="bar"><span class="warn" style="left:60.84%;width:0.60%" title="+7133 ms"></span></td></tr>
+<tr><td class="n">73</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">4 ms</td><td class="bar"><span class="warn" style="left:65.17%;width:0.60%" title="+7641 ms"></span></td></tr>
+<tr><td class="n">74</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">4 ms</td><td class="bar"><span class="warn" style="left:69.51%;width:0.60%" title="+8149 ms"></span></td></tr>
+<tr><td class="n">75</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">4 ms</td><td class="bar"><span class="warn" style="left:73.86%;width:0.60%" title="+8659 ms"></span></td></tr>
+<tr><td class="n">76</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">3 ms</td><td class="bar"><span class="warn" style="left:78.19%;width:0.60%" title="+9167 ms"></span></td></tr>
+<tr><td class="n">77</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">3 ms</td><td class="bar"><span class="warn" style="left:82.52%;width:0.60%" title="+9675 ms"></span></td></tr>
+<tr><td class="n">78</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">3 ms</td><td class="bar"><span class="warn" style="left:86.85%;width:0.60%" title="+10182 ms"></span></td></tr>
+<tr><td class="n">79</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">4 ms</td><td class="bar"><span class="warn" style="left:91.18%;width:0.60%" title="+10690 ms"></span></td></tr>
+<tr><td class="n">80</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s warn">429</td><td class="ms">4 ms</td><td class="bar"><span class="warn" style="left:95.52%;width:0.60%" title="+11199 ms"></span></td></tr>
+<tr><td class="n">81</td><td class="call"><code>GET /v1/accounts/me</code></td><td class="s ok">200</td><td class="ms">4 ms</td><td class="bar"><span class="ok" style="left:99.85%;width:0.60%" title="+11707 ms"></span></td></tr>
+<tr><td class="n">82</td><td class="call"><code>DELETE /v1/accounts/me</code></td><td class="s ok">204</td><td class="ms">3 ms</td><td class="bar"><span class="ok" style="left:99.91%;width:0.60%" title="+11714 ms"></span></td></tr>
+<tr><td class="n">83</td><td class="call"><code>POST /v1/auth/token</code></td><td class="s warn">401</td><td class="ms">4 ms</td><td class="bar"><span class="warn" style="left:99.97%;width:0.60%" title="+11720 ms"></span></td></tr>
+</table>
+</body></html>

@@ -1,0 +1,26 @@
+#10 POST http://localhost:7070/v1/conversations/cnv_e6951708-ad36-4723-ba27-6bba8cb78651/read
+correlation: qa-de18e045-a0af-411f-8461-c54f9e1e06e8
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-de18e045-a0af-411f-8461-c54f9e1e06e8
+Content-Type: application/json
+
+--- response: 200 in 23 ms ---
+Date: Sat, 21 Nov 2026 09:57:08 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-de18e045-a0af-411f-8461-c54f9e1e06e8
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 77
+
+{"conversationId":"cnv_e6951708-ad36-4723-ba27-6bba8cb78651","unreadCount":0}

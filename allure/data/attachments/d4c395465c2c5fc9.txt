@@ -1,0 +1,28 @@
+#3 POST http://localhost:7070/v1/auth/token
+correlation: qa-bdbfa3e2-5a77-4f1d-88cc-5668b781e47d
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-bdbfa3e2-5a77-4f1d-88cc-5668b781e47d
+Content-Type: application/json
+
+--- request body ---
+{"handle":"qa-20b599b5aecb","password":"****"}
+
+--- response: 200 in 42 ms ---
+Date: Sat, 21 Nov 2026 09:57:11 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-bdbfa3e2-5a77-4f1d-88cc-5668b781e47d
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 392
+RateLimit-Reset: 7
+Content-Length: 153
+
+{"accessToken":"****","tokenType":"Bearer","expiresIn":900,"accountId":"acc_43b45986-9303-469f-8a69-5605bbeb8eb3"}

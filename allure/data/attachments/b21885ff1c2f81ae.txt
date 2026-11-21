@@ -1,0 +1,28 @@
+#5 POST http://localhost:7070/v1/conversations/cnv_78a7838b-4057-4b0d-8e13-ba72e2db2381/messages
+correlation: qa-6a5ce24e-89af-4e09-bda5-d2ee87c60151
+
+--- request headers ---
+Accept: application/json
+X-Fault: unavailable-once
+X-Fault-Key: 052be935-0449-4708-bc13-fc0f74a1577b
+X-Correlation-Id: qa-6a5ce24e-89af-4e09-bda5-d2ee87c60151
+Content-Type: application/json
+
+--- request body ---
+{"body":"Hi"}
+
+--- response: 503 in 16 ms ---
+Date: Sat, 21 Nov 2026 09:57:11 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-6a5ce24e-89af-4e09-bda5-d2ee87c60151
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+Retry-After: 1
+Content-Length: 311
+
+{"type":"https://reference-service.example/problems/fault-injected","title":"Service unavailable (injected)","status":503,"detail":"Injected outage; retry after 1 second.","instance":"/v1/conversations/cnv_78a7838b-4057-4b0d-8e13-ba72e2db2381/messages","correlationId":"qa-6a5ce24e-89af-4e09-bda5-d2ee87c60151"}

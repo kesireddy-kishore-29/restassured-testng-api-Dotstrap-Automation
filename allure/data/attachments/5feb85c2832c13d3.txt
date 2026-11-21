@@ -1,0 +1,30 @@
+#5 POST http://localhost:7070/v1/credits/purchases
+correlation: qa-1c724c3b-39b8-4d88-b473-a1497299137f
+
+--- request headers ---
+Accept: application/json
+Idempotency-Key: qa-0a16ff8dcaa3459ab8e744d69d083c83
+X-Correlation-Id: qa-1c724c3b-39b8-4d88-b473-a1497299137f
+Content-Type: application/json
+
+--- request body ---
+{"broken": 
+
+--- response: 400 in 20 ms ---
+Date: Sat, 21 Nov 2026 09:57:12 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-1c724c3b-39b8-4d88-b473-a1497299137f
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 262
+
+{"type":"https://reference-service.example/problems/malformed-json","title":"Malformed JSON body","status":400,"detail":"The body is not valid JSON for this operation.","instance":"/v1/credits/purchases","correlationId":"qa-1c724c3b-39b8-4d88-b473-a1497299137f"}

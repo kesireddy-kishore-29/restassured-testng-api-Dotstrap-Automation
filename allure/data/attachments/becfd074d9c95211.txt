@@ -1,0 +1,31 @@
+#6 POST http://localhost:7070/v1/conversations
+correlation: qa-f3bd7a43-8a51-4f3b-b98a-5eeb8117562a
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-f3bd7a43-8a51-4f3b-b98a-5eeb8117562a
+Content-Type: application/json
+
+--- request body ---
+{"recipientHandle":"qa-3a1a1f576e69","subject":"Paid message","message":"Hi"}
+
+--- response: 201 in 9 ms ---
+Date: Sat, 21 Nov 2026 09:57:06 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-f3bd7a43-8a51-4f3b-b98a-5eeb8117562a
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 57
+RateLimit-Reset: 10
+X-Served-Region: eu
+Location: /v1/conversations/cnv_91fed67a-6278-4043-8729-54725bd356a6
+X-Data-Region: eu
+Content-Length: 235
+
+{"id":"cnv_91fed67a-6278-4043-8729-54725bd356a6","subject":"Paid message","status":"open","region":"eu","participants":["qa-f458c15f48d9","qa-3a1a1f576e69"],"messageCount":1,"unreadCount":0,"createdAt":"2026-11-21T09:57:06.806732259Z"}

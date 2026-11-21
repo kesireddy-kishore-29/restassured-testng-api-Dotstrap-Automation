@@ -1,0 +1,26 @@
+#25 GET http://localhost:7070/v1/conversations/cnv_8697d4e5-54d8-4e10-b586-78fb77a814c7/messages
+correlation: qa-40fef497-73f2-4c9c-b01e-d09c7ec9748e
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-40fef497-73f2-4c9c-b01e-d09c7ec9748e
+Content-Type: application/json
+
+--- response: 200 in 5 ms ---
+Date: Sat, 21 Nov 2026 09:57:07 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-40fef497-73f2-4c9c-b01e-d09c7ec9748e
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 52
+RateLimit-Reset: 10
+X-Served-Region: us
+Content-Length: 644
+
+{"items":[{"id":"msg_ff5a1c80-366a-414a-84f9-11e1770e9beb","conversationId":"cnv_8697d4e5-54d8-4e10-b586-78fb77a814c7","sender":"qa-9436267da1d8","body":"Hi Ben, got a minute?","createdAt":"2026-11-21T09:57:06.324626715Z"},{"id":"msg_44d4057c-f43a-4679-bf42-0a710ae07a6b","conversationId":"cnv_8697d4e5-54d8-4e10-b586-78fb77a814c7","sender":"qa-3dcf935fc2f7","body":"Sure, now works","createdAt":"2026-11-21T09:57:06.816128109Z"},{"id":"msg_11e217ab-281c-4f1c-ac12-54ce8596e90c","conversationId":"cnv_8697d4e5-54d8-4e10-b586-78fb77a814c7","sender":"qa-3dcf935fc2f7","body":"Calling you","createdAt":"2026-11-21T09:57:06.833420571Z"}],"total":3}

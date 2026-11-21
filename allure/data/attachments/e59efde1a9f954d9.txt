@@ -1,0 +1,26 @@
+#8 GET http://localhost:7070/v1/credits/balance
+correlation: qa-2bca3fc1-2223-4a14-bc7e-73c9f49c938f
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-2bca3fc1-2223-4a14-bc7e-73c9f49c938f
+Content-Type: application/json
+
+--- response: 200 in 9 ms ---
+Date: Sat, 21 Nov 2026 09:57:06 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-2bca3fc1-2223-4a14-bc7e-73c9f49c938f
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 55
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 90
+
+{"balance":64,"currency":"credits","accountId":"acc_1cf59fd8-087b-42f5-ab6c-5098cd99dc2b"}

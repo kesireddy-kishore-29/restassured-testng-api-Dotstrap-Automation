@@ -1,0 +1,26 @@
+#5 POST http://localhost:7070/v1/conversations/cnv_8175d1fe-ee5e-4d52-b66b-f1eb11321000/close
+correlation: qa-798f4fbd-84b7-4579-82ac-68e0f0fe2753
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-798f4fbd-84b7-4579-82ac-68e0f0fe2753
+Content-Type: application/json
+
+--- response: 200 in 25 ms ---
+Date: Sat, 21 Nov 2026 09:57:09 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-798f4fbd-84b7-4579-82ac-68e0f0fe2753
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 283
+
+{"id":"cnv_8175d1fe-ee5e-4d52-b66b-f1eb11321000","subject":"Quick question","status":"closed","region":"eu","participants":["qa-e95e7409a893","qa-c1fac522f503"],"messageCount":1,"unreadCount":0,"createdAt":"2026-11-21T09:57:09.871775787Z","closedAt":"2026-11-21T09:57:09.963343927Z"}

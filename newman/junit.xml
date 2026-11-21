@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="restassured-testng-api-Dotstrap-Automation — smoke &amp; functional" tests="28" time="0.882">
+  <testsuite name="Reference service / 01 Health / Health is UP" id="5b54f487-4584-4d0d-a923-86aa94d83df4" timestamp="2026-11-21T09:56:56.830Z" tests="3" failures="0" errors="0" time="0.026">
+    <testcase name="200 and UP" time="0.026" classname="ReferenceService01HealthHealthIsUp"/>
+    <testcase name="three regions" time="0.026" classname="ReferenceService01HealthHealthIsUp"/>
+    <testcase name="security headers" time="0.026" classname="ReferenceService01HealthHealthIsUp"/>
+  </testsuite>
+  <testsuite name="Reference service / 02 Accounts (FEAT-ACCT-01..03) / Create Ava (eu)" id="f00b0155-a683-4aef-aa62-6dca038b4a49" timestamp="2026-11-21T09:56:56.830Z" tests="2" failures="0" errors="0" time="0.027">
+    <testcase name="201 Created with Location" time="0.027" classname="ReferenceService02AccountsFeatAcct0103CreateAvaEu"/>
+    <testcase name="served from the home region" time="0.027" classname="ReferenceService02AccountsFeatAcct0103CreateAvaEu"/>
+  </testsuite>
+  <testsuite name="Reference service / 02 Accounts (FEAT-ACCT-01..03) / Create Ben (us)" id="458ea6fc-600c-49af-871a-8d6593be8d52" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.023">
+    <testcase name="201 Created" time="0.023" classname="ReferenceService02AccountsFeatAcct0103CreateBenUs"/>
+  </testsuite>
+  <testsuite name="Reference service / 02 Accounts (FEAT-ACCT-01..03) / Token for Ava" id="c26cf211-c96f-4d9d-a539-530da838b971" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.017">
+    <testcase name="200 with a Bearer token" time="0.017" classname="ReferenceService02AccountsFeatAcct0103TokenForAva"/>
+  </testsuite>
+  <testsuite name="Reference service / 02 Accounts (FEAT-ACCT-01..03) / Token for Ben" id="6d898e87-d94d-4e7b-863f-f54b6211d51b" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.008">
+    <testcase name="200" time="0.008" classname="ReferenceService02AccountsFeatAcct0103TokenForBen"/>
+  </testsuite>
+  <testsuite name="Reference service / 02 Accounts (FEAT-ACCT-01..03) / Ava reads herself" id="d5e75b86-ad2e-4238-84f5-c98d9248bfaf" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.015">
+    <testcase name="200 and her own handle" time="0.015" classname="ReferenceService02AccountsFeatAcct0103AvaReadsHerself"/>
+  </testsuite>
+  <testsuite name="Reference service / 02 Accounts (FEAT-ACCT-01..03) / Ava sees Ben's public profile" id="9be7119d-25c3-4e33-81f6-ab341cec9531" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.007">
+    <testcase name="no private fields" time="0.007" classname="ReferenceService02AccountsFeatAcct0103AvaSeesBensPublicProfile"/>
+  </testsuite>
+  <testsuite name="Reference service / 03 Conversations (FEAT-CONV-01..02, FEAT-REGION-02) / Ava starts a conversation with Ben" id="2be37f70-52a8-4cde-9d59-5b2526085bd5" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.011">
+    <testcase name="201 and stored in the recipient region" time="0.011" classname="ReferenceService03ConversationsFeatConv0102FeatRegion02AvaStartsAConversationWithBen"/>
+  </testsuite>
+  <testsuite name="Reference service / 03 Conversations (FEAT-CONV-01..02, FEAT-REGION-02) / Ben replies" id="edad5d29-9ce8-412d-b853-28dce4071b2c" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.008">
+    <testcase name="201" time="0.008" classname="ReferenceService03ConversationsFeatConv0102FeatRegion02BenReplies"/>
+  </testsuite>
+  <testsuite name="Reference service / 03 Conversations (FEAT-CONV-01..02, FEAT-REGION-02) / Ava closes it" id="590713e2-8ee1-4e1c-af8c-ed5dfddf9110" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.004">
+    <testcase name="closed" time="0.004" classname="ReferenceService03ConversationsFeatConv0102FeatRegion02AvaClosesIt"/>
+  </testsuite>
+  <testsuite name="Reference service / 03 Conversations (FEAT-CONV-01..02, FEAT-REGION-02) / Ben cannot write to a closed conversation" id="7117830a-3529-47fe-b83b-0f26b338268b" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.011">
+    <testcase name="409 conversation-closed as problem+json" time="0.011" classname="ReferenceService03ConversationsFeatConv0102FeatRegion02BenCannotWriteToAClosedConversation"/>
+  </testsuite>
+  <testsuite name="Reference service / 04 Credits and idempotency (FEAT-IDEMP-01..03) / Purchase without a key is refused" id="83728ea8-ac39-4fd6-88af-13b7b6a60d0e" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.005">
+    <testcase name="400 idempotency-key-required as problem+json" time="0.005" classname="ReferenceService04CreditsAndIdempotencyFeatIdemp0103PurchaseWithoutAKeyIsRefused"/>
+  </testsuite>
+  <testsuite name="Reference service / 04 Credits and idempotency (FEAT-IDEMP-01..03) / Purchase pack-10" id="2c472204-db7f-44e2-a602-535bc1b03b16" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.011">
+    <testcase name="201 Created" time="0.011" classname="ReferenceService04CreditsAndIdempotencyFeatIdemp0103PurchasePack10"/>
+  </testsuite>
+  <testsuite name="Reference service / 04 Credits and idempotency (FEAT-IDEMP-01..03) / Replay with the same key" id="7c564fbb-7fae-460f-ae31-51e17253c410" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.004">
+    <testcase name="200 replay of the same purchase" time="0.004" classname="ReferenceService04CreditsAndIdempotencyFeatIdemp0103ReplayWithTheSameKey"/>
+  </testsuite>
+  <testsuite name="Reference service / 04 Credits and idempotency (FEAT-IDEMP-01..03) / Same key, different pack" id="52051a36-6870-4c48-81ab-11fb750c54a8" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.003">
+    <testcase name="409 idempotency-key-reused as problem+json" time="0.003" classname="ReferenceService04CreditsAndIdempotencyFeatIdemp0103SameKeyDifferentPack"/>
+  </testsuite>
+  <testsuite name="Reference service / 04 Credits and idempotency (FEAT-IDEMP-01..03) / Balance counts the purchase once" id="e8b73c80-58bb-45b7-a822-3a296a623725" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.004">
+    <testcase name="5 free - 1 spent + 10 bought = 14" time="0.004" classname="ReferenceService04CreditsAndIdempotencyFeatIdemp0103BalanceCountsThePurchaseOnce"/>
+  </testsuite>
+  <testsuite name="Reference service / 05 Negative (FEAT-AUTHZ-01, FEAT-ERR-01) / No token" id="d5836747-a49b-48d4-9e8b-a5c33ecec7ac" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.003">
+    <testcase name="401 unauthenticated as problem+json" time="0.003" classname="ReferenceService05NegativeFeatAuthz01FeatErr01NoToken"/>
+  </testsuite>
+  <testsuite name="Reference service / 05 Negative (FEAT-AUTHZ-01, FEAT-ERR-01) / Invalid account is a 422" id="b0cb6e62-0b79-4f66-a881-8e9c4b17e599" timestamp="2026-11-21T09:56:56.830Z" tests="2" failures="0" errors="0" time="0.009">
+    <testcase name="422 validation-failed as problem+json" time="0.009" classname="ReferenceService05NegativeFeatAuthz01FeatErr01InvalidAccountIsA422"/>
+    <testcase name="names every bad field" time="0.009" classname="ReferenceService05NegativeFeatAuthz01FeatErr01InvalidAccountIsA422"/>
+  </testsuite>
+  <testsuite name="Reference service / 05 Negative (FEAT-AUTHZ-01, FEAT-ERR-01) / Admin endpoint is forbidden" id="180f97ef-a30f-49c1-a93e-ff98eb595333" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.003">
+    <testcase name="403 forbidden as problem+json" time="0.003" classname="ReferenceService05NegativeFeatAuthz01FeatErr01AdminEndpointIsForbidden"/>
+  </testsuite>
+  <testsuite name="Reference service / 06 Cleanup (verified) / Delete Ava" id="e9130fdf-00b7-4260-a3e1-c98372ed4d36" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.004">
+    <testcase name="204" time="0.004" classname="ReferenceService06CleanupVerifiedDeleteAva"/>
+  </testsuite>
+  <testsuite name="Reference service / 06 Cleanup (verified) / Delete Ben" id="b15bbd5f-a087-4dd5-82b2-7e17ae19dece" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.002">
+    <testcase name="204" time="0.002" classname="ReferenceService06CleanupVerifiedDeleteBen"/>
+  </testsuite>
+  <testsuite name="Reference service / 06 Cleanup (verified) / Ava can no longer sign in" id="3e823f22-4560-49ac-8b15-1d4e17ac8b7f" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.003">
+    <testcase name="401: the account is really gone" time="0.003" classname="ReferenceService06CleanupVerifiedAvaCanNoLongerSignIn"/>
+  </testsuite>
+  <testsuite name="Restful-Booker (public, needs internet) / Auth token" id="4d518547-ebf3-4f1c-ba14-78d99d8a5bdc" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.262">
+    <testcase name="token issued (FEAT-AUTH-01)" time="0.262" classname="RestfulBookerPublicNeedsInternetAuthToken"/>
+  </testsuite>
+  <testsuite name="Restful-Booker (public, needs internet) / Create booking" id="df3e1d4d-bde8-4f24-975e-0a6632f59efe" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.083">
+    <testcase name="created (FEAT-BOOK-01)" time="0.083" classname="RestfulBookerPublicNeedsInternetCreateBooking"/>
+  </testsuite>
+  <testsuite name="Restful-Booker (public, needs internet) / Read booking" id="e3cea202-f87e-45ff-bf54-a7516287390b" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.083">
+    <testcase name="reads back (FEAT-BOOK-02)" time="0.083" classname="RestfulBookerPublicNeedsInternetReadBooking"/>
+  </testsuite>
+  <testsuite name="Restful-Booker (public, needs internet) / Update without token is refused" id="274f4c2b-44ea-4443-9d49-b2bd2c97815d" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.082">
+    <testcase name="403 (FEAT-AUTH-02)" time="0.082" classname="RestfulBookerPublicNeedsInternetUpdateWithoutTokenIsRefused"/>
+  </testsuite>
+  <testsuite name="Restful-Booker (public, needs internet) / Delete booking" id="06ccf63a-b81a-4740-adab-453c0dd8f0d5" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.082">
+    <testcase name="deleted (FEAT-BOOK-04)" time="0.082" classname="RestfulBookerPublicNeedsInternetDeleteBooking"/>
+  </testsuite>
+  <testsuite name="Restful-Booker (public, needs internet) / Deleted booking is gone" id="213d68f4-7c36-4913-a02e-fe1a89ff93cf" timestamp="2026-11-21T09:56:56.830Z" tests="1" failures="0" errors="0" time="0.082">
+    <testcase name="404 after delete" time="0.082" classname="RestfulBookerPublicNeedsInternetDeletedBookingIsGone"/>
+  </testsuite>
+</testsuites>

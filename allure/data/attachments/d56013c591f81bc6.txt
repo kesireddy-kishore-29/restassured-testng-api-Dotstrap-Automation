@@ -1,0 +1,30 @@
+#2 POST http://localhost:7070/v1/accounts
+correlation: qa-c6ec780e-8926-434f-a49b-f15da7c8c296
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-c6ec780e-8926-434f-a49b-f15da7c8c296
+Content-Type: application/json
+
+--- request body ---
+{"handle":"qa-b5bdbef35e78","displayName":"QA b5bdbef35e78","password":"****","region":"us"}
+
+--- response: 201 in 40 ms ---
+Date: Sat, 21 Nov 2026 09:57:10 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-c6ec780e-8926-434f-a49b-f15da7c8c296
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 594
+RateLimit-Reset: 10
+Location: /v1/accounts/qa-b5bdbef35e78
+X-Served-Region: us
+Content-Length: 181
+
+{"id":"acc_a7fa29bf-a6f4-44f3-b17c-212c8cd90fbd","handle":"qa-b5bdbef35e78","displayName":"QA b5bdbef35e78","region":"us","role":"user","createdAt":"2026-11-21T09:57:10.776771908Z"}

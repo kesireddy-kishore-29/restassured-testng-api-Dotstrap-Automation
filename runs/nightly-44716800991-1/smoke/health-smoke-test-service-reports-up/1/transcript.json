@@ -1,0 +1,30 @@
+[ {
+  "sequence" : 1,
+  "startedAt" : "2026-11-20T10:10:05.941787651Z",
+  "durationMs" : 15,
+  "method" : "GET",
+  "pathTemplate" : "/health",
+  "url" : "http://localhost:7070/health",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "X-Correlation-Id" : "qa-f6f79c31-72a8-42cc-bad0-3b06fe728d6d",
+    "Content-Type" : "application/json"
+  },
+  "status" : 200,
+  "responseHeaders" : {
+    "Date" : "Fri, 20 Nov 2026 10:10:05 GMT",
+    "Content-Type" : "application/json",
+    "X-Correlation-Id" : "qa-f6f79c31-72a8-42cc-bad0-3b06fe728d6d",
+    "X-Content-Type-Options" : "nosniff",
+    "X-Frame-Options" : "DENY",
+    "Content-Security-Policy" : "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy" : "no-referrer",
+    "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+    "Cache-Control" : "no-store",
+    "Vary" : "Origin",
+    "Content-Length" : "95"
+  },
+  "responseBody" : "{\"status\":\"UP\",\"version\":\"1.0.0\",\"region\":\"eu\",\"regions\":[\"in\",\"eu\",\"us\"],\"faultsEnabled\":true}",
+  "correlationId" : "qa-f6f79c31-72a8-42cc-bad0-3b06fe728d6d",
+  "contractViolations" : [ ]
+} ]

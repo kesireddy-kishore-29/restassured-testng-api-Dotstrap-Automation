@@ -1,0 +1,31 @@
+#4 POST http://localhost:7070/v1/conversations
+correlation: qa-78f293db-c4f9-4962-8b8b-b8b69f9ced92
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-78f293db-c4f9-4962-8b8b-b8b69f9ced92
+Content-Type: application/json
+
+--- request body ---
+{"recipientHandle":"qa-bfb7cc805c44","subject":"Error contract","message":"Hi"}
+
+--- response: 201 in 50 ms ---
+Date: Sat, 21 Nov 2026 09:57:11 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-78f293db-c4f9-4962-8b8b-b8b69f9ced92
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: eu
+Location: /v1/conversations/cnv_6f969ff4-5fef-4801-b3b3-a46c20efcaee
+X-Data-Region: eu
+Content-Length: 237
+
+{"id":"cnv_6f969ff4-5fef-4801-b3b3-a46c20efcaee","subject":"Error contract","status":"open","region":"eu","participants":["qa-5bb85311dfd2","qa-bfb7cc805c44"],"messageCount":1,"unreadCount":0,"createdAt":"2026-11-21T09:57:11.027011012Z"}

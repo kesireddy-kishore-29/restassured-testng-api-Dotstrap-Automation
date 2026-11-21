@@ -1,0 +1,31 @@
+#5 POST http://localhost:7070/v1/conversations
+correlation: qa-67d19d64-43a3-43b7-b489-4d4d7881d4e2
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-67d19d64-43a3-43b7-b489-4d4d7881d4e2
+Content-Type: application/json
+
+--- request body ---
+{"recipientHandle":"qa-b56826f42fb2","subject":"Private","message":"Just us"}
+
+--- response: 201 in 27 ms ---
+Date: Sat, 21 Nov 2026 09:56:59 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-67d19d64-43a3-43b7-b489-4d4d7881d4e2
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 59
+RateLimit-Reset: 10
+X-Served-Region: eu
+Location: /v1/conversations/cnv_8d5dbb12-498f-417b-b83f-a9ab591df9b4
+X-Data-Region: eu
+Content-Length: 230
+
+{"id":"cnv_8d5dbb12-498f-417b-b83f-a9ab591df9b4","subject":"Private","status":"open","region":"eu","participants":["qa-e4e901d7098a","qa-b56826f42fb2"],"messageCount":1,"unreadCount":0,"createdAt":"2026-11-21T09:56:59.162024253Z"}

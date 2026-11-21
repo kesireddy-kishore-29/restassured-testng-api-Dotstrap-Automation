@@ -1,0 +1,24 @@
+#1 POST https://restful-booker.herokuapp.com/booking
+correlation: qa-5ecc6a93-0544-485c-9f98-dfd7202e86a1
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-5ecc6a93-0544-485c-9f98-dfd7202e86a1
+Content-Type: application/json
+
+--- request body ---
+{"firstname":"Ada","lastname":"Guest-2ffbe078","totalprice":240,"depositpaid":true,"bookingdates":{"checkin":"2026-12-21","checkout":"2026-12-24"},"additionalneeds":"Late check-in"}
+
+--- response: 200 in 22 ms ---
+Content-Length: 210
+Content-Type: application/json; charset=utf-8
+Date: Sat, 21 Nov 2026 09:57:04 GMT
+Etag: W/"d2-WzqpwwT6QlMGGejOzZQTmUrQIBY"
+Nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+Report-To: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=AjBivoHz%2FAsuFjcBadkbY7lK7HYBbxWlSAJN6hh2ByY%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1795255024"}],"max_age":3600}
+Reporting-Endpoints: heroku-nel="https://nel.heroku.com/reports?s=AjBivoHz%2FAsuFjcBadkbY7lK7HYBbxWlSAJN6hh2ByY%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1795255024"
+Server: Heroku
+Via: 1.1 heroku-router
+X-Powered-By: Express
+
+{"bookingid":3162,"booking":{"firstname":"Ada","lastname":"Guest-2ffbe078","totalprice":240,"depositpaid":true,"bookingdates":{"checkin":"2026-12-21","checkout":"2026-12-24"},"additionalneeds":"Late check-in"}}
