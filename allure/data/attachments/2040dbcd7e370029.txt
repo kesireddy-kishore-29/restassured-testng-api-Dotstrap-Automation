@@ -1,0 +1,29 @@
+#65 POST http://localhost:7070/v1/auth/token
+correlation: qa-1277b9d2-7d0a-4e54-bff3-53b31bea518e
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-1277b9d2-7d0a-4e54-bff3-53b31bea518e
+Content-Type: application/json
+
+--- request body ---
+{"handle":"qa-53eb6cb27a80","password":"****"}
+
+--- response: 429 in 8 ms ---
+Date: Sat, 28 Nov 2026 10:37:26 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-1277b9d2-7d0a-4e54-bff3-53b31bea518e
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 0
+RateLimit-Reset: 9
+Retry-After: 9
+Content-Length: 240
+
+{"type":"https://reference-service.example/problems/rate-limited","title":"Too many requests","status":429,"detail":"Slow down; retry after 9 second(s).","instance":"/v1/auth/token","correlationId":"qa-1277b9d2-7d0a-4e54-bff3-53b31bea518e"}

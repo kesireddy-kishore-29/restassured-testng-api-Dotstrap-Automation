@@ -1,0 +1,2136 @@
+{
+  "schemaVersion" : 1,
+  "repo" : "restassured-testng-api-Dotstrap-Automation",
+  "runId" : "nightly-45395308220-1",
+  "gitSha" : "3882e046fc32a5097e682ed500378eaf1fd442f8",
+  "recordMode" : "all",
+  "startedAt" : "2026-11-24T12:37:57.917215031Z",
+  "finishedAt" : "2026-11-24T12:38:25.447006099Z",
+  "durationMs" : 27529,
+  "environment" : {
+    "testEnv" : "ci",
+    "sutBaseUrl" : "http://localhost:7070",
+    "bookerBaseUrl" : "https://restful-booker.herokuapp.com",
+    "java" : "21.0.13",
+    "os" : "Linux 7.0.0-1020-azure",
+    "recordMode" : "all"
+  },
+  "totals" : {
+    "total" : 124,
+    "passed" : 124,
+    "failed" : 0,
+    "skipped" : 0,
+    "flaky" : 0,
+    "quarantined" : 0
+  },
+  "tests" : [ {
+    "id" : "com.qaautomation.tests.booker.BookingCrudTest#createdBookingReadsBackAsSent",
+    "title" : "A created booking reads back exactly as sent",
+    "suite" : "booker",
+    "featureIds" : [ "FEAT-BOOK-01", "FEAT-BOOK-02" ],
+    "tags" : [ "regression", "booker" ],
+    "status" : "passed",
+    "durationMs" : 266,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:08.110Z",
+    "finishedAt" : "2026-11-24T12:38:08.376Z",
+    "evidence" : {
+      "dir" : "booker/booking-crud-test-created-booking-reads-back-as-sent/1",
+      "transcript" : "booker/booking-crud-test-created-booking-reads-back-as-sent/1/transcript.md",
+      "timeline" : "booker/booking-crud-test-created-booking-reads-back-as-sent/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.booker.BookingCrudTest#deletedBookingIsGone",
+    "title" : "A deleted booking is gone (404 on read)",
+    "suite" : "booker",
+    "featureIds" : [ "FEAT-BOOK-04" ],
+    "tags" : [ "regression", "booker" ],
+    "status" : "passed",
+    "durationMs" : 147,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:08.384Z",
+    "finishedAt" : "2026-11-24T12:38:08.531Z",
+    "evidence" : {
+      "dir" : "booker/booking-crud-test-deleted-booking-is-gone/1",
+      "transcript" : "booker/booking-crud-test-deleted-booking-is-gone/1/transcript.md",
+      "timeline" : "booker/booking-crud-test-deleted-booking-is-gone/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.booker.BookingCrudTest#fullUpdateWithATokenReplacesTheBooking",
+    "title" : "A full update with a token replaces the booking",
+    "suite" : "booker",
+    "featureIds" : [ "FEAT-BOOK-03" ],
+    "tags" : [ "regression", "booker" ],
+    "status" : "passed",
+    "durationMs" : 135,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:08.511Z",
+    "finishedAt" : "2026-11-24T12:38:08.646Z",
+    "evidence" : {
+      "dir" : "booker/booking-crud-test-full-update-with-atoken-replaces-the-booking/1",
+      "transcript" : "booker/booking-crud-test-full-update-with-atoken-replaces-the-booking/1/transcript.md",
+      "timeline" : "booker/booking-crud-test-full-update-with-atoken-replaces-the-booking/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.booker.BookingCrudTest#partialUpdateChangesOnlyNamedFields",
+    "title" : "A partial update changes only the named fields",
+    "suite" : "booker",
+    "featureIds" : [ "FEAT-BOOK-03" ],
+    "tags" : [ "regression", "booker" ],
+    "status" : "passed",
+    "durationMs" : 150,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:08.542Z",
+    "finishedAt" : "2026-11-24T12:38:08.692Z",
+    "evidence" : {
+      "dir" : "booker/booking-crud-test-partial-update-changes-only-named-fields/1",
+      "transcript" : "booker/booking-crud-test-partial-update-changes-only-named-fields/1/transcript.md",
+      "timeline" : "booker/booking-crud-test-partial-update-changes-only-named-fields/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.booker.BookingCrudTest#validCredentialsReceiveAToken",
+    "title" : "Valid credentials receive a token",
+    "suite" : "booker",
+    "featureIds" : [ "FEAT-AUTH-01" ],
+    "tags" : [ "regression", "booker" ],
+    "status" : "passed",
+    "durationMs" : 6,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:08.651Z",
+    "finishedAt" : "2026-11-24T12:38:08.657Z",
+    "evidence" : {
+      "dir" : "booker/booking-crud-test-valid-credentials-receive-atoken/1",
+      "transcript" : "booker/booking-crud-test-valid-credentials-receive-atoken/1/transcript.md",
+      "timeline" : "booker/booking-crud-test-valid-credentials-receive-atoken/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.booker.BookingNegativeTest#unknownBookingIsA404",
+    "title" : "An unknown booking is a 404",
+    "suite" : "booker",
+    "featureIds" : [ "FEAT-NEG-01" ],
+    "tags" : [ "regression", "booker" ],
+    "status" : "passed",
+    "durationMs" : 2106,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:04.945Z",
+    "finishedAt" : "2026-11-24T12:38:07.051Z",
+    "evidence" : {
+      "dir" : "booker/booking-negative-test-unknown-booking-is-a404/1",
+      "transcript" : "booker/booking-negative-test-unknown-booking-is-a404/1/transcript.md",
+      "timeline" : "booker/booking-negative-test-unknown-booking-is-a404/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.booker.BookingNegativeTest#updateWithoutAValidTokenIsRefused[0]",
+    "title" : "An update without a valid token is refused and changes nothing [Optional.empty]",
+    "suite" : "booker",
+    "featureIds" : [ "FEAT-AUTH-02" ],
+    "tags" : [ "regression", "booker" ],
+    "status" : "passed",
+    "durationMs" : 3331,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:04.945Z",
+    "finishedAt" : "2026-11-24T12:38:08.276Z",
+    "evidence" : {
+      "dir" : "booker/booking-negative-test-update-without-avalid-token-is-refused-0/1",
+      "transcript" : "booker/booking-negative-test-update-without-avalid-token-is-refused-0/1/transcript.md",
+      "timeline" : "booker/booking-negative-test-update-without-avalid-token-is-refused-0/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.booker.BookingNegativeTest#updateWithoutAValidTokenIsRefused[1]",
+    "title" : "An update without a valid token is refused and changes nothing [Optional[not-a-real-token]]",
+    "suite" : "booker",
+    "featureIds" : [ "FEAT-AUTH-02" ],
+    "tags" : [ "regression", "booker" ],
+    "status" : "passed",
+    "durationMs" : 214,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:08.285Z",
+    "finishedAt" : "2026-11-24T12:38:08.499Z",
+    "evidence" : {
+      "dir" : "booker/booking-negative-test-update-without-avalid-token-is-refused-1/1",
+      "transcript" : "booker/booking-negative-test-update-without-avalid-token-is-refused-1/1/transcript.md",
+      "timeline" : "booker/booking-negative-test-update-without-avalid-token-is-refused-1/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.booker.BookingNegativeTest#wrongCredentialsDoNotReceiveAToken",
+    "title" : "Wrong credentials do not receive a token",
+    "suite" : "booker",
+    "featureIds" : [ "FEAT-AUTH-02" ],
+    "tags" : [ "regression", "booker" ],
+    "status" : "passed",
+    "durationMs" : 860,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:07.244Z",
+    "finishedAt" : "2026-11-24T12:38:08.104Z",
+    "evidence" : {
+      "dir" : "booker/booking-negative-test-wrong-credentials-do-not-receive-atoken/1",
+      "transcript" : "booker/booking-negative-test-wrong-credentials-do-not-receive-atoken/1/transcript.md",
+      "timeline" : "booker/booking-negative-test-wrong-credentials-do-not-receive-atoken/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ContractTest#accountResourcesMatchTheirContracts",
+    "title" : "Account, token and public profile match their schemas",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-CONTRACT-01", "FEAT-ACCT-03" ],
+    "tags" : [ "contract", "smoke" ],
+    "status" : "passed",
+    "durationMs" : 1708,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:11.241Z",
+    "finishedAt" : "2026-11-24T12:38:12.949Z",
+    "evidence" : {
+      "dir" : "contract/contract-test-account-resources-match-their-contracts/1",
+      "transcript" : "contract/contract-test-account-resources-match-their-contracts/1/transcript.md",
+      "timeline" : "contract/contract-test-account-resources-match-their-contracts/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ContractTest#conversationResourcesMatchTheirContracts",
+    "title" : "Conversation, message, page and read-state match their schemas",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-CONTRACT-01" ],
+    "tags" : [ "contract" ],
+    "status" : "passed",
+    "durationMs" : 1781,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:11.242Z",
+    "finishedAt" : "2026-11-24T12:38:13.023Z",
+    "evidence" : {
+      "dir" : "contract/contract-test-conversation-resources-match-their-contracts/1",
+      "transcript" : "contract/contract-test-conversation-resources-match-their-contracts/1/transcript.md",
+      "timeline" : "contract/contract-test-conversation-resources-match-their-contracts/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ContractTest#creditResourcesMatchTheirContracts",
+    "title" : "Balance, ledger and purchase match their schemas",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-CONTRACT-01" ],
+    "tags" : [ "contract" ],
+    "status" : "passed",
+    "durationMs" : 1666,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:11.242Z",
+    "finishedAt" : "2026-11-24T12:38:12.908Z",
+    "evidence" : {
+      "dir" : "contract/contract-test-credit-resources-match-their-contracts/1",
+      "transcript" : "contract/contract-test-credit-resources-match-their-contracts/1/transcript.md",
+      "timeline" : "contract/contract-test-credit-resources-match-their-contracts/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ContractTest#everyOperationConformsToTheOpenApiDocument",
+    "title" : "Every operation in the OpenAPI document answers as documented (checked per response)",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-CONTRACT-02" ],
+    "tags" : [ "contract" ],
+    "status" : "passed",
+    "durationMs" : 2060,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:11.242Z",
+    "finishedAt" : "2026-11-24T12:38:13.302Z",
+    "evidence" : {
+      "dir" : "contract/contract-test-every-operation-conforms-to-the-open-api-document/1",
+      "transcript" : "contract/contract-test-every-operation-conforms-to-the-open-api-document/1/transcript.md",
+      "timeline" : "contract/contract-test-every-operation-conforms-to-the-open-api-document/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[0]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/auth/token, 400]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 1381,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:13.098Z",
+    "finishedAt" : "2026-11-24T12:38:14.479Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-0/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-0/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-0/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[10]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/conversations, 415]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 393,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.024Z",
+    "finishedAt" : "2026-11-24T12:38:15.417Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-10/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-10/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-10/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[11]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/conversations, 422]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 473,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.032Z",
+    "finishedAt" : "2026-11-24T12:38:15.505Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-11/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-11/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-11/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[12]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/conversations/{id}/messages, 400]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 405,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.429Z",
+    "finishedAt" : "2026-11-24T12:38:15.834Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-12/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-12/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-12/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[13]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/conversations/{id}/messages, 415]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 382,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.452Z",
+    "finishedAt" : "2026-11-24T12:38:15.834Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-13/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-13/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-13/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[14]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/conversations/{id}/messages, 422]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 433,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.459Z",
+    "finishedAt" : "2026-11-24T12:38:15.892Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-14/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-14/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-14/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[15]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/credits/purchases, 400]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 342,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.521Z",
+    "finishedAt" : "2026-11-24T12:38:15.863Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-15/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-15/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-15/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[16]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/credits/purchases, 415]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 237,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.843Z",
+    "finishedAt" : "2026-11-24T12:38:16.080Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-16/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-16/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-16/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[17]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/credits/purchases, 422]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 232,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.848Z",
+    "finishedAt" : "2026-11-24T12:38:16.080Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-17/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-17/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-17/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[1]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/auth/token, 415]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 1443,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:13.103Z",
+    "finishedAt" : "2026-11-24T12:38:14.546Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-1/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-1/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-1/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[2]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/auth/token, 422]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 1372,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:13.105Z",
+    "finishedAt" : "2026-11-24T12:38:14.477Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-2/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-2/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-2/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[3]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/accounts, 400]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 1378,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:13.103Z",
+    "finishedAt" : "2026-11-24T12:38:14.481Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-3/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-3/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-3/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[4]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/accounts, 415]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 477,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.495Z",
+    "finishedAt" : "2026-11-24T12:38:14.972Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-4/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-4/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-4/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[5]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/accounts, 422]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 513,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.497Z",
+    "finishedAt" : "2026-11-24T12:38:15.010Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-5/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-5/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-5/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[6]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [PATCH /v1/accounts/me, 400]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 476,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.508Z",
+    "finishedAt" : "2026-11-24T12:38:14.984Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-6/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-6/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-6/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[7]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [PATCH /v1/accounts/me, 415]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 461,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.551Z",
+    "finishedAt" : "2026-11-24T12:38:15.012Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-7/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-7/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-7/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[8]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [PATCH /v1/accounts/me, 422]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 439,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.993Z",
+    "finishedAt" : "2026-11-24T12:38:15.432Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-8/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-8/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-8/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#aBadBodyIsAProblem[9]",
+    "title" : "Every operation with a body answers bad JSON 400, not JSON 415, invalid 422 [POST /v1/conversations, 400]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 433,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.008Z",
+    "finishedAt" : "2026-11-24T12:38:15.441Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-a-bad-body-is-aproblem-9/1",
+      "transcript" : "contract/error-contract-test-a-bad-body-is-aproblem-9/1/transcript.md",
+      "timeline" : "contract/error-contract-test-a-bad-body-is-aproblem-9/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#missingTokenIsA401[0]",
+    "title" : "Every protected operation answers a missing token with a 401 problem [GET /v1/accounts/me]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 1173,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:13.092Z",
+    "finishedAt" : "2026-11-24T12:38:14.265Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-missing-token-is-a401-0/1",
+      "transcript" : "contract/error-contract-test-missing-token-is-a401-0/1/transcript.md",
+      "timeline" : "contract/error-contract-test-missing-token-is-a401-0/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#missingTokenIsA401[10]",
+    "title" : "Every protected operation answers a missing token with a 401 problem [POST /v1/conversations/{id}/close]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 131,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.446Z",
+    "finishedAt" : "2026-11-24T12:38:14.577Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-missing-token-is-a401-10/1",
+      "transcript" : "contract/error-contract-test-missing-token-is-a401-10/1/transcript.md",
+      "timeline" : "contract/error-contract-test-missing-token-is-a401-10/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#missingTokenIsA401[11]",
+    "title" : "Every protected operation answers a missing token with a 401 problem [GET /v1/credits/balance]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 132,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.447Z",
+    "finishedAt" : "2026-11-24T12:38:14.579Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-missing-token-is-a401-11/1",
+      "transcript" : "contract/error-contract-test-missing-token-is-a401-11/1/transcript.md",
+      "timeline" : "contract/error-contract-test-missing-token-is-a401-11/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#missingTokenIsA401[12]",
+    "title" : "Every protected operation answers a missing token with a 401 problem [GET /v1/credits/ledger]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 92,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.579Z",
+    "finishedAt" : "2026-11-24T12:38:14.671Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-missing-token-is-a401-12/1",
+      "transcript" : "contract/error-contract-test-missing-token-is-a401-12/1/transcript.md",
+      "timeline" : "contract/error-contract-test-missing-token-is-a401-12/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#missingTokenIsA401[13]",
+    "title" : "Every protected operation answers a missing token with a 401 problem [POST /v1/credits/purchases]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 96,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.598Z",
+    "finishedAt" : "2026-11-24T12:38:14.694Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-missing-token-is-a401-13/1",
+      "transcript" : "contract/error-contract-test-missing-token-is-a401-13/1/transcript.md",
+      "timeline" : "contract/error-contract-test-missing-token-is-a401-13/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#missingTokenIsA401[14]",
+    "title" : "Every protected operation answers a missing token with a 401 problem [GET /v1/admin/stats]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 158,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.590Z",
+    "finishedAt" : "2026-11-24T12:38:14.748Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-missing-token-is-a401-14/1",
+      "transcript" : "contract/error-contract-test-missing-token-is-a401-14/1/transcript.md",
+      "timeline" : "contract/error-contract-test-missing-token-is-a401-14/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#missingTokenIsA401[1]",
+    "title" : "Every protected operation answers a missing token with a 401 problem [PATCH /v1/accounts/me]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 1180,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:13.092Z",
+    "finishedAt" : "2026-11-24T12:38:14.272Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-missing-token-is-a401-1/1",
+      "transcript" : "contract/error-contract-test-missing-token-is-a401-1/1/transcript.md",
+      "timeline" : "contract/error-contract-test-missing-token-is-a401-1/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#missingTokenIsA401[2]",
+    "title" : "Every protected operation answers a missing token with a 401 problem [DELETE /v1/accounts/me]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 1205,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:13.097Z",
+    "finishedAt" : "2026-11-24T12:38:14.302Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-missing-token-is-a401-2/1",
+      "transcript" : "contract/error-contract-test-missing-token-is-a401-2/1/transcript.md",
+      "timeline" : "contract/error-contract-test-missing-token-is-a401-2/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#missingTokenIsA401[3]",
+    "title" : "Every protected operation answers a missing token with a 401 problem [GET /v1/accounts/{handle}]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 1156,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:13.099Z",
+    "finishedAt" : "2026-11-24T12:38:14.255Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-missing-token-is-a401-3/1",
+      "transcript" : "contract/error-contract-test-missing-token-is-a401-3/1/transcript.md",
+      "timeline" : "contract/error-contract-test-missing-token-is-a401-3/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#missingTokenIsA401[4]",
+    "title" : "Every protected operation answers a missing token with a 401 problem [POST /v1/conversations]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 135,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.273Z",
+    "finishedAt" : "2026-11-24T12:38:14.408Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-missing-token-is-a401-4/1",
+      "transcript" : "contract/error-contract-test-missing-token-is-a401-4/1/transcript.md",
+      "timeline" : "contract/error-contract-test-missing-token-is-a401-4/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#missingTokenIsA401[5]",
+    "title" : "Every protected operation answers a missing token with a 401 problem [GET /v1/conversations]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 155,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.280Z",
+    "finishedAt" : "2026-11-24T12:38:14.435Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-missing-token-is-a401-5/1",
+      "transcript" : "contract/error-contract-test-missing-token-is-a401-5/1/transcript.md",
+      "timeline" : "contract/error-contract-test-missing-token-is-a401-5/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#missingTokenIsA401[6]",
+    "title" : "Every protected operation answers a missing token with a 401 problem [GET /v1/conversations/{id}]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 144,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.287Z",
+    "finishedAt" : "2026-11-24T12:38:14.431Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-missing-token-is-a401-6/1",
+      "transcript" : "contract/error-contract-test-missing-token-is-a401-6/1/transcript.md",
+      "timeline" : "contract/error-contract-test-missing-token-is-a401-6/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#missingTokenIsA401[7]",
+    "title" : "Every protected operation answers a missing token with a 401 problem [GET /v1/conversations/{id}/messages]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 123,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.312Z",
+    "finishedAt" : "2026-11-24T12:38:14.435Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-missing-token-is-a401-7/1",
+      "transcript" : "contract/error-contract-test-missing-token-is-a401-7/1/transcript.md",
+      "timeline" : "contract/error-contract-test-missing-token-is-a401-7/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#missingTokenIsA401[8]",
+    "title" : "Every protected operation answers a missing token with a 401 problem [POST /v1/conversations/{id}/messages]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 160,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.422Z",
+    "finishedAt" : "2026-11-24T12:38:14.582Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-missing-token-is-a401-8/1",
+      "transcript" : "contract/error-contract-test-missing-token-is-a401-8/1/transcript.md",
+      "timeline" : "contract/error-contract-test-missing-token-is-a401-8/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#missingTokenIsA401[9]",
+    "title" : "Every protected operation answers a missing token with a 401 problem [POST /v1/conversations/{id}/read]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 137,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.444Z",
+    "finishedAt" : "2026-11-24T12:38:14.581Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-missing-token-is-a401-9/1",
+      "transcript" : "contract/error-contract-test-missing-token-is-a401-9/1/transcript.md",
+      "timeline" : "contract/error-contract-test-missing-token-is-a401-9/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[0]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [POST /v1/auth/token]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 1386,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:13.090Z",
+    "finishedAt" : "2026-11-24T12:38:14.476Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-0/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-0/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-0/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[10]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [POST /v1/conversations/{id}/messages]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 417,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.006Z",
+    "finishedAt" : "2026-11-24T12:38:15.423Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-10/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-10/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-10/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[11]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [POST /v1/conversations/{id}/read]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 399,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.020Z",
+    "finishedAt" : "2026-11-24T12:38:15.419Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-11/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-11/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-11/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[12]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [POST /v1/conversations/{id}/close]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 394,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.421Z",
+    "finishedAt" : "2026-11-24T12:38:15.815Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-12/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-12/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-12/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[13]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [GET /v1/credits/balance]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 432,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.425Z",
+    "finishedAt" : "2026-11-24T12:38:15.857Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-13/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-13/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-13/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[14]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [GET /v1/credits/ledger]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 400,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.429Z",
+    "finishedAt" : "2026-11-24T12:38:15.829Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-14/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-14/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-14/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[15]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [POST /v1/credits/purchases]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 342,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.435Z",
+    "finishedAt" : "2026-11-24T12:38:15.777Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-15/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-15/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-15/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[16]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [GET /v1/admin/stats]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 232,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.809Z",
+    "finishedAt" : "2026-11-24T12:38:16.041Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-16/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-16/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-16/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[1]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [POST /v1/accounts]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 1385,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:13.096Z",
+    "finishedAt" : "2026-11-24T12:38:14.481Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-1/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-1/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-1/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[2]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [GET /v1/accounts/me]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 1400,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:13.100Z",
+    "finishedAt" : "2026-11-24T12:38:14.500Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-2/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-2/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-2/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[3]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [PATCH /v1/accounts/me]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 1388,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:13.102Z",
+    "finishedAt" : "2026-11-24T12:38:14.490Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-3/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-3/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-3/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[4]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [DELETE /v1/accounts/me]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 407,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.500Z",
+    "finishedAt" : "2026-11-24T12:38:14.907Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-4/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-4/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-4/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[5]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [GET /v1/accounts/{handle}]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 500,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.505Z",
+    "finishedAt" : "2026-11-24T12:38:15.005Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-5/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-5/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-5/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[6]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [POST /v1/conversations]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 430,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.507Z",
+    "finishedAt" : "2026-11-24T12:38:14.937Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-6/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-6/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-6/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[7]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [GET /v1/conversations]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 464,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.529Z",
+    "finishedAt" : "2026-11-24T12:38:14.993Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-7/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-7/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-7/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[8]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [GET /v1/conversations/{id}]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 484,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.919Z",
+    "finishedAt" : "2026-11-24T12:38:15.403Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-8/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-8/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-8/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outageIsA503WithRetryAfter[9]",
+    "title" : "Every operation answers an outage with a 503 problem and Retry-After [GET /v1/conversations/{id}/messages]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RES-03", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 449,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.963Z",
+    "finishedAt" : "2026-11-24T12:38:15.412Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outage-is-a503with-retry-after-9/1",
+      "transcript" : "contract/error-contract-test-outage-is-a503with-retry-after-9/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outage-is-a503with-retry-after-9/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outsiderIsA403[0]",
+    "title" : "Every conversation operation answers an outsider with a 403 problem [GET /v1/conversations/{id}]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "security", "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 1235,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:13.342Z",
+    "finishedAt" : "2026-11-24T12:38:14.577Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outsider-is-a403-0/1",
+      "transcript" : "contract/error-contract-test-outsider-is-a403-0/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outsider-is-a403-0/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outsiderIsA403[1]",
+    "title" : "Every conversation operation answers an outsider with a 403 problem [GET /v1/conversations/{id}/messages]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "security", "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 1168,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:13.342Z",
+    "finishedAt" : "2026-11-24T12:38:14.510Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outsider-is-a403-1/1",
+      "transcript" : "contract/error-contract-test-outsider-is-a403-1/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outsider-is-a403-1/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outsiderIsA403[2]",
+    "title" : "Every conversation operation answers an outsider with a 403 problem [POST /v1/conversations/{id}/messages]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "security", "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 1229,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:13.344Z",
+    "finishedAt" : "2026-11-24T12:38:14.573Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outsider-is-a403-2/1",
+      "transcript" : "contract/error-contract-test-outsider-is-a403-2/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outsider-is-a403-2/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outsiderIsA403[3]",
+    "title" : "Every conversation operation answers an outsider with a 403 problem [POST /v1/conversations/{id}/read]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "security", "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 1244,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:13.345Z",
+    "finishedAt" : "2026-11-24T12:38:14.589Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outsider-is-a403-3/1",
+      "transcript" : "contract/error-contract-test-outsider-is-a403-3/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outsider-is-a403-3/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#outsiderIsA403[4]",
+    "title" : "Every conversation operation answers an outsider with a 403 problem [POST /v1/conversations/{id}/close]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "security", "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 456,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.539Z",
+    "finishedAt" : "2026-11-24T12:38:14.995Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-outsider-is-a403-4/1",
+      "transcript" : "contract/error-contract-test-outsider-is-a403-4/1/transcript.md",
+      "timeline" : "contract/error-contract-test-outsider-is-a403-4/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#pastTheLimitEveryOperationIsA429",
+    "title" : "Past its rate limit, a token gets a 429 problem from every operation",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-RATE-01", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "security", "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 10642,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:14.759Z",
+    "finishedAt" : "2026-11-24T12:38:25.401Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-past-the-limit-every-operation-is-a429/1",
+      "transcript" : "contract/error-contract-test-past-the-limit-every-operation-is-a429/1/transcript.md",
+      "timeline" : "contract/error-contract-test-past-the-limit-every-operation-is-a429/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#startingAConversationWithNoCreditsIsA402",
+    "title" : "With no credits left, starting a conversation is a 402 and nothing is charged",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-LEDGER-02", "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 866,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.011Z",
+    "finishedAt" : "2026-11-24T12:38:15.877Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-starting-aconversation-with-no-credits-is-a402/1",
+      "transcript" : "contract/error-contract-test-starting-aconversation-with-no-credits-is-a402/1/transcript.md",
+      "timeline" : "contract/error-contract-test-starting-aconversation-with-no-credits-is-a402/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#theAdministratorGetsTheStatistics",
+    "title" : "The administrator gets the service statistics",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "security", "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 212,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:15.884Z",
+    "finishedAt" : "2026-11-24T12:38:16.096Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-the-administrator-gets-the-statistics/1",
+      "transcript" : "contract/error-contract-test-the-administrator-gets-the-statistics/1/transcript.md",
+      "timeline" : "contract/error-contract-test-the-administrator-gets-the-statistics/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#theOpenApiDocumentIsServed",
+    "title" : "The OpenAPI document is served and names every operation",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 49,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:16.060Z",
+    "finishedAt" : "2026-11-24T12:38:16.109Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-the-open-api-document-is-served/1",
+      "transcript" : "contract/error-contract-test-the-open-api-document-is-served/1/transcript.md",
+      "timeline" : "contract/error-contract-test-the-open-api-document-is-served/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#unknownConversationIsA404[0]",
+    "title" : "Every conversation operation answers an unknown id with a 404 problem [GET /v1/conversations/{id}]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 135,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:16.099Z",
+    "finishedAt" : "2026-11-24T12:38:16.234Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-unknown-conversation-is-a404-0/1",
+      "transcript" : "contract/error-contract-test-unknown-conversation-is-a404-0/1/transcript.md",
+      "timeline" : "contract/error-contract-test-unknown-conversation-is-a404-0/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#unknownConversationIsA404[1]",
+    "title" : "Every conversation operation answers an unknown id with a 404 problem [GET /v1/conversations/{id}/messages]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 118,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:16.099Z",
+    "finishedAt" : "2026-11-24T12:38:16.217Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-unknown-conversation-is-a404-1/1",
+      "transcript" : "contract/error-contract-test-unknown-conversation-is-a404-1/1/transcript.md",
+      "timeline" : "contract/error-contract-test-unknown-conversation-is-a404-1/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#unknownConversationIsA404[2]",
+    "title" : "Every conversation operation answers an unknown id with a 404 problem [POST /v1/conversations/{id}/messages]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 170,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:16.105Z",
+    "finishedAt" : "2026-11-24T12:38:16.275Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-unknown-conversation-is-a404-2/1",
+      "transcript" : "contract/error-contract-test-unknown-conversation-is-a404-2/1/transcript.md",
+      "timeline" : "contract/error-contract-test-unknown-conversation-is-a404-2/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#unknownConversationIsA404[3]",
+    "title" : "Every conversation operation answers an unknown id with a 404 problem [POST /v1/conversations/{id}/read]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 179,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:16.106Z",
+    "finishedAt" : "2026-11-24T12:38:16.285Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-unknown-conversation-is-a404-3/1",
+      "transcript" : "contract/error-contract-test-unknown-conversation-is-a404-3/1/transcript.md",
+      "timeline" : "contract/error-contract-test-unknown-conversation-is-a404-3/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.contract.ErrorContractTest#unknownConversationIsA404[4]",
+    "title" : "Every conversation operation answers an unknown id with a 404 problem [POST /v1/conversations/{id}/close]",
+    "suite" : "contract",
+    "featureIds" : [ "FEAT-ERR-01", "FEAT-CONTRACT-02" ],
+    "tags" : [ "regression", "contract" ],
+    "status" : "passed",
+    "durationMs" : 156,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:16.225Z",
+    "finishedAt" : "2026-11-24T12:38:16.381Z",
+    "evidence" : {
+      "dir" : "contract/error-contract-test-unknown-conversation-is-a404-4/1",
+      "transcript" : "contract/error-contract-test-unknown-conversation-is-a404-4/1/transcript.md",
+      "timeline" : "contract/error-contract-test-unknown-conversation-is-a404-4/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.functional.AccountsTest#displayNameChangeIsPersisted",
+    "title" : "A new display name is stored and returned",
+    "suite" : "functional",
+    "featureIds" : [ "FEAT-ACCT-02" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 2121,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:02.753Z",
+    "finishedAt" : "2026-11-24T12:38:04.874Z",
+    "evidence" : {
+      "dir" : "functional/accounts-test-display-name-change-is-persisted/1",
+      "transcript" : "functional/accounts-test-display-name-change-is-persisted/1/transcript.md",
+      "timeline" : "functional/accounts-test-display-name-change-is-persisted/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.functional.AccountsTest#ownerReadsBackTheAccountAsCreated",
+    "title" : "The owner reads back exactly what was created",
+    "suite" : "functional",
+    "featureIds" : [ "FEAT-ACCT-01" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 155,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:05.095Z",
+    "finishedAt" : "2026-11-24T12:38:05.250Z",
+    "evidence" : {
+      "dir" : "functional/accounts-test-owner-reads-back-the-account-as-created/1",
+      "transcript" : "functional/accounts-test-owner-reads-back-the-account-as-created/1/transcript.md",
+      "timeline" : "functional/accounts-test-owner-reads-back-the-account-as-created/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.functional.AccountsTest#publicProfileExposesNoPrivateFields",
+    "title" : "Anyone signed in sees a public profile with no private fields",
+    "suite" : "functional",
+    "featureIds" : [ "FEAT-ACCT-03" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 335,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:05.095Z",
+    "finishedAt" : "2026-11-24T12:38:05.430Z",
+    "evidence" : {
+      "dir" : "functional/accounts-test-public-profile-exposes-no-private-fields/1",
+      "transcript" : "functional/accounts-test-public-profile-exposes-no-private-fields/1/transcript.md",
+      "timeline" : "functional/accounts-test-public-profile-exposes-no-private-fields/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.functional.ConversationsTest#closedConversationRefusesMessages",
+    "title" : "A closed conversation refuses new messages with 409",
+    "suite" : "functional",
+    "featureIds" : [ "FEAT-CONV-02" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 3242,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:02.754Z",
+    "finishedAt" : "2026-11-24T12:38:05.996Z",
+    "evidence" : {
+      "dir" : "functional/conversations-test-closed-conversation-refuses-messages/1",
+      "transcript" : "functional/conversations-test-closed-conversation-refuses-messages/1/transcript.md",
+      "timeline" : "functional/conversations-test-closed-conversation-refuses-messages/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.functional.ConversationsTest#twoPeopleExchangeMessages",
+    "title" : "Two people start a conversation and exchange messages",
+    "suite" : "functional",
+    "featureIds" : [ "FEAT-CONV-01" ],
+    "tags" : [ "regression", "smoke" ],
+    "status" : "passed",
+    "durationMs" : 2164,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:02.755Z",
+    "finishedAt" : "2026-11-24T12:38:04.919Z",
+    "evidence" : {
+      "dir" : "functional/conversations-test-two-people-exchange-messages/1",
+      "transcript" : "functional/conversations-test-two-people-exchange-messages/1/transcript.md",
+      "timeline" : "functional/conversations-test-two-people-exchange-messages/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.functional.ConversationsTest#unreadCountFollowsMessagesAndResetsOnRead",
+    "title" : "Unread counts follow messages and reset when read",
+    "suite" : "functional",
+    "featureIds" : [ "FEAT-CONV-03" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 2302,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:02.754Z",
+    "finishedAt" : "2026-11-24T12:38:05.056Z",
+    "evidence" : {
+      "dir" : "functional/conversations-test-unread-count-follows-messages-and-resets-on-read/1",
+      "transcript" : "functional/conversations-test-unread-count-follows-messages-and-resets-on-read/1/transcript.md",
+      "timeline" : "functional/conversations-test-unread-count-follows-messages-and-resets-on-read/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.negative.AuthBoundaryTest#missingTokenIsUnauthenticated",
+    "title" : "No token: 401 unauthenticated with a Bearer challenge",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01" ],
+    "tags" : [ "security", "regression" ],
+    "status" : "passed",
+    "durationMs" : 1773,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:37:58.586Z",
+    "finishedAt" : "2026-11-24T12:38:00.359Z",
+    "evidence" : {
+      "dir" : "negative/auth-boundary-test-missing-token-is-unauthenticated/1",
+      "transcript" : "negative/auth-boundary-test-missing-token-is-unauthenticated/1/transcript.md",
+      "timeline" : "negative/auth-boundary-test-missing-token-is-unauthenticated/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.negative.AuthBoundaryTest#outsiderCannotReadOrWriteAConversation",
+    "title" : "Someone outside a conversation gets 403, not its content",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-AUTHZ-01" ],
+    "tags" : [ "security", "regression" ],
+    "status" : "passed",
+    "durationMs" : 2082,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:37:58.586Z",
+    "finishedAt" : "2026-11-24T12:38:00.668Z",
+    "evidence" : {
+      "dir" : "negative/auth-boundary-test-outsider-cannot-read-or-write-aconversation/1",
+      "transcript" : "negative/auth-boundary-test-outsider-cannot-read-or-write-aconversation/1/transcript.md",
+      "timeline" : "negative/auth-boundary-test-outsider-cannot-read-or-write-aconversation/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.negative.AuthBoundaryTest#unknownTokenIsRefused[0]",
+    "title" : "A token the service never issued is refused [not-a-real-token-at-all, invalid-token]",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01" ],
+    "tags" : [ "security", "regression" ],
+    "status" : "passed",
+    "durationMs" : 1754,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:37:58.595Z",
+    "finishedAt" : "2026-11-24T12:38:00.349Z",
+    "evidence" : {
+      "dir" : "negative/auth-boundary-test-unknown-token-is-refused-0/1",
+      "transcript" : "negative/auth-boundary-test-unknown-token-is-refused-0/1/transcript.md",
+      "timeline" : "negative/auth-boundary-test-unknown-token-is-refused-0/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.negative.AuthBoundaryTest#unknownTokenIsRefused[1]",
+    "title" : "A token the service never issued is refused [eyJhbGciOiJub25lIn0.eyJzdWIiOiJhZG1pbiJ9., invalid-token]",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-AUTHZ-01", "FEAT-ERR-01" ],
+    "tags" : [ "security", "regression" ],
+    "status" : "passed",
+    "durationMs" : 1743,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:37:58.597Z",
+    "finishedAt" : "2026-11-24T12:38:00.340Z",
+    "evidence" : {
+      "dir" : "negative/auth-boundary-test-unknown-token-is-refused-1/1",
+      "transcript" : "negative/auth-boundary-test-unknown-token-is-refused-1/1/transcript.md",
+      "timeline" : "negative/auth-boundary-test-unknown-token-is-refused-1/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.negative.CreditsNegativeTest#purchaseWithoutIdempotencyKeyIsA400",
+    "title" : "A purchase without an Idempotency-Key is refused with 400",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-IDEMP-03", "FEAT-ERR-01" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 218,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:00.661Z",
+    "finishedAt" : "2026-11-24T12:38:00.879Z",
+    "evidence" : {
+      "dir" : "negative/credits-negative-test-purchase-without-idempotency-key-is-a400/1",
+      "transcript" : "negative/credits-negative-test-purchase-without-idempotency-key-is-a400/1/transcript.md",
+      "timeline" : "negative/credits-negative-test-purchase-without-idempotency-key-is-a400/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.negative.CreditsNegativeTest#sendingWithNoCreditsIsA402",
+    "title" : "With no credits left, a message is a 402 and nothing is charged",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-LEDGER-02", "FEAT-ERR-01" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 316,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:00.662Z",
+    "finishedAt" : "2026-11-24T12:38:00.978Z",
+    "evidence" : {
+      "dir" : "negative/credits-negative-test-sending-with-no-credits-is-a402/1",
+      "transcript" : "negative/credits-negative-test-sending-with-no-credits-is-a402/1/transcript.md",
+      "timeline" : "negative/credits-negative-test-sending-with-no-credits-is-a402/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.negative.CreditsNegativeTest#unknownPackIsA422",
+    "title" : "An unknown credit pack is a 422 on packId",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-ERR-01" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 147,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:00.683Z",
+    "finishedAt" : "2026-11-24T12:38:00.830Z",
+    "evidence" : {
+      "dir" : "negative/credits-negative-test-unknown-pack-is-a422/1",
+      "transcript" : "negative/credits-negative-test-unknown-pack-is-a422/1/transcript.md",
+      "timeline" : "negative/credits-negative-test-unknown-pack-is-a422/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[0]",
+    "title" : "An invalid account request is a 422 naming the field [handle too short, NewAccount[handle=ab, displayName=Name, password=pw-425e4f18-1dea-4de4-a07d-c1688b3e2417, region=eu], handle]",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-ACCT-02", "FEAT-ERR-01" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 1756,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:37:58.597Z",
+    "finishedAt" : "2026-11-24T12:38:00.353Z",
+    "evidence" : {
+      "dir" : "negative/validation-test-invalid-account-is-a422naming-the-field-0/1",
+      "transcript" : "negative/validation-test-invalid-account-is-a422naming-the-field-0/1/transcript.md",
+      "timeline" : "negative/validation-test-invalid-account-is-a422naming-the-field-0/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[1]",
+    "title" : "An invalid account request is a 422 naming the field [handle with capitals, NewAccount[handle=Bad-Handle, displayName=Name, password=pw-425e4f18-1dea-4de4-a07d-c1688b3e2417, region=eu], handle]",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-ACCT-02", "FEAT-ERR-01" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 1755,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:37:58.596Z",
+    "finishedAt" : "2026-11-24T12:38:00.351Z",
+    "evidence" : {
+      "dir" : "negative/validation-test-invalid-account-is-a422naming-the-field-1/1",
+      "transcript" : "negative/validation-test-invalid-account-is-a422naming-the-field-1/1/transcript.md",
+      "timeline" : "negative/validation-test-invalid-account-is-a422naming-the-field-1/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[2]",
+    "title" : "An invalid account request is a 422 naming the field [blank display name, NewAccount[handle=qa-4823693655c9, displayName=   , password=pw-425e4f18-1dea-4de4-a07d-c1688b3e2417, region=eu], displayName]",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-ACCT-02", "FEAT-ERR-01" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 1778,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:37:58.597Z",
+    "finishedAt" : "2026-11-24T12:38:00.375Z",
+    "evidence" : {
+      "dir" : "negative/validation-test-invalid-account-is-a422naming-the-field-2/1",
+      "transcript" : "negative/validation-test-invalid-account-is-a422naming-the-field-2/1/transcript.md",
+      "timeline" : "negative/validation-test-invalid-account-is-a422naming-the-field-2/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[3]",
+    "title" : "An invalid account request is a 422 naming the field [password too short, NewAccount[handle=qa-4823693655c9, displayName=Name, password=short, region=eu], password]",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-ACCT-02", "FEAT-ERR-01" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 1776,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:37:58.597Z",
+    "finishedAt" : "2026-11-24T12:38:00.373Z",
+    "evidence" : {
+      "dir" : "negative/validation-test-invalid-account-is-a422naming-the-field-3/1",
+      "transcript" : "negative/validation-test-invalid-account-is-a422naming-the-field-3/1/transcript.md",
+      "timeline" : "negative/validation-test-invalid-account-is-a422naming-the-field-3/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.negative.ValidationTest#invalidAccountIsA422NamingTheField[4]",
+    "title" : "An invalid account request is a 422 naming the field [unknown region, NewAccount[handle=qa-4823693655c9, displayName=Name, password=pw-425e4f18-1dea-4de4-a07d-c1688b3e2417, region=mars], region]",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-ACCT-02", "FEAT-ERR-01" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 87,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:00.467Z",
+    "finishedAt" : "2026-11-24T12:38:00.554Z",
+    "evidence" : {
+      "dir" : "negative/validation-test-invalid-account-is-a422naming-the-field-4/1",
+      "transcript" : "negative/validation-test-invalid-account-is-a422naming-the-field-4/1/transcript.md",
+      "timeline" : "negative/validation-test-invalid-account-is-a422naming-the-field-4/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.negative.ValidationTest#malformedJsonIsA400",
+    "title" : "A body that is not JSON is a 400 malformed-json problem",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-ERR-01" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 102,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:00.467Z",
+    "finishedAt" : "2026-11-24T12:38:00.569Z",
+    "evidence" : {
+      "dir" : "negative/validation-test-malformed-json-is-a400/1",
+      "transcript" : "negative/validation-test-malformed-json-is-a400/1/transcript.md",
+      "timeline" : "negative/validation-test-malformed-json-is-a400/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.negative.ValidationTest#takenHandleIsA409",
+    "title" : "A handle that is already taken is a 409",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-ACCT-01", "FEAT-ERR-01" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 179,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:00.473Z",
+    "finishedAt" : "2026-11-24T12:38:00.652Z",
+    "evidence" : {
+      "dir" : "negative/validation-test-taken-handle-is-a409/1",
+      "transcript" : "negative/validation-test-taken-handle-is-a409/1/transcript.md",
+      "timeline" : "negative/validation-test-taken-handle-is-a409/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.negative.ValidationTest#unknownResourcesAre404",
+    "title" : "Unknown conversations and handles are 404 problems",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-ERR-01" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 214,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:00.563Z",
+    "finishedAt" : "2026-11-24T12:38:00.777Z",
+    "evidence" : {
+      "dir" : "negative/validation-test-unknown-resources-are404/1",
+      "transcript" : "negative/validation-test-unknown-resources-are404/1/transcript.md",
+      "timeline" : "negative/validation-test-unknown-resources-are404/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.negative.ValidationTest#wrongContentTypeIsA415",
+    "title" : "A body that is not application/json is a 415",
+    "suite" : "negative",
+    "featureIds" : [ "FEAT-ERR-01" ],
+    "tags" : [ "regression" ],
+    "status" : "passed",
+    "durationMs" : 80,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:00.574Z",
+    "finishedAt" : "2026-11-24T12:38:00.654Z",
+    "evidence" : {
+      "dir" : "negative/validation-test-wrong-content-type-is-a415/1",
+      "transcript" : "negative/validation-test-wrong-content-type-is-a415/1/transcript.md",
+      "timeline" : "negative/validation-test-wrong-content-type-is-a415/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.resilience.IdempotencyTest#concurrentDuplicatesProduceOnePurchase",
+    "title" : "Six concurrent duplicates: one purchase, five replays, one charge",
+    "suite" : "resilience",
+    "featureIds" : [ "FEAT-IDEMP-01" ],
+    "tags" : [ "regression", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 1449,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:37:57.989Z",
+    "finishedAt" : "2026-11-24T12:37:59.438Z",
+    "evidence" : {
+      "dir" : "resilience/idempotency-test-concurrent-duplicates-produce-one-purchase/1",
+      "transcript" : "resilience/idempotency-test-concurrent-duplicates-produce-one-purchase/1/transcript.md",
+      "timeline" : "resilience/idempotency-test-concurrent-duplicates-produce-one-purchase/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.resilience.IdempotencyTest#replayReturnsTheOriginalAndChargesOnce",
+    "title" : "Same key + same body replays the original purchase",
+    "suite" : "resilience",
+    "featureIds" : [ "FEAT-IDEMP-01" ],
+    "tags" : [ "regression", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 1425,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:37:57.989Z",
+    "finishedAt" : "2026-11-24T12:37:59.414Z",
+    "evidence" : {
+      "dir" : "resilience/idempotency-test-replay-returns-the-original-and-charges-once/1",
+      "transcript" : "resilience/idempotency-test-replay-returns-the-original-and-charges-once/1/transcript.md",
+      "timeline" : "resilience/idempotency-test-replay-returns-the-original-and-charges-once/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.resilience.IdempotencyTest#reusingAKeyForADifferentPurchaseIsRefused",
+    "title" : "Same key + different body is a 409 and charges nothing",
+    "suite" : "resilience",
+    "featureIds" : [ "FEAT-IDEMP-02" ],
+    "tags" : [ "regression", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 1941,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:37:57.989Z",
+    "finishedAt" : "2026-11-24T12:37:59.930Z",
+    "evidence" : {
+      "dir" : "resilience/idempotency-test-reusing-akey-for-adifferent-purchase-is-refused/1",
+      "transcript" : "resilience/idempotency-test-reusing-akey-for-adifferent-purchase-is-refused/1/transcript.md",
+      "timeline" : "resilience/idempotency-test-reusing-akey-for-adifferent-purchase-is-refused/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.resilience.IdempotencyTest#theSameKeyFromTwoAccountsMakesTwoPurchases",
+    "title" : "Keys are scoped per account",
+    "suite" : "resilience",
+    "featureIds" : [ "FEAT-IDEMP-01" ],
+    "tags" : [ "regression", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 1453,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:37:57.989Z",
+    "finishedAt" : "2026-11-24T12:37:59.442Z",
+    "evidence" : {
+      "dir" : "resilience/idempotency-test-the-same-key-from-two-accounts-makes-two-purchases/1",
+      "transcript" : "resilience/idempotency-test-the-same-key-from-two-accounts-makes-two-purchases/1/transcript.md",
+      "timeline" : "resilience/idempotency-test-the-same-key-from-two-accounts-makes-two-purchases/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.resilience.RetryAndTimeoutTest#clientTimeoutIsEnforcedWithinItsBudget",
+    "title" : "A slow server cannot hang the client",
+    "suite" : "resilience",
+    "featureIds" : [ "FEAT-RES-02" ],
+    "tags" : [ "regression", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 1707,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:37:59.607Z",
+    "finishedAt" : "2026-11-24T12:38:01.314Z",
+    "evidence" : {
+      "dir" : "resilience/retry-and-timeout-test-client-timeout-is-enforced-within-its-budget/1",
+      "transcript" : "resilience/retry-and-timeout-test-client-timeout-is-enforced-within-its-budget/1/transcript.md",
+      "timeline" : "resilience/retry-and-timeout-test-client-timeout-is-enforced-within-its-budget/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.resilience.RetryAndTimeoutTest#lostResponseIsRetriedWithoutDoubleCharging",
+    "title" : "A lost response is retried with the same key and the purchase is charged once",
+    "suite" : "resilience",
+    "featureIds" : [ "FEAT-RES-01", "FEAT-IDEMP-01" ],
+    "tags" : [ "regression", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 1164,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:37:59.608Z",
+    "finishedAt" : "2026-11-24T12:38:00.772Z",
+    "evidence" : {
+      "dir" : "resilience/retry-and-timeout-test-lost-response-is-retried-without-double-charging/1",
+      "transcript" : "resilience/retry-and-timeout-test-lost-response-is-retried-without-double-charging/1/transcript.md",
+      "timeline" : "resilience/retry-and-timeout-test-lost-response-is-retried-without-double-charging/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.resilience.RetryAndTimeoutTest#unavailableIsRetriedAfterRetryAfter",
+    "title" : "A 503 with Retry-After is retried after the wait",
+    "suite" : "resilience",
+    "featureIds" : [ "FEAT-RES-03" ],
+    "tags" : [ "regression", "resilience" ],
+    "status" : "passed",
+    "durationMs" : 1139,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:37:59.611Z",
+    "finishedAt" : "2026-11-24T12:38:00.750Z",
+    "evidence" : {
+      "dir" : "resilience/retry-and-timeout-test-unavailable-is-retried-after-retry-after/1",
+      "transcript" : "resilience/retry-and-timeout-test-unavailable-is-retried-after-retry-after/1/transcript.md",
+      "timeline" : "resilience/retry-and-timeout-test-unavailable-is-retried-after-retry-after/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.security.AuthorizationTest#adminEndpointIsForbiddenToANormalAccount",
+    "title" : "A normal account cannot use the admin endpoint",
+    "suite" : "security",
+    "featureIds" : [ "FEAT-SEC-02" ],
+    "tags" : [ "security", "regression" ],
+    "status" : "passed",
+    "durationMs" : 897,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:06.884Z",
+    "finishedAt" : "2026-11-24T12:38:07.781Z",
+    "evidence" : {
+      "dir" : "security/authorization-test-admin-endpoint-is-forbidden-to-anormal-account/1",
+      "transcript" : "security/authorization-test-admin-endpoint-is-forbidden-to-anormal-account/1/transcript.md",
+      "timeline" : "security/authorization-test-admin-endpoint-is-forbidden-to-anormal-account/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.security.AuthorizationTest#expiredTokenIsRefused",
+    "title" : "A token stops working when it expires",
+    "suite" : "security",
+    "featureIds" : [ "FEAT-SEC-03" ],
+    "tags" : [ "security", "regression" ],
+    "status" : "passed",
+    "durationMs" : 1255,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:07.108Z",
+    "finishedAt" : "2026-11-24T12:38:08.363Z",
+    "evidence" : {
+      "dir" : "security/authorization-test-expired-token-is-refused/1",
+      "transcript" : "security/authorization-test-expired-token-is-refused/1/transcript.md",
+      "timeline" : "security/authorization-test-expired-token-is-refused/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.security.CorsTest#allowedOriginCanReadTheHeadersTheAppNeeds",
+    "title" : "An allowed origin can read the headers the app needs",
+    "suite" : "security",
+    "featureIds" : [ "FEAT-CORS-01" ],
+    "tags" : [ "security", "regression" ],
+    "status" : "passed",
+    "durationMs" : 1513,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:05.123Z",
+    "finishedAt" : "2026-11-24T12:38:06.636Z",
+    "evidence" : {
+      "dir" : "security/cors-test-allowed-origin-can-read-the-headers-the-app-needs/1",
+      "transcript" : "security/cors-test-allowed-origin-can-read-the-headers-the-app-needs/1/transcript.md",
+      "timeline" : "security/cors-test-allowed-origin-can-read-the-headers-the-app-needs/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.security.CorsTest#allowedOriginPassesPreflight",
+    "title" : "An allowed origin passes preflight for an idempotent purchase",
+    "suite" : "security",
+    "featureIds" : [ "FEAT-CORS-01" ],
+    "tags" : [ "security", "regression" ],
+    "status" : "passed",
+    "durationMs" : 1507,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:05.124Z",
+    "finishedAt" : "2026-11-24T12:38:06.631Z",
+    "evidence" : {
+      "dir" : "security/cors-test-allowed-origin-passes-preflight/1",
+      "transcript" : "security/cors-test-allowed-origin-passes-preflight/1/transcript.md",
+      "timeline" : "security/cors-test-allowed-origin-passes-preflight/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.security.CorsTest#otherOriginsAreRefused",
+    "title" : "Any other origin is refused",
+    "suite" : "security",
+    "featureIds" : [ "FEAT-CORS-02" ],
+    "tags" : [ "security", "regression" ],
+    "status" : "passed",
+    "durationMs" : 2613,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:05.123Z",
+    "finishedAt" : "2026-11-24T12:38:07.736Z",
+    "evidence" : {
+      "dir" : "security/cors-test-other-origins-are-refused/1",
+      "transcript" : "security/cors-test-other-origins-are-refused/1/transcript.md",
+      "timeline" : "security/cors-test-other-origins-are-refused/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.security.RateLimitTest#exceedingTheLimitIs429ThenRecovers",
+    "title" : "Past the limit: 429 with Retry-After, then recovery",
+    "suite" : "security",
+    "featureIds" : [ "FEAT-RATE-01" ],
+    "tags" : [ "security", "regression" ],
+    "status" : "passed",
+    "durationMs" : 12177,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:05.123Z",
+    "finishedAt" : "2026-11-24T12:38:17.300Z",
+    "evidence" : {
+      "dir" : "security/rate-limit-test-exceeding-the-limit-is429then-recovers/1",
+      "transcript" : "security/rate-limit-test-exceeding-the-limit-is429then-recovers/1/transcript.md",
+      "timeline" : "security/rate-limit-test-exceeding-the-limit-is429then-recovers/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.security.SecurityHeadersTest#securityHeadersOnEveryResponse[0]",
+    "title" : "Every response carries the security headers and no server banner [200 health, com.qaautomation.tests.security.SecurityHeadersTest$$Lambda/0x000070d1f86b1a30@204ada29]",
+    "suite" : "security",
+    "featureIds" : [ "FEAT-SEC-01" ],
+    "tags" : [ "security", "regression", "smoke" ],
+    "status" : "passed",
+    "durationMs" : 53,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:06.905Z",
+    "finishedAt" : "2026-11-24T12:38:06.958Z",
+    "evidence" : {
+      "dir" : "security/security-headers-test-security-headers-on-every-response-0/1",
+      "transcript" : "security/security-headers-test-security-headers-on-every-response-0/1/transcript.md",
+      "timeline" : "security/security-headers-test-security-headers-on-every-response-0/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.security.SecurityHeadersTest#securityHeadersOnEveryResponse[1]",
+    "title" : "Every response carries the security headers and no server banner [401 problem, com.qaautomation.tests.security.SecurityHeadersTest$$Lambda/0x000070d1f86b1c58@6af416ac]",
+    "suite" : "security",
+    "featureIds" : [ "FEAT-SEC-01" ],
+    "tags" : [ "security", "regression", "smoke" ],
+    "status" : "passed",
+    "durationMs" : 188,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:06.905Z",
+    "finishedAt" : "2026-11-24T12:38:07.093Z",
+    "evidence" : {
+      "dir" : "security/security-headers-test-security-headers-on-every-response-1/1",
+      "transcript" : "security/security-headers-test-security-headers-on-every-response-1/1/transcript.md",
+      "timeline" : "security/security-headers-test-security-headers-on-every-response-1/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.smoke.HealthSmokeTest#newAccountCanSignInAndReadItself",
+    "title" : "A new account can sign in and read itself back",
+    "suite" : "smoke",
+    "featureIds" : [ "FEAT-ACCT-01" ],
+    "tags" : [ "smoke" ],
+    "status" : "passed",
+    "durationMs" : 1477,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:03.465Z",
+    "finishedAt" : "2026-11-24T12:38:04.942Z",
+    "evidence" : {
+      "dir" : "smoke/health-smoke-test-new-account-can-sign-in-and-read-itself/1",
+      "transcript" : "smoke/health-smoke-test-new-account-can-sign-in-and-read-itself/1/transcript.md",
+      "timeline" : "smoke/health-smoke-test-new-account-can-sign-in-and-read-itself/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.smoke.HealthSmokeTest#serviceReportsUp",
+    "title" : "The reference service reports itself up, with its version and regions",
+    "suite" : "smoke",
+    "featureIds" : [ "FEAT-HEALTH-01" ],
+    "tags" : [ "smoke" ],
+    "status" : "passed",
+    "durationMs" : 1298,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:03.465Z",
+    "finishedAt" : "2026-11-24T12:38:04.763Z",
+    "evidence" : {
+      "dir" : "smoke/health-smoke-test-service-reports-up/1",
+      "transcript" : "smoke/health-smoke-test-service-reports-up/1/transcript.md",
+      "timeline" : "smoke/health-smoke-test-service-reports-up/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.workflows.LedgerConsistencyTest#concurrentPurchasesSumCorrectly",
+    "title" : "Ten concurrent purchases are all counted, exactly once",
+    "suite" : "workflows",
+    "featureIds" : [ "FEAT-LEDGER-03" ],
+    "tags" : [ "workflow", "regression" ],
+    "status" : "passed",
+    "durationMs" : 430,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:10.170Z",
+    "finishedAt" : "2026-11-24T12:38:10.600Z",
+    "evidence" : {
+      "dir" : "workflows/ledger-consistency-test-concurrent-purchases-sum-correctly/1",
+      "transcript" : "workflows/ledger-consistency-test-concurrent-purchases-sum-correctly/1/transcript.md",
+      "timeline" : "workflows/ledger-consistency-test-concurrent-purchases-sum-correctly/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.workflows.LedgerConsistencyTest#historySumsToTheBalance",
+    "title" : "Grants, purchases and spends sum to the balance",
+    "suite" : "workflows",
+    "featureIds" : [ "FEAT-LEDGER-01" ],
+    "tags" : [ "workflow", "regression" ],
+    "status" : "passed",
+    "durationMs" : 583,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:10.244Z",
+    "finishedAt" : "2026-11-24T12:38:10.827Z",
+    "evidence" : {
+      "dir" : "workflows/ledger-consistency-test-history-sums-to-the-balance/1",
+      "transcript" : "workflows/ledger-consistency-test-history-sums-to-the-balance/1/transcript.md",
+      "timeline" : "workflows/ledger-consistency-test-history-sums-to-the-balance/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.workflows.MultiActorConversationTest#twoPeopleConverseAndTheOwnerEndsIt",
+    "title" : "Two people exchange messages; an outsider is kept out; closing stops the thread",
+    "suite" : "workflows",
+    "featureIds" : [ "FEAT-CONV-01", "FEAT-CONV-02", "FEAT-CONV-03", "FEAT-AUTHZ-01", "FEAT-REGION-02" ],
+    "tags" : [ "workflow", "regression" ],
+    "status" : "passed",
+    "durationMs" : 3774,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:07.598Z",
+    "finishedAt" : "2026-11-24T12:38:11.372Z",
+    "evidence" : {
+      "dir" : "workflows/multi-actor-conversation-test-two-people-converse-and-the-owner-ends-it/1",
+      "transcript" : "workflows/multi-actor-conversation-test-two-people-converse-and-the-owner-ends-it/1/transcript.md",
+      "timeline" : "workflows/multi-actor-conversation-test-two-people-converse-and-the-owner-ends-it/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.workflows.MultiRegionTest#crossRegionConversationLivesInTheRecipientsRegion",
+    "title" : "A cross-region conversation is stored in the recipient's region, for both sides",
+    "suite" : "workflows",
+    "featureIds" : [ "FEAT-REGION-02" ],
+    "tags" : [ "workflow", "regression" ],
+    "status" : "passed",
+    "durationMs" : 2611,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:07.598Z",
+    "finishedAt" : "2026-11-24T12:38:10.209Z",
+    "evidence" : {
+      "dir" : "workflows/multi-region-test-cross-region-conversation-lives-in-the-recipients-region/1",
+      "transcript" : "workflows/multi-region-test-cross-region-conversation-lives-in-the-recipients-region/1/transcript.md",
+      "timeline" : "workflows/multi-region-test-cross-region-conversation-lives-in-the-recipients-region/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.workflows.MultiRegionTest#servedByTheHomeRegionFromAnyEdge[0]",
+    "title" : "Requests are served by the home region, whichever edge they arrive at [IN, eu]",
+    "suite" : "workflows",
+    "featureIds" : [ "FEAT-REGION-01" ],
+    "tags" : [ "workflow", "regression" ],
+    "status" : "passed",
+    "durationMs" : 2243,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:07.608Z",
+    "finishedAt" : "2026-11-24T12:38:09.851Z",
+    "evidence" : {
+      "dir" : "workflows/multi-region-test-served-by-the-home-region-from-any-edge-0/1",
+      "transcript" : "workflows/multi-region-test-served-by-the-home-region-from-any-edge-0/1/transcript.md",
+      "timeline" : "workflows/multi-region-test-served-by-the-home-region-from-any-edge-0/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.workflows.MultiRegionTest#servedByTheHomeRegionFromAnyEdge[1]",
+    "title" : "Requests are served by the home region, whichever edge they arrive at [EU, us]",
+    "suite" : "workflows",
+    "featureIds" : [ "FEAT-REGION-01" ],
+    "tags" : [ "workflow", "regression" ],
+    "status" : "passed",
+    "durationMs" : 2234,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:07.613Z",
+    "finishedAt" : "2026-11-24T12:38:09.847Z",
+    "evidence" : {
+      "dir" : "workflows/multi-region-test-served-by-the-home-region-from-any-edge-1/1",
+      "transcript" : "workflows/multi-region-test-served-by-the-home-region-from-any-edge-1/1/transcript.md",
+      "timeline" : "workflows/multi-region-test-served-by-the-home-region-from-any-edge-1/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.workflows.MultiRegionTest#servedByTheHomeRegionFromAnyEdge[2]",
+    "title" : "Requests are served by the home region, whichever edge they arrive at [US, in]",
+    "suite" : "workflows",
+    "featureIds" : [ "FEAT-REGION-01" ],
+    "tags" : [ "workflow", "regression" ],
+    "status" : "passed",
+    "durationMs" : 2240,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:07.613Z",
+    "finishedAt" : "2026-11-24T12:38:09.853Z",
+    "evidence" : {
+      "dir" : "workflows/multi-region-test-served-by-the-home-region-from-any-edge-2/1",
+      "transcript" : "workflows/multi-region-test-served-by-the-home-region-from-any-edge-2/1/transcript.md",
+      "timeline" : "workflows/multi-region-test-served-by-the-home-region-from-any-edge-2/1/timeline.html"
+    }
+  }, {
+    "id" : "com.qaautomation.tests.workflows.MultiRegionTest#unknownRegionIsRefused",
+    "title" : "An unknown home region is refused with 422",
+    "suite" : "workflows",
+    "featureIds" : [ "FEAT-REGION-03" ],
+    "tags" : [ "workflow", "regression" ],
+    "status" : "passed",
+    "durationMs" : 3494,
+    "attempt" : 1,
+    "quarantined" : false,
+    "startedAt" : "2026-11-24T12:38:07.599Z",
+    "finishedAt" : "2026-11-24T12:38:11.093Z",
+    "evidence" : {
+      "dir" : "workflows/multi-region-test-unknown-region-is-refused/1",
+      "transcript" : "workflows/multi-region-test-unknown-region-is-refused/1/transcript.md",
+      "timeline" : "workflows/multi-region-test-unknown-region-is-refused/1/timeline.html"
+    }
+  } ],
+  "shards" : 8
+}

@@ -1,0 +1,21 @@
+#3 GET https://restful-booker.herokuapp.com/booking/3197
+correlation: qa-dc9ac47d-e4d6-4769-90f5-39cd4ea31d91
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-dc9ac47d-e4d6-4769-90f5-39cd4ea31d91
+Content-Type: application/json
+
+--- response: 404 in 33 ms ---
+Content-Length: 9
+Content-Type: text/plain; charset=utf-8
+Date: Sat, 28 Nov 2026 10:37:12 GMT
+Etag: W/"9-0gXL1ngzMqISxa6S1zx3F4wtLyg"
+Nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+Report-To: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=KQBDu9fVUJLI9A%2FQL%2Fx1DU2rPR7qgpWypDb4%2FQdLTNs%3D\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\u0026ts=1795862232"}],"max_age":3600}
+Reporting-Endpoints: heroku-nel="https://nel.heroku.com/reports?s=KQBDu9fVUJLI9A%2FQL%2Fx1DU2rPR7qgpWypDb4%2FQdLTNs%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1795862232"
+Server: Heroku
+Via: 1.1 heroku-router
+X-Powered-By: Express
+
+Not Found

@@ -1,0 +1,28 @@
+#5 POST http://localhost:7070/v1/accounts
+correlation: qa-46a0dec4-e6e7-4350-b545-afa3b8b788b8
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-46a0dec4-e6e7-4350-b545-afa3b8b788b8
+Content-Type: application/json
+
+--- request body ---
+{"handle":"ab","displayName":"Name","password":"****","region":"eu"}
+
+--- response: 422 in 6 ms ---
+Date: Sat, 28 Nov 2026 10:37:24 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-46a0dec4-e6e7-4350-b545-afa3b8b788b8
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 600
+RateLimit-Remaining: 447
+RateLimit-Reset: 7
+Content-Length: 338
+
+{"type":"https://reference-service.example/problems/validation-failed","title":"Validation failed","status":422,"detail":"One or more fields are invalid.","instance":"/v1/accounts","correlationId":"qa-46a0dec4-e6e7-4350-b545-afa3b8b788b8","errors":[{"field":"handle","message":"3-30 characters: a-z, 0-9 and '-', not starting with '-'"}]}

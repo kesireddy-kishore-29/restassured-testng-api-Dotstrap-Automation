@@ -1,0 +1,26 @@
+#11 GET http://localhost:7070/v1/credits/ledger
+correlation: qa-8fe7f4e5-cbf2-488c-8bd8-04b09146dd66
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-8fe7f4e5-cbf2-488c-8bd8-04b09146dd66
+Content-Type: application/json
+
+--- response: 200 in 5 ms ---
+Date: Sat, 28 Nov 2026 10:37:25 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-8fe7f4e5-cbf2-488c-8bd8-04b09146dd66
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 52
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 1169
+
+{"items":[{"id":"led_a3002a3f-f11b-4a34-89c4-bf591327837c","type":"grant","amount":5,"balanceAfter":5,"reference":"welcome-grant","createdAt":"2026-11-28T10:37:25.058885351Z"},{"id":"led_f06e0ad7-1269-42d0-83dc-1ff9a54d7654","type":"spend","amount":-1,"balanceAfter":4,"reference":"cnv_8dbab6fd-7018-4b1b-b430-08ca9b882789","createdAt":"2026-11-28T10:37:25.213547736Z"},{"id":"led_8b1d99db-790d-4d46-9c76-d65e166f2f7c","type":"spend","amount":-1,"balanceAfter":3,"reference":"msg_033779c4-40c9-43e7-9ed6-1b3261ba79d8","createdAt":"2026-11-28T10:37:25.253857413Z"},{"id":"led_e3b10990-cb08-42cf-9d08-77dbc3908960","type":"spend","amount":-1,"balanceAfter":2,"reference":"msg_04d9d8b5-d100-4072-abe8-4f9277fc6622","createdAt":"2026-11-28T10:37:25.292845808Z"},{"id":"led_79c3e690-55e3-4513-9b42-d2bbbf15bf78","type":"spend","amount":-1,"balanceAfter":1,"reference":"msg_4d1bff98-c720-4da8-b4f3-e879171926d3","createdAt":"2026-11-28T10:37:25.326087208Z"},{"id":"led_639f6b7e-c84b-4a66-a30f-b596a3200447","type":"spend","amount":-1,"balanceAfter":0,"reference":"msg_3ff47807-79db-49dc-ac09-f1d78b3f9a9a","createdAt":"2026-11-28T10:37:25.356900308Z"}],"total":6,"balance":0}

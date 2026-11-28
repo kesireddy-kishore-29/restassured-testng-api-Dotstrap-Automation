@@ -1,0 +1,26 @@
+#4 GET http://localhost:7070/v1/accounts/me
+correlation: qa-082738b5-7a52-4b60-97a9-1c9feaffe227
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-082738b5-7a52-4b60-97a9-1c9feaffe227
+Content-Type: application/json
+
+--- response: 200 in 19 ms ---
+Date: Sat, 28 Nov 2026 10:37:14 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-082738b5-7a52-4b60-97a9-1c9feaffe227
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 179
+
+{"id":"acc_82589b56-c0f8-4b3d-8cbf-fad29ef1c23c","handle":"qa-40e7b82d6225","displayName":"Ava Lindqvist","region":"eu","role":"user","createdAt":"2026-11-28T10:37:14.251209620Z"}

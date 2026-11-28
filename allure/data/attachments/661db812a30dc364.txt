@@ -1,0 +1,29 @@
+#5 POST http://localhost:7070/v1/conversations
+correlation: qa-085bb1d4-acb2-42b5-a544-60202d1881d8
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-085bb1d4-acb2-42b5-a544-60202d1881d8
+Content-Type: application/json
+
+--- request body ---
+{"broken": 
+
+--- response: 400 in 23 ms ---
+Date: Sat, 28 Nov 2026 10:37:25 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-085bb1d4-acb2-42b5-a544-60202d1881d8
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 258
+
+{"type":"https://reference-service.example/problems/malformed-json","title":"Malformed JSON body","status":400,"detail":"The body is not valid JSON for this operation.","instance":"/v1/conversations","correlationId":"qa-085bb1d4-acb2-42b5-a544-60202d1881d8"}

@@ -1,0 +1,27 @@
+#5 GET http://localhost:7070/v1/conversations/cnv_26a39301-e065-4a55-94f1-6b105aea331a
+correlation: qa-6e82761e-405c-4ea2-b0ca-68baaff7ecdd
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-6e82761e-405c-4ea2-b0ca-68baaff7ecdd
+Content-Type: application/json
+
+--- response: 200 in 37 ms ---
+Date: Sat, 28 Nov 2026 10:37:20 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-6e82761e-405c-4ea2-b0ca-68baaff7ecdd
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: in
+X-Data-Region: eu
+Content-Length: 237
+
+{"id":"cnv_26a39301-e065-4a55-94f1-6b105aea331a","subject":"Across regions","status":"open","region":"eu","participants":["qa-e6f3cdc5daca","qa-0492cb38a106"],"messageCount":1,"unreadCount":0,"createdAt":"2026-11-28T10:37:20.106450779Z"}

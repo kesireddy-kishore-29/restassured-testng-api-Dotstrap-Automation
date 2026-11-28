@@ -1,0 +1,34 @@
+[ {
+  "sequence" : 1,
+  "startedAt" : "2026-11-20T10:09:52.754803958Z",
+  "durationMs" : 19,
+  "method" : "POST",
+  "pathTemplate" : "/v1/accounts",
+  "url" : "http://localhost:7070/v1/accounts",
+  "requestHeaders" : {
+    "Accept" : "application/json",
+    "X-Correlation-Id" : "qa-04e92066-de8f-4ba1-bed0-778d4b252d29",
+    "Content-Type" : "text/plain; charset=ISO-8859-1"
+  },
+  "requestBody" : "handle=qa-x",
+  "status" : 415,
+  "responseHeaders" : {
+    "Date" : "Fri, 20 Nov 2026 10:09:52 GMT",
+    "Content-Type" : "application/problem+json",
+    "X-Correlation-Id" : "qa-04e92066-de8f-4ba1-bed0-778d4b252d29",
+    "X-Content-Type-Options" : "nosniff",
+    "X-Frame-Options" : "DENY",
+    "Content-Security-Policy" : "default-src 'none'; frame-ancestors 'none'",
+    "Referrer-Policy" : "no-referrer",
+    "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+    "Cache-Control" : "no-store",
+    "Vary" : "Origin",
+    "RateLimit-Limit" : "600",
+    "RateLimit-Remaining" : "586",
+    "RateLimit-Reset" : "9",
+    "Content-Length" : "252"
+  },
+  "responseBody" : "{\"type\":\"https://reference-service.example/problems/unsupported-media-type\",\"title\":\"Unsupported media type\",\"status\":415,\"detail\":\"Send the body as application/json.\",\"instance\":\"/v1/accounts\",\"correlationId\":\"qa-04e92066-de8f-4ba1-bed0-778d4b252d29\"}",
+  "correlationId" : "qa-04e92066-de8f-4ba1-bed0-778d4b252d29",
+  "contractViolations" : [ ]
+} ]

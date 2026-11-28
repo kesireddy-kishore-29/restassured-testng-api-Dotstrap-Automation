@@ -1,0 +1,26 @@
+#24 POST http://localhost:7070/v1/conversations/cnv_2469b298-e721-426e-b614-c36a9f7fedd8/close
+correlation: qa-6354a1f5-a396-4dab-8550-664ccbc38257
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-6354a1f5-a396-4dab-8550-664ccbc38257
+Content-Type: application/json
+
+--- response: 200 in 8 ms ---
+Date: Sat, 28 Nov 2026 10:37:21 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-6354a1f5-a396-4dab-8550-664ccbc38257
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 54
+RateLimit-Reset: 9
+X-Served-Region: eu
+Content-Length: 284
+
+{"id":"cnv_2469b298-e721-426e-b614-c36a9f7fedd8","subject":"Project kickoff","status":"closed","region":"us","participants":["qa-d0228301b3f3","qa-ab1efe8f0546"],"messageCount":3,"unreadCount":2,"createdAt":"2026-11-28T10:37:20.183493104Z","closedAt":"2026-11-28T10:37:21.338451476Z"}

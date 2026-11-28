@@ -1,0 +1,26 @@
+#6 GET http://localhost:7070/v1/accounts/qa-fae555f1869b
+correlation: qa-e1d44afa-b2d0-4a99-b075-d0a7e90a7b95
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-e1d44afa-b2d0-4a99-b075-d0a7e90a7b95
+Content-Type: application/json
+
+--- response: 200 in 18 ms ---
+Date: Sat, 28 Nov 2026 10:37:16 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-e1d44afa-b2d0-4a99-b075-d0a7e90a7b95
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 74
+
+{"handle":"qa-fae555f1869b","displayName":"QA fae555f1869b","region":"us"}

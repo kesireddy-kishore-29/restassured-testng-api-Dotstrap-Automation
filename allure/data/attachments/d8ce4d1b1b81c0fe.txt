@@ -1,0 +1,12 @@
+#3 GET http://localhost:7070/v1/accounts/me
+correlation: qa-bc9e5eb5-f932-4569-a13b-cd73683d8932
+
+--- request headers ---
+Accept: application/json
+X-Fault: latency=4000
+X-Fault-Key: 9704552b-6796-48dc-b7b5-57c1b0f94b81
+X-Correlation-Id: qa-bc9e5eb5-f932-4569-a13b-cd73683d8932
+Content-Type: application/json
+
+--- response: none in 818 ms ---
+error: SocketTimeoutException: Read timed out

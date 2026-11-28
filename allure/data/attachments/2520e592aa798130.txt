@@ -1,0 +1,29 @@
+#5 POST http://localhost:7070/v1/conversations/cnv_807b3109-a799-4dd4-925d-e4c5bba881f0/messages
+correlation: qa-5c12ffb5-05e5-4a29-a990-7f832c765708
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-5c12ffb5-05e5-4a29-a990-7f832c765708
+Content-Type: application/json
+
+--- request body ---
+{"body":"Second"}
+
+--- response: 201 in 55 ms ---
+Date: Sat, 28 Nov 2026 10:37:14 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-5c12ffb5-05e5-4a29-a990-7f832c765708
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 58
+RateLimit-Reset: 10
+X-Served-Region: eu
+Content-Length: 197
+
+{"id":"msg_a0920d0d-c2fc-49cd-b9c1-7a53ae8c8301","conversationId":"cnv_807b3109-a799-4dd4-925d-e4c5bba881f0","sender":"qa-ef93ddfb8954","body":"Second","createdAt":"2026-11-28T10:37:14.855963473Z"}

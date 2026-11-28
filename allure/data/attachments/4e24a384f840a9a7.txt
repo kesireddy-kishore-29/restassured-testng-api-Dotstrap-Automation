@@ -1,0 +1,29 @@
+#12 POST http://localhost:7070/v1/conversations/cnv_2469b298-e721-426e-b614-c36a9f7fedd8/messages
+correlation: qa-0b947cd7-2112-4f72-a876-46a5c1f13832
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-0b947cd7-2112-4f72-a876-46a5c1f13832
+Content-Type: application/json
+
+--- request body ---
+{"body":"Calling you"}
+
+--- response: 201 in 8 ms ---
+Date: Sat, 28 Nov 2026 10:37:20 GMT
+Content-Type: application/json
+X-Correlation-Id: qa-0b947cd7-2112-4f72-a876-46a5c1f13832
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 54
+RateLimit-Reset: 10
+X-Served-Region: us
+Content-Length: 202
+
+{"id":"msg_b35712d8-d784-49d0-8a92-5ef2054bdfe7","conversationId":"cnv_2469b298-e721-426e-b614-c36a9f7fedd8","sender":"qa-ab1efe8f0546","body":"Calling you","createdAt":"2026-11-28T10:37:20.857757588Z"}

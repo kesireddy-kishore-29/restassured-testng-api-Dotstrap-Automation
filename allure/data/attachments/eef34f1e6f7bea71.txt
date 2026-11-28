@@ -1,0 +1,23 @@
+#10 DELETE http://localhost:7070/v1/accounts/me
+correlation: qa-13feee86-f04a-4d4b-ac58-e1a2d4432b85
+
+--- request headers ---
+Accept: application/json
+X-Correlation-Id: qa-13feee86-f04a-4d4b-ac58-e1a2d4432b85
+Content-Type: application/json
+
+--- response: 204 in 9 ms ---
+Date: Sat, 28 Nov 2026 10:37:15 GMT
+Content-Type: text/plain
+X-Correlation-Id: qa-13feee86-f04a-4d4b-ac58-e1a2d4432b85
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+RateLimit-Limit: 60
+RateLimit-Remaining: 57
+RateLimit-Reset: 10
+X-Served-Region: eu

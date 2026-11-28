@@ -1,0 +1,28 @@
+#5 PATCH http://localhost:7070/v1/accounts/me
+correlation: qa-57842440-89bd-4929-89a3-c0db8a9c9b73
+
+--- request headers ---
+Accept: application/json
+X-Fault-Key: 1ed0430b-22e5-4294-81eb-47b2570791bc
+X-Fault: unavailable-once
+X-Correlation-Id: qa-57842440-89bd-4929-89a3-c0db8a9c9b73
+Content-Type: application/json
+
+--- request body ---
+{"displayName":"Probe"}
+
+--- response: 503 in 20 ms ---
+Date: Sat, 28 Nov 2026 10:37:22 GMT
+Content-Type: application/problem+json
+X-Correlation-Id: qa-57842440-89bd-4929-89a3-c0db8a9c9b73
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'none'; frame-ancestors 'none'
+Referrer-Policy: no-referrer
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+Vary: Origin
+Retry-After: 1
+Content-Length: 259
+
+{"type":"https://reference-service.example/problems/fault-injected","title":"Service unavailable (injected)","status":503,"detail":"Injected outage; retry after 1 second.","instance":"/v1/accounts/me","correlationId":"qa-57842440-89bd-4929-89a3-c0db8a9c9b73"}
